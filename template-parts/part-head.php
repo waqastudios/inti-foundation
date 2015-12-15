@@ -16,7 +16,7 @@
 	<?php if ( get_inti_option('apple_touch_icon', 'inti_customizer_options') ) : ?>
 		<link href="<?php echo get_inti_option('apple_touch_icon', 'inti_customizer_options'); ?>" rel="apple-touch-icon" />
 	<?php else : ?>
-		<link href="<?php echo get_template_directory_uri(); ?>/img/apple-icon-touch.png" rel="apple-touch-icon" />
+		<link href="<?php echo get_template_directory_uri(); ?>/img/apple-touch-icon.png" rel="apple-touch-icon" />
 	<?php endif; ?>
 
 	<!-- Ms App Tile Color -->
