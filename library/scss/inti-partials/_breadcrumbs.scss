@@ -1,0 +1,26 @@
+/******************************************************************
+
+Stylesheet: Breadcrumbs
+
+
+
+******************************************************************/
+
+
+div.breadcrumbs {
+	margin: 0;
+	
+	nav.breadcrumbs {
+		ul { 
+			margin: 0;
+		}
+	}
+
+	&.top nav.breadcrumbs {
+		margin: $global-margin 0 0 0;
+	}
+
+	&.bottom nav.breadcrumbs {
+		margin: $global-margin 0;
+	}
+}

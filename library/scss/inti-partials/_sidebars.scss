@@ -1,0 +1,35 @@
+/******************************************************************
+
+Stylesheet: Sidebars and Widgets
+
+Styles for sidebars and the widgets they contain
+
+******************************************************************/
+
+
+.sidebar {
+	.widget {
+		margin: $global-margin 0 ($global-margin * 2) 0; 
+
+			.widget-title {}
+	}
+
+	.widget_search {
+		form {}
+		label {
+			text-transform: uppercase;
+			font-size: rem-calc(11);
+		}
+		input#s {}
+		input.button {}
+	}
+
+	.widget_calendar {
+		#today { background-color: $primary-color; }
+		td { text-align: center; }
+	}
+}
+
+#sidebar {}
+#sidebar-frontpage {}
+#sidebar-footer {} 

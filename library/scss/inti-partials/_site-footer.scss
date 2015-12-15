@@ -1,0 +1,25 @@
+/******************************************************************
+
+Stylesheet: Footer
+
+Styles for the site-footer and the components it is home to. The
+footer can be wide or contained.
+
+******************************************************************/
+
+#footer {
+
+}
+
+.footer-widgets {
+	padding: $global-padding 0;
+	background-color: $light-gray; 
+}
+.footer-menu { background-color: $black; }
+.footer-social { background-color: $light-gray; }
+.footer-info {
+	background-color: $light-gray; 
+
+		span.copyright {}
+		span.site-credits {}
+}

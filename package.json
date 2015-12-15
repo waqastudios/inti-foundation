@@ -1,0 +1,27 @@
+{
+  "name": "inti-foundation",
+  "version": "1.0.0",
+  "description": "A responsive WordPress theme built with ZURB's Foundation for Sites 6.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/waqastudios/inti-foundation.git"
+  },
+  "author": "Waqa Studios",
+  "license": "GPL-2.0",
+  "homepage": "https://github.com/waqastudios/inti-foundation",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^2.3.1",
+    "gulp-bower": "0.0.10",
+    "gulp-concat": "^2.5.2",
+    "gulp-jshint": "^1.11.0",
+    "gulp-minify-css": "^1.1.6",
+    "gulp-plumber": "^1.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.1.1",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-uglify": "^1.2.0",
+    "gulp-util": "^3.0.7",
+    "jshint-stylish": "^2.0.0"
+  }
+}

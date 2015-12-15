@@ -1,0 +1,48 @@
+/******************************************************************
+
+Stylesheet: Comments
+
+Styles for displaying comments, threads of comments and positioning
+of comment areas
+
+******************************************************************/
+
+
+#respond {
+	margin: $global-margin 0;
+}
+
+#comments {
+	margin: $global-margin 0;
+	
+		ol.comment-list {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+		}
+		li.comment {
+
+			article.comment-body {
+				padding: $global-padding;
+
+					.comment-author {}
+					.comment {}
+					.coment-meta {}
+					.respond {}
+			}
+
+			&.even { 
+				> article { background-color: smart-scale($white, 5%); }
+			}
+			&.thread-even {}
+			&.odd {}
+			&.parent {} // has parent
+
+			
+			ul.children { // has children
+				margin: 0 0 $global-margin $list-nested-side-margin;
+				li {}
+			} 
+		}
+}
+

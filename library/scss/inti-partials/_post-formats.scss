@@ -1,0 +1,52 @@
+/******************************************************************
+
+Stylesheet: Post Formats
+
+Posts (and some pages) have different styles depending on their
+post format. They may even have different HTML that needs to be
+styled.
+
+******************************************************************/
+
+@mixin no-title-margins-on-archive() {
+	margin: ($global-margin * 4) 0;
+}
+
+// Pages
+article.format-page {}
+
+// Posts
+article.format-standard {}
+article.format-aside {}
+article.format-audio {}
+article.format-chat {}
+article.format-gallery {}
+article.format-image {}
+article.format-link {}
+article.format-none {} // 404
+article.format-quote {}
+article.format-status {}
+article.format-video {}
+
+body.archive, body.blog {
+	// Posts - by default we add more margins to types without titles
+	article.format-standard {}
+	article.format-aside { 
+		@include no-title-margins-on-archive();
+	}
+	article.format-audio {}
+	article.format-chat {}
+	article.format-gallery {}
+	article.format-image {}
+	article.format-link { 
+		@include no-title-margins-on-archive();
+	}
+	article.format-none {} // 404
+	article.format-quote { 
+		@include no-title-margins-on-archive();
+	}
+	article.format-status { 
+		@include no-title-margins-on-archive();
+	}
+	article.format-video {}
+}

@@ -1,0 +1,32 @@
+/******************************************************************
+
+Stylesheet: Archives
+
+Styles for index,php, archive.php, category.php, tag.php, search.php
+and any other template that outputs a loop of posts.
+
+******************************************************************/
+
+
+header.archive-header {
+	margin: 0 0 ($global-margin * 4) 0;
+
+		.archive-title {
+			span {
+				font-style: italic;
+			}
+		}
+		.archive-meta {}
+}
+
+body.archive, body.blog, body.search-results {
+	
+	&.category {}
+	&.tag {}
+
+	article {
+		margin: 0 0 ($global-margin * 4) 0;
+
+			.entry-body {}
+	}
+}

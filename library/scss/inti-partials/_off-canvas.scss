@@ -1,0 +1,57 @@
+/******************************************************************
+
+Stylesheet: Off Canvas
+
+By default all the visible page content is placed within a 
+F6 off-canvas's .off-canvas-content wrapper, outside of which an 
+off canvas menu is found.
+
+******************************************************************/
+
+
+.off-canvas-wrapper {
+	.off-canvas-wrapper-inner {}
+	.off-canvas-wrapper-inner.is-off-canvas-open {}
+
+	.off-canvas-wrapper-inner.is-off-canvas-open.is-open-left {}
+	.off-canvas-wrapper-inner.is-off-canvas-open.is-open-right {}
+
+
+
+	// Stuff that is not the off-canvas, i.e. site content
+	.off-canvas-content {
+		// F6 adds box-shadow here, visible when content is shifted
+	}
+
+
+	// The off-canvas menus
+	.off-canvas { 
+		height: 100vh;
+		background-color: $black;
+
+			ul.menu {
+				li {
+									
+					&.current-menu-item { font-weight: bold; }
+					&.current-menu-parent > a { font-weight: bold; }
+				}
+
+				a { color: $white; }
+
+				ul.submenu {
+					background-color: $black;
+				}
+			}
+
+			.is-drilldown-submenu-parent {
+				> a::after { border-color: transparent transparent transparent $white; }
+			}
+			.js-drilldown-back::before { border-color: transparent $white transparent transparent; }
+			}
+
+
+
+
+
+	
+}

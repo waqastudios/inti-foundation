@@ -1,0 +1,96 @@
+/******************************************************************
+
+Stylesheet: Pages and Posts
+
+Styles relating to WordPress page templates, page.php (and variarions
+of page templates. i.e. page-about.php) and post templates, single.php (and any
+variarions of post templates. i.e. single-x.php
+
+
+Post Formats have their own stylesheet
+
+******************************************************************/
+
+// Body classes - style pages depending on template or post type
+body.page {}
+body.single {}
+
+body.page.page-template-default {
+	#sidebar {}
+}
+body.single.single-post {
+	#sidebar {}
+}
+
+// Article - the page/post meat
+article {
+	.entry-body { }
+	.entry-header {}
+	.entry-content { 
+		margin: $global-margin 0; 
+	}
+	.entry-summary {
+		margin: $global-margin 0; 
+	}
+	.entry-footer {}
+
+	.page-links {
+		margin: $global-margin 0; 
+
+			span {
+				text-transform: uppercase;
+				font-size: rem-calc(11);
+			}
+	}
+
+	.entry-meta {
+		//margin: 0 0 $global-margin 0;
+
+			&.icons {
+				.by-author, .entry-date, .entry-cats, .entry-tags { display: inline-block; margin: 0 $global-margin 0 0; }
+			}
+
+			.by-author, .entry-date, .entry-cats, .entry-tags {}
+	}	
+
+	.edit-link {}
+
+	&.featured {
+		@include callout($primary-color);
+	}
+}
+
+nav.nav-single {
+	@include grid-row;
+	margin: $global-margin 0;
+
+	.alignleft { margin: 0 0 $global-margin 0; display: inline-block; }
+
+	@include breakpoint(medium up) {
+		.alignleft { @include grid-column(5, 0); margin: 0; } 
+		.alignright { @include grid-column(5, 0); text-align: right; }
+	}
+}
+
+// article.page {
+// 	.entry-body {
+// 		.entry-header {}
+
+// 		.entry-content {}
+
+// 		.entry-footer {}
+// 	}
+// }
+
+// article.post {
+// 	.entry-body {
+// 		.entry-header {}
+
+// 		.entry-content {}
+
+// 		.entry-footer {}
+// 	}
+// }
+
+
+

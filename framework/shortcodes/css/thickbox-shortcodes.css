@@ -1,0 +1,8 @@
+#TB_ajaxContent {
+	width: auto !important;
+	height: auto !important; 
+}
+
+tr.option { 
+	display: none;
+}
