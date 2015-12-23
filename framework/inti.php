@@ -6,7 +6,7 @@
  *
  * @package Inti
  * @author Waqa Studios
- * @since 1.0.0
+ * @since 1.0.1
  * @license GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
  */
 
@@ -49,11 +49,10 @@ class Inti {
 		// if theme supports extensions
 		require_if_theme_supports('inti-menus', locate_template('/framework/extensions/walkers.php'));
 		require_if_theme_supports('inti-menus', locate_template('/framework/extensions/menus.php'));
-		//require_if_theme_supports('inti-post-types', locate_template('/framework/post-types/post-types.php'));
+		require_if_theme_supports('inti-post-types', locate_template('/framework/post-types/post-types.php'));
 		require_if_theme_supports('inti-sidebars', locate_template('/framework/extensions/sidebars.php'));
 		require_if_theme_supports('inti-shortcodes', locate_template('/framework/shortcodes/shortcodes.php'));
 		require_if_theme_supports('inti-shortcodes', locate_template('/framework/shortcodes/tinymce-functions.php'));
-		// require_if_theme_supports('inti-translation', locate_template('/framework/lang/language.php'));
 		require_if_theme_supports('inti-breadcrumbs', locate_template('/framework/extensions/breadcrumbs.php'));
 		require_if_theme_supports('inti-custom-login', locate_template('/framework/extensions/login.php'));
 	}

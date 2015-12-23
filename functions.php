@@ -4,7 +4,7 @@
  *
  * @package Inti
  * @author Waqa Studios
- * @since 1.0.0
+ * @since 1.0.1
  * @copyright Copyright (c) 2015, Waqa Studios
  * @license GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
  */
@@ -48,12 +48,12 @@ if ( function_exists('childtheme_override_setup') ) {
 		
 		add_theme_support(
 			'inti-post-types',
-			array('slides', 'portfolio')
+			array('slides')
 		);
 		
 		add_theme_support(
 			'inti-page-templates',
-			array('front-page', 'news-page', 'portfolio', 'contact')
+			array('front-page')
 		);
 
 		add_theme_support('inti-customizer');
