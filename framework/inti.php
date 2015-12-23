@@ -42,6 +42,9 @@ class Inti {
 		require_once locate_template('/framework/metaboxes/metaboxes.php');
 		require_once locate_template('/framework/extensions/socialmedia.php');
 		
+		// widget functions
+		require_once locate_template('/framework/widgets/widget-functions.php');
+
 		// custom widgets
 		require_once locate_template('/framework/widgets/image.php');
 		require_once locate_template('/framework/widgets/flexvideo.php');
