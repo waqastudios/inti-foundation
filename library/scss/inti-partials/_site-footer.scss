@@ -15,7 +15,14 @@ footer can be wide or contained.
 	padding: $global-padding 0;
 	background-color: $light-gray; 
 }
-.footer-menu { background-color: $black; }
+.footer-menu { 
+	background-color: $black; 
+
+		ul.menu {
+			li { display: inline-block; }
+		}
+
+}
 .footer-social { background-color: $light-gray; }
 .footer-info {
 	background-color: $light-gray; 
