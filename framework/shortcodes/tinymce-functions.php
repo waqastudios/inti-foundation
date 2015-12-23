@@ -8,15 +8,12 @@
  * @since 1.0.0
  * @license GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
  */
- 
 
 
 /**
- * Add the Javascript we'll need for the buttons.
- *
+ * Add the shortcode picker button to TinyMCE... and the JS files to run it.
+ * @since 1.0.0
  */
-
-// Hooks your functions into the correct filters
 function inti_add_mce_button() {
 	// check user permissions
 	if ( !current_user_can( 'edit_posts' ) && !current_user_can( 'edit_pages' ) ) {
@@ -43,7 +40,11 @@ function inti_register_mce_button( $buttons ) {
 }
 
 
-// Enable font size & font family selects in the editor
+
+/**
+ * Enable font size & font family selects in the editor
+ * @since 1.0.0
+ */
 if ( ! function_exists( 'inti_mce_standard_buttons' ) ) {
 	function inti_mce_standard_buttons( $buttons ) {
 		array_unshift( $buttons, 'fontselect' ); // Add Font Select
@@ -89,6 +90,7 @@ add_filter( 'tiny_mce_before_init', 'inti_mce_google_fonts_array' );
 
 
 
+
 /**
  * Functions we'll need for the TinyMCE shortcode popup.
  *
@@ -104,7 +106,7 @@ add_action( 'admin_enqueue_scripts', 'inti_shortcode_interface_stylesheets', 100
 
 /**
  * Types of shortcode available.
- *
+ * @since 1.0.0
  */
 function inti_shortcode_add_select() {
 	$options = array(
@@ -131,6 +133,7 @@ add_action('inti_shortcode_select', 'inti_shortcode_add_select');
 /**
  * Enqueue javascript files for each shortcode.
  * These can be unqueued in a child theme if a shortcode there overwrites Inti functionality
+ * @since 1.0.0
  */
 function inti_shortcode_enqueue_shortcodes($hook) {
 	if ($hook == "post.php"){
@@ -163,6 +166,10 @@ function inti_shortcode_enqueue_shortcodes($hook) {
 add_action('admin_enqueue_scripts', 'inti_shortcode_enqueue_shortcodes');
 
 
+/**
+ * Button Shortcode - with options
+ * @since 1.0.0
+ */
 function inti_shortcode_add_button() {
 	ob_start();?>
 
@@ -246,7 +253,10 @@ function inti_shortcode_add_button() {
 }
 add_action('inti_shortcode_view', 'inti_shortcode_add_button');
 
-
+/**
+ * Dropdown Button Shortcode - with options
+ * @since 1.0.0
+ */
 function inti_shortcode_add_dropdown_button() {
 	ob_start();?>
 
@@ -347,6 +357,10 @@ Text, HTML, other shortcodes...
 add_action('inti_shortcode_view', 'inti_shortcode_add_dropdown_button');
 
 
+/**
+ * Flex Video shortcode - with options
+ * @since 1.0.0
+ */
 function inti_shortcode_add_flex_video() {
 	ob_start();?>
 
@@ -393,6 +407,10 @@ function inti_shortcode_add_flex_video() {
 add_action('inti_shortcode_view', 'inti_shortcode_add_flex_video');
 
 
+/**
+ * Callout Shortcode - with options
+ * @since 1.0.0
+ */
 function inti_shortcode_add_callout() {
 	ob_start();?>
 
@@ -455,6 +473,10 @@ function inti_shortcode_add_callout() {
 add_action('inti_shortcode_view', 'inti_shortcode_add_callout');
 
 
+/**
+ * Accordion Shortcode - with options
+ * @since 1.0.0
+ */
 function inti_shortcode_add_accordion() {
 	ob_start();?>
 
@@ -519,6 +541,10 @@ function inti_shortcode_add_accordion() {
 add_action('inti_shortcode_view', 'inti_shortcode_add_accordion');
 
 
+/**
+ * Tabs Shortcode - with options
+ * @since 1.0.0
+ */
 function inti_shortcode_add_tabs() {
 	ob_start();?>
 
@@ -576,6 +602,10 @@ function inti_shortcode_add_tabs() {
 add_action('inti_shortcode_view', 'inti_shortcode_add_tabs');
 
 
+/**
+ * Tooltip Shortcode - with options
+ * @since 1.0.0
+ */
 function inti_shortcode_add_tooltip() {
 	ob_start();?>
 
@@ -640,6 +670,10 @@ function inti_shortcode_add_tooltip() {
 add_action('inti_shortcode_view', 'inti_shortcode_add_tooltip');
 
 
+/**
+ * Label Shortcode - with options
+ * @since 1.0.0
+ */
 function inti_shortcode_add_label() {
 	ob_start();?>
 
@@ -689,6 +723,7 @@ function inti_shortcode_add_label() {
 	echo $html;
 }
 add_action('inti_shortcode_view', 'inti_shortcode_add_label');
+
 
 /**
  * Hooks for shortcodes
