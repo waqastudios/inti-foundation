@@ -63,12 +63,10 @@ $body-font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
 $body-antialiased: true;
 $global-margin: 1rem;
 $global-padding: 1rem;
-$global-margin: 1rem;
 $global-weight-normal: normal;
 $global-weight-bold: bold;
 $global-radius: 0;
 $global-text-direction: ltr;
-$rem-base: 16px;
 
 // 2. Breakpoints
 // --------------
@@ -88,7 +86,10 @@ $breakpoint-classes: (small medium mlarge large);
 
 $grid-row-width: $global-width;
 $grid-column-count: 12;
-$grid-column-gutter: 30px;
+$grid-column-responsive-gutter: (
+  small: 20px,
+  medium: 30px,
+);
 $grid-column-align-edge: true;
 $block-grid-max: 8;
 
@@ -208,6 +209,7 @@ $accordion-content-padding: 1rem;
 // -----------------
 
 $accordionmenu-arrows: true;
+$accordionmenu-arrow-color: $primary-color;
 
 // 9. Badge
 // --------
@@ -234,7 +236,7 @@ $breadcrumbs-item-slash: true;
 // ----------
 
 $button-padding: 0.85em 1em;
-$button-margin: 0 $global-margin $global-margin 0;
+$button-margin: 0 0 $global-margin 0;
 $button-fill: solid;
 $button-background: $primary-color;
 $button-background-hover: scale-color($button-background, $lightness: -15%);
@@ -286,6 +288,7 @@ $closebutton-color-hover: $black;
 
 $drilldown-transition: transform 0.15s linear;
 $drilldown-arrows: true;
+$drilldown-arrow-color: $primary-color;
 $drilldown-background: $white;
 
 // 16. Dropdown
@@ -306,6 +309,7 @@ $dropdown-sizes: (
 // -----------------
 
 $dropdownmenu-arrows: true;
+$dropdownmenu-arrow-color: $anchor-color;
 $dropdownmenu-min-width: 200px;
 $dropdownmenu-background: $black;
 $dropdownmenu-border: none;
@@ -313,7 +317,6 @@ $dropdownmenu-border: none;
 // 18. Flex Video
 // --------------
 
-$flexvideo-padding-top: rem-calc(25);
 $flexvideo-margin-bottom: rem-calc(16);
 $flexvideo-ratio: 4 by 3;
 $flexvideo-ratio-widescreen: 16 by 9;
@@ -337,7 +340,7 @@ $form-label-color: $black;
 $form-label-font-size: rem-calc(14);
 $form-label-font-weight: $global-weight-normal;
 $form-label-line-height: 1.8;
-$select-background: #fafafa;
+$select-background: $white;
 $select-triangle-color: #333;
 $select-radius: $global-radius;
 $input-color: $dark-gray;
