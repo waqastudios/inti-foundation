@@ -132,7 +132,7 @@ gulp.task('watch', function() {
   gulp.watch('./library/scss/**/*.scss', ['styles']);
 
   // Watch site-js files
-  gulp.watch('./library/js/scripts/*.js', ['scripts']);
+  gulp.watch('./library/js/scripts/*.js', ['site-js']);
   
   // Watch foundation-js files
   gulp.watch('./library/vendor/foundation-sites/js/*.js', ['foundation-js']);
