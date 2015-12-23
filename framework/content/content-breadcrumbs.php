@@ -14,7 +14,7 @@
  * Breadcrumbs at the top
  * Add breadcrumb links before the main content block
  * 
- * @since 1.0.0
+ * @since 1.0.1
  */
 function inti_do_content_before_breadcrumbs() { 
 	if ( current_theme_supports('inti-breadcrumbs') ) {
@@ -25,7 +25,7 @@ function inti_do_content_before_breadcrumbs() {
 						<?php echo inti_get_breadcrumbs(); ?>
 					</div><!-- .columns -->
 				</div><!-- .row -->
-			</div><!-- #breadcrumbs -->
+			</div><!-- .breadcrumbs -->
 <?php 
 		}
 	}
@@ -37,7 +37,7 @@ add_action('inti_hook_content_before', 'inti_do_content_before_breadcrumbs', 1);
  * Breadcrumbs at the bottom
  * Add breadcrumb links after the main content block
  * 
- * @since 1.0.0
+ * @since 1.0.1
  */
 function inti_do_content_after_breadcrumbs() { 
 	if ( current_theme_supports('inti-breadcrumbs') ) {
@@ -48,7 +48,7 @@ function inti_do_content_after_breadcrumbs() {
 						<?php echo inti_get_breadcrumbs(); ?>
 					</div><!-- .columns -->
 				</div><!-- .row -->
-			</div><!-- #breadcrumbs -->
+			</div><!-- .breadcrumbs -->
 <?php 
 		}
 	}

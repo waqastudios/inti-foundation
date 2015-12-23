@@ -15,7 +15,7 @@
  * Adds a row in which a sidebar is displayed in the footer
  * See sidebar.php for details of how it is displayed horizontally
  * 
- * @since 1.0.0
+ * @since 1.0.1
  */
 function inti_do_footer_widgets() { ?>
 	<div class="footer-widgets">
@@ -24,7 +24,7 @@ function inti_do_footer_widgets() { ?>
 					<?php get_sidebar('footer'); ?>  
 			</div><!-- .columns -->
 		</div><!-- .row -->     
-	</div><!-- .inner-footer -->
+	</div><!-- .footer-widgets -->
 <?php 
 }
 add_action('inti_hook_footer_inside', 'inti_do_footer_widgets', 1);
