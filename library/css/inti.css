@@ -4619,6 +4619,8 @@ Styles for sidebars and the widgets they contain
 ******************************************************************/
 .sidebar .widget {
   margin: 1rem 0 2rem 0; }
+  .sidebar .widget ul {
+    margin: 0 0 1rem 2rem; }
 
 .sidebar .widget_search label {
   text-transform: uppercase;
@@ -4629,6 +4631,14 @@ Styles for sidebars and the widgets they contain
 
 .sidebar .widget_calendar td {
   text-align: center; }
+
+.sidebar .widget_nav_menu ul {
+  margin: 0;
+  background-color: #e6e6e6; }
+  .sidebar .widget_nav_menu ul li.current-menu-item {
+    font-weight: bold; }
+  .sidebar .widget_nav_menu ul li.current-menu-parent > a {
+    font-weight: bold; }
 
 /******************************************************************
 

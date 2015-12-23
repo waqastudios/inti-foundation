@@ -12,6 +12,7 @@ Styles for sidebars and the widgets they contain
 		margin: $global-margin 0 ($global-margin * 2) 0; 
 
 			.widget-title {}
+			ul { margin: 0 0 $global-margin ($global-margin * 2); }
 	}
 
 	.widget_search {
@@ -27,6 +28,20 @@ Styles for sidebars and the widgets they contain
 	.widget_calendar {
 		#today { background-color: $primary-color; }
 		td { text-align: center; }
+	}
+
+	.widget_nav_menu {
+		ul { 
+			margin: 0;
+			background-color: $light-gray;
+			
+				li { 
+					
+					&.current-menu-item { font-weight: bold; }
+					&.current-menu-parent > a { font-weight: bold; }
+				}
+				ul.sub-menu {}
+		}
 	}
 }
 
