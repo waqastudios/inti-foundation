@@ -577,11 +577,11 @@ function inti_shortcode_add_tabs() {
 
 	<tr class="option inti-tabs">
 		<th class="label">
-			<label for="tab-item-1-text"><?php _e('Item Text', 'inti'); ?> <span class="count">1</span></label>
+			<label for="tab-item-1-content"><?php _e('Item Text', 'inti'); ?> <span class="count">1</span></label>
 		</th>
 
 		<td class="field">
-			<textarea name="tab-item-1-text" id="tab-item-1-text" cols="30" rows="5" class="widefat"></textarea>
+			<textarea name="tab-item-1-content" id="tab-item-1-content" cols="30" rows="5" class="widefat"></textarea>
 		</td>
 	</tr>
 

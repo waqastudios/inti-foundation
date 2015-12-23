@@ -11,8 +11,8 @@
 		if( $currentShortcode === 'inti-tabs' ) {
 				var taborientation     = $('#tabs-orientation').val();
 
-				var tabitem1title     = $('#tabs-item-1-title').val(),
-					tabitem1content = $('#tabs-item-1-content').val();
+				var tabitem1title     = $('#tab-item-1-title').val(),
+					tabitem1content = $('#tab-item-1-content').val();
 
 				var shortcode = '[tabs';
 
