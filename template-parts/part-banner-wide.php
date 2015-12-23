@@ -18,4 +18,4 @@
 			<?php inti_hook_site_banner_title_area_after(); ?>
 		</div><!-- .column -->
 
-	</div><!-- .inner-header -->
+	</div><!-- .site-banner -->

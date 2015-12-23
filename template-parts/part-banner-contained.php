@@ -16,12 +16,4 @@
 			</div>
 			<?php inti_hook_site_banner_title_area_after(); ?>
 		</div><!-- .row -->
-	</div><!-- .inner-header -->  
-
-
-	<?php 
-// 	$meta = wp_get_attachment_metadata(1805);
-// print_r($meta);
-// print_r($meta['image_meta']);
-// 	echo wp_image_add_srcset_and_sizes('<img src="http://192.168.0.4/inti-foundation/wordpress/wp-content/uploads/2015/12/logo@2x.png" class="wp-post-image" alt="logo">', wp_get_attachment_metadata( 1805, $unfiltered ), 1805); 
-// 	?>
+	</div><!-- .site-banner -->
