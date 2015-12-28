@@ -54,7 +54,7 @@ add_action('inti_hook_footer_inside', 'inti_do_footer_menu', 2);
  * Adds spurious details such as copyright messages, could also
  * be a home for terms and conditions links etc.
  * 
- * @since 1.0.0
+ * @since 1.0.2
  */
 function inti_do_footer_info() { ?>
 	<div class="footer-info">
