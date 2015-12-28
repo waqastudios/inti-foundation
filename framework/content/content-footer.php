@@ -63,7 +63,7 @@ function inti_do_footer_info() { ?>
 								
 					<?php 
 					if ( get_inti_option('custom_copyright', 'inti_footer_options') ) : 
-						echo get_inti_option('footer_siteinfo', 'inti_footer_options'); 
+						echo get_inti_option('custom_copyright', 'inti_footer_options'); 
 					else : ?>
 						<p><span class="copyright">Copyright &copy; <?php echo date_i18n('Y'); ?> <?php bloginfo('name'); ?> | </span>
 						<span class="site-credits"><?php _e('Powered by ', 'inti'); ?><a href="<?php echo esc_url('http://wordpress.org/'); ?>" title="<?php esc_attr_e('Personal Publishing Platform', 'inti'); ?>">WordPress</a> &amp; <a href="<?php echo esc_url('http://inti.waqastudios.com/') ?>" title="<?php esc_attr_e('Foundation 6 WordPress Framework', 'inti'); ?>">Inti Foundation</a></span></p>
