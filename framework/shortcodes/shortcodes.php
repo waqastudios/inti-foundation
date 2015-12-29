@@ -65,12 +65,6 @@ if (!function_exists('inti_shortcode_dropdown_button')) {
 
 		return $html;
 
-
-		//return '<button data-dropdown="drop-'.$id.'" aria-controls="drop-'.$id.'" aria-expanded="false" class="button dropdown '. $type .' '. $style .' '. $style .'" role="button">' . $title . '</button>' 
-		//	. '<ul id="drop-'. $id .'" data-dropdown-content class="f-dropdown" role="menu" aria-hidden="false" tabindex="-1">'
-		//	. $content
-		//	. '</ul>
-		//';
 	}
 	add_shortcode('dropdown-button', 'inti_shortcode_dropdown_button');
 }

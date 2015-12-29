@@ -115,7 +115,6 @@ function inti_shortcode_add_select() {
 		'inti-dropdown-button' => __('Dropdown Button', 'inti'),
 		'inti-flex-video' => __('Video', 'inti'),
 		'inti-callout' => __('Callout', 'inti'),
-		'inti-pricing-table' => __('Pricing Table', 'inti'),
 		'inti-accordion' => __('Accordion', 'inti'),
 		'inti-tabs' => __('Tabs', 'inti'),
 		'inti-tooltip' => __('Tooltip', 'inti'),
@@ -212,18 +211,18 @@ function inti_shortcode_add_button() {
 
 		<td class="field">
 			<select name="button-type" id="button-type" class="widefat">
-				<option value="" selected><?php _e('Standard', 'inti'); ?></option>
+				<option value="" selected><?php _e('Primary', 'inti'); ?></option>
+				<option value="secondary"><?php _e('Secondary', 'inti'); ?></option>
 				<option value="success"><?php _e('Success', 'inti'); ?></option>
 				<option value="alert"><?php _e('Alert', 'inti'); ?></option>
+				<option value="warning"><?php _e('Warning', 'inti'); ?></option>
 				<option value="disabled"><?php _e('Disabled', 'inti'); ?></option>
-				<option value="info"><?php _e('Info', 'inti'); ?></option>
-				<option value="secondary"><?php _e('Secondary', 'inti'); ?></option>
-				<option value="hollow"><?php _e('Standard Hollow', 'inti'); ?></option>
+				<option value="hollow"><?php _e('Primary Hollow', 'inti'); ?></option>
+				<option value="secondary hollow"><?php _e('Secondary Hollow', 'inti'); ?></option>
 				<option value="success hollow"><?php _e('Success Hollow', 'inti'); ?></option>
 				<option value="alert hollow"><?php _e('Alert Hollow', 'inti'); ?></option>
+				<option value="warning hollow"><?php _e('Warning Hollow', 'inti'); ?></option>
 				<option value="disabled hollow"><?php _e('Disabled Hollow', 'inti'); ?></option>
-				<option value="info hollow"><?php _e('Info Hollow', 'inti'); ?></option>
-				<option value="secondary hollow"><?php _e('Secondary Hollow', 'inti'); ?></option>
 			</select>
 		</td>
 	</tr>
@@ -281,12 +280,12 @@ function inti_shortcode_add_dropdown_button() {
 
 		<td class="field">
 			<select name="dropdown-button-type" id="dropdown-button-type" class="widefat">
-				<option value="" selected><?php _e('Standard', 'inti'); ?></option>
+				<option value="" selected><?php _e('Primary', 'inti'); ?></option>
+				<option value="secondary"><?php _e('Secondary', 'inti'); ?></option>
 				<option value="success"><?php _e('Success', 'inti'); ?></option>
 				<option value="alert"><?php _e('Alert', 'inti'); ?></option>
+				<option value="warning"><?php _e('Warning', 'inti'); ?></option>
 				<option value="disabled"><?php _e('Disabled', 'inti'); ?></option>
-				<option value="info"><?php _e('Info', 'inti'); ?></option>
-				<option value="secondary"><?php _e('Secondary', 'inti'); ?></option>
 			</select>
 		</td>
 	</tr>
@@ -426,11 +425,11 @@ function inti_shortcode_add_callout() {
 
 		<td class="field">			
 			<select name="callout-type" id="callout-type" class="widefat">
-				<option value="" selected><?php _e('Standard', 'inti'); ?></option>
+				<option value="" selected><?php _e('Primary', 'inti'); ?></option>
+				<option value="secondary"><?php _e('Secondary', 'inti'); ?></option>
 				<option value="success"><?php _e('Success', 'inti'); ?></option>
 				<option value="alert"><?php _e('Alert', 'inti'); ?></option>
-				<option value="primary"><?php _e('Primary', 'inti'); ?></option>
-				<option value="secondary"><?php _e('Secondary', 'inti'); ?></option>
+				<option value="warning"><?php _e('Warning', 'inti'); ?></option>
 			</select>
 		</td>
 	</tr>
@@ -698,12 +697,11 @@ function inti_shortcode_add_label() {
 
 		<td class="field">
 			<select name="label-type" id="label-type" class="widefat">
-				<option value="" selected><?php _e('Standard', 'inti'); ?></option>
+				<option value="" selected><?php _e('Primary', 'inti'); ?></option>
+				<option value="secondary"><?php _e('Secondary', 'inti'); ?></option>
 				<option value="success"><?php _e('Success', 'inti'); ?></option>
 				<option value="warning"><?php _e('Warning', 'inti'); ?></option>
-				<option value="info"><?php _e('Info', 'inti'); ?></option>
 				<option value="alert"><?php _e('Alert', 'inti'); ?></option>
-				<option value="secondary"><?php _e('Secondary', 'inti'); ?></option>
 			</select>
 		</td>
 	</tr>
