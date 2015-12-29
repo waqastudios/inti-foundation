@@ -1,0 +1,15 @@
+/******************************************************************
+
+Stylesheet: Shortcodes
+
+Styles for the shortcodes
+
+******************************************************************/
+
+
+a span.label { color: $primary-color; background-color: $light-gray; cursor: pointer; }
+a:hover span.label { color: $primary-color; background-color: smart-scale($light-gray); }
+span.label.category, span.label.tag { background-color: $light-gray; }
+
+
+.tabs-wrapper > p { display: none; }

@@ -4014,6 +4014,16 @@ img.aligncenter {
 
 /******************************************************************
 
+Stylesheet: Formatting
+
+Styles that affect the look of page and post content
+
+******************************************************************/
+.entry-content ul, .entry-content ol, .entry-summary ul, .entry-summary ol {
+  margin: 0 0 1rem 2rem; }
+
+/******************************************************************
+
 Stylesheet: Site Banner
 
 The site banner comes before or after the main navigation menu, it
@@ -4258,6 +4268,28 @@ Styles for sidebars and the widgets they contain
 
 /******************************************************************
 
+Stylesheet: Shortcodes
+
+Styles for the shortcodes
+
+******************************************************************/
+a span.label {
+  color: #2199e8;
+  background-color: #e6e6e6;
+  cursor: pointer; }
+
+a:hover span.label {
+  color: #2199e8;
+  background-color: #dbdbdb; }
+
+span.label.category, span.label.tag {
+  background-color: #e6e6e6; }
+
+.tabs-wrapper > p {
+  display: none; }
+
+/******************************************************************
+
 Stylesheet: Comments
 
 Styles for displaying comments, threads of comments and positioning
@@ -4354,18 +4386,3 @@ body.admin-bar {
 
 * {
   outline: 0; }
-
-a span.label {
-  color: #2199e8;
-  background-color: #e6e6e6;
-  cursor: pointer; }
-
-a:hover span.label {
-  color: #2199e8;
-  background-color: #dbdbdb; }
-
-span.label.category, span.label.tag {
-  background-color: #e6e6e6; }
-
-.tabs-wrapper > p {
-  display: none; }

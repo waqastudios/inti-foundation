@@ -1,0 +1,15 @@
+/******************************************************************
+
+Stylesheet: Formatting
+
+Styles that affect the look of page and post content
+
+******************************************************************/
+
+.entry-content, .entry-summary {
+
+	ul, ol {
+		margin: 0 0 $global-margin ($global-margin * 2);
+	}
+
+}
