@@ -1,6 +1,7 @@
 // Grab our gulp packages
 var gulp  = require('gulp'),
     gutil = require('gulp-util'),
+    sourcemaps = require('gulp-sourcemaps'),
     sass = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
     minifycss = require('gulp-minify-css'),
@@ -19,14 +20,17 @@ gulp.task('styles', function() {
             gutil.log(gutil.colors.red(error.message));
             this.emit('end');
     }))
+    .pipe(sourcemaps.init())
     .pipe(sass())
     .pipe(autoprefixer({
             browsers: ['last 2 versions'],
             cascade: false
         }))
+
     .pipe(gulp.dest('./library/css/'))     
     .pipe(rename({suffix: '-min'}))
     .pipe(minifycss())
+    .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./library/css/'))
 });    
     
