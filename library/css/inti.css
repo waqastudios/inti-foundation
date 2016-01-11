@@ -1928,13 +1928,13 @@ h6 {
   h2 {
     font-size: 1.875rem; }
   h3 {
-    font-size: 1.78125rem; }
+    font-size: 1.8125rem; }
   h4 {
-    font-size: 1.6875rem; }
+    font-size: 1.75rem; }
   h5 {
-    font-size: 1.59375rem; }
+    font-size: 1.6875rem; }
   h6 {
-    font-size: 1.5rem; } }
+    font-size: 1.625rem; } }
 
 @media screen and (min-width: 48em) {
   h1 {
@@ -4063,6 +4063,9 @@ off canvas menu, and hides the main navigation menu
 
 .top-bar ul.dropdown.menu li.current-menu-parent > a {
   font-weight: bold; }
+
+.top-bar ul.dropdown.menu ul {
+  display: none; }
 
 .top-bar ul.dropdown.menu .is-dropdown-submenu-parent.is-down-arrow > a::after {
   border-color: #fefefe transparent transparent; }
