@@ -7,4 +7,6 @@
  * @since 1.0.0
  */?>
 
- <?php dynamic_sidebar('sidebar-footer'); ?>
+<div class="sidebar">
+	<?php dynamic_sidebar('sidebar-footer'); ?>	
+</div>
