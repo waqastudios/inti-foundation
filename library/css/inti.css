@@ -4329,6 +4329,8 @@ footer can be wide or contained.
 
 .footer-menu {
   background-color: #0a0a0a; }
+  .footer-menu ul.menu a {
+    color: #fefefe; }
   .footer-menu ul.menu li {
     display: inline-block; }
 

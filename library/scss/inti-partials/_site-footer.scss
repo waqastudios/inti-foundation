@@ -19,6 +19,7 @@ footer can be wide or contained.
 	background-color: $black; 
 
 		ul.menu {
+			a { color: $white; }
 			li { display: inline-block; }
 		}
 
