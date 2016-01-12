@@ -36,15 +36,17 @@ add_action('inti_hook_footer_inside', 'inti_do_footer_widgets', 1);
  * 
  * @since 1.0.0
  */
-function inti_do_footer_menu() { ?>
-	<div class="footer-menu">
-		<div class="row">
-			<div class="large-12 columns">
-				<?php echo inti_get_footer_menu() ?>
-			</div><!-- .columns -->
-		</div><!-- .row -->
-	</div><!-- .footer-menu -->
-<?php 
+function inti_do_footer_menu() { 
+	if ( has_nav_menu('footer-menu') ) : ?>
+		<div class="footer-menu">
+			<div class="row">
+				<div class="large-12 columns">
+					<?php echo inti_get_footer_menu();	?>
+				</div><!-- .columns -->
+			</div><!-- .row -->
+		</div><!-- .footer-menu -->
+<?php
+	endif;
 }
 add_action('inti_hook_footer_inside', 'inti_do_footer_menu', 2);
 
