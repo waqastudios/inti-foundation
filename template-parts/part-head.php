@@ -43,9 +43,9 @@
 	
 	<meta name="robots" content="index, follow" />
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-	<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="<?php bloginfo('url'); ?>/feed/" />
+	<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="<?php echo esc_url( home_url() ); ?>/feed/" />
 	   
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta class="foundation-mq">
 
-	<title><?php wp_title('&laquo;', true, 'right'); ?> <?php bloginfo('name'); ?></title>
+	<title><?php wp_title('&laquo;', true, 'right'); ?></title>
