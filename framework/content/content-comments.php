@@ -20,37 +20,8 @@
 function inti_do_post_page_footer_comments_link() {
 	$system = get_inti_option('commenting_system', 'inti_commenting_options');
 
-	if ( comments_open() && !is_front_page()) :
-		switch ( $system ) { 
-			case 'wordpress' : ?>
-				<div class="comments-link">
-					<i class="fi fi-comments" title="Comments"></i>
-					<?php comments_popup_link('<span class="leave-comment">' . __('Leave a comment', 'inti') . '</span>', __('1 Comment', 'inti'), __('% Comments', 'inti') ); ?>
-				</div><!-- .comments-link -->
-				<?php
-			break; 
-			case 'disqus' : ?>
-				<div class="comments-link">
-					<i class="fi fi-comments" title="Comments"></i>
-					<a href="<?php the_permalink() ?>#disqus_thread"></a>
-				</div><!-- .comments-link -->
-				<?php
-			break; 
-			case 'facebook' : ?>
-				<div class="comments-link">
-					<i class="fi fi-comments" title="Comments"></i>
-					<fb:comments-count href="<?php the_permalink(); ?>"></fb:comments-count>
-				</div><!-- .comments-link -->
-				<?php
-			break; 
-			case 'google' : ?>
-				<div class="comments-link">
-					<i class="fi fi-comments" title="Comments"></i>
-					<span class="leave-comment"><div class="g-commentcount" data-href="<?php the_permalink(); ?>"></div></span>
-				</div><!-- .comments-link -->
-				<?php 
-			break; 
-		}
+	if (!is_front_page()) :
+		echo inti_get_post_page_footer_comments_link();
 	endif;
 }
 

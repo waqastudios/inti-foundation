@@ -122,6 +122,7 @@ if ( !function_exists('inti_get_post_header_meta') ) {
 			'show_cat'    => true,
 			'show_tag'    => false,
 			'show_icons'  => true,
+			'show_label'  => false,
 			'show_uncategorized' => false,
 		 );
 		$args = wp_parse_args( $args, $defaults );
@@ -147,11 +148,15 @@ if ( !function_exists('inti_get_post_header_meta') ) {
 			} else {
 				$meta .= ( $date && $args['show_date'] ) ? '%3$s ' : '';
 				$meta .= ( $author && $args['show_author'] ) ? __('by', 'inti') . ' <span class="by-author">%4$s</span> ' : '';
-				$meta .= ( $categories_list && $args['show_cat'] ) ? '<div class="entry-cats">' . __('in', 'inti') . ' %1$s</div>' : '';
+				$meta .= ( $categories_list && $args['show_cat'] ) ? '<div class="entry-cats">%1$s</div>' : '';
 				$meta .= ( $tag_list && $args['show_tag'] ) ? '<div class="entry-tags">' . __('Tags:', 'inti') . ' %2$s</div>' : '';
 
 				if ( $meta ) {
-					$output = '<div class="entry-meta">' . __('Posted: ', 'inti') . $meta . '</div>';
+					if ( $args['show_label'] ) {
+						$output = '<div class="entry-meta">' . __('Posted: ', 'inti') . $meta . '</div>';
+					} else {
+						$output = '<div class="entry-meta">' . $meta . '</div>';
+					}
 				}
 			}
 	
@@ -182,6 +187,7 @@ if ( !function_exists('inti_get_post_footer_meta') ) {
 			'show_cat'    => true,
 			'show_tag'    => true,
 			'show_icons'  => true,
+			'show_label'  => false,
 			'show_uncategorized' => false,
 		 );
 		$args = wp_parse_args( $args, $defaults );
@@ -207,11 +213,15 @@ if ( !function_exists('inti_get_post_footer_meta') ) {
 			} else {
 				$meta .= ( $date && $args['show_date'] ) ? '%3$s ' : '';
 				$meta .= ( $author && $args['show_author'] ) ? __('by', 'inti') . ' <span class="by-author">%4$s</span> ' : '';
-				$meta .= ( $categories_list && $args['show_cat'] ) ? '<div class="entry-cats">' . __('in', 'inti') . ' %1$s</div>' : '';
+				$meta .= ( $categories_list && $args['show_cat'] ) ? '<div class="entry-cats">%1$s</div>' : '';
 				$meta .= ( $tag_list && $args['show_tag'] ) ? '<div class="entry-tags">' . __('Tags:', 'inti') . ' %2$s</div>' : '';
 
 				if ( $meta ) {
-					$output = '<div class="entry-meta">' . __('Posted: ', 'inti') . $meta . '</div>';
+					if ( $args['show_label'] ) {
+						$output = '<div class="entry-meta">' . __('Posted: ', 'inti') . $meta . '</div>';
+					} else {
+						$output = '<div class="entry-meta">' . $meta . '</div>';
+					}
 				}
 			}
 	
@@ -222,5 +232,52 @@ if ( !function_exists('inti_get_post_footer_meta') ) {
 	}
 }
 
+/**
+ * Post/Page footer comments link 
+ * Gets a link to the post and page footers with a link that shows the number
+ * of comments and takes the user to the #respond area when clicked
+ * 
+ * @since 1.0.7
+ */
+function inti_get_post_page_footer_comments_link() {	
+	$system = get_inti_option('commenting_system', 'inti_commenting_options');
 
+	ob_start();
+
+	if ( comments_open() ) :
+		switch ( $system ) { 
+			case 'wordpress' : ?>
+				<div class="comments-link">
+					<i class="fi fi-comments" title="Comments"></i>
+					<?php comments_popup_link('<span class="leave-comment">' . __('Leave a comment', 'inti') . '</span>', __('1 Comment', 'inti'), __('% Comments', 'inti') ); ?>
+				</div><!-- .comments-link -->
+				<?php
+			break; 
+			case 'disqus' : ?>
+				<div class="comments-link">
+					<i class="fi fi-comments" title="Comments"></i>
+					<a href="<?php the_permalink() ?>#disqus_thread"></a>
+				</div><!-- .comments-link -->
+				<?php
+			break; 
+			case 'facebook' : ?>
+				<div class="comments-link">
+					<i class="fi fi-comments" title="Comments"></i>
+					<fb:comments-count href="<?php the_permalink(); ?>"></fb:comments-count>
+				</div><!-- .comments-link -->
+				<?php
+			break; 
+			case 'google' : ?>
+				<div class="comments-link">
+					<i class="fi fi-comments" title="Comments"></i>
+					<span class="leave-comment"><div class="g-commentcount" data-href="<?php the_permalink(); ?>"></div></span>
+				</div><!-- .comments-link -->
+				<?php 
+			break; 
+		}
+	endif;
+
+	$comments_link = ob_get_clean();
+	return $comments_link;
+}
 ?>
