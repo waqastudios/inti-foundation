@@ -6,11 +6,6 @@
  *
  * @package Inti
  * @since 1.0.0
- * @param $field_name - name of field we're looking for
- * @param $option_array - name of option array in database the field is in
- * @param $default a default value if option is avialble
- * @param $meta_id post meta id to retrieve meta from database
- * @license GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
  */
 if (!function_exists('inti_get_layout')) {
 	function inti_get_layout( $option, $meta ) {
@@ -22,5 +17,37 @@ if (!function_exists('inti_get_layout')) {
 		return $meta;
 	}
 }
+
+
+/**
+ * Inti Get Theme Layout
+ * retrieves theme support options for page templates for distribution through the theme
+ * if a flag is set, adds extra option for use in places like the metabox subsystem so that "same as customizer"
+ * can be added as an override setting
+ * @package Inti
+ * @since 1.0.6
+ */
+if (!function_exists('inti_get_theme_layouts')) {
+	function inti_get_theme_layouts($with_customizer_option) {
+		$layouts = get_theme_support('inti-layouts');
+		$theme_layouts = array();
+		
+		if ( !is_array( $layouts[0] ) ) {
+			$layouts[0] = array();
+		}
+
+		if ($with_customizer_option) {
+			$theme_layouts['default']   = __('As Set In Customize', 'inti');
+		}
+
+		if ( in_array( '1c', $layouts[0] ) ) {   $theme_layouts['1c']   = __('One Column', 'inti'); }
+		if ( in_array( '2c-l', $layouts[0] ) ) { $theme_layouts['2c-l'] = __('Two Columns, Left', 'inti'); }
+		if ( in_array( '2c-r', $layouts[0] ) ) { $theme_layouts['2c-r'] = __('Two Columns, Right', 'inti'); }
+		if ( in_array( '1c-thin', $layouts[0] ) ) { $theme_layouts['1c-thin'] = __('One Column, Thin', 'inti'); }
+
+		return $theme_layouts;
+	}
+}
+
 
 ?>

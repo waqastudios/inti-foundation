@@ -64,13 +64,7 @@ function inti_register_layout_metabox() {
 		'desc'    => __( 'Decide whether to show or hide a sidebar and where to place it.', 'inti' ),
 		'id'      => $prefix . 'radio',
 		'type'    => 'radio',
-		'options' => array(
-			'default' => __( 'As Set In Customize', 'inti' ),
-			'1c' => __( 'One Column', 'inti' ),
-			'2c-l' => __( 'Two Columns, Left', 'inti' ),
-			'2c-r' => __( 'Two Columns, Right', 'inti' ),
-			'1c-thin' => __( 'One Column, Thin', 'inti' ),
-		),
+		'options' => inti_get_theme_layouts(true) // get theme layouts, with customizer default = true
 	) );
 
 }
