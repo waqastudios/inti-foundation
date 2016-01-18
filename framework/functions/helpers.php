@@ -195,7 +195,7 @@ function inti_img_unautop( $content ) {
 function inti_excerpt_more( $output ) {
 	global $post;
 	$readmore = get_inti_option('read_more_text', 'inti_general_options', 'Read more &raquo;');
-	return '&hellip;  <a href="' . get_permalink( $post->ID ) . '" title="Read ' . get_the_title( $post->ID ) . '">' . $readmore . '</a>';
+	return '&hellip;  <a href="' . get_permalink( $post->ID ) . '" title="Read ' . get_the_title( $post->ID ) . '" class="read-more">' . $readmore . '</a>';
 }
 
 /**

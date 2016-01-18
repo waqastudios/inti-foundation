@@ -108,6 +108,7 @@ if ( !function_exists('inti_get_author_meta') ) {
  * Combine and return all the meta information for the post header
  *
  * @since 1.0.0
+ * @version 1.0.7
  */
 if ( !function_exists('inti_get_post_header_meta') ) {
 	function inti_get_post_header_meta( $args = '' ) {
@@ -173,6 +174,7 @@ if ( !function_exists('inti_get_post_header_meta') ) {
  * Combine and return all the meta information for the post footer
  *
  * @since 1.0.0
+ * @version 1.0.7
  */
 if ( !function_exists('inti_get_post_footer_meta') ) {
 	function inti_get_post_footer_meta( $args = '' ) {
