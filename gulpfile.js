@@ -65,7 +65,7 @@ gulp.task('vendor-js', function() {
           './library/vendor/modernizr/modernizr.js',
           './library/vendor/what-input/what-input.js',
           './library/vendor/toastr/toastr.js',
-          './library/vendor/slick/dist/slick.js',
+          './library/vendor/slick/slick/slick.js',
           './library/vendor/jQuery-Flex-Vertical-Center/jquery.flexverticalcenter.js',
           './library/vendor/motion-ui/motion-ui.js',
           './library/vendor/jquery.cookie/jquery.cookie.js'
