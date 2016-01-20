@@ -39,7 +39,8 @@ class Inti {
 		require_once locate_template('/framework/extensions/comments.php');
 		require_once locate_template('/framework/extensions/styles.php');
 		require_once locate_template('/framework/extensions/scripts.php');
-		require_once locate_template('/framework/metaboxes/metaboxes.php');
+		require_once locate_template('/framework/metaboxes/CMB2/init.php'); // Fetches CMB2
+		require_once locate_template('/framework/metaboxes/metaboxes.php'); // Fetches metaboxes
 		require_once locate_template('/framework/extensions/socialmedia.php');
 		
 		// widget functions
