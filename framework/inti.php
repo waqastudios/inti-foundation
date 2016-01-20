@@ -6,7 +6,8 @@
  *
  * @package Inti
  * @author Waqa Studios
- * @since 1.0.1
+ * @since 1.0.0
+ * @version 1.0.8
  * @license GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
  */
 
