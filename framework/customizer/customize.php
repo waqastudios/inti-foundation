@@ -422,7 +422,7 @@ if ( !function_exists('inti_customize_register') ) {
 		
 		
 		// Posts & Pages
-		$theme_layouts = inti_get_theme_layouts();
+		$theme_layouts = inti_get_theme_layouts(false);
 		
 		$wp_customize->add_section('inti_customizer_posts', array( 
 			'title'    => __('Layouts', 'inti'),
