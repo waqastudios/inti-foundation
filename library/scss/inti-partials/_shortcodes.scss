@@ -6,6 +6,13 @@ Styles for the shortcodes
 
 ******************************************************************/
 
+ul.accordion {
+	margin: 0 0 1rem;
+}
+ul.tabs {
+	margin: 0;
+}
+
 
 a span.label { color: $primary-color; background-color: $light-gray; cursor: pointer; }
 a:hover span.label { color: $primary-color; background-color: smart-scale($light-gray); }

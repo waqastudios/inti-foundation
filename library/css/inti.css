@@ -4160,8 +4160,13 @@ Stylesheet: Formatting
 Styles that affect the look of page and post content
 
 ******************************************************************/
-.entry-content ul, .entry-content ol, .entry-summary ul, .entry-summary ol {
-  margin: 0 0 1rem 2rem; }
+.entry-content, .entry-summary {
+  /**
+	 * Accordion and Tabs are shortcodes that should not 
+	 * have margins - see _shortcodes.scss
+	 */ }
+  .entry-content ul, .entry-content ol, .entry-summary ul, .entry-summary ol {
+    margin: 0 0 1rem 2rem; }
 
 /******************************************************************
 
@@ -4417,6 +4422,12 @@ Stylesheet: Shortcodes
 Styles for the shortcodes
 
 ******************************************************************/
+ul.accordion {
+  margin: 0 0 1rem; }
+
+ul.tabs {
+  margin: 0; }
+
 a span.label {
   color: #2199e8;
   background-color: #e6e6e6;
