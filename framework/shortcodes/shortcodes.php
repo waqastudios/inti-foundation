@@ -9,10 +9,22 @@
  * @license GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
  */
 
-//move wpautop filter to AFTER shortcode is processed
-remove_filter( 'the_content', 'wpautop' );
-add_filter( 'the_content', 'wpautop' , 99);
-add_filter( 'the_content', 'shortcode_unautop',100 );
+
+/**
+ * Filters the content to remove any extra paragraph or break tags
+ * caused by shortcodes.
+ *
+ * @since 1.0.9
+ * @author Thomas Griffin
+ * @param string $content  String of HTML content.
+ * @return string $content Amended string of HTML content.
+ */
+function inti_shortcode_empty_paragraph_fix( $content ) { 
+	$array = array( '<p>[' => '[', ']</p>' => ']', ']<br />' => ']' ); 
+	return strtr( $content, $array ); 
+}
+add_filter( 'the_content', 'inti_shortcode_empty_paragraph_fix' ); 
+
 
 /* ---------------------------------------------------------------------- */
 /*	Foundation 6 Grid Columns
