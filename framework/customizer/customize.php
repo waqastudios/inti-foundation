@@ -122,7 +122,7 @@ function inti_customizer_css() {
 		$output .= "\n" . '.entry-content h6, .entry-summary h6 { color: ' . get_inti_option('h6_color', 'inti_customizer_options') . '; }';
 	}
 
-	echo ( $output ) ? '<style>' . apply_filters('inti_customizer_css', $output) . "\n" . '</style>' . "\n" : '';
+	echo ( $output ) ? '<style type="text/css">' . apply_filters('inti_customizer_css', $output) . "\n" . '</style>' . "\n" : '';
 }
 add_action('wp_head', 'inti_customizer_css');
 
@@ -134,29 +134,45 @@ add_action('wp_head', 'inti_customizer_css');
  * @since 1.0.0
  */
 function inti_customize_preview_js() {
-	wp_enqueue_script('inti-customizer', get_template_directory_uri() . '/framework/customizer/js/theme-customizer.js', array('customize-preview'), filemtime(get_template_directory() . '/framework/customizer/js/theme-customizer.js'), true );
+	wp_enqueue_script('inti-customizer-preview-js', get_template_directory_uri() . '/framework/customizer/js/theme-customizer-preview.js', '', filemtime(get_template_directory() . '/framework/customizer/js/theme-customizer-preview.js'), true );
 }
 add_action('customize_preview_init', 'inti_customize_preview_js');
 
 
 /**
+ * JavaScript handlers to make Theme Customizer to help custom controls do what they need to do.
+ *
+ * @since 1.0.10
+ */
+function inti_customize_controls_js() {
+	wp_enqueue_script('inti-customizer-controls-js', get_template_directory_uri() . '/framework/customizer/js/theme-customizer-controls.js', '', filemtime(get_template_directory() . '/framework/customizer/js/theme-customizer-controls.js'), true );
+}
+add_action('customize_controls_enqueue_scripts', 'inti_customize_controls_js');
+
+
+/**
  * Add CSS to the WP Theme Customizer page
  *
- * @since 1.0.0
+ * @since 1.0.10
  */
-function inti_customize_preview_css() {
-	echo '
-	<style type="text/css">
+function inti_customize_control_css() {
+	$output = '	
 		.customize-control { margin-bottom:16px; }
 		.customize-control-radio { padding:0; }
 		.customize-control-checkbox label { line-height:20px; }
 	</style>';
+
+	echo ( $output ) ? '<style type="text/css">' . apply_filters('inti_customize_control_css_filter', $output) . "\n" . '</style>' . "\n" : '';
 }
-add_action('customize_controls_print_styles', 'inti_customize_preview_css', 99);
+add_action('customize_controls_print_styles', 'inti_customize_control_css');
 
 
 /**
  * Register Customizer
+ *
+ * 1) Defines classes for custom controls
+ * 2) Removes junk from Customize
+ * 3) Adds all sections and settings
  *
  * @author Samuel Wood (Otto) (@Otto42 / ottopress.com)
  * @link http://ottopress.com/2012/theme-customizer-part-deux-getting-rid-of-options-pages/
@@ -169,85 +185,104 @@ if ( !function_exists('inti_customize_register') ) {
 		
 		do_action('inti_customize_register', $wp_customize);
 		
-		class WP_Customize_Textarea_Control extends WP_Customize_Control {
-		public $type = 'textarea';
-	 
-			public function render_content() { ?>
-				<label><span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-				<textarea rows="5" style="width:100%;" <?php $this->link(); ?>><?php echo esc_textarea( $this->value() ); ?></textarea>
-				</label>
-			<?php
+		/**
+		 * 1) Defines classes for custom controls
+		 */
+
+		/**
+		 * Textarea control
+		 *
+		 * @since 1.0.0
+		 */
+		if ( !class_exists('WP_Customize_Textarea_Control') ) {
+			class WP_Customize_Textarea_Control extends WP_Customize_Control {
+			public $type = 'textarea';
+		 
+				public function render_content() { ?>
+					<label><span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+					<textarea rows="5" style="width:100%;" <?php $this->link(); ?>><?php echo esc_textarea( $this->value() ); ?></textarea>
+					</label>
+				<?php
+				}
 			}
 		}
+
+		if ( !class_exists('WP_Customize_WPEditor_Control') ) {
+		class WP_Customize_WPEditor_Control extends WP_Customize_Control {
+			public $type = 'wysiwyg';
 		
+				public function render_content() { ?>
+					<style>
+						.mce-container {
+							z-index: 99999999999999 !important;
+						}
+						#wp-link-wrap {
+							z-index: 99999999999999 !important;
+						}
+						#wp-link-backdrop {
+							z-index: 99999999999999 !important;
+						}
+					</style>
+					<label><span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+					<input type="hidden" <?php $this->link(); ?> value="<?php echo esc_textarea( $this->value() ); ?>">
+						<?php
+						$content = $this->value();
+						$editor_id = str_replace('[', '_', $this->id);
+						$editor_id = str_replace(']', '', $editor_id);
+						$settings = array( 
+							'textarea_name' => $this->id,
+							'media_buttons' => false, 
+							'drag_drop_upload'=>false );
+
+						wp_editor( $content, $editor_id, $settings );
+
+						do_action('admin_footer');
+						do_action('admin_print_footer_scripts');
+
+						?>
+					
+					</label>
+				<?php
+				}
+			}
+		}
+
 		/**
-		 * modified dropdown-pages 
+		 * Post Categories control
 		 * from wp-includes/class-wp-customize-control.php
 		 *
 		 * @since 1.0.0
 		 */
-		class WP_Customize_Dropdown_Categories_Control extends WP_Customize_Control {
-		public $type = 'dropdown-categories';	
+		if ( !class_exists('WP_Customize_WPEditor_Control') ) {
+			class WP_Customize_Dropdown_Categories_Control extends WP_Customize_Control {
+			public $type = 'dropdown-categories';	
+			
+				public function render_content() {
+					$dropdown = wp_dropdown_categories( 
+						array( 
+							'name'             => '_customize-dropdown-categories-' . $this->id,
+							'echo'             => 0,
+							'hide_empty'       => false,
+							'show_option_none' => '&mdash; ' . __('Select', 'inti') . ' &mdash;',
+							'hide_if_empty'    => false,
+							'selected'         => $this->value(),
+						 )
+					 );
 		
-			public function render_content() {
-				$dropdown = wp_dropdown_categories( 
-					array( 
-						'name'             => '_customize-dropdown-categories-' . $this->id,
-						'echo'             => 0,
-						'hide_empty'       => false,
-						'show_option_none' => '&mdash; ' . __('Select', 'inti') . ' &mdash;',
-						'hide_if_empty'    => false,
-						'selected'         => $this->value(),
-					 )
-				 );
-	
-				$dropdown = str_replace('<select', '<select ' . $this->get_link(), $dropdown );
-	
-				printf( 
-					'<label class="customize-control-select"><span class="customize-control-title">%s</span> %s</label>',
-					$this->label,
-					$dropdown
-				 );
+					$dropdown = str_replace('<select', '<select ' . $this->get_link(), $dropdown );
+		
+					printf( 
+						'<label class="customize-control-select"><span class="customize-control-title">%s</span> %s</label>',
+						$this->label,
+						$dropdown
+					 );
+				}
 			}
 		}
 		
-		/**
-		 * modified dropdown-pages 
-		 * from wp-includes/class-wp-customize-control.php
-		 *
-		 * @since 1.0.0
-		 */
-		class WP_Customize_Dropdown_Slide_Categories_Control extends WP_Customize_Control {
-		public $type = 'dropdown-slide-categories';	
-		
-			public function render_content() {
-				$dropdown = wp_dropdown_categories( 
-					array( 
-						'name'              => '_customize-dropdown-slide-categories-' . $this->id,
-						'echo'              => 0,
-						'hide_empty'        => false,
-						'show_option_none'  => '&mdash; ' . __('Select', 'inti') . ' &mdash;',
-						'hide_if_empty'     => false,
-						'name'              => 'slide-cat',
-						'taxonomy'          => 'slide-category',
-						'selected'          => $this->value(),
-					 )
-				 );
-	
-				$dropdown = str_replace('<select', '<select ' . $this->get_link(), $dropdown );
-	
-				printf( 
-					'<label class="customize-control-select"><span class="customize-control-title">%s</span> %s</label>',
-					$this->label,
-					$dropdown
-				 );
-			}
-		}
 		
 		/**
-		 * Remove default WP Customize sections
-		 *
-		 * @since 1.0.0
+		 * 2) Removes junk from Customize
 		 */
 		$wp_customize->remove_section('title_tagline');
 		$wp_customize->remove_section('colors');
@@ -256,12 +291,10 @@ if ( !function_exists('inti_customize_register') ) {
 		$wp_customize->remove_section('static_front_page');
 		$wp_customize->remove_section('nav');
 		
+
 		/**
-		 * setup customizer settings
-		 *
-		 * @since 1.0.0
+		 * 3) Adds all sections and settings
 		 */
-		 
 		// Header
 		$wp_customize->add_section('inti_customizer_general', array( 
 			'title'    => __('General', 'inti'),
