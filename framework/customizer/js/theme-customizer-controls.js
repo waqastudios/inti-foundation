@@ -1,7 +1,7 @@
 /**
  * Theme Customizer javascript functions.
  *
- * Contains handlers to make the Customizer preview reload any changes asynchronously.
+ * Contains handlers to make custom controls perform advanced functions
  *
  */
 
@@ -22,9 +22,9 @@
 						setChange,
 						content;
 
-					if(editor){console.log(id);
+					if(editor){
 						editor.onChange.add(function (ed, e) {
-							ed.save();console.log('OK2');
+							ed.save();
 							content = editor.getContent();
 							clearTimeout(setChange);
 							setChange = setTimeout(function(){
