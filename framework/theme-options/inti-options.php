@@ -12,6 +12,7 @@
  * Add the Javascript we'll need for the options page.
  *
  */
+add_action( 'admin_enqueue_scripts', 'inti_options_scripts' );
 function inti_options_scripts($hook) {
 
 	if ($hook == "toplevel_page_inti_theme_options"){
@@ -28,78 +29,79 @@ function inti_options_scripts($hook) {
 	}
 
 }
-add_action( 'admin_enqueue_scripts', 'inti_options_scripts' );
 
 /**
  * This function introduces the theme options into the 'Appearance' menu and into a top-level 
  * 'Inti Options' menu.
  */
-function inti_options_setup() {
+if (!function_exists('inti_options_setup')) {
+	add_action( 'admin_menu', 'inti_options_setup' );
+	function inti_options_setup() {
 
-	add_theme_page(
-		__('Inti Options', 'inti'),                    // The title to be displayed in the browser window for this page.
-		__('Inti Options', 'inti'),                    // The text to be displayed for this menu item
-		'manage_options',                    // Which type of users can see this menu item
-		'inti_theme_options',            // The unique ID - that is, the slug - for this menu item
-		'inti_options_interface'             // The name of the function to call when rendering this menu's page
-	);
-	
-	add_menu_page(
-		__('Inti Options', 'inti'),                    // The value used to populate the browser's title bar when the menu page is active
-		__('Inti Options', 'inti'),                    // The text of the menu in the administrator's sidebar
-		'administrator',                    // What roles are able to access the menu
-		'inti_theme_options',               // The ID used to bind submenu items to this menu 
-		'inti_options_interface'             // The callback function used to render this menu
-	);
-	
-	add_submenu_page(
-		'inti_theme_options',               // The ID of the top-level menu page to which this submenu item belongs
-		__( 'General Options', 'inti' ),         // The value used to populate the browser's title bar when the menu page is active
-		__( 'General Options', 'inti' ),                 // The label of this submenu item displayed in the menu
-		'manage_options',                    // What roles are able to access this submenu item
-		'inti_theme_options&tab=general_options',    // The ID used to represent this submenu item
-		'inti_options_interface'             // The callback function used to render the options for this submenu item
-	);
-	
-	add_submenu_page(
-		'inti_theme_options',
-		__( 'Header/Navigation', 'inti' ),
-		__( 'Header/Navigation', 'inti' ),
-		'manage_options',
-		'inti_theme_options&tab=headernav_options',
-		create_function( null, 'inti_options_interface( "headernav_options" );' )
-	);
+		add_theme_page(
+			__('Inti Options', 'inti'),                    // The title to be displayed in the browser window for this page.
+			__('Inti Options', 'inti'),                    // The text to be displayed for this menu item
+			'manage_options',                    // Which type of users can see this menu item
+			'inti_theme_options',            // The unique ID - that is, the slug - for this menu item
+			'inti_options_interface'             // The name of the function to call when rendering this menu's page
+		);
+		
+		add_menu_page(
+			__('Inti Options', 'inti'),                    // The value used to populate the browser's title bar when the menu page is active
+			__('Inti Options', 'inti'),                    // The text of the menu in the administrator's sidebar
+			'administrator',                    // What roles are able to access the menu
+			'inti_theme_options',               // The ID used to bind submenu items to this menu 
+			'inti_options_interface'             // The callback function used to render this menu
+		);
+		
+		add_submenu_page(
+			'inti_theme_options',               // The ID of the top-level menu page to which this submenu item belongs
+			__( 'General Options', 'inti' ),         // The value used to populate the browser's title bar when the menu page is active
+			__( 'General Options', 'inti' ),                 // The label of this submenu item displayed in the menu
+			'manage_options',                    // What roles are able to access this submenu item
+			'inti_theme_options&tab=general_options',    // The ID used to represent this submenu item
+			'inti_options_interface'             // The callback function used to render the options for this submenu item
+		);
+		
+		add_submenu_page(
+			'inti_theme_options',
+			__( 'Header/Navigation', 'inti' ),
+			__( 'Header/Navigation', 'inti' ),
+			'manage_options',
+			'inti_theme_options&tab=headernav_options',
+			create_function( null, 'inti_options_interface( "headernav_options" );' )
+		);
 
-	add_submenu_page(
-		'inti_theme_options',
-		__( 'Footer/Analytics', 'inti' ),
-		__( 'Footer/Analytics', 'inti' ),
-		'manage_options',
-		'inti_theme_options&tab=footer_options',
-		create_function( null, 'inti_options_interface( "footer_options" );' )
-	);
+		add_submenu_page(
+			'inti_theme_options',
+			__( 'Footer/Analytics', 'inti' ),
+			__( 'Footer/Analytics', 'inti' ),
+			'manage_options',
+			'inti_theme_options&tab=footer_options',
+			create_function( null, 'inti_options_interface( "footer_options" );' )
+		);
 
-	add_submenu_page(
-		'inti_theme_options',
-		__( 'Social Media Profiles', 'inti' ),
-		__( 'Social Media Profiles', 'inti' ),
-		'manage_options',
-		'inti_theme_options&tab=social_options',
-		create_function( null, 'inti_options_interface( "social_options" );' )
-	);
-	
-	add_submenu_page(
-		'inti_theme_options',
-		__( 'Commenting', 'inti' ),
-		__( 'Commenting', 'inti' ),
-		'manage_options',
-		'inti_theme_options&tab=commenting_options',
-		create_function( null, 'inti_options_interface( "commenting_options" );' )
-	);
+		add_submenu_page(
+			'inti_theme_options',
+			__( 'Social Media Profiles', 'inti' ),
+			__( 'Social Media Profiles', 'inti' ),
+			'manage_options',
+			'inti_theme_options&tab=social_options',
+			create_function( null, 'inti_options_interface( "social_options" );' )
+		);
+		
+		add_submenu_page(
+			'inti_theme_options',
+			__( 'Commenting', 'inti' ),
+			__( 'Commenting', 'inti' ),
+			'manage_options',
+			'inti_theme_options&tab=commenting_options',
+			create_function( null, 'inti_options_interface( "commenting_options" );' )
+		);
 
 
-} // end inti_options_setup
-add_action( 'admin_menu', 'inti_options_setup' );
+	} // end inti_options_setup
+}
 
 /**
  * Renders a simple page to display for the theme menu defined above.
@@ -267,284 +269,288 @@ function inti_default_commenting_options() {
 	
 } // end inti_default_commenting_options
 
+
 /**
  * Initializes the theme's general options page by registering the Sections,
  * Fields, and Settings.
  *
  * This function is registered with the 'admin_init' hook.
  */ 
-function inti_initialize_general_options() {
+if (!function_exists('inti_initialize_general_options')) {
+	function inti_initialize_general_options() {
 
-	// If the theme options don't exist, create them.
-	if( false == get_option( 'inti_general_options' ) ) {  
-		add_option( 'inti_general_options', apply_filters( 'inti_default_general_options', inti_default_general_options() ) );
-	} // end if
+		// If the theme options don't exist, create them.
+		if( false == get_option( 'inti_general_options' ) ) {  
+			add_option( 'inti_general_options', apply_filters( 'inti_default_general_options', inti_default_general_options() ) );
+		} // end if
 
-	// First, we register a section. This is necessary since all future options must belong to a 
-	add_settings_section(
-		'general_settings_section',         // ID used to identify this section and with which to register options
-		__( 'Posts and Pages', 'inti' ),     // Title to be displayed on the administration page
-		'inti_posts_and_pages_callback', // Callback used to render the description of the section
-		'inti_general_options'     // Page on which to add this section of options
-	);
-	
-		// Next, we'll introduce the fields for toggling the visibility of content elements.
-		add_settings_field( 
-			'excerpt_limit',                      // ID used to identify the field throughout the theme
-			__( 'Except Limit', 'inti' ),                          // The label to the left of the option interface element
-			'inti_excerpt_limit_callback',   // The name of the function responsible for rendering the option interface
-			'inti_general_options',    // The page on which this option will be displayed
-			'general_settings_section',         // The name of the section to which this field belongs
-			array(                              // The array of arguments to pass to the callback. In this case, just a description.
-				__( 'How many characters do you want to display for excerpts?', 'inti' ),
-			)
+		// First, we register a section. This is necessary since all future options must belong to a 
+		add_settings_section(
+			'general_settings_section',         // ID used to identify this section and with which to register options
+			__( 'Posts and Pages', 'inti' ),     // Title to be displayed on the administration page
+			'inti_posts_and_pages_callback', // Callback used to render the description of the section
+			'inti_general_options'     // Page on which to add this section of options
 		);
-	
-		add_settings_field( 
-			'read_more_text',                     
-			__( 'Read More text', 'inti' ),             
-			'inti_read_more_text_callback',  
-			'inti_general_options',                    
-			'general_settings_section',         
-			array(                              
-				__( 'After the excerpt there\'s a button or link with this text to continue reading.', 'inti' ),
-			)
+		
+			// Next, we'll introduce the fields for toggling the visibility of content elements.
+			add_settings_field( 
+				'excerpt_limit',                      // ID used to identify the field throughout the theme
+				__( 'Except Limit', 'inti' ),                          // The label to the left of the option interface element
+				'inti_excerpt_limit_callback',   // The name of the function responsible for rendering the option interface
+				'inti_general_options',    // The page on which this option will be displayed
+				'general_settings_section',         // The name of the section to which this field belongs
+				array(                              // The array of arguments to pass to the callback. In this case, just a description.
+					__( 'How many characters do you want to display for excerpts?', 'inti' ),
+				)
+			);
+		
+			add_settings_field( 
+				'read_more_text',                     
+				__( 'Read More text', 'inti' ),             
+				'inti_read_more_text_callback',  
+				'inti_general_options',                    
+				'general_settings_section',         
+				array(                              
+					__( 'After the excerpt there\'s a button or link with this text to continue reading.', 'inti' ),
+				)
+			);
+		
+			add_settings_field( 
+				'blog_interface',                      
+				__( 'Blog Index Style', 'inti' ),              
+				'inti_blog_interface_callback',   
+				'inti_general_options',        
+				'general_settings_section',         
+				array(                              
+					__( 'You can display posts in a classic blog style as in option one, or shorts style as in option two.', 'inti' ),
+				)
+			);
+		
+			add_settings_field( 
+				'breadcrumbs',                      
+				__( 'Show Breadcrumbs', 'inti' ),              
+				'inti_breadcrumbs_callback',   
+				'inti_general_options',
+				'general_settings_section',         
+				array(                              
+					__( 'They can be displayed before and after the content, or not at all.', 'inti' ),
+				)
+			);
+		
+			add_settings_field( 
+				'pagination',                      
+				__( 'Pagination Style', 'inti' ),              
+				'inti_pagination_callback',   
+				'inti_general_options',
+				'general_settings_section',         
+				array(                              
+					__( 'Move between lists of posts in archives with number or Next/Previous links', 'inti' ),
+				)
+			);
+		
+			add_settings_field( 
+				'nextprev_post_links',                      
+				__( 'Links to Next/Previous posts on single posts', 'inti' ),              
+				'inti_nextprev_post_links_callback',   
+				'inti_general_options',
+				'general_settings_section',         
+				array(                              
+					__( 'Move from one post to the next or previous post directly with Next/Previous links', 'inti' ),
+				)
+			);
+
+
+
+		add_settings_section(
+			'general_settings_section_2',         // ID used to identify this section and with which to register options
+			__( 'Front Page', 'inti' ),     // Title to be displayed on the administration page
+			'inti_frontpage_callback', // Callback used to render the description of the section
+			'inti_general_options'     // Page on which to add this section of options
 		);
-	
-		add_settings_field( 
-			'blog_interface',                      
-			__( 'Blog Index Style', 'inti' ),              
-			'inti_blog_interface_callback',   
-			'inti_general_options',        
-			'general_settings_section',         
-			array(                              
-				__( 'You can display posts in a classic blog style as in option one, or shorts style as in option two.', 'inti' ),
-			)
+		
+			add_settings_field( 
+				'frontpage_post_category',                      // ID used to identify the field throughout the theme
+				__( 'Post Category to display', 'inti' ),                          // The label to the left of the option interface element
+				'inti_frontpage_post_category_callback',   // The name of the function responsible for rendering the option interface
+				'inti_general_options',    // The page on which this option will be displayed
+				'general_settings_section_2'
+			);
+		
+			add_settings_field( 
+				'frontpage_post_number',                      // ID used to identify the field throughout the theme
+				__( 'Number of posts to display', 'inti' ),                          // The label to the left of the option interface element
+				'inti_frontpage_post_number_callback',   // The name of the function responsible for rendering the option interface
+				'inti_general_options',    // The page on which this option will be displayed
+				'general_settings_section_2'
+			);
+
+			add_settings_field( 
+				'frontpage_post_columns',                      // ID used to identify the field throughout the theme
+				__( 'Number of columns', 'inti' ),                          // The label to the left of the option interface element
+				'inti_frontpage_post_columns_callback',   // The name of the function responsible for rendering the option interface
+				'inti_general_options',    // The page on which this option will be displayed
+				'general_settings_section_2'
+			);
+
+			add_settings_field( 
+				'frontpage_exclude_category',                      // ID used to identify the field throughout the theme
+				__( 'Exclude front page category', 'inti' ),                          // The label to the left of the option interface element
+				'inti_frontpage_exclude_category_callback',   // The name of the function responsible for rendering the option interface
+				'inti_general_options',    // The page on which this option will be displayed
+				'general_settings_section_2'
+			);
+
+
+
+		add_settings_section(
+			'general_settings_section_3',         // ID used to identify this section and with which to register options
+			__( 'Sharing', 'inti' ),     // Title to be displayed on the administration page
+			'inti_sharing_callback', // Callback used to render the description of the section
+			'inti_general_options'     // Page on which to add this section of options
 		);
-	
-		add_settings_field( 
-			'breadcrumbs',                      
-			__( 'Show Breadcrumbs', 'inti' ),              
-			'inti_breadcrumbs_callback',   
+		
+			add_settings_field( 
+				'sharing_on_posts',                      // ID used to identify the field throughout the theme
+				__( 'Enable sharing on Posts', 'inti' ),                          // The label to the left of the option interface element
+				'inti_sharing_posts_callback',   // The name of the function responsible for rendering the option interface
+				'inti_general_options',    // The page on which this option will be displayed
+				'general_settings_section_3'
+			);
+		
+			add_settings_field( 
+				'sharing_on_pages',                      // ID used to identify the field throughout the theme
+				__( 'Enable sharing on Pages', 'inti' ),                          // The label to the left of the option interface element
+				'inti_sharing_pages_callback',   // The name of the function responsible for rendering the option interface
+				'inti_general_options',    // The page on which this option will be displayed
+				'general_settings_section_3'
+			);
+
+			add_settings_field( 
+				'sharing_platforms',                      // ID used to identify the field throughout the theme
+				__( 'Display these sharing platforms', 'inti' ),                          // The label to the left of the option interface element
+				'inti_sharing_platforms_callback',   // The name of the function responsible for rendering the option interface
+				'inti_general_options',    // The page on which this option will be displayed
+				'general_settings_section_3',         // The name of the section to which this field belongs
+				array(                 
+					'options'   =>  array (
+										'twitter'   =>  'Twitter',
+										'facebook'   =>  'Facebook',
+										'google'   =>  'Google+',
+										'linkedin'   =>  'LinkedIn',
+										'pinterest'   =>  'Pinterest',
+										'tumblr'   =>  'Tumblr',
+
+									)
+				)
+			);
+
+
+
+		add_settings_section(
+			'general_settings_section_4',         // ID used to identify this section and with which to register options
+			__( '404', 'inti' ),     // Title to be displayed on the administration page
+			'inti_404_callback', // Callback used to render the description of the section
+			'inti_general_options'     // Page on which to add this section of options
+		);
+		
+			add_settings_field( 
+				'page_not_found',                      // ID used to identify the field throughout the theme
+				__( 'Message to display when page not found', 'inti' ),                          // The label to the left of the option interface element
+				'inti_page_not_found_callback',   // The name of the function responsible for rendering the option interface
+				'inti_general_options',    // The page on which this option will be displayed
+				'general_settings_section_4',         // The name of the section to which this field belongs
+				array(                              // The array of arguments to pass to the callback. In this case, just a description.
+					__( '', 'inti' ),
+				)
+			);
+		
+
+
+		
+		// Finally, we register the fields with WordPress
+		register_setting(
 			'inti_general_options',
-			'general_settings_section',         
-			array(                              
-				__( 'They can be displayed before and after the content, or not at all.', 'inti' ),
-			)
-		);
-	
-		add_settings_field( 
-			'pagination',                      
-			__( 'Pagination Style', 'inti' ),              
-			'inti_pagination_callback',   
-			'inti_general_options',
-			'general_settings_section',         
-			array(                              
-				__( 'Move between lists of posts in archives with number or Next/Previous links', 'inti' ),
-			)
-		);
-	
-		add_settings_field( 
-			'nextprev_post_links',                      
-			__( 'Links to Next/Previous posts on single posts', 'inti' ),              
-			'inti_nextprev_post_links_callback',   
-			'inti_general_options',
-			'general_settings_section',         
-			array(                              
-				__( 'Move from one post to the next or previous post directly with Next/Previous links', 'inti' ),
-			)
+			'inti_general_options'
 		);
 
+		
+	} // end inti_initialize_general_options
+	add_action( 'admin_init', 'inti_initialize_general_options' );
+}
 
-
-	add_settings_section(
-		'general_settings_section_2',         // ID used to identify this section and with which to register options
-		__( 'Front Page', 'inti' ),     // Title to be displayed on the administration page
-		'inti_frontpage_callback', // Callback used to render the description of the section
-		'inti_general_options'     // Page on which to add this section of options
-	);
-	
-		add_settings_field( 
-			'frontpage_post_category',                      // ID used to identify the field throughout the theme
-			__( 'Post Category to display', 'inti' ),                          // The label to the left of the option interface element
-			'inti_frontpage_post_category_callback',   // The name of the function responsible for rendering the option interface
-			'inti_general_options',    // The page on which this option will be displayed
-			'general_settings_section_2'
-		);
-	
-		add_settings_field( 
-			'frontpage_post_number',                      // ID used to identify the field throughout the theme
-			__( 'Number of posts to display', 'inti' ),                          // The label to the left of the option interface element
-			'inti_frontpage_post_number_callback',   // The name of the function responsible for rendering the option interface
-			'inti_general_options',    // The page on which this option will be displayed
-			'general_settings_section_2'
-		);
-
-		add_settings_field( 
-			'frontpage_post_columns',                      // ID used to identify the field throughout the theme
-			__( 'Number of columns', 'inti' ),                          // The label to the left of the option interface element
-			'inti_frontpage_post_columns_callback',   // The name of the function responsible for rendering the option interface
-			'inti_general_options',    // The page on which this option will be displayed
-			'general_settings_section_2'
-		);
-
-		add_settings_field( 
-			'frontpage_exclude_category',                      // ID used to identify the field throughout the theme
-			__( 'Exclude front page category', 'inti' ),                          // The label to the left of the option interface element
-			'inti_frontpage_exclude_category_callback',   // The name of the function responsible for rendering the option interface
-			'inti_general_options',    // The page on which this option will be displayed
-			'general_settings_section_2'
-		);
-
-
-
-
-	add_settings_section(
-		'general_settings_section_3',         // ID used to identify this section and with which to register options
-		__( 'Sharing', 'inti' ),     // Title to be displayed on the administration page
-		'inti_sharing_callback', // Callback used to render the description of the section
-		'inti_general_options'     // Page on which to add this section of options
-	);
-	
-		add_settings_field( 
-			'sharing_on_posts',                      // ID used to identify the field throughout the theme
-			__( 'Enable sharing on Posts', 'inti' ),                          // The label to the left of the option interface element
-			'inti_sharing_posts_callback',   // The name of the function responsible for rendering the option interface
-			'inti_general_options',    // The page on which this option will be displayed
-			'general_settings_section_3'
-		);
-	
-		add_settings_field( 
-			'sharing_on_pages',                      // ID used to identify the field throughout the theme
-			__( 'Enable sharing on Pages', 'inti' ),                          // The label to the left of the option interface element
-			'inti_sharing_pages_callback',   // The name of the function responsible for rendering the option interface
-			'inti_general_options',    // The page on which this option will be displayed
-			'general_settings_section_3'
-		);
-
-		add_settings_field( 
-			'sharing_platforms',                      // ID used to identify the field throughout the theme
-			__( 'Display these sharing platforms', 'inti' ),                          // The label to the left of the option interface element
-			'inti_sharing_platforms_callback',   // The name of the function responsible for rendering the option interface
-			'inti_general_options',    // The page on which this option will be displayed
-			'general_settings_section_3',         // The name of the section to which this field belongs
-			array(                 
-				'options'   =>  array (
-									'twitter'   =>  'Twitter',
-									'facebook'   =>  'Facebook',
-									'google'   =>  'Google+',
-									'linkedin'   =>  'LinkedIn',
-									'pinterest'   =>  'Pinterest',
-									'tumblr'   =>  'Tumblr',
-
-								)
-			)
-		);
-
-
-
-	add_settings_section(
-		'general_settings_section_4',         // ID used to identify this section and with which to register options
-		__( '404', 'inti' ),     // Title to be displayed on the administration page
-		'inti_404_callback', // Callback used to render the description of the section
-		'inti_general_options'     // Page on which to add this section of options
-	);
-	
-		add_settings_field( 
-			'page_not_found',                      // ID used to identify the field throughout the theme
-			__( 'Message to display when page not found', 'inti' ),                          // The label to the left of the option interface element
-			'inti_page_not_found_callback',   // The name of the function responsible for rendering the option interface
-			'inti_general_options',    // The page on which this option will be displayed
-			'general_settings_section_4',         // The name of the section to which this field belongs
-			array(                              // The array of arguments to pass to the callback. In this case, just a description.
-				__( '', 'inti' ),
-			)
-		);
-	
-
-
-	
-	// Finally, we register the fields with WordPress
-	register_setting(
-		'inti_general_options',
-		'inti_general_options'
-	);
-
-	
-} // end inti_initialize_general_options
-add_action( 'admin_init', 'inti_initialize_general_options' );
 
 /**
  * Initializes the theme's Header/Navidation sections by registering the Sections,
  * Fields, and Settings.
  *
  * This function is registered with the 'admin_init' hook.
- */ 
-function inti_initialize_headernav_options() {
+ */
+if (!function_exists('inti_initialize_headernav_options')) {
+	function inti_initialize_headernav_options() {
 
-	if( false == get_option( 'inti_headernav_options' ) ) {   
-		add_option( 'inti_headernav_options', apply_filters( 'inti_default_headernav_options', inti_default_headernav_options() ) );
-	} // end if
-	
-	add_settings_section(
-		'headernav_settings_section',          // ID used to identify this section and with which to register options
-		__( 'Header/Navigation', 'inti' ),      // Title to be displayed on the administration page
-		'inti_headernav_options_callback',  // Callback used to render the description of the section
-		'inti_headernav_options'      // Page on which to add this section of options
-	);
-	
-		add_settings_field( 
-			'nav_social',                      
-			'Social media icons on nav bar',                          
-			'inti_nav_social_callback', 
-			'inti_headernav_options', 
-			'headernav_settings_section'           
+		if( false == get_option( 'inti_headernav_options' ) ) {   
+			add_option( 'inti_headernav_options', apply_filters( 'inti_default_headernav_options', inti_default_headernav_options() ) );
+		} // end if
+		
+		add_settings_section(
+			'headernav_settings_section',          // ID used to identify this section and with which to register options
+			__( 'Header/Navigation', 'inti' ),      // Title to be displayed on the administration page
+			'inti_headernav_options_callback',  // Callback used to render the description of the section
+			'inti_headernav_options'      // Page on which to add this section of options
 		);
+		
+			add_settings_field( 
+				'nav_social',                      
+				'Social media icons on nav bar',                          
+				'inti_nav_social_callback', 
+				'inti_headernav_options', 
+				'headernav_settings_section'           
+			);
 
-		add_settings_field( 
-			'head_js',                     
-			'Custom JavaScript in head',                         
-			'inti_head_js_callback',    
-			'inti_headernav_options', 
-			'headernav_settings_section',   
-			array(                              // The array of arguments to pass to the callback. In this case, just a description.
-				__( 'Most custom JavaScript should go in the footer.', 'inti' ),
-			)        
+			add_settings_field( 
+				'head_js',                     
+				'Custom JavaScript in head',                         
+				'inti_head_js_callback',    
+				'inti_headernav_options', 
+				'headernav_settings_section',   
+				array(                              // The array of arguments to pass to the callback. In this case, just a description.
+					__( 'Most custom JavaScript should go in the footer.', 'inti' ),
+				)        
+			);
+
+			add_settings_field( 
+				'head_css',                     
+				'Custom CSS in head',                         
+				'inti_head_css_callback',    
+				'inti_headernav_options', 
+				'headernav_settings_section'      
+			);
+
+			add_settings_field( 
+				'head_meta',                     
+				'Custom Meta Tags in head',                         
+				'inti_head_meta_callback',    
+				'inti_headernav_options', 
+				'headernav_settings_section'      
+			);
+
+			add_settings_field( 
+				'body_inside',                     
+				'Custom Code immediately after body',                         
+				'inti_body_inside_callback',    
+				'inti_headernav_options', 
+				'headernav_settings_section'      
+			);
+		
+		register_setting(
+			'inti_headernav_options',
+			'inti_headernav_options'
+			//'inti_sanitize_headernav_options'
 		);
-
-		add_settings_field( 
-			'head_css',                     
-			'Custom CSS in head',                         
-			'inti_head_css_callback',    
-			'inti_headernav_options', 
-			'headernav_settings_section'      
-		);
-
-		add_settings_field( 
-			'head_meta',                     
-			'Custom Meta Tags in head',                         
-			'inti_head_meta_callback',    
-			'inti_headernav_options', 
-			'headernav_settings_section'      
-		);
-
-		add_settings_field( 
-			'body_inside',                     
-			'Custom Code immediately after body',                         
-			'inti_body_inside_callback',    
-			'inti_headernav_options', 
-			'headernav_settings_section'      
-		);
-	
-	register_setting(
-		'inti_headernav_options',
-		'inti_headernav_options'
-		//'inti_sanitize_headernav_options'
-	);
-	
-} // end inti_initialize_headernav_options
-add_action( 'admin_init', 'inti_initialize_headernav_options' );
-
+		
+	} // end inti_initialize_headernav_options
+	add_action( 'admin_init', 'inti_initialize_headernav_options' );
+}
 
 /**
  * Initializes the theme's Footer options by registering the Sections,
@@ -552,185 +558,188 @@ add_action( 'admin_init', 'inti_initialize_headernav_options' );
  *
  * This function is registered with the 'admin_init' hook.
  */ 
-function inti_initialize_footer_options() {
+if (!function_exists('inti_initialize_footer_options')) {
+	function inti_initialize_footer_options() {
 
-	if( false == get_option( 'inti_footer_options' ) ) {   
-		add_option( 'inti_footer_options', apply_filters( 'inti_default_footer_options', inti_default_footer_options() ) );
-	} // end if
-	
-	add_settings_section(
-		'footer_settings_section',          // ID used to identify this section and with which to register options
-		__( 'Footer/Analytics', 'inti' ),      // Title to be displayed on the administration page
-		'inti_footer_options_callback',  // Callback used to render the description of the section
-		'inti_footer_options'      // Page on which to add this section of options
-	);
-	
-		add_settings_field( 
-			'footer_social',                      
-			'Social media icons in footer',                          
-			'inti_footer_social_callback', 
-			'inti_footer_options', 
-			'footer_settings_section'           
-		);
-
-		add_settings_field( 
-			'analytics_id',                     
-			'Google Analytics ID',                         
-			'inti_analytics_id_callback',    
-			'inti_footer_options', 
-			'footer_settings_section',   
-			array(                              // The array of arguments to pass to the callback. In this case, just a description.
-				__( 'Enter Your Analytics site ID (e.g. UA-XXXXX-X) here.', 'inti' ),
-			)        
+		if( false == get_option( 'inti_footer_options' ) ) {   
+			add_option( 'inti_footer_options', apply_filters( 'inti_default_footer_options', inti_default_footer_options() ) );
+		} // end if
+		
+		add_settings_section(
+			'footer_settings_section',          // ID used to identify this section and with which to register options
+			__( 'Footer/Analytics', 'inti' ),      // Title to be displayed on the administration page
+			'inti_footer_options_callback',  // Callback used to render the description of the section
+			'inti_footer_options'      // Page on which to add this section of options
 		);
 		
-		add_settings_field( 
-			'custom_copyright',                     
-			'Custom copyright text',                         
-			'inti_custom_copyright_callback',    
-			'inti_footer_options', 
-			'footer_settings_section',  
-			array(                              // The array of arguments to pass to the callback. In this case, just a description.
-				__( 'There is a custom copyright notice in the footer by default, to replace it with a custom notice, enter your text here. Leave blank to see the default notice.', 'inti' ),
-			)       
-		);
+			add_settings_field( 
+				'footer_social',                      
+				'Social media icons in footer',                          
+				'inti_footer_social_callback', 
+				'inti_footer_options', 
+				'footer_settings_section'           
+			);
 
-		add_settings_field( 
-			'footer_js',                     
-			'Custom JavaScript in footer',                         
-			'inti_footer_js_callback',    
-			'inti_footer_options', 
-			'footer_settings_section',   
-			array(                              // The array of arguments to pass to the callback. In this case, just a description.
-				__( 'Add custom javascript code to the footer (best place), modify the copyright text and set up other custom footer features.', 'inti' ),
-			)       
-		);
-	
-	register_setting(
-		'inti_footer_options',
-		'inti_footer_options'
-	);
-	
-} // end inti_initialize_footer_options
-add_action( 'admin_init', 'inti_initialize_footer_options' );
+			add_settings_field( 
+				'analytics_id',                     
+				'Google Analytics ID',                         
+				'inti_analytics_id_callback',    
+				'inti_footer_options', 
+				'footer_settings_section',   
+				array(                              // The array of arguments to pass to the callback. In this case, just a description.
+					__( 'Enter Your Analytics site ID (e.g. UA-XXXXX-X) here.', 'inti' ),
+				)        
+			);
+			
+			add_settings_field( 
+				'custom_copyright',                     
+				'Custom copyright text',                         
+				'inti_custom_copyright_callback',    
+				'inti_footer_options', 
+				'footer_settings_section',  
+				array(                              // The array of arguments to pass to the callback. In this case, just a description.
+					__( 'There is a custom copyright notice in the footer by default, to replace it with a custom notice, enter your text here. Leave blank to see the default notice.', 'inti' ),
+				)       
+			);
 
+			add_settings_field( 
+				'footer_js',                     
+				'Custom JavaScript in footer',                         
+				'inti_footer_js_callback',    
+				'inti_footer_options', 
+				'footer_settings_section',   
+				array(                              // The array of arguments to pass to the callback. In this case, just a description.
+					__( 'Add custom javascript code to the footer (best place), modify the copyright text and set up other custom footer features.', 'inti' ),
+				)       
+			);
+		
+		register_setting(
+			'inti_footer_options',
+			'inti_footer_options'
+		);
+		
+	} // end inti_initialize_footer_options
+	add_action( 'admin_init', 'inti_initialize_footer_options' );
+}
 
 /**
  * Initializes the theme's Social options by registering the Sections,
  * Fields, and Settings.
  *
  * This function is registered with the 'admin_init' hook.
- */ 
-function inti_initialize_social_options() {
+ */
+if (!function_exists('inti_initialize_social_options')) {
+	function inti_initialize_social_options() {
 
-	if( false == get_option( 'inti_social_options' ) ) {   
-		add_option( 'inti_social_options', apply_filters( 'inti_default_social_options', inti_default_social_options() ) );
-	} // end if
-	
-	add_settings_section(
-		'social_settings_section',          // ID used to identify this section and with which to register options
-		__( 'Social Media Profiles', 'inti' ),      // Title to be displayed on the administration page
-		'inti_social_options_callback',  // Callback used to render the description of the section
-		'inti_social_options'      // Page on which to add this section of options
-	);
-	
+		if( false == get_option( 'inti_social_options' ) ) {   
+			add_option( 'inti_social_options', apply_filters( 'inti_default_social_options', inti_default_social_options() ) );
+		} // end if
+		
+		add_settings_section(
+			'social_settings_section',          // ID used to identify this section and with which to register options
+			__( 'Social Media Profiles', 'inti' ),      // Title to be displayed on the administration page
+			'inti_social_options_callback',  // Callback used to render the description of the section
+			'inti_social_options'      // Page on which to add this section of options
+		);
+		
 
-		add_settings_field( 
-			'social_fb',                     
-			'<i class="fa fa-2x fa-facebook-square"></i> Facebook',                         
-			'inti_social_fb_callback',    
-			'inti_social_options', 
-			'social_settings_section',   
-			array(                              // The array of arguments to pass to the callback. In this case, just a description.
-				__( 'Complete URL', 'inti' ),
-			)        
+			add_settings_field( 
+				'social_fb',                     
+				'<i class="fa fa-2x fa-facebook-square"></i> Facebook',                         
+				'inti_social_fb_callback',    
+				'inti_social_options', 
+				'social_settings_section',   
+				array(                              // The array of arguments to pass to the callback. In this case, just a description.
+					__( 'Complete URL', 'inti' ),
+				)        
+			);
+			
+			add_settings_field( 
+				'social_tw',                     
+				'<i class="fa fa-2x fa-twitter-square"></i> Twitter',                         
+				'inti_social_tw_callback',    
+				'inti_social_options', 
+				'social_settings_section',   
+				array(                              // The array of arguments to pass to the callback. In this case, just a description.
+					__( 'Username, i.e. @twitter', 'inti' ),
+				)        
+			);
+			
+			add_settings_field( 
+				'social_gp',                     
+				'<i class="fa fa-2x fa-google-plus-square"></i>  Google+',                         
+				'inti_social_gp_callback',    
+				'inti_social_options', 
+				'social_settings_section',   
+				array(                              // The array of arguments to pass to the callback. In this case, just a description.
+					__( 'Complete URL', 'inti' ),
+				)        
+			);
+			
+			add_settings_field( 
+				'social_li',                     
+				'<i class="fa fa-2x fa-linkedin-square"></i> LinkedIn',                         
+				'inti_social_li_callback',    
+				'inti_social_options', 
+				'social_settings_section',   
+				array(                              // The array of arguments to pass to the callback. In this case, just a description.
+					__( 'Complete URL', 'inti' ),
+				)        
+			);
+			
+			add_settings_field( 
+				'social_in',                     
+				'<i class="fa fa-2x fa-instagram"></i> Instagram',                         
+				'inti_social_in_callback',    
+				'inti_social_options', 
+				'social_settings_section',   
+				array(                              // The array of arguments to pass to the callback. In this case, just a description.
+					__( 'Complete URL', 'inti' ),
+				)        
+			);
+			
+			add_settings_field( 
+				'social_pi',                     
+				'<i class="fa fa-2x fa-pinterest-square"></i> Pinterest',                         
+				'inti_social_pi_callback',    
+				'inti_social_options', 
+				'social_settings_section',   
+				array(                              // The array of arguments to pass to the callback. In this case, just a description.
+					__( 'Complete URL', 'inti' ),
+				)        
+			);
+			
+			add_settings_field( 
+				'social_yt',                     
+				'<i class="fa fa-2x fa-youtube-square"></i> YouTube',                         
+				'inti_social_yt_callback',    
+				'inti_social_options', 
+				'social_settings_section',   
+				array(                              // The array of arguments to pass to the callback. In this case, just a description.
+					__( 'Complete URL', 'inti' ),
+				)        
+			);
+			
+			add_settings_field( 
+				'social_vi',                     
+				'<i class="fa fa-2x fa-vimeo-square"></i> Vimeo',                         
+				'inti_social_vi_callback',    
+				'inti_social_options', 
+				'social_settings_section',   
+				array(                              // The array of arguments to pass to the callback. In this case, just a description.
+					__( 'Complete URL', 'inti' ),
+				)        
+			);
+		
+		register_setting(
+			'inti_social_options',
+			'inti_social_options',
+			'inti_sanitize_social_options'
 		);
 		
-		add_settings_field( 
-			'social_tw',                     
-			'<i class="fa fa-2x fa-twitter-square"></i> Twitter',                         
-			'inti_social_tw_callback',    
-			'inti_social_options', 
-			'social_settings_section',   
-			array(                              // The array of arguments to pass to the callback. In this case, just a description.
-				__( 'Username, i.e. @twitter', 'inti' ),
-			)        
-		);
-		
-		add_settings_field( 
-			'social_gp',                     
-			'<i class="fa fa-2x fa-google-plus-square"></i>  Google+',                         
-			'inti_social_gp_callback',    
-			'inti_social_options', 
-			'social_settings_section',   
-			array(                              // The array of arguments to pass to the callback. In this case, just a description.
-				__( 'Complete URL', 'inti' ),
-			)        
-		);
-		
-		add_settings_field( 
-			'social_li',                     
-			'<i class="fa fa-2x fa-linkedin-square"></i> LinkedIn',                         
-			'inti_social_li_callback',    
-			'inti_social_options', 
-			'social_settings_section',   
-			array(                              // The array of arguments to pass to the callback. In this case, just a description.
-				__( 'Complete URL', 'inti' ),
-			)        
-		);
-		
-		add_settings_field( 
-			'social_in',                     
-			'<i class="fa fa-2x fa-instagram"></i> Instagram',                         
-			'inti_social_in_callback',    
-			'inti_social_options', 
-			'social_settings_section',   
-			array(                              // The array of arguments to pass to the callback. In this case, just a description.
-				__( 'Complete URL', 'inti' ),
-			)        
-		);
-		
-		add_settings_field( 
-			'social_pi',                     
-			'<i class="fa fa-2x fa-pinterest-square"></i> Pinterest',                         
-			'inti_social_pi_callback',    
-			'inti_social_options', 
-			'social_settings_section',   
-			array(                              // The array of arguments to pass to the callback. In this case, just a description.
-				__( 'Complete URL', 'inti' ),
-			)        
-		);
-		
-		add_settings_field( 
-			'social_yt',                     
-			'<i class="fa fa-2x fa-youtube-square"></i> YouTube',                         
-			'inti_social_yt_callback',    
-			'inti_social_options', 
-			'social_settings_section',   
-			array(                              // The array of arguments to pass to the callback. In this case, just a description.
-				__( 'Complete URL', 'inti' ),
-			)        
-		);
-		
-		add_settings_field( 
-			'social_vi',                     
-			'<i class="fa fa-2x fa-vimeo-square"></i> Vimeo',                         
-			'inti_social_vi_callback',    
-			'inti_social_options', 
-			'social_settings_section',   
-			array(                              // The array of arguments to pass to the callback. In this case, just a description.
-				__( 'Complete URL', 'inti' ),
-			)        
-		);
-	
-	register_setting(
-		'inti_social_options',
-		'inti_social_options',
-		'inti_sanitize_social_options'
-	);
-	
-} // end inti_initialize_footer_options
-add_action( 'admin_init', 'inti_initialize_social_options' );
+	} // end inti_initialize_footer_options
+	add_action( 'admin_init', 'inti_initialize_social_options' );
+}
 
 
 /**
@@ -738,152 +747,153 @@ add_action( 'admin_init', 'inti_initialize_social_options' );
  * Fields, and Settings.
  *
  * This function is registered with the 'admin_init' hook.
- */ 
-function inti_initialize_commenting_options() {
+ */
+if (!function_exists('inti_initialize_commenting_options')) {
+	function inti_initialize_commenting_options() {
 
-	if( false == get_option( 'inti_commenting_options' ) ) {   
-		add_option( 'inti_commenting_options', apply_filters( 'inti_default_commenting_options', inti_default_commenting_options() ) );
-	} // end if
-	
-	add_settings_section(
-		'commenting_settings_section',          // ID used to identify this section and with which to register options
-		__( 'Commenting System', 'inti' ),      // Title to be displayed on the administration page
-		'inti_commenting_options_callback',  // Callback used to render the description of the section
-		'inti_commenting_options'      // Page on which to add this section of options
-	);
-		add_settings_field( 
-			'commenting_system',                     
-			'Commenting System',                         
-			'inti_commenting_system_callback',    
-			'inti_commenting_options', 
-			'commenting_settings_section',   
-			array(                              // The array of arguments to pass to the callback. In this case, just a description.
-				__( '', 'inti' ),
-			)        
+		if( false == get_option( 'inti_commenting_options' ) ) {   
+			add_option( 'inti_commenting_options', apply_filters( 'inti_default_commenting_options', inti_default_commenting_options() ) );
+		} // end if
+		
+		add_settings_section(
+			'commenting_settings_section',          // ID used to identify this section and with which to register options
+			__( 'Commenting System', 'inti' ),      // Title to be displayed on the administration page
+			'inti_commenting_options_callback',  // Callback used to render the description of the section
+			'inti_commenting_options'      // Page on which to add this section of options
 		);
-		add_settings_field( 
-			'comments_on_pages',                     
-			'Comments on pages',                         
-			'inti_comments_on_pages_callback',    
-			'inti_commenting_options', 
-			'commenting_settings_section',   
-			array(                              // The array of arguments to pass to the callback. In this case, just a description.
-				__( 'By default comments are shown on pages and posts. Here you can hide them on pages. To turn comments off altogether, see Settings -> Discussion', 'inti' ),
-			)        
+			add_settings_field( 
+				'commenting_system',                     
+				'Commenting System',                         
+				'inti_commenting_system_callback',    
+				'inti_commenting_options', 
+				'commenting_settings_section',   
+				array(                              // The array of arguments to pass to the callback. In this case, just a description.
+					__( '', 'inti' ),
+				)        
+			);
+			add_settings_field( 
+				'comments_on_pages',                     
+				'Comments on pages',                         
+				'inti_comments_on_pages_callback',    
+				'inti_commenting_options', 
+				'commenting_settings_section',   
+				array(                              // The array of arguments to pass to the callback. In this case, just a description.
+					__( 'By default comments are shown on pages and posts. Here you can hide them on pages. To turn comments off altogether, see Settings -> Discussion', 'inti' ),
+				)        
+			);
+	 
+		add_settings_section(
+			'commenting_settings_section_disqus',          // ID used to identify this section and with which to register options
+			__( 'DISQUS', 'inti' ),      // Title to be displayed on the administration page
+			'inti_disqus_options_callback',  // Callback used to render the description of the section
+			'inti_commenting_options'      // Page on which to add this section of options
 		);
- 
-	add_settings_section(
-		'commenting_settings_section_disqus',          // ID used to identify this section and with which to register options
-		__( 'DISQUS', 'inti' ),      // Title to be displayed on the administration page
-		'inti_disqus_options_callback',  // Callback used to render the description of the section
-		'inti_commenting_options'      // Page on which to add this section of options
-	);
-		add_settings_field( 
-			'disqus_shortname',                     
-			'Disqus Shortname',                         
-			'inti_disqus_shortname_callback',    
-			'inti_commenting_options', 
-			'commenting_settings_section_disqus',   
-			array(                              // The array of arguments to pass to the callback. In this case, just a description.
-				__( 'You\'ll get this at the end of the registration process. Please contact your developer if you need assistance.', 'inti' ),
-			)        
+			add_settings_field( 
+				'disqus_shortname',                     
+				'Disqus Shortname',                         
+				'inti_disqus_shortname_callback',    
+				'inti_commenting_options', 
+				'commenting_settings_section_disqus',   
+				array(                              // The array of arguments to pass to the callback. In this case, just a description.
+					__( 'You\'ll get this at the end of the registration process. Please contact your developer if you need assistance.', 'inti' ),
+				)        
+			);
+	 
+		add_settings_section(
+			'commenting_settings_section_fb',          // ID used to identify this section and with which to register options
+			__( 'Facebook Comments', 'inti' ),      // Title to be displayed on the administration page
+			'inti_fbcomments_options_callback',  // Callback used to render the description of the section
+			'inti_commenting_options'      // Page on which to add this section of options
 		);
- 
-	add_settings_section(
-		'commenting_settings_section_fb',          // ID used to identify this section and with which to register options
-		__( 'Facebook Comments', 'inti' ),      // Title to be displayed on the administration page
-		'inti_fbcomments_options_callback',  // Callback used to render the description of the section
-		'inti_commenting_options'      // Page on which to add this section of options
-	);
-		add_settings_field( 
-			'fbcomments_appid',                     
-			'Facebook App API',                         
-			'inti_fbcomments_appid_callback',    
-			'inti_commenting_options', 
-			'commenting_settings_section_fb',   
-			array(                              // The array of arguments to pass to the callback. In this case, just a description.
-				__( 'You\'ll need to register a Facebook App for your site. Please contact your developer if you need assistance.', 'inti' ),
-			)        
+			add_settings_field( 
+				'fbcomments_appid',                     
+				'Facebook App API',                         
+				'inti_fbcomments_appid_callback',    
+				'inti_commenting_options', 
+				'commenting_settings_section_fb',   
+				array(                              // The array of arguments to pass to the callback. In this case, just a description.
+					__( 'You\'ll need to register a Facebook App for your site. Please contact your developer if you need assistance.', 'inti' ),
+				)        
+			);
+			add_settings_field( 
+				'fbcomments_moderators',                     
+				'Moderators',                         
+				'inti_fbcomments_moderators_callback',    
+				'inti_commenting_options', 
+				'commenting_settings_section_fb',   
+				array(                              // The array of arguments to pass to the callback. In this case, just a description.
+					__( 'By default, all users set as admins for the registered app can moderate comments. To add moderators, each Facebook Profile ID separated by a comma </strong>without spaces</strong>. Top find your Facebook Profile ID', 'inti' )
+					. '<a href="https://developers.facebook.com/tools/explorer/?method=GET&path=me" target="blank">' . __('click here', 'inti') . '</a>.',
+				)        
+			);
+			add_settings_field( 
+				'fbcomments_lang',                     
+				'Language',                         
+				'inti_fbcomments_lang_callback',    
+				'inti_commenting_options', 
+				'commenting_settings_section_fb',   
+				array(                              // The array of arguments to pass to the callback. In this case, just a description.
+					__( 'Set this to be the same as your site language and locale.', 'inti' ),
+				)        
+			);
+			add_settings_field( 
+				'fbcomments_colorscheme',                     
+				'Color Scheme',                         
+				'inti_fbcomments_colorscheme_callback',    
+				'inti_commenting_options', 
+				'commenting_settings_section_fb',   
+				array(                              // The array of arguments to pass to the callback. In this case, just a description.
+					__( 'For dark and light background sites.', 'inti' ),
+				)        
+			);
+			add_settings_field( 
+				'fbcomments_amount',                     
+				'Show X Comments',                         
+				'inti_fbcomments_amount_callback',    
+				'inti_commenting_options', 
+				'commenting_settings_section_fb',   
+				array(                              // The array of arguments to pass to the callback. In this case, just a description.
+					__( 'Number of comments to show at a time.', 'inti' ),
+				)        
+			);
+			add_settings_field( 
+				'fbcomments_width',                     
+				'Comment Area Width',                         
+				'inti_fbcomments_width_callback',    
+				'inti_commenting_options', 
+				'commenting_settings_section_fb',   
+				array(                              // The array of arguments to pass to the callback. In this case, just a description.
+					__( 'Give a width for your comment box in pixels.', 'inti' ),
+				)        
+			);
+	 
+		add_settings_section(
+			'commenting_settings_section_gp',          // ID used to identify this section and with which to register options
+			__( 'Google+ Comments', 'inti' ),      // Title to be displayed on the administration page
+			'inti_gpcomments_options_callback',  // Callback used to render the description of the section
+			'inti_commenting_options'      // Page on which to add this section of options
 		);
-		add_settings_field( 
-			'fbcomments_moderators',                     
-			'Moderators',                         
-			'inti_fbcomments_moderators_callback',    
-			'inti_commenting_options', 
-			'commenting_settings_section_fb',   
-			array(                              // The array of arguments to pass to the callback. In this case, just a description.
-				__( 'By default, all users set as admins for the registered app can moderate comments. To add moderators, each Facebook Profile ID separated by a comma </strong>without spaces</strong>. Top find your Facebook Profile ID', 'inti' )
-				. '<a href="https://developers.facebook.com/tools/explorer/?method=GET&path=me" target="blank">' . __('click here', 'inti') . '</a>.',
-			)        
-		);
-		add_settings_field( 
-			'fbcomments_lang',                     
-			'Language',                         
-			'inti_fbcomments_lang_callback',    
-			'inti_commenting_options', 
-			'commenting_settings_section_fb',   
-			array(                              // The array of arguments to pass to the callback. In this case, just a description.
-				__( 'Set this to be the same as your site language and locale.', 'inti' ),
-			)        
-		);
-		add_settings_field( 
-			'fbcomments_colorscheme',                     
-			'Color Scheme',                         
-			'inti_fbcomments_colorscheme_callback',    
-			'inti_commenting_options', 
-			'commenting_settings_section_fb',   
-			array(                              // The array of arguments to pass to the callback. In this case, just a description.
-				__( 'For dark and light background sites.', 'inti' ),
-			)        
-		);
-		add_settings_field( 
-			'fbcomments_amount',                     
-			'Show X Comments',                         
-			'inti_fbcomments_amount_callback',    
-			'inti_commenting_options', 
-			'commenting_settings_section_fb',   
-			array(                              // The array of arguments to pass to the callback. In this case, just a description.
-				__( 'Number of comments to show at a time.', 'inti' ),
-			)        
-		);
-		add_settings_field( 
-			'fbcomments_width',                     
-			'Comment Area Width',                         
-			'inti_fbcomments_width_callback',    
-			'inti_commenting_options', 
-			'commenting_settings_section_fb',   
-			array(                              // The array of arguments to pass to the callback. In this case, just a description.
-				__( 'Give a width for your comment box in pixels.', 'inti' ),
-			)        
-		);
- 
-	add_settings_section(
-		'commenting_settings_section_gp',          // ID used to identify this section and with which to register options
-		__( 'Google+ Comments', 'inti' ),      // Title to be displayed on the administration page
-		'inti_gpcomments_options_callback',  // Callback used to render the description of the section
-		'inti_commenting_options'      // Page on which to add this section of options
-	);
-		add_settings_field( 
-			'gpcomments_width',                     
-			'Comment Area Width',                         
-			'inti_gpcomments_width_callback',    
-			'inti_commenting_options', 
-			'commenting_settings_section_gp',   
-			array(                              // The array of arguments to pass to the callback. In this case, just a description.
-				__( 'Give a width for your comment box in pixels.', 'inti' ),
-			)        
+			add_settings_field( 
+				'gpcomments_width',                     
+				'Comment Area Width',                         
+				'inti_gpcomments_width_callback',    
+				'inti_commenting_options', 
+				'commenting_settings_section_gp',   
+				array(                              // The array of arguments to pass to the callback. In this case, just a description.
+					__( 'Give a width for your comment box in pixels.', 'inti' ),
+				)        
+			);
+			
+		  
+		
+		register_setting(
+			'inti_commenting_options',
+			'inti_commenting_options'
 		);
 		
-	  
-	
-	register_setting(
-		'inti_commenting_options',
-		'inti_commenting_options'
-	);
-	
-} // end inti_initialize_footer_options
-add_action( 'admin_init', 'inti_initialize_commenting_options' );
-
+	} // end inti_initialize_footer_options
+	add_action( 'admin_init', 'inti_initialize_commenting_options' );
+}
 
 
 /* ------------------------------------------------------------------------ *
