@@ -1,6 +1,6 @@
 /******************************************************************
 
-Stylesheet: Site Banner
+Stylesheet: Site Header
 
 The site banner comes before or after the main navigation menu, it
 normally includes a logo, or a full width hero image.
@@ -12,8 +12,9 @@ normally includes a logo, or a full width hero image.
 
 		.row {}
 
-		.site-logo {}
-		img {}
+		.site-logo {
+			img {}
+		}
 
 		.title-area { // may be set to display: none in the customizer options
 			h1.site-title {}

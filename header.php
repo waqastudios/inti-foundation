@@ -19,10 +19,6 @@
 <body <?php body_class(); ?>>
 	<?php inti_hook_site_before(); ?>
 
-		<div id="page" class="webpage"> 
-		
-			<?php inti_hook_site_banner_before(); // inti_do_main_dropwdown_menu() is placed above or below banner ?>
-		
-			<?php get_template_part('template-parts/part', 'banner-contained'); ?>
-			
-			<?php inti_hook_site_banner_after(); // inti_do_main_dropwdown_menu() is placed above or below banner ?>
+		<div id="page" class="webpage">
+
+			<?php get_template_part('template-parts/part', 'header-contained'); ?>
