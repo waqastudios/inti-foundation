@@ -4213,6 +4213,9 @@ off canvas menu, and hides the main navigation menu
 .top-bar ul.dropdown.menu ul {
   display: none; }
 
+.top-bar ul.dropdown.menu ul.js-dropdown-active {
+  display: block; }
+
 .top-bar ul.dropdown.menu .is-dropdown-submenu-parent.is-down-arrow > a::after {
   border-color: #fefefe transparent transparent; }
 

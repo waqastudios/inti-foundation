@@ -43,6 +43,8 @@ off canvas menu, and hides the main navigation menu
 				&.current-menu-parent > a { font-weight: bold; }
 			}
 			ul { display: none; } // Loads with display: none to prevent submenu flashes. 
+			ul.js-dropdown-active { display: block; }
+			
 			ul.sub-menu {}
 
 			& .is-dropdown-submenu-parent.is-down-arrow {
