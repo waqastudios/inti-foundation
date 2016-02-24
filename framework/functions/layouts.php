@@ -6,15 +6,67 @@
  *
  * @package Inti
  * @since 1.0.0
+ * @version 1.2.0
  */
 if (!function_exists('inti_get_layout')) {
-	function inti_get_layout( $option, $meta ) {
+	function inti_get_layout( $meta ) {
+
+		// set a default layout
+		$layout = get_inti_option('site_layout', 'inti_customizer_options', '2c-l');
+
 	
-		if ($meta == "default" || $meta == "" ) {
-			return $option;
+		// check to see if $meta was provided, if it wasn't, the page in question will be an archive
+		if ($meta == "" ) {
+			$meta = "default";
 		}
-		// return default if nothing else
-		return $meta;
+
+
+		// this is a single post - compare selected layouts and establish which has priority
+		if (is_single()) { 
+
+			// get customizer option for default post layout, if none, use site layout default
+			$layout = get_inti_option('post_layout', 'inti_customizer_options', $layout);
+
+			// check if the metabox option has been set to override - if it isn't still on default, it has been changed, use that
+			if ($meta != "default") {
+				$layout = $meta;
+			}
+		}
+
+
+		// this is a static page - compare selected layouts and establish which has priority
+		if (is_page()) { 
+
+			// get customizer option for default page layout, if none, use site layout default
+			$layout = get_inti_option('page_layout', 'inti_customizer_options', $layout);
+
+			// check if the metabox option has been set to override - if it isn't still on default, it has been changed, use that
+			if ($meta != "default") {
+				$layout = $meta;
+			}
+
+
+		}
+
+
+		// this is a archive - compare selected layouts and establish which has priority
+		if ( is_archive() || is_home() || is_search() ) {
+
+			// get customizer option for default archive layout, if none, use site layout default
+			$layout = get_inti_option('archive_layout', 'inti_customizer_options', $layout);
+
+		}
+
+		// this is the frontpage - use site default or metabox value only
+		if (is_front_page()) { 
+			if ($meta != "default") {
+				$layout = $meta;
+			}
+		}
+		
+
+		// return final layout
+		return $layout;
 	}
 }
 

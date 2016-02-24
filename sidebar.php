@@ -5,13 +5,12 @@
  * @package Inti
  * @subpackage Templates
  * @since 1.0.0
+ * @version 1.2.0
  */?>
 
 <?php // get the page layout
 wp_reset_postdata(); 
-$default_layout = get_inti_option('page_layout', 'inti_customizer_options', '2c-l');
-$meta_layout = get_inti_option('', '', '', '_inti_layout_radio');
-$layout = inti_get_layout($default_layout, $meta_layout); ?>
+$layout = inti_get_layout(get_inti_option('', '', '', '_inti_layout_radio')); ?>
 	
 <?php inti_hook_sidebar_before(); ?>
 

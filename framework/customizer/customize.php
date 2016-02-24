@@ -462,17 +462,60 @@ if ( !function_exists('inti_customize_register') ) {
 			'priority' => 20,
 		 ) );
 
+			$wp_customize->add_setting('inti_customizer_options[site_layout]', array( 
+				'default'    => '2c-l',
+				'type'       => 'option',
+				'capability' => 'manage_options'
+			 ) );
+				$wp_customize->add_control('inti_customizer_options[site_layout]', array( 
+					'label'       => __('Default Layout', 'inti'),
+					'description' => __('Default layout for all pages, posts, archives and custom types throughout the site if not individually changed or overwritten below','inti'),
+					'section'     => 'inti_customizer_posts',
+					'type'        => 'select',
+					'choices'     => $theme_layouts,
+					'priority'    => 4,
+				 ) );
+
 			$wp_customize->add_setting('inti_customizer_options[page_layout]', array( 
 				'default'    => '2c-l',
 				'type'       => 'option',
 				'capability' => 'manage_options',
 			 ) );
 				$wp_customize->add_control('inti_customizer_options[page_layout]', array( 
-					'label'    => __('Default Layout', 'inti'),
-					'section'  => 'inti_customizer_posts',
-					'type'     => 'select',
-					'choices'  => $theme_layouts,
-					'priority' => 4,
+					'label'       => __('Page Layout', 'inti'),
+					'description' => __('Default layout for static pages','inti'),
+					'section'     => 'inti_customizer_posts',
+					'type'        => 'select',
+					'choices'     => $theme_layouts,
+					'priority'    => 5,
+				 ) );
+
+			$wp_customize->add_setting('inti_customizer_options[post_layout]', array( 
+				'default'    => '2c-l',
+				'type'       => 'option',
+				'capability' => 'manage_options',
+			 ) );
+				$wp_customize->add_control('inti_customizer_options[post_layout]', array( 
+					'label'       => __('Single Post Layout', 'inti'),
+					'description' => __('Default layout for blog posts','inti'),
+					'section'     => 'inti_customizer_posts',
+					'type'        => 'select',
+					'choices'     => $theme_layouts,
+					'priority'    => 6,
+				 ) );
+
+			$wp_customize->add_setting('inti_customizer_options[archive_layout]', array( 
+				'default'    => '2c-l',
+				'type'       => 'option',
+				'capability' => 'manage_options',
+			 ) );
+				$wp_customize->add_control('inti_customizer_options[archive_layout]', array( 
+					'label'       => __('Post Archive Layout', 'inti'),
+					'description' => __('Default layout for blog post archives and index','inti'),
+					'section'     => 'inti_customizer_posts',
+					'type'        => 'select',
+					'choices'     => $theme_layouts,
+					'priority'    => 6,
 				 ) );
 
 			$wp_customize->add_setting('inti_customizer_options[page_links]', array( 
@@ -489,7 +532,7 @@ if ( !function_exists('inti_customize_register') ) {
 						'numbered'  => __('Numbered', 'inti'),
 						'prev_next' => __('Prev / Next', 'inti'),
 						 ),
-					'priority' => 5,
+					'priority' => 7,
 				 ) );	
 
 			

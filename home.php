@@ -7,8 +7,7 @@
  * @since 1.0.0
  */
 
-$default_layout = get_inti_option('page_layout', 'inti_customizer_options', '2c-l');
-$layout = $default_layout;
+$layout = inti_get_layout('');
 
 get_header(); ?>
 

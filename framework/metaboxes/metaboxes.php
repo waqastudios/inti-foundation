@@ -43,7 +43,7 @@ function inti_register_layout_metabox() {
 		'id'            => $prefix . 'metabox',
 		'title'         => __( 'Layout', 'inti' ),
 		'object_types'  => array( 'page', 'post' ), // Post type
-		'show_on_cb' => 'inti_hide_if_front_page', // function should return a bool value
+		// 'show_on_cb' => 'inti_hide_if_front_page', // function should return a bool value
 		'context'    => 'side',
 		'priority'   => 'core',
 		// 'show_names' => true, // Show field names on the left
