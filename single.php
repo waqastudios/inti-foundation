@@ -39,6 +39,13 @@ get_header(); ?>
 					case '2c-r': ?>
 
 				<div class="small-12 medium-7 medium-push-5 large-8 large-push-4 columns">
+				
+
+
+				<?php break;
+					case '1c-thin': ?>
+
+				<div class="small-12 medium-10 medium-centered large-9 columns">
 
 
 				<?php } //end switch ?>
