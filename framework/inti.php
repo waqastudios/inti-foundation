@@ -69,6 +69,7 @@ class Inti {
 		require_once locate_template('/framework/functions/layouts.php');
 		require_once locate_template('/framework/functions/post-meta.php');
 		require_once locate_template('/framework/functions/srcset-images.php');
+		require_once locate_template('/framework/functions/theme-supports.php');
 		
 		// if theme supports functions
 		require_if_theme_supports('inti-pagination', locate_template('/framework/functions/pagination.php'));
