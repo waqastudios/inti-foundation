@@ -207,11 +207,23 @@ if ( !function_exists('inti_customize_register') ) {
 			}
 		}
 
+		/**
+		 * Textarea control
+		 *
+		 * @since 1.0.10
+		 * @version 1.2.2
+		 */
 		if ( !class_exists('WP_Customize_WPEditor_Control') ) {
-		class WP_Customize_WPEditor_Control extends WP_Customize_Control {
-			public $type = 'wysiwyg';
+			class WP_Customize_WPEditor_Control extends WP_Customize_Control {
+				public $type = 'wysiwyg';
 		
-				public function render_content() { ?>
+				public function render_content() { 
+					static $i = 1;
+
+					// Important
+					static $number_of_editors = 1; // You'll have to manually tell this control how many there'll be
+
+					?>
 					<style>
 						.mce-container {
 							z-index: 99999999999999 !important;
@@ -232,12 +244,17 @@ if ( !function_exists('inti_customize_register') ) {
 						$settings = array( 
 							'textarea_name' => $this->id,
 							'media_buttons' => false, 
-							'drag_drop_upload'=>false );
+							'drag_drop_upload'=>false 
+						);
 
 						wp_editor( $content, $editor_id, $settings );
 
 						do_action('admin_footer');
-						do_action('admin_print_footer_scripts');
+
+						if ($i == $number_of_editors ) {
+							do_action('admin_print_footer_scripts');
+						}
+						$i++;
 
 						?>
 					
@@ -253,7 +270,7 @@ if ( !function_exists('inti_customize_register') ) {
 		 *
 		 * @since 1.0.0
 		 */
-		if ( !class_exists('WP_Customize_WPEditor_Control') ) {
+		if ( !class_exists('WP_Customize_Dropdown_Categories_Control') ) {
 			class WP_Customize_Dropdown_Categories_Control extends WP_Customize_Control {
 			public $type = 'dropdown-categories';	
 			
@@ -263,7 +280,7 @@ if ( !function_exists('inti_customize_register') ) {
 							'name'             => '_customize-dropdown-categories-' . $this->id,
 							'echo'             => 0,
 							'hide_empty'       => false,
-							'show_option_none' => '&mdash; ' . __('Select', 'inti') . ' &mdash;',
+							'show_option_none' => '&mdash; ' . __('Select Category', 'inti') . ' &mdash;',
 							'hide_if_empty'    => false,
 							'selected'         => $this->value(),
 						 )
@@ -280,6 +297,53 @@ if ( !function_exists('inti_customize_register') ) {
 			}
 		}
 		
+		/** 
+		 * Dropdown Pages 
+		 * Shows select for pages
+		 * @since 1.2.2
+		 */
+		if ( !class_exists('WP_Customize_Dropdown_Pages_Control') ) {
+			class WP_Customize_Dropdown_Pages_Control extends WP_Customize_Control {
+				public $type = 'dropdown-pages';	
+				
+				public function render_content() {
+
+					$args = array(
+						'post_type' => 'page',
+						'orderby' => 'title',
+						'order' => 'ASC',
+						'posts_per_page' => 100,
+					);
+					$optins = new WP_Query($args);
+
+					$dropdown = '<select name="_customize-dropdown-page-'.$this->id.'" 
+										 id="_customize-dropdown-page-'.$this->id.'" 
+										 class="postform">';
+
+					$dropdown .= '<option value="-1">&mdash; ' . __('Select Page', 'inti') . ' &mdash;</option>';
+
+
+					while($optins->have_posts()) : $optins->the_post();
+
+						$dropdown .= '<option value="'. get_the_ID(). '">'.get_the_title().'</option>';
+
+					endwhile;
+
+						
+
+					$dropdown .= '</select>';
+
+					$dropdown = str_replace('<select', '<select ' . $this->get_link(), $dropdown );
+
+					printf( 
+						'<label class="customize-control-select"><span class="customize-control-title">%s</span> %s</label>',
+						$this->label,
+						$dropdown
+					 );
+				}
+			}
+
+		}
 		
 		/**
 		 * 2) Removes junk from Customize
@@ -934,14 +998,34 @@ if ( !function_exists('inti_customize_register') ) {
 			'priority'       => 55
 		 ) );
 	
+			// $wp_customize->add_setting('inti_customizer_options[custom_copyright]', array( 
+			// 	'default'		=> '',
+			// 	'type'			=> 'option',
+			// 	'capability'	=> 'manage_options',
+			// 	// 'transport'  => 'postMessage',
+			//  ) );
+			// 	$wp_customize->add_control(
+			// 		new WP_Customize_Textarea_Control(
+			// 			$wp_customize,
+			// 			'inti_customizer_options[custom_copyright]', 
+			// 			array( 
+			// 				'label'			=> __('Copyright Text', 'inti'),
+			// 				'description'	=> __('There is a custom copyright notice in the footer by default, to replace it with a custom notice, enter your text here. Leave blank to see the default notice.', 'inti'),
+			// 				'section'		=> 'inti_customizer_footer',
+			// 				'settings'		=> 'inti_customizer_options[custom_copyright]',
+			// 				'type'			=> 'textarea',
+			// 				'priority'		=> 1,
+			// 			)
+			// 		)
+			// 	);					
+
 			$wp_customize->add_setting('inti_customizer_options[custom_copyright]', array( 
-				'default'		=> '',
-				'type'			=> 'option',
-				'capability'	=> 'manage_options',
-				// 'transport'  => 'postMessage',
+				'default'        => '',
+				'type'           => 'option',
+				'capability'     => 'manage_options',
 			 ) );
 				$wp_customize->add_control(
-					new WP_Customize_Textarea_Control(
+					new WP_Customize_WPEditor_Control(
 						$wp_customize,
 						'inti_customizer_options[custom_copyright]', 
 						array( 
@@ -949,11 +1033,11 @@ if ( !function_exists('inti_customize_register') ) {
 							'description'	=> __('There is a custom copyright notice in the footer by default, to replace it with a custom notice, enter your text here. Leave blank to see the default notice.', 'inti'),
 							'section'		=> 'inti_customizer_footer',
 							'settings'		=> 'inti_customizer_options[custom_copyright]',
-							'type'			=> 'textarea',
+							'type'			=> 'wysiwyg',
 							'priority'		=> 1,
 						)
 					)
-				);			
+				);	
 
 
 		// Login
