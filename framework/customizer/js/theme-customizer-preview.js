@@ -58,7 +58,6 @@
 	
 	// Main Styles
 	wp.customize('inti_customizer_options[title_font]', function(value) {
-		console.log(value);
 		value.bind(function(to) {
 			console.log(to);
 			$('entry-title').css('font-family', to);
@@ -83,7 +82,6 @@
 	// Content Styles
 	wp.customize('inti_customizer_options[paragraph_font]', function(value) {
 		value.bind(function(to) {
-			console.log(to);
 			$('.entry-content p, .entry-summary p').css('font-family', to);
 		});
 	});

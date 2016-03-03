@@ -590,17 +590,6 @@ if (!function_exists('inti_initialize_footer_options')) {
 					__( 'Enter Your Analytics site ID (e.g. UA-XXXXX-X) here.', 'inti' ),
 				)        
 			);
-			
-			add_settings_field( 
-				'custom_copyright',                     
-				'Custom copyright text',                         
-				'inti_custom_copyright_callback',    
-				'inti_footer_options', 
-				'footer_settings_section',  
-				array(                              // The array of arguments to pass to the callback. In this case, just a description.
-					__( 'There is a custom copyright notice in the footer by default, to replace it with a custom notice, enter your text here. Leave blank to see the default notice.', 'inti' ),
-				)       
-			);
 
 			add_settings_field( 
 				'footer_js',                     
@@ -1352,32 +1341,11 @@ function inti_analytics_id_callback($args) {
 	$html = '<input type="text" id="analytics_id" name="inti_footer_options[analytics_id]" value="' . $id . '" />';
 
 	// Here, we'll take the first argument of the array and add it to a label next to the input
-	$html .= '<p><small><label for="custom_copyright">&nbsp;' . $args[0] . '</label></small></p>'; 
+	$html .= '<p><small><label for="analytics_id">&nbsp;' . $args[0] . '</label></small></p>'; 
 
 	echo $html;
 	
 } // end inti_analytics_id_callback
-
-function inti_custom_copyright_callback($args) {
-	
-	$options = get_option('inti_footer_options');
-	
-	$data = "";
-	if( isset( $options['custom_copyright'] ) ) {
-		$data = html_entity_decode($options['custom_copyright']);
-	} // end if
-
-
-	
-
-	wp_editor($data, 'inti_footer_options_custom_copyright', array( 'textarea_name' => 'inti_footer_options[custom_copyright]','media_buttons' => true, 'wpautop' => true, 'textarea_rows' => '2' ));
-								
-	// Here, we'll take the first argument of the array and add it to a label next to the input
-	$html = '<p><small><label for="custom_copyright">&nbsp;' . $args[0] . '</label></small></p>'; 
-	
-	echo $html;
-	
-}
 
 function inti_footer_js_callback($args) {
 

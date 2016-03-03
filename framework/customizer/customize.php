@@ -297,7 +297,7 @@ if ( !function_exists('inti_customize_register') ) {
 		 */
 		// Header
 		$wp_customize->add_section('inti_customizer_general', array( 
-			'title'    => __('General', 'inti'),
+			'title'    => __('General/Header', 'inti'),
 			'priority' => 5,
 		 ) );
 
@@ -926,6 +926,34 @@ if ( !function_exists('inti_customize_register') ) {
 					'section'  => 'inti_customizer_content_styles',
 					'settings' => 'inti_customizer_options[h4_color]',
 				 ) ) );
+
+
+		// Footer
+		$wp_customize->add_section('inti_customizer_footer', array( 
+			'title'          => __('Footer', 'inti'),
+			'priority'       => 55
+		 ) );
+	
+			$wp_customize->add_setting('inti_customizer_options[custom_copyright]', array( 
+				'default'		=> '',
+				'type'			=> 'option',
+				'capability'	=> 'manage_options',
+				// 'transport'  => 'postMessage',
+			 ) );
+				$wp_customize->add_control(
+					new WP_Customize_Textarea_Control(
+						$wp_customize,
+						'inti_customizer_options[custom_copyright]', 
+						array( 
+							'label'			=> __('Copyright Text', 'inti'),
+							'description'	=> __('There is a custom copyright notice in the footer by default, to replace it with a custom notice, enter your text here. Leave blank to see the default notice.', 'inti'),
+							'section'		=> 'inti_customizer_footer',
+							'settings'		=> 'inti_customizer_options[custom_copyright]',
+							'type'			=> 'textarea',
+							'priority'		=> 1,
+						)
+					)
+				);			
 
 
 		// Login
