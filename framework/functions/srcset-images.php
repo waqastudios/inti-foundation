@@ -23,7 +23,7 @@ function inti_get_srcset_image ($url, $alt){
 
 	} else {
 		if (function_exists('wp_image_add_srcset_and_sizes')){
-			$final_image = wp_image_add_srcset_and_sizes($img_html, wp_get_attachment_metadata( $attachment_id, $unfiltered ), $attachment_id);
+			$final_image = wp_image_add_srcset_and_sizes($img_html, wp_get_attachment_metadata( $attachment_id, false ), $attachment_id);
 			return $final_image;
 		} else {
 			return $img_html;

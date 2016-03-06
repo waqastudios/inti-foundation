@@ -16,18 +16,18 @@
 if(!function_exists('slide_post_type_init')){
 	function slide_post_type_init() {
 		$labels = array(
-			'name' => _x('Slides', 'post type general name', inti),
-			'singular_name' => _x('Slide', 'post type singular name', inti),
-			'add_new' => __('Add New', 'Slide', inti),
-			'add_new_item' => __('Add New Slide', inti),
-			'edit_item' => __('Edit Slide', inti),
-			'new_item' => __('New Slide', inti),
-			'view_item' => __('View Slide', inti),
-			'search_items' => __('Search Slides', inti),
-			'not_found' =>  __('No Slide found', inti),
-			'not_found_in_trash' => __('No Slide found in Trash', inti), 
+			'name' => _x('Slides', 'post type general name', 'inti'),
+			'singular_name' => _x('Slide', 'post type singular name', 'inti'),
+			'add_new' => __('Add New', 'Slide', 'inti'),
+			'add_new_item' => __('Add New Slide', 'inti'),
+			'edit_item' => __('Edit Slide', 'inti'),
+			'new_item' => __('New Slide', 'inti'),
+			'view_item' => __('View Slide', 'inti'),
+			'search_items' => __('Search Slides', 'inti'),
+			'not_found' =>  __('No Slide found', 'inti'),
+			'not_found_in_trash' => __('No Slide found in Trash', 'inti'), 
 			'parent_item_colon' => '',
-			'menu_name' => _x('Slides', '', inti)
+			'menu_name' => _x('Slides', '', 'inti')
 	);
 	$args = array(
 		'labels' => $labels,
