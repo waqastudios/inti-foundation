@@ -1,13 +1,78 @@
 <?php
 
 class inti_widget_flexvideo extends WP_Widget {
-	function inti_widget_flexvideo() {
-		$widget_ops = array('classname' => 'inti_flexvideo', 'description' => __('Add a video to your sidebar', 'inti') );
-		$this->WP_Widget('inti_widget_flexvideo', 'Video', $widget_ops);
+
+	/**
+	 * Register widget with WordPress.
+	 */
+	function __construct() {
+		parent::__construct(
+			'inti_flexvideo', // Base ID
+			__( 'Video', 'inti' ), // Name
+			array( 'description' => __( 'Add a video to your sidebar', 'inti' ), ) // Args
+		);
 	}
+
+ 	/**
+	 * Front-end display of widget.
+	 *
+	 * @see WP_Widget::widget()
+	 *
+	 * @param array $args     Widget arguments.
+	 * @param array $instance Saved values from database.
+	 */
+	public function widget( $args, $instance ) {
+
+		// Output before widget
+		echo $args['before_widget'];
+
+		// Title for Widget
+		$title = "";
+		if ( ! empty( $instance['title'] ) ) {
+			$title = $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ). $args['after_title'];
+		}
+
+		// Custom values for widget
+		$videoaspect = empty($instance['videoaspect']) ? ' ' : apply_filters('widget_title', $instance['videoaspect']);
+		$videosource = empty($instance['videosource']) ? ' ' : apply_filters('widget_title', $instance['videosource']);
+		$videoid = empty($instance['videoid']) ? ' ' : apply_filters('widget_title', $instance['videoid']);
  
-	function form($instance) {
-		$instance = wp_parse_args( (array) $instance, array( 'videoaspect' => '', 'videosource' => '', 'videoid' => '' ) );
+		if (trim($title)) {
+			echo '<h4 class="widget-title">' . $title . '</h4>';
+		}
+ 
+		// WIDGET CODE GOES HERE
+		$html = '<div class="flex-video '. $videoaspect .' '. $videosource .'">';
+		switch ($videosource) {
+			case 'youtube' :
+				$html .= '<iframe src="http://www.youtube.com/embed/'. $videoid .'?wmode=opaque&showsearch=0&rel=0&modestbranding=1&showinfo=0&controls=2" frameborder="0" allowfullscreen></iframe>';
+				break;
+			case 'vimeo' :
+				$html .= '<iframe src="http://player.vimeo.com/video/'. $videoid .'?title=0&amp;byline=0&amp;portrait=0&amp;color=ff0179" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
+				break;
+			case 'wistia' :
+				$html .= '<iframe src="http://fast.wistia.net/embed/iframe/'. $videoid .'?plugin%5Bsocialbar-v1%5D%5Bon%5D=false" frameborder="0" allowtransparency="true" allowfullscreen scrolling="no"></iframe>';
+				break;
+		}
+
+		$html .= '</div>';
+		
+		echo $html;
+
+		// Output after widget
+		echo $args['after_widget'];
+
+	}
+	
+	/**
+	 * Back-end widget form.
+	 *
+	 * @see WP_Widget::form()
+	 *
+	 * @param array $instance Previously saved values from database.
+	 */
+	public function form($instance) {
+		$instance = wp_parse_args( (array) $instance, array( 'title' => '', 'videoaspect' => '', 'videosource' => '', 'videoid' => '' ) );
 		$title = $instance['title'];
 		$videoaspect = $instance['videoaspect'];
 		$videosource = $instance['videosource'];
@@ -35,7 +100,17 @@ class inti_widget_flexvideo extends WP_Widget {
 	</label></p>
 <?php
 	}
- 
+
+	/**
+	 * Sanitize widget form values as they are saved.
+	 *
+	 * @see WP_Widget::update()
+	 *
+	 * @param array $new_instance Values just sent to be saved.
+	 * @param array $old_instance Previously saved values from database.
+	 *
+	 * @return array Updated safe values to be saved.
+	 */
 	function update($new_instance, $old_instance) {
 		$instance = $old_instance;
 		$instance['title'] = $new_instance['title'];
@@ -45,39 +120,6 @@ class inti_widget_flexvideo extends WP_Widget {
 		return $instance;
 	}
  
-	function widget($args, $instance) {
-		extract($args, EXTR_SKIP);
-		echo $before_widget;
-		$title = empty($instance['title']) ? ' ' : apply_filters('widget_title', $instance['title']);
-		$videoaspect = empty($instance['videoaspect']) ? ' ' : apply_filters('widget_title', $instance['videoaspect']);
-		$videosource = empty($instance['videosource']) ? ' ' : apply_filters('widget_title', $instance['videosource']);
-		$videoid = empty($instance['videoid']) ? ' ' : apply_filters('widget_title', $instance['videoid']);
- 
-		if (trim($title)) {
-			echo "<h4>$title</h4>";
-		}
- 
-		// WIDGET CODE GOES HERE
-		$html = '<div class="flex-video '. $videoaspect .' '. $videosource .'">';
-		switch ($videosource) {
-			case 'youtube' :
-				$html .= '<iframe src="http://www.youtube.com/embed/'. $videoid .'?wmode=opaque&showsearch=0&rel=0&modestbranding=1&showinfo=0&controls=2" frameborder="0" allowfullscreen></iframe>';
-				break;
-			case 'vimeo' :
-				$html .= '<iframe src="http://player.vimeo.com/video/'. $videoid .'?title=0&amp;byline=0&amp;portrait=0&amp;color=ff0179" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
-				break;
-			case 'wistia' :
-				$html .= '<iframe src="http://fast.wistia.net/embed/iframe/'. $videoid .'?plugin%5Bsocialbar-v1%5D%5Bon%5D=false" frameborder="0" allowtransparency="true" allowfullscreen scrolling="no"></iframe>';
-				break;
-		}
-
-		$html .= '</div>';
-		
-		echo $html;
-
-		echo $after_widget;
-	}
- 
 }
-add_action( 'widgets_init', create_function('', 'return register_widget("inti_widget_flexvideo");') );
+add_action( 'widgets_init', function(){ register_widget( 'inti_widget_flexvideo' ); });
 ?>
