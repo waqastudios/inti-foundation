@@ -89,9 +89,11 @@ if ( comments_open() ) :
 		<?php endif; ?>
 		<p>
 			<label for="comment"><?php _e('Comment', 'inti'); ?></label>
-			<textarea name="comment" id="comment" tabindex="4"></textarea>
+			<textarea name="comment" id="comment" rows="4" tabindex="4"></textarea>
 		</p>
-		<p id="allowed_tags" class="small"><strong>XHTML:</strong> <?php _e('You can use these tags:','inti'); ?> <code><?php echo allowed_tags(); ?></code></p>
+		<?php if ( get_inti_option('comments_show_allowed_tags', 'inti_commenting_options', false) ) : ?>
+			<p id="allowed_tags" class="small"><strong>HTML:</strong> <?php _e('You can use these tags:','inti'); ?> <code><?php echo allowed_tags(); ?></code></p>
+		<?php endif; ?>
 		<p><input name="submit" class="button" type="submit" id="submit" tabindex="5" value="<?php esc_attr_e('Submit Comment', 'inti'); ?>"></p>
 		<?php comment_id_fields(); ?>
 		<?php do_action('comment_form', $post->ID); ?>

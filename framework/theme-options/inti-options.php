@@ -256,6 +256,7 @@ function inti_default_commenting_options() {
 	$defaults = array(
 		'commenting_system'     =>  'wordpress',
 		'comments_on_pages'     =>  '1',
+		'comments_show_allowed_tags'     =>  '1',
 		'disqus_shortname'  =>  '',
 		'fbcomments_apiid'  =>  '',
 		'fbcomments_moderators'  =>  '',
@@ -777,6 +778,16 @@ if (!function_exists('inti_initialize_commenting_options')) {
 				'commenting_settings_section',   
 				array(                              // The array of arguments to pass to the callback. In this case, just a description.
 					__( 'By default comments are shown on pages and posts. Here you can hide them on pages. To turn comments off altogether, see Settings -> Discussion', 'inti' ),
+				)        
+			);
+			add_settings_field( 
+				'comments_show_allowed_tags',                     
+				'Allowed tags message',                         
+				'inti_comments_show_allowed_tags_callback',    
+				'inti_commenting_options', 
+				'commenting_settings_section',   
+				array(                              // The array of arguments to pass to the callback. In this case, just a description.
+					__( 'By default a message is shown under the comments box informing commenters what HTML tags they are allowed to use.', 'inti' ),
 				)        
 			);
 	 
@@ -1533,7 +1544,18 @@ function inti_comments_on_pages_callback($args) {
 
 	$html = '<input type="checkbox" id="comments_on_pages" name="inti_commenting_options[comments_on_pages]" value="1"' . checked( 1, $options['comments_on_pages'], false ) . '/>';
 	$html .= '&nbsp;';
-	$html .= '<label for="comments_on_pages">Show comments on pages</label><p><br><br></p>';
+	$html .= '<label for="comments_on_pages">Show comments on pages</label>';
+	
+	echo $html;
+}
+
+function inti_comments_show_allowed_tags_callback($args) {
+	
+	$options = get_option('inti_commenting_options');
+
+	$html = '<input type="checkbox" id="comments_show_allowed_tags" name="inti_commenting_options[comments_show_allowed_tags]" value="1"' . checked( 1, $options['comments_show_allowed_tags'], false ) . '/>';
+	$html .= '&nbsp;';
+	$html .= '<label for="comments_show_allowed_tags">Show allowed HTML tags message under comment box</label><p><br><br></p>';
 	
 	echo $html;
 }
