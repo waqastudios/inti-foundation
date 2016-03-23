@@ -101,7 +101,7 @@ add_action('inti_hook_post_header', 'inti_do_standard_format_header_titles', 3);
  * 
  * @since 1.0.0
  */
-function inti_do_post_thumbnail() {   
+function inti_do_post_thumbnail() {
 	$blog_style = get_inti_option('blog_interface', 'inti_general_options');  
 	if ( has_post_thumbnail() && $blog_style == 1 ) { ?>
 
@@ -289,4 +289,134 @@ function inti_do_nav_single() {
 add_action('inti_hook_post_after', 'inti_do_nav_single', 1);
 
 
+/**
+ * Post footer sharing 
+ * in single.php
+ * 
+ * @since 1.2.4
+ */
+function inti_do_post_sharing() {
+	$sharing_posts = get_inti_option('sharing_on_posts', 'inti_general_options', false);
+	$twitter = get_inti_option('sharing_platforms_twitter', 'inti_general_options', false);
+	$facebook = get_inti_option('sharing_platforms_facebook', 'inti_general_options', false);
+	$google = get_inti_option('sharing_platforms_google', 'inti_general_options', false);
+	$linkedin = get_inti_option('sharing_platforms_linkedin', 'inti_general_options', false);
+	$pinterest = get_inti_option('sharing_platforms_pinterest', 'inti_general_options', false);
+	$tumblr = get_inti_option('sharing_platforms_tumblr', 'inti_general_options', false);
+	
+	//pinterest build
+	$thumb = "";
+	if (has_post_thumbnail( get_the_ID() )) { 
+		$thumb = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'large' );
+		$thumb = rawurlencode($thumb[0]);
+	}
+
+	$twitteruser = get_inti_option('social_tw', 'inti_social_options');
+
+	if ( $sharing_posts ) {
+		?>
+		<div class="social-sharing">
+			<span><?php _e('Share with', 'inti'); ?>:</span>
+			<ul>
+
+			<?php if ($twitter) : ?> 
+					<?php if ($twitteruser) : ?>
+						<li class="share-twitter"><a href="http://www.twitter.com/share?url=<?php echo urlencode(inti_get_tiny_url(get_permalink())); ?>&text=<?php echo urlencode(get_the_title()); ?>&via=<?php echo $twitteruser; ?>" title="Twitter" target="_blank"><i class="fa fa-twitter"></i></a></li>
+					<?php else :?>
+						<li class="share-twitter"><a href="http://www.twitter.com/share?url=<?php echo urlencode(inti_get_tiny_url(get_permalink())); ?>&text=<?php echo urlencode(get_the_title()); ?>" title="Twitter" target="_blank"><i class="fa fa-twitter"></i></a></li>
+					<?php endif; ?>
+			<?php endif; ?>
+
+			<?php if ($facebook) : ?>
+				<li class="share-facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode(get_permalink()); ?>&t=<?php echo urlencode(get_the_title()); ?>" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
+			<?php endif; ?>
+
+			<?php if ($google) : ?>
+				<li class="share-google"><a href="https://plus.google.com/share?url=<?php echo urlencode(get_permalink()); ?>" title="Google+" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+			<?php endif; ?>
+
+			<?php if ($linkedin) : ?>
+				<li class="share-linkedin"><a href="https://www.linkedin.com/cws/share?url=<?php echo urlencode(get_permalink()); ?>" title="LinkedIn" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+			<?php endif; ?>
+
+			<?php if ($pinterest) : ?>
+				<li class="share-pinterest"><a href="http://pinterest.com/pin/create/link/?url=<?php echo urlencode(get_permalink()); ?>%2F&media=<?php echo $thumb;?>&description=<?php echo urlencode(get_the_title()); ?>" title="Pinterest" target="_blank"><i class="fa fa-pinterest"></i></a></li>
+			<?php endif; ?>
+
+			<?php if ($tumblr) : ?>
+				<li class="share-tumblr"><a href="http://www.tumblr.com/share/link?url=<?php echo urlencode(get_permalink()); ?>&name=<?php echo urlencode(get_the_title()) ?>&description=<?php echo urlencode(get_the_excerpt()); ?>" title="Tumblr" target="_blank"><i class="fa fa-tumblr"></i></a></li>
+			<?php endif; ?>
+
+			</ul>
+		</div>
+		<?php
+	}
+}
+add_action('inti_hook_post_footer', 'inti_do_post_sharing', 5);
+
+
+/**
+ * Page Edit 
+ * Add an edit button for a page in the page footer
+ * 
+ * @since 1.2.4
+ */
+function inti_do_page_sharing() {
+	$sharing_pages = get_inti_option('sharing_on_pages', 'inti_general_options', false);
+	$twitter = get_inti_option('sharing_platforms_twitter', 'inti_general_options', false);
+	$facebook = get_inti_option('sharing_platforms_facebook', 'inti_general_options', false);
+	$google = get_inti_option('sharing_platforms_google', 'inti_general_options', false);
+	$linkedin = get_inti_option('sharing_platforms_linkedin', 'inti_general_options', false);
+	$pinterest = get_inti_option('sharing_platforms_pinterest', 'inti_general_options', false);
+	$tumblr = get_inti_option('sharing_platforms_tumblr', 'inti_general_options', false);
+	
+	//pinterest build
+	$thumb = "";
+	if (has_post_thumbnail( get_the_ID() )) { 
+		$thumb = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'large' );
+		$thumb = rawurlencode($thumb[0]);
+	}
+
+	$twitteruser = get_inti_option('social_tw', 'inti_social_options');
+
+	if ( $sharing_pages ) {
+		?>
+		<div class="social-sharing">
+			<span><?php _e('Share with', 'inti'); ?>:</span>
+			<ul>
+
+			<?php if ($twitter) : ?> 
+					<?php if ($twitteruser) : ?>
+						<li class="share-twitter"><a href="http://www.twitter.com/share?url=<?php echo urlencode(inti_get_tiny_url(get_permalink())); ?>&text=<?php echo urlencode(get_the_title()); ?>&via=<?php echo $twitteruser; ?>" title="Twitter" target="_blank"><i class="fa fa-twitter"></i></a></li>
+					<?php else :?>
+						<li class="share-twitter"><a href="http://www.twitter.com/share?url=<?php echo urlencode(inti_get_tiny_url(get_permalink())); ?>&text=<?php echo urlencode(get_the_title()); ?>" title="Twitter" target="_blank"><i class="fa fa-twitter"></i></a></li>
+					<?php endif; ?>
+			<?php endif; ?>
+
+			<?php if ($facebook) : ?>
+				<li class="share-facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode(get_permalink()); ?>&t=<?php echo urlencode(get_the_title()); ?>" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
+			<?php endif; ?>
+
+			<?php if ($google) : ?>
+				<li class="share-google"><a href="https://plus.google.com/share?url=<?php echo urlencode(get_permalink()); ?>" title="Google+" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+			<?php endif; ?>
+
+			<?php if ($linkedin) : ?>
+				<li class="share-linkedin"><a href="https://www.linkedin.com/cws/share?url=<?php echo urlencode(get_permalink()); ?>" title="LinkedIn" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+			<?php endif; ?>
+
+			<?php if ($pinterest) : ?>
+				<li class="share-pinterest"><a href="http://pinterest.com/pin/create/link/?url=<?php echo urlencode(get_permalink()); ?>%2F&description=<?php echo urlencode(get_the_title()); ?>" title="Pinterest" target="_blank"><i class="fa fa-pinterest"></i></a></li>
+			<?php endif; ?>
+
+			<?php if ($tumblr) : ?>
+				<li class="share-tumblr"><a href="http://www.tumblr.com/share/link?url=<?php echo urlencode(get_permalink()); ?>&name=<?php echo urlencode(get_the_title()) ?>&description=<?php echo urlencode(get_the_excerpt()); ?>" title="Tumblr" target="_blank"><i class="fa fa-tumblr"></i></a></li>
+			<?php endif; ?>
+
+			</ul>
+		</div>
+		<?php
+	}
+}
+add_action('inti_hook_page_footer', 'inti_do_page_sharing');
 ?>

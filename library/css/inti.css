@@ -4307,6 +4307,20 @@ article .entry-meta.icons .by-author, article .entry-meta.icons .entry-date, art
   display: inline-block;
   margin: 0 1rem 0 0; }
 
+article .social-sharing span {
+  text-transform: uppercase;
+  font-size: .6875rem; }
+
+article .social-sharing ul {
+  list-style: none;
+  display: inline-block; }
+
+article .social-sharing li {
+  display: inline-block; }
+
+article .social-sharing a {
+  padding: 5px; }
+
 article.featured {
   margin: 0 0 1rem 0;
   padding: 1rem;

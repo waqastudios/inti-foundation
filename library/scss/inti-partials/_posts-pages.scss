@@ -55,6 +55,16 @@ article {
 
 	.edit-link {}
 
+	.social-sharing {
+		span { 
+		    text-transform: uppercase;
+		    font-size: .6875rem;
+		}
+		ul { list-style: none; display: inline-block; }
+		li { display: inline-block; }
+		a { padding: 5px; }
+	}
+
 	&.featured {
 		@include callout($primary-color);
 	}

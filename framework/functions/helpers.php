@@ -33,6 +33,7 @@
  * 20. Add Comment Reply Class
  * 21. Exclude Front Page Posts
  * 22. Get an attachment ID given a URL.
+ * 23. Generate a tinyurl.com tiny URL
  */
 
 /**
@@ -465,5 +466,28 @@ function inti_get_attachment_id( $url ) {
 	}
 
 	return $attachment_id;
+}
+
+
+/**
+ * 23. Get an attachment ID given a URL.
+ * 
+ * @param string $url
+ * @return string
+ */
+function inti_get_tiny_url($url){
+	if (function_exists('curl_init')) {
+		$url = 'http://tinyurl.com/api-create.php?url=' . $url;
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_HEADER, 0);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($ch, CURLOPT_URL, $url);
+		$tinyurl = curl_exec($ch);
+		curl_close($ch);
+		return $tinyurl;
+	} else {
+		//cURL disabled on server; Return long URL instead.
+		return $url;
+	}
 }
 ?>

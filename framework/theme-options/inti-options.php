@@ -1207,9 +1207,8 @@ function inti_sharing_platforms_callback($args) {
 		$checked = in_array($val, $options) ? 'checked="checked"' : '';
 		
 		printf(
-			'<p><input type="checkbox" id="inti_general_options[%1$s]" name="inti_general_options[sharing_platforms_%1$s]" value="%1$s" '.$checked.' />&nbsp;<label>%3$s</label></p>',
+			'<p><input type="checkbox" id="inti_general_options[%1$s]" name="inti_general_options[sharing_platforms_%1$s]" value="%1$s" ' . $checked . ' />&nbsp;<label for="inti_general_options[sharing_platforms_%1$s]">%2$s</label></p>',
 			$val,
-			checked( $val, $args['value'], FALSE ),
 			$platform
 		);
 	}
