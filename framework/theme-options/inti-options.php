@@ -194,6 +194,7 @@ function inti_default_general_options() {
 		'frontpage_post_number' => '3',
 		'frontpage_post_columns' => '1',
 		'frontpage_exclude_category'  =>  '1',
+		'frontpage_breadcrumbs'  =>  '0',
 		'sharing_on_posts'      =>  '1',
 		'sharing_on_pages'      =>  '1',
 		'page_not_found'       =>   '',
@@ -396,6 +397,14 @@ if (!function_exists('inti_initialize_general_options')) {
 				'frontpage_exclude_category',                      // ID used to identify the field throughout the theme
 				__( 'Exclude front page category', 'inti' ),                          // The label to the left of the option interface element
 				'inti_frontpage_exclude_category_callback',   // The name of the function responsible for rendering the option interface
+				'inti_general_options',    // The page on which this option will be displayed
+				'general_settings_section_2'
+			);
+
+			add_settings_field( 
+				'frontpage_breadcrumbs',                      // ID used to identify the field throughout the theme
+				__( 'Hide breadcrumbs on front page', 'inti' ),                          // The label to the left of the option interface element
+				'inti_frontpage_breadcrumbs_callback',   // The name of the function responsible for rendering the option interface
 				'inti_general_options',    // The page on which this option will be displayed
 				'general_settings_section_2'
 			);
@@ -1168,7 +1177,19 @@ function inti_frontpage_exclude_category_callback() {
 	
 	$html = '<input type="checkbox" id="frontpage_exclude_category" name="inti_general_options[frontpage_exclude_category]" value="1"' . checked( 1, $options['frontpage_exclude_category'], false ) . '/>';
 	$html .= '&nbsp;';
-	$html .= '<label for="frontpage_exclude_category">Exclude the front page post category from the rest of the blog</label><p></p><br><br>';
+	$html .= '<label for="frontpage_exclude_category">Exclude the front page post category from the rest of the blog</label>';
+	
+	echo $html;
+
+}
+
+function inti_frontpage_breadcrumbs_callback() {
+
+	$options = get_option( 'inti_general_options' );
+	
+	$html = '<input type="checkbox" id="frontpage_breadcrumbs" name="inti_general_options[frontpage_breadcrumbs]" value="1"' . checked( 1, $options['frontpage_breadcrumbs'], false ) . '/>';
+	$html .= '&nbsp;';
+	$html .= '<label for="frontpage_breadcrumbs">Hide breadcrumbs on front page</label><p></p><br><br>';
 	
 	echo $html;
 
