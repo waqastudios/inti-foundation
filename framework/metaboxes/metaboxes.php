@@ -56,6 +56,7 @@ function inti_register_layout_metabox() {
 		'desc'    => __( 'Decide whether to show or hide a sidebar and where to place it.', 'inti' ),
 		'id'      => $prefix . 'radio',
 		'type'    => 'radio',
+		'default' => 'default',
 		'options' => inti_get_theme_layouts(true) // get theme layouts, with customizer default = true
 	) );
 
