@@ -43,14 +43,14 @@ article {
 			}
 	}
 
-	.entry-meta {
+	.post-meta {
 		//margin: 0 0 $global-margin 0;
 
 			&.icons {
-				.by-author, .entry-date, .entry-cats, .entry-tags { display: inline-block; margin: 0 $global-margin 0 0; }
+				.by-author, .post-date, .post-cats, .post-tags { display: inline-block; margin: 0 $global-margin 0 0; }
 			}
 
-			.by-author, .entry-date, .entry-cats, .entry-tags {}
+			.by-author, .post-date, .post-cats, .post-tags {}
 	}	
 
 	.edit-link {}

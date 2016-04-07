@@ -139,24 +139,24 @@ if ( !function_exists('inti_get_post_header_meta') ) {
 		if ( $date || $categories_list || $author || $tag_list ) {
 			if ( $args['show_icons'] ) {
 				$meta .= ( $author && $args['show_author'] ) ? '<span class="by-author"><i class="fi fi-torso" title="Written by"></i> %4$s</span>' : '';
-				$meta .= ( $date && $args['show_date'] ) ? '<span class="entry-date"><i class="fi fi-calendar" title="Publish on"></i> %3$s</span>' : '';
-				$meta .= ( $categories_list && $args['show_cat'] ) ? '<span class="entry-cats"><i class="fi fi-folder" title="Posted in"></i> %1$s</span>' : '';
-				$meta .= ( $tag_list && $args['show_tag'] ) ? '<div class="entry-tags"><i class="fi fi-flag" title="Tagged with"></i> %2$s</div>' : '';
+				$meta .= ( $date && $args['show_date'] ) ? '<span class="post-date"><i class="fi fi-calendar" title="Publish on"></i> %3$s</span>' : '';
+				$meta .= ( $categories_list && $args['show_cat'] ) ? '<span class="post-cats"><i class="fi fi-folder" title="Posted in"></i> %1$s</span>' : '';
+				$meta .= ( $tag_list && $args['show_tag'] ) ? '<div class="post-tags"><i class="fi fi-flag" title="Tagged with"></i> %2$s</div>' : '';
 				
 				if ( $meta ) {
-					$output = '<div class="entry-meta icons">' . $meta . '</div>';
+					$output = '<div class="post-meta icons">' . $meta . '</div>';
 				}
 			} else {
 				$meta .= ( $date && $args['show_date'] ) ? '%3$s ' : '';
 				$meta .= ( $author && $args['show_author'] ) ? __('by', 'inti') . ' <span class="by-author">%4$s</span> ' : '';
-				$meta .= ( $categories_list && $args['show_cat'] ) ? '<div class="entry-cats">%1$s</div>' : '';
-				$meta .= ( $tag_list && $args['show_tag'] ) ? '<div class="entry-tags">' . __('Tags:', 'inti') . ' %2$s</div>' : '';
+				$meta .= ( $categories_list && $args['show_cat'] ) ? '<div class="post-cats">%1$s</div>' : '';
+				$meta .= ( $tag_list && $args['show_tag'] ) ? '<div class="post-tags">' . __('Tags:', 'inti') . ' %2$s</div>' : '';
 
 				if ( $meta ) {
 					if ( $args['show_label'] ) {
-						$output = '<div class="entry-meta">' . __('Posted: ', 'inti') . $meta . '</div>';
+						$output = '<div class="post-meta">' . __('Posted: ', 'inti') . $meta . '</div>';
 					} else {
-						$output = '<div class="entry-meta">' . $meta . '</div>';
+						$output = '<div class="post-meta">' . $meta . '</div>';
 					}
 				}
 			}
@@ -205,24 +205,24 @@ if ( !function_exists('inti_get_post_footer_meta') ) {
 		if ( $date || $categories_list || $author || $tag_list ) {
 			if ( $args['show_icons'] ) {
 				$meta .= ( $author && $args['show_author'] ) ? '<span class="by-author"><i class="fi fi-torso" title="Written by"></i> %4$s</span>' : '';
-				$meta .= ( $date && $args['show_date'] ) ? '<span class="entry-date"><i class="fi fi-calendar" title="Publish on"></i> %3$s</span>' : '';
-				$meta .= ( $categories_list && $args['show_cat'] ) ? '<div class="entry-cats"><i class="fi fi-folder" title="Posted in"></i> %1$s</div>' : '';
-				$meta .= ( $tag_list && $args['show_tag'] ) ? '<div class="entry-tags"><i class="fi fi-flag" title="Tagged with"></i> %2$s</div>' : '';
+				$meta .= ( $date && $args['show_date'] ) ? '<span class="post-date"><i class="fi fi-calendar" title="Publish on"></i> %3$s</span>' : '';
+				$meta .= ( $categories_list && $args['show_cat'] ) ? '<div class="post-cats"><i class="fi fi-folder" title="Posted in"></i> %1$s</div>' : '';
+				$meta .= ( $tag_list && $args['show_tag'] ) ? '<div class="post-tags"><i class="fi fi-flag" title="Tagged with"></i> %2$s</div>' : '';
 				
 				if ( $meta ) {
-					$output = '<div class="entry-meta icons">' . $meta . '</div>';
+					$output = '<div class="post-meta icons">' . $meta . '</div>';
 				}
 			} else {
 				$meta .= ( $date && $args['show_date'] ) ? '%3$s ' : '';
 				$meta .= ( $author && $args['show_author'] ) ? __('by', 'inti') . ' <span class="by-author">%4$s</span> ' : '';
-				$meta .= ( $categories_list && $args['show_cat'] ) ? '<div class="entry-cats">%1$s</div>' : '';
-				$meta .= ( $tag_list && $args['show_tag'] ) ? '<div class="entry-tags">' . __('Tags:', 'inti') . ' %2$s</div>' : '';
+				$meta .= ( $categories_list && $args['show_cat'] ) ? '<div class="post-cats">%1$s</div>' : '';
+				$meta .= ( $tag_list && $args['show_tag'] ) ? '<div class="post-tags">' . __('Tags:', 'inti') . ' %2$s</div>' : '';
 
 				if ( $meta ) {
 					if ( $args['show_label'] ) {
-						$output = '<div class="entry-meta">' . __('Posted: ', 'inti') . $meta . '</div>';
+						$output = '<div class="post-meta">' . __('Posted: ', 'inti') . $meta . '</div>';
 					} else {
-						$output = '<div class="entry-meta">' . $meta . '</div>';
+						$output = '<div class="post-meta">' . $meta . '</div>';
 					}
 				}
 			}

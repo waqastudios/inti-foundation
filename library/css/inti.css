@@ -4303,7 +4303,7 @@ article .page-links {
     text-transform: uppercase;
     font-size: 0.6875rem; }
 
-article .entry-meta.icons .by-author, article .entry-meta.icons .entry-date, article .entry-meta.icons .entry-cats, article .entry-meta.icons .entry-tags {
+article .post-meta.icons .by-author, article .post-meta.icons .post-date, article .post-meta.icons .post-cats, article .post-meta.icons .post-tags {
   display: inline-block;
   margin: 0 1rem 0 0; }
 
