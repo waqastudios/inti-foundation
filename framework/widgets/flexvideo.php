@@ -30,6 +30,7 @@ class inti_widget_flexvideo extends WP_Widget {
 		$title = "";
 		if ( ! empty( $instance['title'] ) ) {
 			$title = $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ). $args['after_title'];
+			echo trim($title);
 		}
 
 		// Custom values for widget
@@ -37,9 +38,8 @@ class inti_widget_flexvideo extends WP_Widget {
 		$videosource = empty($instance['videosource']) ? ' ' : apply_filters('widget_title', $instance['videosource']);
 		$videoid = empty($instance['videoid']) ? ' ' : apply_filters('widget_title', $instance['videoid']);
  
-		if (trim($title)) {
-			echo '<h4 class="widget-title">' . $title . '</h4>';
-		}
+		
+		
  
 		// WIDGET CODE GOES HERE
 		$html = '<div class="flex-video '. $videoaspect .' '. $videosource .'">';

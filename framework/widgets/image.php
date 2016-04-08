@@ -30,6 +30,7 @@ class inti_widget_image extends WP_Widget {
 		$title = "";
 		if ( ! empty( $instance['title'] ) ) {
 			$title = $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ). $args['after_title'];
+			echo trim($title);
 		}
 
 		// Custom values for widget
@@ -38,10 +39,6 @@ class inti_widget_image extends WP_Widget {
 		$linkurl = empty($instance['linkurl']) ? ' ' : apply_filters('widget_title', $instance['linkurl']);
  
 		if ( ! empty( $imgurl ) ) : ?>
-
-			<?php if ($title) : ?>
-				<h4 class="widget-title"><?php echo $title; ?></h4>
-			<?php endif; ?>
 
 			<?php if ($linkurl) : ?>
 			<a href="<?php echo $linkurl; ?>">
