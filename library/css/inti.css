@@ -4432,6 +4432,13 @@ Styles for sidebars and the widgets they contain
   .sidebar .widget_nav_menu ul li.current-menu-parent > a {
     font-weight: bold; }
 
+.sidebar .widget_inti_social_links ul.social-icons {
+  margin: 0;
+  list-style: none; }
+  .sidebar .widget_inti_social_links ul.social-icons li {
+    display: inline-block;
+    margin: 0 0.5rem; }
+
 /******************************************************************
 
 Stylesheet: Shortcodes

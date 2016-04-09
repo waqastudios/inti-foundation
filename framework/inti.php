@@ -50,6 +50,7 @@ class Inti {
 		// custom widgets
 		require_once locate_template('/framework/widgets/image.php');
 		require_once locate_template('/framework/widgets/flexvideo.php');
+		require_once locate_template('/framework/widgets/social-links.php');
 		
 		// if theme supports extensions
 		require_if_theme_supports('inti-menus', locate_template('/framework/extensions/walkers.php'));

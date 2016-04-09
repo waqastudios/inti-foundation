@@ -43,6 +43,15 @@ Styles for sidebars and the widgets they contain
 				ul.sub-menu {}
 		}
 	}
+	.widget_inti_image {}
+	.widget_inti_flexvideo {}
+	.widget_inti_social_links {
+		ul.social-icons {
+			margin: 0;
+			list-style: none;
+				li { display: inline-block; margin: 0 ($global-margin / 2); }
+		}
+	}
 }
 
 #sidebar {}

@@ -116,7 +116,52 @@ if ( !function_exists( 'inti_get_footer_social_links' ) ) {
 		$yt = get_inti_option('social_yt', 'inti_social_options');
 		$vi = get_inti_option('social_vi', 'inti_social_options');
 
-		$html = '<ul class="social-icons left menu">';
+		$html = '<ul class="social-icons">';
+			
+			// foundicons
+			// if ($fb) $html .= '<li class="social-fb"><a href="'. $fb .'"><i class="fi fi-social-facebook"></i></a></li>';
+			// if ($tw) $html .= '<li class="social-tw"><a href="'. $tw .'"><i class="fi fi-social-twitter"></i></a></li>';
+			// if ($gp) $html .= '<li class="social-gp"><a href="'. $gp .'"><i class="fi fi-social-google-plus"></i></a></li>';
+			// if ($li) $html .= '<li class="social-li"><a href="'. $li .'"><i class="fi fi-social-linkedin"></i></a></li>';
+			// if ($in) $html .= '<li class="social-in"><a href="'. $in .'"><i class="fi fi-social-instagram"></i></a></li>';
+			// if ($pi) $html .= '<li class="social-pi"><a href="'. $pi .'"><i class="fi fi-social-pinterest"></i></a></li>';
+			// if ($yt) $html .= '<li class="social-yt"><a href="'. $yt .'"><i class="fi fi-social-youtube"></i></a></li>';
+			// if ($vi) $html .= '<li class="social-vi"><a href="'. $vi .'"><i class="fi fi-social-vimeo"></i></a></li>';
+
+			// fontawesome
+			if ($fb) $html .= '<li class="social-fb"><a href="'. $fb .'"><i class="fa fa-facebook"></i></a></li>';
+			if ($tw) $html .= '<li class="social-tw"><a href="'. $tw .'"><i class="fa fa-twitter"></i></a></li>';
+			if ($gp) $html .= '<li class="social-gp"><a href="'. $gp .'"><i class="fa fa-googleplus"></i></a></li>';
+			if ($li) $html .= '<li class="social-li"><a href="'. $li .'"><i class="fa fa-linkedin"></i></a></li>';
+			if ($in) $html .= '<li class="social-in"><a href="'. $in .'"><i class="fa fa-instagram"></i></a></li>';
+			if ($pi) $html .= '<li class="social-pi"><a href="'. $pi .'"><i class="fa fa-pinterest"></i></a></li>';
+			if ($yt) $html .= '<li class="social-yt"><a href="'. $yt .'"><i class="fa fa-youtube"></i></a></li>';
+			if ($vi) $html .= '<li class="social-vi"><a href="'. $vi .'"><i class="fa fa-vimeo"></i></a></li>';
+
+		$html.='</ul>';
+		return apply_filters('inti_filter_footer_social_links', $html);
+	}
+}
+
+
+/**
+ * Build HTML for social media icons
+ * in widget
+ * 
+ * @since 1.2.5
+ */
+if ( !function_exists( 'inti_get_widget_social_links' ) ) {
+	function inti_get_widget_social_links() { 
+		$fb = get_inti_option('social_fb', 'inti_social_options');
+		$tw = get_inti_option('social_tw', 'inti_social_options');
+		$gp = get_inti_option('social_gp', 'inti_social_options');
+		$li = get_inti_option('social_li', 'inti_social_options');
+		$in = get_inti_option('social_in', 'inti_social_options');
+		$pi = get_inti_option('social_pi', 'inti_social_options');
+		$yt = get_inti_option('social_yt', 'inti_social_options');
+		$vi = get_inti_option('social_vi', 'inti_social_options');
+
+		$html = '<ul class="social-icons">';
 			
 			// foundicons
 			// if ($fb) $html .= '<li class="social-fb"><a href="'. $fb .'"><i class="fi fi-social-facebook"></i></a></li>';
