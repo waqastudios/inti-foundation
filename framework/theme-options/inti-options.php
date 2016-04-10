@@ -239,9 +239,15 @@ function inti_default_footer_options() {
 function inti_default_social_options() {
 	
 	$defaults = array(
-		''       =>  '',
-		''      =>  '',
-		''    =>  '',
+		'social_fb'    =>  '',
+		'social_tw'    =>  '',
+		'social_gp'    =>  '',
+		'social_li'    =>  '',
+		'social_in'    =>  '',
+		'social_pi'    =>  '',
+		'social_yt'    =>  '',
+		'social_vi'    =>  '',
+		'social_open_new'    =>  '1',
 	);
 	
 	return apply_filters( 'inti_default_social_options', $defaults );
@@ -660,7 +666,7 @@ if (!function_exists('inti_initialize_social_options')) {
 				'inti_social_options', 
 				'social_settings_section',   
 				array(                              // The array of arguments to pass to the callback. In this case, just a description.
-					__( 'Username, i.e. @twitter', 'inti' ),
+					__( 'Complete URL', 'inti' ),
 				)        
 			);
 			
@@ -727,6 +733,17 @@ if (!function_exists('inti_initialize_social_options')) {
 				'social_settings_section',   
 				array(                              // The array of arguments to pass to the callback. In this case, just a description.
 					__( 'Complete URL', 'inti' ),
+				)        
+			);
+
+			add_settings_field( 
+				'social_open_new',                     
+				'Open links in new tabs',                         
+				'inti_social_open_new_callback',    
+				'inti_social_options', 
+				'social_settings_section',   
+				array(                              // The array of arguments to pass to the callback. In this case, just a description.
+					__( 'Open links to social media profiles in new tabs', 'inti' ),
 				)        
 			);
 		
@@ -1507,9 +1524,20 @@ function inti_social_vi_callback($args) {
 	} // end if
 	
 	// Render the output
-	echo '<input type="text" id="social_vi" name="inti_social_options[social_vi]" value="' . $url . '" placeholder="' . $args[0] . '" />';
+	echo '<input type="text" id="social_vi" name="inti_social_options[social_vi]" value="' . $url . '" placeholder="' . $args[0] . '" /><p><br><br></p>';
 	
 } // end inti_social_vi_callback
+
+function inti_social_open_new_callback($args) {
+	
+	$options = get_option('inti_social_options');
+
+	$html = '<input type="checkbox" id="social_open_new" name="inti_social_options[social_open_new]" value="1"' . checked( 1, $options['social_open_new'], false ) . '/>';
+	$html .= '&nbsp;';
+	$html .= '<label for="social_open_new">Open links to social media profiles in new tabs</label>';
+	
+	echo $html;
+} // end inti_social_open_new_callback
 
 function inti_commenting_system_callback($args) {
 	
@@ -1781,12 +1809,19 @@ function inti_sanitize_social_options( $input ) {
 	// Loop through each of the options sanitizing the data
 	foreach( $input as $key => $val ) {
 	
-		if( isset ( $input[$key] ) ) {
-			$output[$key] = esc_url_raw( strip_tags( stripslashes( $input[$key] ) ) );
-		} // end if 
-	
+		// Most of the social_options are URLs to profiles. There's one that's a checkbox, so we don't want its value to be made a URL.
+		// If you're going to add options that have string values, you'll have to do this another way
+		if ( is_string($input) ) {
+			// It's a textbox, so a URL, make sure it's a URL
+			if( isset ( $input[$key] ) ) {
+				$output[$key] = esc_url_raw( strip_tags( stripslashes( $input[$key] ) ) );
+			} // end if 
+		} else {
+			// The value isn't a string, just add it back
+			$output[$key] = $input[$key];
+		}
 	} // end foreach
-	
+
 	// Return the new collection
 	return apply_filters( 'inti_sanitize_social_options', $output, $input );
 
