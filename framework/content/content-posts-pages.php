@@ -294,6 +294,7 @@ add_action('inti_hook_post_after', 'inti_do_nav_single', 1);
  * in single.php
  * 
  * @since 1.2.4
+ * @version 1.2.5
  */
 function inti_do_post_sharing() {
 	$sharing_posts = get_inti_option('sharing_on_posts', 'inti_general_options', false);
@@ -311,7 +312,9 @@ function inti_do_post_sharing() {
 		$thumb = rawurlencode($thumb[0]);
 	}
 
+	// Sharing on twitter adds via @handle into the message, we grab that from the profile given in the social options
 	$twitteruser = get_inti_option('social_tw', 'inti_social_options');
+	$twitteruser = substr($twitteruser, strrpos($twitteruser, "/") + 1);
 
 	if ( $sharing_posts ) {
 		?>
@@ -360,6 +363,7 @@ add_action('inti_hook_post_footer', 'inti_do_post_sharing', 5);
  * Add an edit button for a page in the page footer
  * 
  * @since 1.2.4
+ * @version 1.2.5
  */
 function inti_do_page_sharing() {
 	$sharing_pages = get_inti_option('sharing_on_pages', 'inti_general_options', false);
@@ -377,7 +381,9 @@ function inti_do_page_sharing() {
 		$thumb = rawurlencode($thumb[0]);
 	}
 
+	// Sharing on twitter adds via @handle into the message, we grab that from the profile given in the social options
 	$twitteruser = get_inti_option('social_tw', 'inti_social_options');
+	$twitteruser = substr($twitteruser, strrpos($twitteruser, "/") + 1);
 
 	if ( $sharing_pages ) {
 		?>
