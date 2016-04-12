@@ -11,7 +11,9 @@ var gulp  = require('gulp'),
     concat = require('gulp-concat'),
     rename = require('gulp-rename'),
     plumber = require('gulp-plumber'),
-    bower = require('gulp-bower')
+    bower = require('gulp-bower'),
+    babel = require('gulp-babel');
+
     
 // Compile Sass, Autoprefix and minify
 gulp.task('styles', function() {
@@ -106,9 +108,12 @@ gulp.task('foundation-js', function() {
           './library/vendor/foundation-sites/js/foundation.sticky.js',
           './library/vendor/foundation-sites/js/foundation.tabs.js',
           './library/vendor/foundation-sites/js/foundation.toggler.js',
-          './library/vendor/foundation-sites/js/foundation.tooltip.js',
-          './library/vendor/foundation-sites/js/motion-ui.js'
+          './library/vendor/foundation-sites/js/foundation.tooltip.js'
   ])
+    .pipe(babel({
+      presets: ['es2015'],
+        compact: true
+    }))
     .pipe(jshint())
     .pipe(jshint.reporter('jshint-stylish'))
     .pipe(concat('foundation.js'))
