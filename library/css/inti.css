@@ -4838,7 +4838,14 @@ footer can be wide or contained.
     display: inline-block; }
 
 .footer-social {
+  padding: 1rem 0;
   background-color: #e6e6e6; }
+  .footer-social ul {
+    list-style: none; }
+    .footer-social ul li {
+      display: inline-block; }
+    .footer-social ul a {
+      padding: 5px; }
 
 .footer-info {
   background-color: #e6e6e6; }

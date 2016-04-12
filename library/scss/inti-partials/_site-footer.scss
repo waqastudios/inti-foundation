@@ -24,7 +24,15 @@ footer can be wide or contained.
 		}
 
 }
-.footer-social { background-color: $light-gray; }
+.footer-social { 
+	padding: $global-padding 0;
+	background-color: $light-gray; 
+
+		ul { list-style: none;
+			li { display: inline-block; }
+			a { padding: 5px; }
+		}
+}
 .footer-info {
 	background-color: $light-gray; 
 
