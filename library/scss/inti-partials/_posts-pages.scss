@@ -28,9 +28,11 @@ article {
 	.entry-header {}
 	.entry-content { 
 		margin: $global-margin 0; 
+		@include clearfix;
 	}
 	.entry-summary {
 		margin: $global-margin 0; 
+		@include clearfix;
 	}
 	.entry-footer {}
 
@@ -81,26 +83,3 @@ nav.nav-single {
 		.alignright { @include grid-column(5, 0); text-align: right; }
 	}
 }
-
-// article.page {
-// 	.entry-body {
-// 		.entry-header {}
-
-// 		.entry-content {}
-
-// 		.entry-footer {}
-// 	}
-// }
-
-// article.post {
-// 	.entry-body {
-// 		.entry-header {}
-
-// 		.entry-content {}
-
-// 		.entry-footer {}
-// 	}
-// }
-
-
-

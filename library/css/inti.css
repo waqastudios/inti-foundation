@@ -4614,9 +4614,19 @@ Post Formats have their own stylesheet
 ******************************************************************/
 article .entry-content {
   margin: 1rem 0; }
+  article .entry-content::before, article .entry-content::after {
+    content: ' ';
+    display: table; }
+  article .entry-content::after {
+    clear: both; }
 
 article .entry-summary {
   margin: 1rem 0; }
+  article .entry-summary::before, article .entry-summary::after {
+    content: ' ';
+    display: table; }
+  article .entry-summary::after {
+    clear: both; }
 
 article .page-links {
   margin: 1rem 0; }
