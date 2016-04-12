@@ -31,10 +31,10 @@
 	wp.customize('inti_customizer_options[show_site_banner_mobile]', function(value) {
 		value.bind(function(to) {
 			if( to == '' ) {
-				$('.site-banner').css('display', 'none');
+				$('.site-banner').addClass('show-for-mlarge'); console.log('ok');
 			}
 			else if( to == 1 ) {
-				$('.site-banner').css('display', 'block');
+				$('.site-banner').removeClass('show-for-mlarge');
 			};
 		});
 	});

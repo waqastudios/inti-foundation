@@ -134,7 +134,7 @@ add_action('wp_head', 'inti_customizer_css');
  * @since 1.0.0
  */
 function inti_customize_preview_js() {
-	wp_enqueue_script('inti-customizer-preview-js', get_template_directory_uri() . '/framework/customizer/js/theme-customizer-preview.js', '', filemtime(get_template_directory() . '/framework/customizer/js/theme-customizer-preview.js'), true );
+	wp_enqueue_script('inti-customizer-preview-js', get_template_directory_uri() . '/framework/customizer/js/theme-customizer-preview.js', array(), filemtime(get_template_directory() . '/framework/customizer/js/theme-customizer-preview.js'), true );
 }
 add_action('customize_preview_init', 'inti_customize_preview_js');
 
@@ -421,7 +421,8 @@ if ( !function_exists('inti_customize_register') ) {
 				'transport'  => 'postMessage',
 			 ) );	
 				$wp_customize->add_control('inti_customizer_options[show_site_banner_mobile]', array( 
-					'label'    => __('Show Site Logo/Banner on Mobile', 'inti'),
+					'label'    => __('Show main Site Banner/Logo on Mobile', 'inti'),
+					'description' => __('Uncheck if you will show the logo in Mobile Nav','inti'),
 					'section'  => 'inti_customizer_general',
 					'type'     => 'checkbox',
 					'priority' => 5,
