@@ -167,8 +167,13 @@ function inti_do_main_dropdown_menu() {
 				</div>
 				<div class="top-bar-right float-right hide-for-mlarge">
 					<ul class="menu">
-						<!-- <li><button class="menu-icon" type="button" data-toggle="off-canvas"></button></li> -->
-						<li class="menu-text off-canvas-button"><a data-toggle="inti-off-canvas-menu">Menu</a></li>
+						<li class="menu-text off-canvas-button"><a data-toggle="inti-off-canvas-menu">
+							<div class="hamburger">
+								<span></span>
+								<span></span>
+								<span></span>
+							</div>
+						</a></li>
 					</ul>
 				</div>
 			</nav>

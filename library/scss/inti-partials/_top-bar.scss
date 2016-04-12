@@ -15,7 +15,7 @@ off canvas menu, and hides the main navigation menu
 ******************************************************************/
 
 .top-bar {
-	
+	font-size: 1.35rem;
 		.main-dropdown-menu > ul { float: left; }
 
 		ul {}
@@ -60,7 +60,41 @@ off canvas menu, and hides the main navigation menu
 		.site-title {
 			color: $white;
 		}
-		
-		.off-canvas-menu {}
-		
+
 }
+
+		.top-bar .off-canvas-button {
+			.hamburger {
+				width: 1.5rem; height: 0.875rem;
+				position: relative;
+				display: inline-block;
+				transform: rotate(0);
+
+					span {
+						display: block;
+						position: absolute;
+						height: 2px;
+						width: 100%;
+						background-color: #fff;
+						opacity: 1;
+						left: 0;
+						transform: rotate(0);
+						transition: transform 125ms linear;
+							&:nth-child(1) { top: 0; }
+							&:nth-child(2) { top: 0.4375rem; }
+							&:nth-child(3) { top: 0.875rem; }
+					}
+
+			}
+		}
+
+		.is-off-canvas-open .top-bar .off-canvas-button {
+			.hamburger {
+				span {
+
+							&:nth-child(1) { top: 0.5rem; transform: rotate(135deg); }
+							&:nth-child(2) { top: 0.4375rem; opacity: 0; }
+							&:nth-child(3) { top: 0.5rem; transform: rotate(45deg); }
+				}
+			}
+		}

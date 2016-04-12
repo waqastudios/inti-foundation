@@ -4194,39 +4194,71 @@ On smaller screens the top bar shows a button that triggers the
 off canvas menu, and hides the main navigation menu
 
 ******************************************************************/
-.top-bar .main-dropdown-menu > ul {
-  float: left; }
+.top-bar {
+  font-size: 1.35rem; }
+  .top-bar .main-dropdown-menu > ul {
+    float: left; }
+  @media screen and (min-width: 48em) {
+    .top-bar {
+      padding: 0.5rem; } }
+  .top-bar ul.menu a {
+    color: #fefefe; }
+  .top-bar ul.dropdown.menu li.current-menu-item {
+    font-weight: bold; }
+  .top-bar ul.dropdown.menu li.current-menu-parent > a {
+    font-weight: bold; }
+  .top-bar ul.dropdown.menu ul {
+    display: none; }
+  .top-bar ul.dropdown.menu ul.js-dropdown-active {
+    display: block; }
+  .top-bar ul.dropdown.menu .is-dropdown-submenu-parent.is-down-arrow > a::after {
+    border-color: #fefefe transparent transparent; }
+  .top-bar ul.dropdown.menu .is-dropdown-submenu-parent.is-right-arrow a::after {
+    border-color: transparent transparent transparent #fefefe; }
+  .top-bar .site-logo {
+    padding: 0; }
+  .top-bar .site-title {
+    color: #fefefe; }
 
-@media screen and (min-width: 48em) {
-  .top-bar {
-    padding: 0.5rem; } }
+.top-bar .off-canvas-button .hamburger {
+  width: 1.5rem;
+  height: 0.875rem;
+  position: relative;
+  display: inline-block;
+  -webkit-transform: rotate(0);
+  transform: rotate(0); }
+  .top-bar .off-canvas-button .hamburger span {
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background-color: #fff;
+    opacity: 1;
+    left: 0;
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    transition: -webkit-transform 125ms linear;
+    transition: transform 125ms linear; }
+    .top-bar .off-canvas-button .hamburger span:nth-child(1) {
+      top: 0; }
+    .top-bar .off-canvas-button .hamburger span:nth-child(2) {
+      top: 0.4375rem; }
+    .top-bar .off-canvas-button .hamburger span:nth-child(3) {
+      top: 0.875rem; }
 
-.top-bar ul.menu a {
-  color: #fefefe; }
+.is-off-canvas-open .top-bar .off-canvas-button .hamburger span:nth-child(1) {
+  top: 0.5rem;
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg); }
 
-.top-bar ul.dropdown.menu li.current-menu-item {
-  font-weight: bold; }
+.is-off-canvas-open .top-bar .off-canvas-button .hamburger span:nth-child(2) {
+  top: 0.4375rem;
+  opacity: 0; }
 
-.top-bar ul.dropdown.menu li.current-menu-parent > a {
-  font-weight: bold; }
-
-.top-bar ul.dropdown.menu ul {
-  display: none; }
-
-.top-bar ul.dropdown.menu ul.js-dropdown-active {
-  display: block; }
-
-.top-bar ul.dropdown.menu .is-dropdown-submenu-parent.is-down-arrow > a::after {
-  border-color: #fefefe transparent transparent; }
-
-.top-bar ul.dropdown.menu .is-dropdown-submenu-parent.is-right-arrow a::after {
-  border-color: transparent transparent transparent #fefefe; }
-
-.top-bar .site-logo {
-  padding: 0; }
-
-.top-bar .site-title {
-  color: #fefefe; }
+.is-off-canvas-open .top-bar .off-canvas-button .hamburger span:nth-child(3) {
+  top: 0.5rem;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg); }
 
 /******************************************************************
 
