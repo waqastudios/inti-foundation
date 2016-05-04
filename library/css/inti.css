@@ -4767,7 +4767,11 @@ Styles for sidebars and the widgets they contain
     margin: 0 0.5rem; }
 
 .admin-bar .sticky.is-stuck {
-  margin-top: 32px !important; }
+  margin-top: 32px !important;
+  transition: margin-top .25s ease; }
+  @media screen and (max-width: 49em) {
+    .admin-bar .sticky.is-stuck {
+      margin-top: 46px !important; } }
 
 /******************************************************************
 
@@ -4897,10 +4901,9 @@ CSS3 GRADIENTS.
 /* General Inti Styles - fix this */
 body.admin-bar {
   padding-top: 32px; }
-
-@media screen and (max-width: 48em) {
-  body.admin-bar {
-    padding-top: 46px !important; } }
+  @media screen and (max-width: 48.875em) {
+    body.admin-bar {
+      padding-top: 46px !important; } }
 
 * {
   outline: 0; }

@@ -101,12 +101,16 @@ new styles, or the minimized inti-min.css file can be unqueued
 /* General Inti Styles - fix this */
 body { }
 
-body.admin-bar { padding-top: 32px;}
-@include breakpoint(768px down) {
-	body.admin-bar {
-		padding-top: 46px !important;
+body.admin-bar { 
+	padding-top: 32px;
+
+	@include breakpoint(782px down) {
+		& {
+			padding-top: 46px !important;
+		}	
 	}	
-}	
+}
+
 * {  outline: 0; }
 
 #page {
