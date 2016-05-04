@@ -41,7 +41,7 @@ function inti_register_layout_metabox() {
 
 	$cmb_layout = new_cmb2_box( array(
 		'id'            => $prefix . 'metabox',
-		'title'         => __( 'Layout', 'inti' ),
+		'title'         => __( 'Configuration', 'inti' ),
 		'object_types'  => array( 'page', 'post' ), // Post type
 		// 'show_on_cb' => 'inti_hide_if_front_page', // function should return a bool value
 		'context'    => 'side',
@@ -58,6 +58,19 @@ function inti_register_layout_metabox() {
 		'type'    => 'radio',
 		'default' => 'default',
 		'options' => inti_get_theme_layouts(true) // get theme layouts, with customizer default = true
+	) );
+
+	$cmb_layout->add_field( array(
+		'name'    => __( 'Sticky Sidebar', 'inti' ),
+		'desc'    => __( 'Keep sidebar widgets in view as you scroll down the page.', 'inti' ),
+		'id'      => $prefix . 'stickysidebars',
+		'type'    => 'radio',
+		'default' => 'default',
+		'options'          => array(
+			'default' => __( 'As Set In Customize', 'inti' ),
+			'static'   => __( 'Static', 'inti' ),
+			'sticky'     => __( 'Sticky', 'inti' ),
+		),
 	) );
 
 }

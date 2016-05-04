@@ -10,7 +10,10 @@
 
 <?php // get the page layout
 wp_reset_postdata(); 
-$layout = inti_get_layout(get_inti_option('', '', '', '_inti_layout_radio')); ?>
+$layout = inti_get_layout(get_inti_option('', '', '', '_inti_layout_radio')); 
+$sticky = inti_get_sticky_sidebars(get_inti_option('', '', '', '_inti_layout_stickysidebars')); 
+
+?>
 	
 <?php inti_hook_sidebar_before(); ?>
 
@@ -42,16 +45,46 @@ if ( is_page() ) : ?>
 	<?php 
 	if ( is_front_page() && $has_sidebar ) : ?>
 
-		<div id="sidebar" class="sidebar <?php echo $column_classes; ?> columns" role="complementary">
-			<?php dynamic_sidebar('sidebar-frontpage'); ?>
-		</div><!-- #sidebar -->
+		<?php if ($sticky == "sticky"): ?>
+
+			<div id="sidebar" class="sidebar <?php echo $column_classes; ?> columns" role="complementary" data-sticky-container>
+				<div class="sticky" data-sticky data-anchor="content" data-margin-top="0">
+				<?php dynamic_sidebar('sidebar-frontpage'); ?>
+				</div>
+			</div><!-- #sidebar -->
+
+		<?php else : ?>
+
+			<div id="sidebar" class="sidebar <?php echo $column_classes; ?> columns" role="complementary">
+			
+				<?php dynamic_sidebar('sidebar-frontpage'); ?>
+
+			</div><!-- #sidebar -->
+
+		<?php endif; ?>
+
+
 
 	<?php 
 	elseif ( !is_front_page() && $has_sidebar ) : ?>
 
-		<div id="sidebar" class="sidebar <?php echo $column_classes; ?> columns" role="complementary">
-			<?php dynamic_sidebar('sidebar'); ?>
-		</div><!-- #sidebar -->
+		<?php if ($sticky == "sticky"): ?>
+
+			<div id="sidebar" class="sidebar <?php echo $column_classes; ?> columns" role="complementary" data-sticky-container>
+				<div class="sticky" data-sticky data-anchor="content" data-margin-top="0">
+				<?php dynamic_sidebar('sidebar'); ?>
+				</div>
+			</div><!-- #sidebar -->
+
+		<?php else : ?>
+
+			<div id="sidebar" class="sidebar <?php echo $column_classes; ?> columns" role="complementary">
+
+				<?php dynamic_sidebar('sidebar'); ?>
+
+			</div><!-- #sidebar -->
+
+		<?php endif; ?>
 
 	<?php 
 	else : // no sidebar ?>
@@ -63,17 +96,45 @@ if ( is_page() ) : ?>
 <?php elseif ( ( is_archive() || is_home() || is_search() ) && $has_sidebar ) : ?>
 
 
-	<div id="sidebar" class="sidebar <?php echo $column_classes; ?> columns" role="complementary">
-		<?php dynamic_sidebar('sidebar'); ?>
-	</div><!-- #sidebar -->
+		<?php if ($sticky == "sticky"): ?>
+
+			<div id="sidebar" class="sidebar <?php echo $column_classes; ?> columns" role="complementary" data-sticky-container>
+				<div class="sticky" data-sticky data-anchor="content" data-margin-top="0">
+				<?php dynamic_sidebar('sidebar'); ?>
+				</div>
+			</div><!-- #sidebar -->
+
+		<?php else : ?>
+
+			<div id="sidebar" class="sidebar <?php echo $column_classes; ?> columns" role="complementary">
+
+				<?php dynamic_sidebar('sidebar'); ?>
+
+			</div><!-- #sidebar -->
+
+		<?php endif; ?>
 	
 
 <?php elseif ( is_single() && $has_sidebar ) : ?>
 
 
-	<div id="sidebar" class="sidebar <?php echo $column_classes; ?> columns" role="complementary">
-		<?php dynamic_sidebar('sidebar'); ?>
-	</div><!-- #sidebar -->
+		<?php if ($sticky == "sticky"): ?>
+
+			<div id="sidebar" class="sidebar <?php echo $column_classes; ?> columns" role="complementary" data-sticky-container>
+				<div class="sticky" data-sticky data-anchor="content" data-margin-top="0">
+				<?php dynamic_sidebar('sidebar'); ?>
+				</div>
+			</div><!-- #sidebar -->
+
+		<?php else : ?>
+
+			<div id="sidebar" class="sidebar <?php echo $column_classes; ?> columns" role="complementary">
+
+				<?php dynamic_sidebar('sidebar'); ?>
+
+			</div><!-- #sidebar -->
+
+		<?php endif; ?>
 
 
 <?php endif; ?>

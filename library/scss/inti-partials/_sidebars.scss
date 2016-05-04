@@ -57,3 +57,8 @@ Styles for sidebars and the widgets they contain
 #sidebar {}
 #sidebar-frontpage {}
 #sidebar-footer {} 
+
+
+
+// Sticky Sidebars need to have extra top spacing if admin-bar is visible
+.admin-bar .sticky.is-stuck { margin-top: 32px !important; }

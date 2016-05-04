@@ -4766,6 +4766,9 @@ Styles for sidebars and the widgets they contain
     display: inline-block;
     margin: 0 0.5rem; }
 
+.admin-bar .sticky.is-stuck {
+  margin-top: 32px !important; }
+
 /******************************************************************
 
 Stylesheet: Shortcodes

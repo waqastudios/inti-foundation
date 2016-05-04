@@ -523,7 +523,7 @@ if ( !function_exists('inti_customize_register') ) {
 		$theme_layouts = inti_get_theme_layouts(false);
 		
 		$wp_customize->add_section('inti_customizer_posts', array( 
-			'title'    => __('Layouts', 'inti'),
+			'title'    => __('Page Options', 'inti'),
 			'priority' => 20,
 		 ) );
 
@@ -583,20 +583,20 @@ if ( !function_exists('inti_customize_register') ) {
 					'priority'    => 6,
 				 ) );
 
-			$wp_customize->add_setting('inti_customizer_options[page_links]', array( 
-				'default'        => 'numbered',
+			$wp_customize->add_setting('inti_customizer_options[sticky_sidebars]', array( 
+				'default'        => 'static',
 				'type'           => 'option',
 				'capability'     => 'manage_options',
-				'theme_supports' => 'inti-page-links',
 			 ) );
-				$wp_customize->add_control('inti_customizer_options[page_links]', array( 
-					'label'    => __('Page Link Type', 'inti'),
-					'section'  => 'inti_customizer_posts',
-					'type'     => 'select',
-					'choices'  => array( 
-						'numbered'  => __('Numbered', 'inti'),
-						'prev_next' => __('Prev / Next', 'inti'),
-						 ),
+				$wp_customize->add_control('inti_customizer_options[sticky_sidebars]', array( 
+					'label'			=> __('Sticky Sidebars', 'inti'),
+					'description'	=> __( 'Keep sidebar widgets in view as you scroll down the page.', 'inti' ),
+					'section'		=> 'inti_customizer_posts',
+					'type'			=> 'select',
+					'choices'		=> array(
+						'static'  => __('Static', 'inti'),
+						'sticky'  => __('Sticky', 'inti'),
+					),
 					'priority' => 7,
 				 ) );	
 

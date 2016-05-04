@@ -490,4 +490,52 @@ function inti_get_tiny_url($url){
 		return $url;
 	}
 }
+
+
+/**
+ * Inti Get Layout
+ * with the values of the default setting in Customizer or Theme Options,
+ * return the layout name to use on a particular page or post.
+ *
+ * @package Inti
+ * @since 1.0.0
+ * @version 1.2.0
+ */
+if (!function_exists('inti_get_sticky_sidebars')) {
+	function inti_get_sticky_sidebars( $meta ) {
+
+		// set a default state
+		$sticky = get_inti_option('sticky_sidebars', 'inti_customizer_options', 'static');
+
+	
+		// check to see if $meta was provided, if it wasn't, the page in question will be an archive
+		if ($meta == "" ) {
+			$meta = "default";
+		}
+
+
+
+		// compare selected states and establish which has priority
+		// get customizer option for default sidebar stickiness, if none is set, use site state default
+		$sticky = get_inti_option('sticky_sidebars', 'inti_customizer_options', $sticky);
+
+		// check if the metabox option has been set to override - if it isn't still on default, it has been changed, use that
+		if ($meta != "default") {
+			$sticky = $meta;
+		}
+
+
+
+		// this is the frontpage - we might not let the sidebars stick, but we do here by default
+		if (is_front_page()) { 
+			if ($meta != "default") {
+				$sticky = $meta;
+			}
+		}
+		
+
+		// return final sticky
+		return $sticky;
+	}
+}
 ?>
