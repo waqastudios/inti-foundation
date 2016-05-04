@@ -62,6 +62,16 @@ function inti_hook_site_after() {
 }
 
 /**
+ * Register hook: inti_hook_site_header_before
+ *
+ * in header.php before whole header
+ * @since 1.2.6
+ */
+function inti_hook_site_header_before() {
+	do_action('inti_hook_site_header_before');
+}
+
+/**
  * Register hook: inti_hook_site_banner_before
  *
  * in header.php before header tag
@@ -112,13 +122,23 @@ function inti_hook_site_banner_title_area_after() {
 }
 
 /**
- * Register hook: inti_hook_header_after
+ * Register hook: inti_hook_site_banner_after
  *
  * in header.php after closing header tag
  * @since 1.0.0 
  */
 function inti_hook_site_banner_after() {
 	do_action('inti_hook_site_banner_after');
+}
+
+/**
+ * Register hook: inti_hook_site_header_after
+ *
+ * in header.php after closing header tag
+ * @since 1.2.6 
+ */
+function inti_hook_site_header_after() {
+	do_action('inti_hook_site_header_after');
 }
 
 /**

@@ -493,13 +493,14 @@ function inti_get_tiny_url($url){
 
 
 /**
- * Inti Get Layout
- * with the values of the default setting in Customizer or Theme Options,
- * return the layout name to use on a particular page or post.
+ * 24. Work out if a page should have sticky sidebars by comparing the default
+ * site-wide option in Customize and the metabox for each page/post. Meta takes
+ * priority. 
  *
+ * This function is nearly identical to the one in framework/functions/layout.php
+ * 
  * @package Inti
- * @since 1.0.0
- * @version 1.2.0
+ * @since 1.2.6
  */
 if (!function_exists('inti_get_sticky_sidebars')) {
 	function inti_get_sticky_sidebars( $meta ) {

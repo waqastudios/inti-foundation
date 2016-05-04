@@ -1,6 +1,10 @@
+<?php inti_hook_site_header_before(); ?>
+
+<div id="site-header" class="site-header">
+
 	<?php inti_hook_site_banner_before(); // inti_do_main_dropwdown_menu() is placed above or below banner ?>
-	
-	<div class="site-banner<?php if ( !get_inti_option('show_site_banner_mobile', 'inti_customizer_options') ) echo " show-for-mlarge"; ?>" role="banner">
+
+	<div id="site-banner" class="site-banner<?php if ( !get_inti_option('show_site_banner_mobile', 'inti_customizer_options') ) echo " show-for-mlarge"; ?>" role="banner">
 
 		<div class="column">
 			<?php inti_hook_site_banner_site_logo_before(); ?>
@@ -23,3 +27,7 @@
 	</div><!-- .site-banner -->
 
 	<?php inti_hook_site_banner_after(); // inti_do_main_dropwdown_menu() is placed above or below banner ?>
+
+</div>
+
+<?php inti_hook_site_header_after(); ?>

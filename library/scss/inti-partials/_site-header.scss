@@ -2,22 +2,27 @@
 
 Stylesheet: Site Header
 
+The site header wraps both the site-banner, the main navigation and
+anything else that has been added to one of the hooks alongside them.
 The site banner comes before or after the main navigation menu, it
 normally includes a logo, or a full width hero image.
 
 ******************************************************************/
+.site-header {
 
-.site-banner {
-	overflow: auto;
+	.site-banner {
+		overflow: auto;
 
-		.row {}
+			.row {}
 
-		.site-logo {
-			img {}
-		}
+			.site-logo {
+				img {}
+			}
 
-		.title-area { // may be set to display: none in the customizer options
-			h1.site-title {}
-			p.site-description {}
-		} 
+			.title-area { // may be set to display: none in the customizer options
+				h1.site-title {}
+				p.site-description {}
+			} 
+	}
+
 }

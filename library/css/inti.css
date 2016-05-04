@@ -4453,11 +4453,13 @@ Styles that affect the look of page and post content
 
 Stylesheet: Site Header
 
+The site header wraps both the site-banner, the main navigation and
+anything else that has been added to one of the hooks alongside them.
 The site banner comes before or after the main navigation menu, it
 normally includes a logo, or a full width hero image.
 
 ******************************************************************/
-.site-banner {
+.site-header .site-banner {
   overflow: auto; }
 
 /******************************************************************
@@ -4769,7 +4771,7 @@ Styles for sidebars and the widgets they contain
 .admin-bar .sticky.is-stuck {
   margin-top: 32px !important;
   transition: margin-top .25s ease; }
-  @media screen and (max-width: 49em) {
+  @media screen and (max-width: 48.875em) {
     .admin-bar .sticky.is-stuck {
       margin-top: 46px !important; } }
 
