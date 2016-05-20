@@ -111,7 +111,6 @@ add_action( 'admin_enqueue_scripts', 'inti_shortcode_interface_stylesheets', 100
 function inti_shortcode_add_select() {
 	$options = array(
 		'inti-button' => __('Button', 'inti'),
-		'inti-split-button' => __('Split Button', 'inti'),
 		'inti-dropdown-button' => __('Dropdown Button', 'inti'),
 		'inti-flex-video' => __('Video', 'inti'),
 		'inti-callout' => __('Callout', 'inti'),
@@ -197,11 +196,11 @@ function inti_shortcode_add_button() {
 	</tr>			
 	<tr class="option inti-button">
 		<th class="label">
-			<label for="inti-button-target"><?php _e('Open link in a new window/tab', 'inti'); ?></label>
+			<label for="button-target"><?php _e('Open link in a new window/tab', 'inti'); ?></label>
 		</th>
 
 		<td class="field">
-			<input type="checkbox" name="inti-button-target" id="inti-button-target" value="_blank">
+			<input type="checkbox" name="button-target" id="button-target" value="_blank">
 		</td>
 	</tr>
 	<tr class="option inti-button">
@@ -425,7 +424,8 @@ function inti_shortcode_add_callout() {
 
 		<td class="field">			
 			<select name="callout-type" id="callout-type" class="widefat">
-				<option value="" selected><?php _e('Primary', 'inti'); ?></option>
+				<option value=""><?php _e('None', 'inti'); ?></option>
+				<option value="primary" selected><?php _e('Primary', 'inti'); ?></option>
 				<option value="secondary"><?php _e('Secondary', 'inti'); ?></option>
 				<option value="success"><?php _e('Success', 'inti'); ?></option>
 				<option value="alert"><?php _e('Alert', 'inti'); ?></option>
