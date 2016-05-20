@@ -517,7 +517,7 @@ if (!function_exists('inti_initialize_headernav_options')) {
 		
 			add_settings_field( 
 				'nav_social',                      
-				'Social media icons on nav bar',                          
+				__('Social media icons on nav bar', 'inti' ),                          
 				'inti_nav_social_callback', 
 				'inti_headernav_options', 
 				'headernav_settings_section'           
@@ -525,7 +525,7 @@ if (!function_exists('inti_initialize_headernav_options')) {
 
 			add_settings_field( 
 				'head_js',                     
-				'Custom JavaScript in head',                         
+				__('Custom JavaScript in head', 'inti' ),                         
 				'inti_head_js_callback',    
 				'inti_headernav_options', 
 				'headernav_settings_section',   
@@ -536,7 +536,7 @@ if (!function_exists('inti_initialize_headernav_options')) {
 
 			add_settings_field( 
 				'head_css',                     
-				'Custom CSS in head',                         
+				__('Custom CSS in head', 'inti' ),                         
 				'inti_head_css_callback',    
 				'inti_headernav_options', 
 				'headernav_settings_section'      
@@ -544,7 +544,7 @@ if (!function_exists('inti_initialize_headernav_options')) {
 
 			add_settings_field( 
 				'head_meta',                     
-				'Custom Meta Tags in head',                         
+				__('Custom Meta Tags in head', 'inti' ),                         
 				'inti_head_meta_callback',    
 				'inti_headernav_options', 
 				'headernav_settings_section'      
@@ -552,7 +552,7 @@ if (!function_exists('inti_initialize_headernav_options')) {
 
 			add_settings_field( 
 				'body_inside',                     
-				'Custom Code immediately after body',                         
+				__('Custom Code immediately after body', 'inti' ),                         
 				'inti_body_inside_callback',    
 				'inti_headernav_options', 
 				'headernav_settings_section'      
@@ -590,7 +590,7 @@ if (!function_exists('inti_initialize_footer_options')) {
 		
 			add_settings_field( 
 				'footer_social',                      
-				'Social media icons in footer',                          
+				__('Social media icons in footer', 'inti' ),                          
 				'inti_footer_social_callback', 
 				'inti_footer_options', 
 				'footer_settings_section'           
@@ -598,7 +598,7 @@ if (!function_exists('inti_initialize_footer_options')) {
 
 			add_settings_field( 
 				'analytics_id',                     
-				'Google Analytics ID',                         
+				__('Google Analytics ID', 'inti' ),                         
 				'inti_analytics_id_callback',    
 				'inti_footer_options', 
 				'footer_settings_section',   
@@ -609,7 +609,7 @@ if (!function_exists('inti_initialize_footer_options')) {
 
 			add_settings_field( 
 				'footer_js',                     
-				'Custom JavaScript in footer',                         
+				__('Custom JavaScript in footer', 'inti' ),                         
 				'inti_footer_js_callback',    
 				'inti_footer_options', 
 				'footer_settings_section',   
@@ -738,7 +738,7 @@ if (!function_exists('inti_initialize_social_options')) {
 
 			add_settings_field( 
 				'social_open_new',                     
-				'Open links in new tabs',                         
+				__('Open links in new tabs', 'inti' ),                         
 				'inti_social_open_new_callback',    
 				'inti_social_options', 
 				'social_settings_section',   
@@ -773,13 +773,13 @@ if (!function_exists('inti_initialize_commenting_options')) {
 		
 		add_settings_section(
 			'commenting_settings_section',          // ID used to identify this section and with which to register options
-			__( 'Commenting System', 'inti' ),      // Title to be displayed on the administration page
+			__('Commenting System', 'inti' ),      // Title to be displayed on the administration page
 			'inti_commenting_options_callback',  // Callback used to render the description of the section
 			'inti_commenting_options'      // Page on which to add this section of options
 		);
 			add_settings_field( 
 				'commenting_system',                     
-				'Commenting System',                         
+				__('Commenting System', 'inti' ),                        
 				'inti_commenting_system_callback',    
 				'inti_commenting_options', 
 				'commenting_settings_section',   
@@ -789,7 +789,7 @@ if (!function_exists('inti_initialize_commenting_options')) {
 			);
 			add_settings_field( 
 				'comments_on_pages',                     
-				'Comments on pages',                         
+				__('Comments on pages', 'inti'),                         
 				'inti_comments_on_pages_callback',    
 				'inti_commenting_options', 
 				'commenting_settings_section',   
@@ -799,7 +799,7 @@ if (!function_exists('inti_initialize_commenting_options')) {
 			);
 			add_settings_field( 
 				'comments_show_allowed_tags',                     
-				'Allowed tags message',                         
+				__('Allowed tags message', 'inti'),                         
 				'inti_comments_show_allowed_tags_callback',    
 				'inti_commenting_options', 
 				'commenting_settings_section',   
@@ -816,7 +816,7 @@ if (!function_exists('inti_initialize_commenting_options')) {
 		);
 			add_settings_field( 
 				'disqus_shortname',                     
-				'Disqus Shortname',                         
+				__('Disqus Shortname', 'inti'),                         
 				'inti_disqus_shortname_callback',    
 				'inti_commenting_options', 
 				'commenting_settings_section_disqus',   
@@ -843,18 +843,18 @@ if (!function_exists('inti_initialize_commenting_options')) {
 			);
 			add_settings_field( 
 				'fbcomments_moderators',                     
-				'Moderators',                         
+				__('Moderators', 'inti'),                         
 				'inti_fbcomments_moderators_callback',    
 				'inti_commenting_options', 
 				'commenting_settings_section_fb',   
 				array(                              // The array of arguments to pass to the callback. In this case, just a description.
-					__( 'By default, all users set as admins for the registered app can moderate comments. To add moderators, each Facebook Profile ID separated by a comma </strong>without spaces</strong>. Top find your Facebook Profile ID', 'inti' )
+					__( 'By default, all users set as admins for the registered app can moderate comments. To add moderators, each Facebook Profile ID should be separated by a comma <strong>without spaces</strong>. To find your Facebook Profile ID', 'inti' )
 					. '<a href="https://developers.facebook.com/tools/explorer/?method=GET&path=me" target="blank">' . __('click here', 'inti') . '</a>.',
 				)        
 			);
 			add_settings_field( 
 				'fbcomments_lang',                     
-				'Language',                         
+				__('Language', 'inti'),                         
 				'inti_fbcomments_lang_callback',    
 				'inti_commenting_options', 
 				'commenting_settings_section_fb',   
@@ -864,7 +864,7 @@ if (!function_exists('inti_initialize_commenting_options')) {
 			);
 			add_settings_field( 
 				'fbcomments_colorscheme',                     
-				'Color Scheme',                         
+				__('Color Scheme', 'inti'),                         
 				'inti_fbcomments_colorscheme_callback',    
 				'inti_commenting_options', 
 				'commenting_settings_section_fb',   
@@ -874,7 +874,7 @@ if (!function_exists('inti_initialize_commenting_options')) {
 			);
 			add_settings_field( 
 				'fbcomments_amount',                     
-				'Show X Comments',                         
+				__('Show X Comments', 'inti'),                         
 				'inti_fbcomments_amount_callback',    
 				'inti_commenting_options', 
 				'commenting_settings_section_fb',   
@@ -884,7 +884,7 @@ if (!function_exists('inti_initialize_commenting_options')) {
 			);
 			add_settings_field( 
 				'fbcomments_width',                     
-				'Comment Area Width',                         
+				__('Comment Area Width', 'inti'),                         
 				'inti_fbcomments_width_callback',    
 				'inti_commenting_options', 
 				'commenting_settings_section_fb',   
@@ -901,7 +901,7 @@ if (!function_exists('inti_initialize_commenting_options')) {
 		);
 			add_settings_field( 
 				'gpcomments_width',                     
-				'Comment Area Width',                         
+				__('Comment Area Width', 'inti'),                         
 				'inti_gpcomments_width_callback',    
 				'inti_commenting_options', 
 				'commenting_settings_section_gp',   
@@ -1051,11 +1051,11 @@ function inti_blog_interface_callback($args) {
    
 	$html .= '<input type="radio" id="blog_interface_one" name="inti_general_options[blog_interface]" value="1"' . checked( 1, $options['blog_interface'], false ) . '/>';
 	$html .= '&nbsp;';
-	$html .= '<label for="blog_interface_one">Option One (Standard)</label>';
+	$html .= '<label for="blog_interface_one">' . __('Option One (Standard)', 'inti') . '</label>';
 	$html .= '&nbsp;&nbsp;&nbsp;&nbsp;';
 	$html .= '<input type="radio" id="blog_interface_two" name="inti_general_options[blog_interface]" value="2"' . checked( 2, $options['blog_interface'], false ) . '/>';
 	$html .= '&nbsp;';
-	$html .= '<label for="blog_interface_two">Option Two (Shorts)</label>';
+	$html .= '<label for="blog_interface_two">' . __('Option Two (Shorts)', 'inti') . '</label>';
 	
 	// Here, we'll take the first argument of the array and add it to a label next to the input
 	$html .= '<p><small><label for="blog_interface">&nbsp;' . $args[0] . '</label></small></p>'; 
@@ -1070,19 +1070,19 @@ function inti_breadcrumbs_callback($args) {
 
 	$html = '<p><input type="radio" id="breadcrumbs_none" name="inti_general_options[breadcrumbs]" value="none"' . checked( "none", $options['breadcrumbs'], false ) . '/>';
 	$html .= '&nbsp;';
-	$html .= '<label for="breadcrumbs_none">None/Off</label></p>';
+	$html .= '<label for="breadcrumbs_none">' . __('None/Off', 'inti') . '</label></p>';
 
 	$html .= '<p><input type="radio" id="breadcrumbs_top" name="inti_general_options[breadcrumbs]" value="top"' . checked( "top", $options['breadcrumbs'], false ) . '/>';
 	$html .= '&nbsp;';
-	$html .= '<label for="breadcrumbs_top">Top Only</label></p>';
+	$html .= '<label for="breadcrumbs_top">' . __('Top Only', 'inti') . '</label></p>';
 
 	$html .= '<p><input type="radio" id="breadcrumbs_bottom" name="inti_general_options[breadcrumbs]" value="bottom"' . checked( "bottom", $options['breadcrumbs'], false ) . '/>';
 	$html .= '&nbsp;';
-	$html .= '<label for="breadcrumbs_bottom">Bottom Only</label></p>';
+	$html .= '<label for="breadcrumbs_bottom">' . __('Bottom Only', 'inti') . '</label></p>';
 
 	$html .= '<p><input type="radio" id="breadcrumbs_topbottom" name="inti_general_options[breadcrumbs]" value="topbottom"' . checked( "topbottom", $options['breadcrumbs'], false ) . '/>';
 	$html .= '&nbsp;';
-	$html .= '<label for="breadcrumbs_topbottom">Top and Bottom</label></p>';
+	$html .= '<label for="breadcrumbs_topbottom">' . __('Top and Bottom', 'inti') . '</label></p>';
 
 
 	
@@ -1099,11 +1099,11 @@ function inti_pagination_callback($args) {
 
 	$html = '<p><input type="radio" id="pagination_numbered" name="inti_general_options[pagination]" value="numbered"' . checked( "numbered", $options['pagination'], false ) . '/>';
 	$html .= '&nbsp;';
-	$html .= '<label for="numbered">Page Numbers</label></p>';
+	$html .= '<label for="numbered">' . __('Page Numbers', 'inti') . '</label></p>';
 
 	$html .= '<p><input type="radio" id="pagination_nextprev" name="inti_general_options[pagination]" value="nextprev"' . checked( "nextprev", $options['pagination'], false ) . '/>';
 	$html .= '&nbsp;';
-	$html .= '<label for="nextprev">Next/Previous links</label></p>';
+	$html .= '<label for="nextprev">' . __('Next/Previous links', 'inti') . '</label></p>';
 
 
 	
@@ -1120,15 +1120,15 @@ function inti_nextprev_post_links_callback($args) {
 
 	$html = '<p><input type="radio" id="nextprev_post_links_none" name="inti_general_options[nextprev_post_links]" value="none"' . checked( "none", $options['nextprev_post_links'], false ) . '/>';
 	$html .= '&nbsp;';
-	$html .= '<label for="nextprev_post_links_none">None/Off</label></p>';
+	$html .= '<label for="nextprev_post_links_none">' . __('None/Off', 'inti') . '</label></p>';
 
 	$html .= '<p><input type="radio" id="nextprev_post_links_bottom" name="inti_general_options[nextprev_post_links]" value="bottom"' . checked( "bottom", $options['nextprev_post_links'], false ) . '/>';
 	$html .= '&nbsp;';
-	$html .= '<label for="nextprev_post_links_bottom">Bottom Only</label></p>';
+	$html .= '<label for="nextprev_post_links_bottom">' . __('Bottom Only', 'inti') . 'Bottom Only</label></p>';
 
 	$html .= '<p><input type="radio" id="nextprev_post_links_topbottom" name="inti_general_options[nextprev_post_links]" value="topbottom"' . checked( "topbottom", $options['nextprev_post_links'], false ) . '/>';
 	$html .= '&nbsp;';
-	$html .= '<label for="nextprev_post_links_topbottom">Top and Bottom</label></p>';
+	$html .= '<label for="nextprev_post_links_topbottom">' . __('Top and Bottom', 'inti') . '</label></p>';
 
 
 	
@@ -1205,7 +1205,7 @@ function inti_frontpage_exclude_category_callback() {
 	
 	$html = '<input type="checkbox" id="frontpage_exclude_category" name="inti_general_options[frontpage_exclude_category]" value="1"' . checked( 1, $options['frontpage_exclude_category'], false ) . '/>';
 	$html .= '&nbsp;';
-	$html .= '<label for="frontpage_exclude_category">Exclude the front page post category from the rest of the blog</label>';
+	$html .= '<label for="frontpage_exclude_category">' . __('Exclude the front page post category from the rest of the blog', 'inti') . '</label>';
 	
 	echo $html;
 
@@ -1217,7 +1217,7 @@ function inti_frontpage_breadcrumbs_callback() {
 	
 	$html = '<input type="checkbox" id="frontpage_breadcrumbs" name="inti_general_options[frontpage_breadcrumbs]" value="1"' . checked( 1, $options['frontpage_breadcrumbs'], false ) . '/>';
 	$html .= '&nbsp;';
-	$html .= '<label for="frontpage_breadcrumbs">Hide breadcrumbs on front page</label><p></p><br><br>';
+	$html .= '<label for="frontpage_breadcrumbs">' . __('Hide breadcrumbs on front page', 'inti') . '</label><p></p><br><br>';
 	
 	echo $html;
 
@@ -1229,7 +1229,7 @@ function inti_sharing_posts_callback() {
 	
 	$html = '<input type="checkbox" id="sharing_on_posts" name="inti_general_options[sharing_on_posts]" value="1"' . checked( 1, $options['sharing_on_posts'], false ) . '/>';
 	$html .= '&nbsp;';
-	$html .= '<label for="sharing_on_posts">Allow sharing buttons on blog posts</label>';
+	$html .= '<label for="sharing_on_posts">' . __('Allow sharing buttons on blog posts', 'inti') . '</label>';
 	
 	echo $html;
 
@@ -1241,7 +1241,7 @@ function inti_sharing_pages_callback() {
 	
 	$html = '<input type="checkbox" id="sharing_on_pages" name="inti_general_options[sharing_on_pages]" value="1"' . checked( 1, $options['sharing_on_pages'], false ) . '/>';
 	$html .= '&nbsp;';
-	$html .= '<label for="sharing_on_pages">Allow sharing buttons on standard pages</label>';
+	$html .= '<label for="sharing_on_pages">' . __('Allow sharing buttons on standard pages', 'inti') . '</label>';
 	
 	echo $html;
 
@@ -1291,7 +1291,7 @@ function inti_nav_social_callback() {
 	
 	$html = '<input type="checkbox" id="nav_social" name="inti_headernav_options[nav_social]" value="1"' . checked( 1, $options['nav_social'], false ) . '/>';
 	$html .= '&nbsp;';
-	$html .= '<label for="nav_social">Show social media profile icons in navigation bar</label><br><br><br><br>';
+	$html .= '<label for="nav_social">' . __('Show social media profile icons in navigation bar', 'inti') . '</label><br><br><br><br>';
 	
 	echo $html;
 
@@ -1371,7 +1371,7 @@ function inti_footer_social_callback() {
 	
 	$html = '<input type="checkbox" id="footer_social" name="inti_footer_options[footer_social]" value="1"' . checked( 1, $options['footer_social'], false ) . '/>';
 	$html .= '&nbsp;';
-	$html .= '<label for="footer_social">Show social media profile icons in footer area</label>';
+	$html .= '<label for="footer_social">' . __('Show social media profile icons in footer area', 'inti') . '</label>';
 	
 	echo $html;
 
@@ -1534,7 +1534,7 @@ function inti_social_open_new_callback($args) {
 
 	$html = '<input type="checkbox" id="social_open_new" name="inti_social_options[social_open_new]" value="1"' . checked( 1, $options['social_open_new'], false ) . '/>';
 	$html .= '&nbsp;';
-	$html .= '<label for="social_open_new">Open links to social media profiles in new tabs</label>';
+	$html .= '<label for="social_open_new">' . __('Open links to social media profiles in new tabs', 'inti') . '</label>';
 	
 	echo $html;
 } // end inti_social_open_new_callback
@@ -1543,9 +1543,9 @@ function inti_commenting_system_callback($args) {
 	
 	$options = get_option('inti_commenting_options');
 
-	$html .= '<p><input type="radio" id="commenting_system_wordpress" name="inti_commenting_options[commenting_system]" value="wordpress"' . checked( 'wordpress', $options['commenting_system'], false ) . '/>';
+	$html = '<p><input type="radio" id="commenting_system_wordpress" name="inti_commenting_options[commenting_system]" value="wordpress"' . checked( 'wordpress', $options['commenting_system'], false ) . '/>';
 	$html .= '&nbsp;';
-	$html .= '<label for="commenting_system_wordpress"><i class="fa fa-wordpress"></i> WordPress Default</label></p>';
+	$html .= '<label for="commenting_system_wordpress"><i class="fa fa-wordpress"></i> WordPress</label></p>';
 
 	$html .= '<p><input type="radio" id="commenting_system_disqus" name="inti_commenting_options[commenting_system]" value="disqus"' . checked( 'disqus', $options['commenting_system'], false ) . '/>';
 	$html .= '&nbsp;';
@@ -1572,7 +1572,7 @@ function inti_comments_on_pages_callback($args) {
 
 	$html = '<input type="checkbox" id="comments_on_pages" name="inti_commenting_options[comments_on_pages]" value="1"' . checked( 1, $options['comments_on_pages'], false ) . '/>';
 	$html .= '&nbsp;';
-	$html .= '<label for="comments_on_pages">Show comments on pages</label>';
+	$html .= '<label for="comments_on_pages">' . __('Show comments on pages', 'inti') . '</label>';
 	
 	echo $html;
 }
@@ -1583,7 +1583,7 @@ function inti_comments_show_allowed_tags_callback($args) {
 
 	$html = '<input type="checkbox" id="comments_show_allowed_tags" name="inti_commenting_options[comments_show_allowed_tags]" value="1"' . checked( 1, $options['comments_show_allowed_tags'], false ) . '/>';
 	$html .= '&nbsp;';
-	$html .= '<label for="comments_show_allowed_tags">Show allowed HTML tags message under comment box</label><p><br><br></p>';
+	$html .= '<label for="comments_show_allowed_tags">' . __('Show allowed HTML tags message under comment box', 'inti') . '</label><p><br><br></p>';
 	
 	echo $html;
 }
@@ -1718,13 +1718,13 @@ function inti_fbcomments_colorscheme_callback($args) {
 
 	// Render the output
    
-	$html .= '<input type="radio" id="fbcomments_colorscheme_light" name="inti_commenting_options[fbcomments_colorscheme]" value="light"' . checked( 'light', $options['fbcomments_colorscheme'], false ) . '/>';
+	$html = '<input type="radio" id="fbcomments_colorscheme_light" name="inti_commenting_options[fbcomments_colorscheme]" value="light"' . checked( 'light', $options['fbcomments_colorscheme'], false ) . '/>';
 	$html .= '&nbsp;';
-	$html .= '<label for="fbcomments_colorscheme_light">Light</label>';
+	$html .= '<label for="fbcomments_colorscheme_light">' . __('Light', 'inti') . '</label>';
 	$html .= '&nbsp;&nbsp;&nbsp;&nbsp;';
 	$html .= '<input type="radio" id="fbcomments_colorscheme_dark" name="inti_commenting_options[fbcomments_colorscheme]" value="dark"' . checked( 'dark', $options['fbcomments_colorscheme'], false ) . '/>';
 	$html .= '&nbsp;';
-	$html .= '<label for="inti_commenting_options[fbcomments_colorscheme]">Dark</label>';
+	$html .= '<label for="inti_commenting_options[fbcomments_colorscheme]">' . __('Dark', 'inti') . '</label>';
 
 	echo $html;
 	// Here, we'll take the first argument of the array and add it to a label next to the input

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Inti Foundation\n"
-"POT-Creation-Date: 2016-05-19 22:11-0500\n"
-"PO-Revision-Date: 2016-05-19 22:12-0500\n"
+"POT-Creation-Date: 2016-05-20 17:45-0500\n"
+"PO-Revision-Date: 2016-05-20 18:00-0500\n"
 "Last-Translator: \n"
 "Language-Team: Waqa Studios <team@waqa.pe>\n"
 "Language: es_ES\n"
@@ -57,7 +57,7 @@ msgstr "Tu comentario está esperando aprobación. "
 
 #: comments.php:50
 msgid "Please do not load this page directly. Thanks!"
-msgstr "Por favor no cargar esta página directamente. Gracias!"
+msgstr "Por favor no cargar esta página directamente. ¡Gracias!"
 
 #: comments.php:55
 msgid "This post is password protected. Enter the password to view comments."
@@ -67,18 +67,18 @@ msgstr ""
 
 #: comments.php:68 framework/functions/post-meta.php:254
 msgid "Leave a comment"
-msgstr "Dejar un comentario"
+msgstr "Deja un comentario"
 
 #: comments.php:68
 #, php-format
 msgid "Leave a comment for %s"
-msgstr "Dejar un comentario para %s"
+msgstr "Deja un comentario para %s"
 
 #: comments.php:71
 #, php-format
 msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
 msgstr ""
-"Debes tener una <a href=\"%s\">sesión iniciada</a> para dejar un comentario."
+"Debe tener una <a href=\"%s\">sesión iniciada</a> para dejar un comentario."
 
 #: comments.php:75
 #, php-format
@@ -115,7 +115,7 @@ msgstr "Comentario"
 
 #: comments.php:95
 msgid "You can use these tags:"
-msgstr "Puedes usar estas etiquetas:"
+msgstr "Puede usar estas etiquetas:"
 
 #: comments.php:97
 msgid "Submit Comment"
@@ -143,7 +143,7 @@ msgstr "%s"
 
 #: framework/content/content-posts-pages.php:70
 msgid "Featured Post"
-msgstr "Entras Destacada"
+msgstr "Entrada Destacada"
 
 #: framework/content/content-posts-pages.php:204
 #: framework/content/content-posts-pages.php:231
@@ -171,12 +171,12 @@ msgstr "Seleccionar Página"
 
 #: framework/customizer/customize.php:364
 msgid "General/Header"
-msgstr "Cabecera"
+msgstr "General/Cabecera"
 
 #: framework/customizer/customize.php:375
 #: framework/customizer/customize.php:456
 msgid "Site Title"
-msgstr "Título de Sitio"
+msgstr "Título del Sitio"
 
 #: framework/customizer/customize.php:387
 msgid "Tagline"
@@ -196,11 +196,11 @@ msgstr "Mostrar Logo/Banner principal del Sitio en dispositivo móvil"
 
 #: framework/customizer/customize.php:425
 msgid "Uncheck if you will show the logo in Mobile Nav"
-msgstr "Desactivar la casilla para mostrar el logo en dispositivo móvil"
+msgstr "Desactiva la casilla para mostrar el logo en dispositivo móvil"
 
 #: framework/customizer/customize.php:437
 msgid "Site Logo for Mobile Nav"
-msgstr "Logo del Sitio para versión en barra de menú para navegador móvil"
+msgstr "Logo del Sitio en barra de menú para navegador móvil"
 
 #: framework/customizer/customize.php:450
 msgid "Show Logo/Title in Mobile Nav"
@@ -224,11 +224,11 @@ msgstr "Icono Apple Touch"
 
 #: framework/customizer/customize.php:491
 msgid "Windows Tile Color"
-msgstr "Color Windows Tile "
+msgstr "Color de Mosaicos"
 
 #: framework/customizer/customize.php:503
 msgid "Windows Tile Image"
-msgstr "Icono Windows Tile Image"
+msgstr "Imagen del Mosaico"
 
 #: framework/customizer/customize.php:515
 msgid "Theme Color"
@@ -236,43 +236,44 @@ msgstr "Color de Tema"
 
 #: framework/customizer/customize.php:526
 msgid "Page Options"
-msgstr "Opciones para Páginas"
+msgstr "Opciones de Página"
 
 #: framework/customizer/customize.php:536
 msgid "Default Layout"
-msgstr "Diseño predeterminado"
+msgstr "Diseño Predeterminado"
 
 #: framework/customizer/customize.php:537
 msgid ""
 "Default layout for all pages, posts, archives and custom types throughout "
 "the site if not individually changed or overwritten below"
 msgstr ""
-"Diseño predeterminado para Entradas, Páginas, Archivos en todo el sitio que "
-"si no han sido cambiados individualmente abajo"
+"Diseño de estructura predeterminado para todas las entradas, páginas, "
+"archivos y tipos de posts customizados en todo el sitio, si no han sido "
+"individualmente cambiados o sobrescritos abajo"
 
 #: framework/customizer/customize.php:550 framework/metaboxes/metaboxes.php:55
 msgid "Page Layout"
-msgstr "Diseño de Páginas Individuales"
+msgstr "Diseño de estructura de Páginas"
 
 #: framework/customizer/customize.php:551
 msgid "Default layout for static pages"
-msgstr "Diseño predeterminado para páginas estáticas"
+msgstr "Diseño de estructura predeterminado para Páginas estáticas"
 
 #: framework/customizer/customize.php:564
 msgid "Single Post Layout"
-msgstr "Diseño de Entradas Individuales"
+msgstr "Diseño de estructura de Entradas individuales"
 
 #: framework/customizer/customize.php:565
 msgid "Default layout for blog posts"
-msgstr "Diseño predeterminado de Entradas"
+msgstr "Diseño de estructura predeterminado de Entradas"
 
 #: framework/customizer/customize.php:578
 msgid "Post Archive Layout"
-msgstr "Diseño de Archivo de Entradas"
+msgstr "Diseño de estructura de Archivo de Entradas"
 
 #: framework/customizer/customize.php:579
 msgid "Default layout for blog post archives and index"
-msgstr "Diseño predeterminado para Entradas, Archivos e Índice"
+msgstr "Diseño de estructura predeterminado para Entradas, Archivos e Índice"
 
 #: framework/customizer/customize.php:592
 msgid "Sticky Sidebars"
@@ -306,11 +307,11 @@ msgstr "Tamaño de Títulos (Entradas y Páginas)"
 
 #: framework/customizer/customize.php:651
 msgid "General Link Color"
-msgstr "Color predeterminado de enlace"
+msgstr "Color predeterminado de enlaces"
 
 #: framework/customizer/customize.php:665
 msgid "General Link Hover Color"
-msgstr "Color predeterminado de enlace presionado"
+msgstr "Color predeterminado de enlaces presionados"
 
 #: framework/customizer/customize.php:674
 msgid "Content Styles"
@@ -330,11 +331,11 @@ msgstr "Color de Párrafo"
 
 #: framework/customizer/customize.php:729
 msgid "Content Link Color"
-msgstr "Color de enlace dentro de contenido"
+msgstr "Color de enlaces dentro de contenido"
 
 #: framework/customizer/customize.php:743
 msgid "Content Link Hover Color"
-msgstr "Color de enlace presionado dentro de contenido"
+msgstr "Color de enlaces presionados dentro de contenido"
 
 #: framework/customizer/customize.php:756
 msgid "H1 Font"
@@ -432,7 +433,7 @@ msgstr "Iniciar Sesión"
 
 #: framework/customizer/customize.php:1059
 msgid "Login Logo"
-msgstr "Logo Página de Iniciar Sesión"
+msgstr "Logo de Inicio de Sesión"
 
 #: framework/customizer/customize.php:1072
 msgid "Logo Link URL"
@@ -444,15 +445,15 @@ msgstr "Atributo de Título de Logo"
 
 #: framework/extensions/comments.php:17
 msgid "No Responses to"
-msgstr "Ninguna respuesta a"
+msgstr "No hay respuestas para"
 
 #: framework/extensions/comments.php:17
 msgid "One Response to"
-msgstr "Una respuesta a"
+msgstr "Una respuesta para"
 
 #: framework/extensions/comments.php:17
 msgid "% Responses to"
-msgstr "% Respuestas a"
+msgstr "% Respuestas para"
 
 #: framework/extensions/comments.php:57
 #, php-format
@@ -483,7 +484,8 @@ msgstr "Sidebar Principal"
 #: framework/extensions/sidebars.php:26
 msgid "Main sidebar for archives, posts and pages with a 2 column layout"
 msgstr ""
-"Sidebar principal para archivos, entradas y páginas con diseño a 2 columnas"
+"Sidebar principal para archivos, entradas y páginas con diseño de estructura "
+"a 2 columnas"
 
 #: framework/extensions/sidebars.php:37
 #: framework/theme-options/inti-options.php:374
@@ -492,7 +494,7 @@ msgstr "Página Principal"
 
 #: framework/extensions/sidebars.php:39
 msgid "Main sidebar for the front page template"
-msgstr "Sidebar principal para modelo de página de inicio"
+msgstr "Sidebar principal para el modelo de página de inicio"
 
 #: framework/extensions/sidebars.php:55
 msgid "Footer widget area"
@@ -529,11 +531,11 @@ msgstr "Una columna, Angosta"
 
 #: framework/functions/pagination.php:48
 msgid "Older posts"
-msgstr "Anteriores"
+msgstr "Entradas anteriores"
 
 #: framework/functions/pagination.php:51
 msgid "Newer posts"
-msgstr "Siguientes"
+msgstr "Entradas recientes"
 
 #: framework/functions/pagination.php:78
 msgid "&laquo; Previous"
@@ -550,7 +552,7 @@ msgstr "&hellip;"
 #: framework/functions/post-meta.php:26 framework/functions/post-meta.php:32
 #, php-format
 msgid "View all posts in %s"
-msgstr "Ver entradas en %s"
+msgstr "Ver todas las entradas en %s"
 
 #: framework/functions/post-meta.php:58
 #, php-format
@@ -565,7 +567,7 @@ msgstr "Ver todas las entradas de %s %s"
 #: framework/functions/post-meta.php:97
 #, php-format
 msgid "View all posts by %s"
-msgstr "Ver entradas escritas por %s"
+msgstr "Ver todas las entradas de %s"
 
 #: framework/functions/post-meta.php:151 framework/functions/post-meta.php:217
 msgid "by"
@@ -573,7 +575,7 @@ msgstr "por"
 
 #: framework/functions/post-meta.php:153 framework/functions/post-meta.php:219
 msgid "Tags:"
-msgstr "Etiquetas"
+msgstr "Etiquetas:"
 
 #: framework/functions/post-meta.php:157 framework/functions/post-meta.php:223
 msgid "Posted: "
@@ -593,7 +595,7 @@ msgstr "Configuración"
 
 #: framework/metaboxes/metaboxes.php:56
 msgid "Decide whether to show or hide a sidebar and where to place it."
-msgstr "Decidice si mostrar u ocultar el sidebar y dónde colocarlo."
+msgstr "Decide si mostrar u ocultar el sidebar y dónde colocarlo."
 
 #: framework/metaboxes/metaboxes.php:64
 msgid "Sticky Sidebar"
@@ -604,176 +606,172 @@ msgid "Button"
 msgstr "Botón"
 
 #: framework/shortcodes/tinymce-functions.php:114
-msgid "Split Button"
-msgstr "Botón dividido"
-
-#: framework/shortcodes/tinymce-functions.php:115
 msgid "Dropdown Button"
 msgstr "Botón desplegable"
 
-#: framework/shortcodes/tinymce-functions.php:116
+#: framework/shortcodes/tinymce-functions.php:115
 #: framework/widgets/flexvideo.php:11
 msgid "Video"
 msgstr "Video"
 
-#: framework/shortcodes/tinymce-functions.php:117
+#: framework/shortcodes/tinymce-functions.php:116
 msgid "Callout"
 msgstr "Llamada de atención"
 
-#: framework/shortcodes/tinymce-functions.php:118
+#: framework/shortcodes/tinymce-functions.php:117
 msgid "Accordion"
 msgstr "Acordeón"
 
-#: framework/shortcodes/tinymce-functions.php:119
+#: framework/shortcodes/tinymce-functions.php:118
 msgid "Tabs"
 msgstr "Pestañas"
 
-#: framework/shortcodes/tinymce-functions.php:120
+#: framework/shortcodes/tinymce-functions.php:119
 msgid "Tooltip"
 msgstr "Información de herramientas"
 
-#: framework/shortcodes/tinymce-functions.php:121
+#: framework/shortcodes/tinymce-functions.php:120
 msgid "Label"
 msgstr "Etiqueta"
 
-#: framework/shortcodes/tinymce-functions.php:177
+#: framework/shortcodes/tinymce-functions.php:176
 msgid "Buttons are convenient tools when you need more traditional actions."
 msgstr ""
-"Los Botones son herramientas convenientes cuando se necesitan acciones más "
+"Los Botones son herramientas convenientes cuando se necesita acciones más "
 "tradicionales."
 
-#: framework/shortcodes/tinymce-functions.php:182
-#: framework/shortcodes/tinymce-functions.php:269
+#: framework/shortcodes/tinymce-functions.php:181
+#: framework/shortcodes/tinymce-functions.php:268
 msgid "Button Text"
 msgstr "Texto de Botón"
 
-#: framework/shortcodes/tinymce-functions.php:191
+#: framework/shortcodes/tinymce-functions.php:190
 msgid "URL"
 msgstr "URL"
 
-#: framework/shortcodes/tinymce-functions.php:200
+#: framework/shortcodes/tinymce-functions.php:199
 msgid "Open link in a new window/tab"
 msgstr "Abrir enlace en una nueva página/pestaña"
 
-#: framework/shortcodes/tinymce-functions.php:209
-#: framework/shortcodes/tinymce-functions.php:278
-#: framework/shortcodes/tinymce-functions.php:423
+#: framework/shortcodes/tinymce-functions.php:208
+#: framework/shortcodes/tinymce-functions.php:277
+#: framework/shortcodes/tinymce-functions.php:422
 #: framework/shortcodes/tinymce-functions.php:627
 #: framework/shortcodes/tinymce-functions.php:695
 msgid "Type"
 msgstr "Tipo"
 
-#: framework/shortcodes/tinymce-functions.php:214
-#: framework/shortcodes/tinymce-functions.php:283
+#: framework/shortcodes/tinymce-functions.php:213
+#: framework/shortcodes/tinymce-functions.php:282
 #: framework/shortcodes/tinymce-functions.php:428
 #: framework/shortcodes/tinymce-functions.php:700
 msgid "Primary"
 msgstr "Principal"
 
-#: framework/shortcodes/tinymce-functions.php:215
-#: framework/shortcodes/tinymce-functions.php:284
+#: framework/shortcodes/tinymce-functions.php:214
+#: framework/shortcodes/tinymce-functions.php:283
 #: framework/shortcodes/tinymce-functions.php:429
 #: framework/shortcodes/tinymce-functions.php:701
 msgid "Secondary"
 msgstr "Secundario"
 
-#: framework/shortcodes/tinymce-functions.php:216
-#: framework/shortcodes/tinymce-functions.php:285
+#: framework/shortcodes/tinymce-functions.php:215
+#: framework/shortcodes/tinymce-functions.php:284
 #: framework/shortcodes/tinymce-functions.php:430
 #: framework/shortcodes/tinymce-functions.php:702
 msgid "Success"
 msgstr "Éxito"
 
-#: framework/shortcodes/tinymce-functions.php:217
-#: framework/shortcodes/tinymce-functions.php:286
+#: framework/shortcodes/tinymce-functions.php:216
+#: framework/shortcodes/tinymce-functions.php:285
 #: framework/shortcodes/tinymce-functions.php:431
 #: framework/shortcodes/tinymce-functions.php:704
 msgid "Alert"
 msgstr "Alerta"
 
-#: framework/shortcodes/tinymce-functions.php:218
-#: framework/shortcodes/tinymce-functions.php:287
+#: framework/shortcodes/tinymce-functions.php:217
+#: framework/shortcodes/tinymce-functions.php:286
 #: framework/shortcodes/tinymce-functions.php:432
 #: framework/shortcodes/tinymce-functions.php:703
 msgid "Warning"
 msgstr "Advertencia"
 
-#: framework/shortcodes/tinymce-functions.php:219
-#: framework/shortcodes/tinymce-functions.php:288
+#: framework/shortcodes/tinymce-functions.php:218
+#: framework/shortcodes/tinymce-functions.php:287
 msgid "Disabled"
 msgstr "Desactivado"
 
-#: framework/shortcodes/tinymce-functions.php:220
+#: framework/shortcodes/tinymce-functions.php:219
 msgid "Primary Hollow"
-msgstr "Botón Bordeado principal"
+msgstr "Botón (vacío con borde) principal"
+
+#: framework/shortcodes/tinymce-functions.php:220
+msgid "Secondary Hollow"
+msgstr "Botón (vacío con borde) secundario"
 
 #: framework/shortcodes/tinymce-functions.php:221
-msgid "Secondary Hollow"
-msgstr "Botón Bordeado secundario"
+msgid "Success Hollow"
+msgstr "Botón (vacío con borde) de éxito"
 
 #: framework/shortcodes/tinymce-functions.php:222
-msgid "Success Hollow"
-msgstr "Botón Bordeado de éxito"
+msgid "Alert Hollow"
+msgstr "Botón (vacío con borde) de alerta"
 
 #: framework/shortcodes/tinymce-functions.php:223
-msgid "Alert Hollow"
-msgstr "Botón bordeado de alerta"
+msgid "Warning Hollow"
+msgstr "Botón (vacío con borde) de advertencia"
 
 #: framework/shortcodes/tinymce-functions.php:224
-msgid "Warning Hollow"
-msgstr "Botón bordeado de advertencia"
-
-#: framework/shortcodes/tinymce-functions.php:225
 msgid "Disabled Hollow"
-msgstr "Botón Bordeado de desactivado"
+msgstr "Botón (vacío con borde) desactivado"
 
-#: framework/shortcodes/tinymce-functions.php:231
-#: framework/shortcodes/tinymce-functions.php:294
+#: framework/shortcodes/tinymce-functions.php:230
+#: framework/shortcodes/tinymce-functions.php:293
 #: framework/shortcodes/tinymce-functions.php:438
 #: framework/shortcodes/tinymce-functions.php:557
 msgid "Style"
 msgstr "Estilo"
 
-#: framework/shortcodes/tinymce-functions.php:236
-#: framework/shortcodes/tinymce-functions.php:299
+#: framework/shortcodes/tinymce-functions.php:235
+#: framework/shortcodes/tinymce-functions.php:298
 #: framework/shortcodes/tinymce-functions.php:443
 msgid "Default"
 msgstr "Defecto"
 
-#: framework/shortcodes/tinymce-functions.php:237
-#: framework/shortcodes/tinymce-functions.php:300
+#: framework/shortcodes/tinymce-functions.php:236
+#: framework/shortcodes/tinymce-functions.php:299
 msgid "Tiny"
 msgstr "Muy pequeño"
 
-#: framework/shortcodes/tinymce-functions.php:238
-#: framework/shortcodes/tinymce-functions.php:301
+#: framework/shortcodes/tinymce-functions.php:237
+#: framework/shortcodes/tinymce-functions.php:300
 #: framework/shortcodes/tinymce-functions.php:444
 msgid "Small"
 msgstr "Pequeño"
 
-#: framework/shortcodes/tinymce-functions.php:239
-#: framework/shortcodes/tinymce-functions.php:302
+#: framework/shortcodes/tinymce-functions.php:238
+#: framework/shortcodes/tinymce-functions.php:301
 #: framework/shortcodes/tinymce-functions.php:445
 msgid "Large"
 msgstr "Grande"
 
-#: framework/shortcodes/tinymce-functions.php:240
+#: framework/shortcodes/tinymce-functions.php:239
 msgid "Default Expanded"
 msgstr "Expandido por defecto"
 
-#: framework/shortcodes/tinymce-functions.php:241
+#: framework/shortcodes/tinymce-functions.php:240
 msgid "Tiny Expanded"
 msgstr "Expandido muy pequeño"
 
-#: framework/shortcodes/tinymce-functions.php:242
+#: framework/shortcodes/tinymce-functions.php:241
 msgid "Small Expanded"
 msgstr "Expandido pequeño"
 
-#: framework/shortcodes/tinymce-functions.php:243
+#: framework/shortcodes/tinymce-functions.php:242
 msgid "Large Expanded"
 msgstr "Expandido grande"
 
-#: framework/shortcodes/tinymce-functions.php:264
+#: framework/shortcodes/tinymce-functions.php:263
 msgid ""
 "Dropdown Buttons aren't clickable on their own, clicking them displays more "
 "options."
@@ -781,90 +779,94 @@ msgstr ""
 "Los Botones desplegables no tienen la acción en sí mismos, al hacer click se "
 "despliegan más opciones."
 
-#: framework/shortcodes/tinymce-functions.php:303
+#: framework/shortcodes/tinymce-functions.php:302
 msgid "Expanded"
 msgstr "Expandido"
 
-#: framework/shortcodes/tinymce-functions.php:309
+#: framework/shortcodes/tinymce-functions.php:308
 msgid "Reveal Content Alignment"
 msgstr "Revelar alineación de contenido"
 
-#: framework/shortcodes/tinymce-functions.php:314
+#: framework/shortcodes/tinymce-functions.php:313
 msgid "Below Button"
 msgstr "Debajo del Botón"
 
-#: framework/shortcodes/tinymce-functions.php:315
+#: framework/shortcodes/tinymce-functions.php:314
 msgid "Above Button"
 msgstr "Arriba del Botón"
 
-#: framework/shortcodes/tinymce-functions.php:316
+#: framework/shortcodes/tinymce-functions.php:315
 msgid "Right of Button"
 msgstr "A la derecha del Botón"
 
-#: framework/shortcodes/tinymce-functions.php:317
+#: framework/shortcodes/tinymce-functions.php:316
 msgid "Left of Button"
 msgstr "A la izquierda del Botón"
 
-#: framework/shortcodes/tinymce-functions.php:323
+#: framework/shortcodes/tinymce-functions.php:322
 msgid "Reveal on hover"
 msgstr "Revelar Botón presionado"
 
-#: framework/shortcodes/tinymce-functions.php:332
+#: framework/shortcodes/tinymce-functions.php:331
 msgid "Show arrow icon"
 msgstr "Mostrar ícono de flecha"
 
-#: framework/shortcodes/tinymce-functions.php:341
+#: framework/shortcodes/tinymce-functions.php:340
 msgid "Revealed Content"
 msgstr "Contenido revelado"
 
-#: framework/shortcodes/tinymce-functions.php:368
+#: framework/shortcodes/tinymce-functions.php:367
 #: framework/widgets/flexvideo.php:83
 msgid "Aspect Ratio"
 msgstr "Relación de Aspecto"
 
-#: framework/shortcodes/tinymce-functions.php:373
+#: framework/shortcodes/tinymce-functions.php:372
 #: framework/widgets/flexvideo.php:85
 msgid "Widescreen"
 msgstr "Widescreen"
 
-#: framework/shortcodes/tinymce-functions.php:374
+#: framework/shortcodes/tinymce-functions.php:373
 #: framework/widgets/flexvideo.php:86
 msgid "4:3"
 msgstr "4:3"
 
-#: framework/shortcodes/tinymce-functions.php:380
+#: framework/shortcodes/tinymce-functions.php:379
 msgid "Source"
 msgstr "Fuente"
 
-#: framework/shortcodes/tinymce-functions.php:385
+#: framework/shortcodes/tinymce-functions.php:384
 #: framework/widgets/flexvideo.php:92
 msgid "YouTube"
 msgstr "YouTube"
 
-#: framework/shortcodes/tinymce-functions.php:386
+#: framework/shortcodes/tinymce-functions.php:385
 #: framework/widgets/flexvideo.php:93
 msgid "Vimeo"
 msgstr "Vimeo"
 
-#: framework/shortcodes/tinymce-functions.php:387
+#: framework/shortcodes/tinymce-functions.php:386
 #: framework/widgets/flexvideo.php:94
 msgid "Wistia"
 msgstr "Wistia"
 
-#: framework/shortcodes/tinymce-functions.php:393
+#: framework/shortcodes/tinymce-functions.php:392
 msgid "Video ID"
 msgstr "ID de Video"
 
-#: framework/shortcodes/tinymce-functions.php:418
+#: framework/shortcodes/tinymce-functions.php:417
 msgid ""
 "Outline sections of your page easily but wrapping them in a box. Set the "
 "area as a 'closable alert' to make an alert box, which can communicate "
 "success, warnings, failure or just information."
 msgstr ""
-"Resalta secciones de la página con facilidad, agrupados en una caja. "
+"Resalta secciones de la página con facilidad, agrupándolos en una caja. "
 "Establece el área como una \"alerta que se puede cerrar” para hacer un "
-"cuadro de alerta, que puede comunicar el éxito, advertencias, falla o "
+"cuadro de alerta, el cual puede comunicar éxito, advertencias, falla o "
 "simplemente información."
+
+#: framework/shortcodes/tinymce-functions.php:427
+msgid "None"
+msgstr "Ninguno"
 
 #: framework/shortcodes/tinymce-functions.php:451
 msgid "Callout Content"
@@ -930,8 +932,8 @@ msgid ""
 "anything else in your page."
 msgstr ""
 "Lo atributos son una forma rápida de proporcionar información adicional en "
-"un término o acción en una página. Se puede envolver alrededor de las "
-"palabras, estos botones, imágenes o cualquier otra cosa en su página."
+"un término o acción en una página. Se puede envolver alrededor de palabras, "
+"botones, imágenes o cualquier otra cosa en su página."
 
 #: framework/shortcodes/tinymce-functions.php:618
 #: framework/shortcodes/tinymce-functions.php:686
@@ -999,7 +1001,7 @@ msgstr "Seleccionar Shortcodes"
 
 #: framework/shortcodes/tinymce-interface.php:38
 msgid "Your shortcode"
-msgstr "Tu shortcode"
+msgstr "Su shortcode"
 
 #: framework/shortcodes/tinymce-interface.php:47
 msgid "Insert Shortcode"
@@ -1011,7 +1013,7 @@ msgstr "Insertar Shortcode"
 #: framework/theme-options/inti-options.php:51
 #: framework/theme-options/inti-options.php:135
 msgid "Inti Options"
-msgstr "Opiniones de Inti"
+msgstr "Opciones de Inti"
 
 #: framework/theme-options/inti-options.php:59
 #: framework/theme-options/inti-options.php:60
@@ -1023,7 +1025,7 @@ msgstr "Opciones Generales"
 #: framework/theme-options/inti-options.php:112
 #: framework/theme-options/inti-options.php:513
 msgid "Header/Navigation"
-msgstr "Cabeza de Página/Navigación"
+msgstr "Encabezado de Página/Navegación"
 
 #: framework/theme-options/inti-options.php:77
 #: framework/theme-options/inti-options.php:78
@@ -1037,7 +1039,7 @@ msgstr "Pie de Página/Analytics"
 #: framework/theme-options/inti-options.php:114
 #: framework/theme-options/inti-options.php:645
 msgid "Social Media Profiles"
-msgstr "Redes Sociales"
+msgstr "Perfil de Redes Sociales"
 
 #: framework/theme-options/inti-options.php:95
 #: framework/theme-options/inti-options.php:96
@@ -1063,14 +1065,14 @@ msgstr "¿Cuántos caracteres quieres mostrar en el extracto de texto?"
 
 #: framework/theme-options/inti-options.php:317
 msgid "Read More text"
-msgstr "Text ‘Leer Más’"
+msgstr "Texto ‘Leer Más’"
 
 #: framework/theme-options/inti-options.php:322
 msgid ""
 "After the excerpt there's a button or link with this text to continue "
 "reading."
 msgstr ""
-"Debajo del extracto hay un botón o enlace de este texto para continuar "
+"Debajo del extracto hay un botón o enlace con este texto para continuar "
 "leyendo."
 
 #: framework/theme-options/inti-options.php:328
@@ -1102,23 +1104,23 @@ msgid ""
 "Move between lists of posts in archives with number or Next/Previous links"
 msgstr ""
 "Moverse entre las listas de entradas en los archivos por medio de enlaces "
-"númerados o Siguiente / Anterior"
+"numerados o Siguiente/Anterior"
 
 #: framework/theme-options/inti-options.php:361
 msgid "Links to Next/Previous posts on single posts"
-msgstr "Enlaces a Siguiente/Anterior entrada en entradas individuales"
+msgstr "Enlaces de Siguiente/Anterior entrada en entradas individuales"
 
 #: framework/theme-options/inti-options.php:366
 msgid ""
 "Move from one post to the next or previous post directly with Next/Previous "
 "links"
 msgstr ""
-"Pasar de una entrada a la siguiente o la anterior publicación directamente "
+"Pasa de una entrada a la siguiente o la anterior publicación directamente "
 "con los enlaces de Siguiente/Anterior"
 
 #: framework/theme-options/inti-options.php:381
 msgid "Post Category to display"
-msgstr "Categoría a mostrar"
+msgstr "Categoría de entrada a mostrar"
 
 #: framework/theme-options/inti-options.php:389
 msgid "Number of posts to display"
@@ -1126,15 +1128,16 @@ msgstr "Cantidad de entradas a mostrar"
 
 #: framework/theme-options/inti-options.php:397
 msgid "Number of columns"
-msgstr "Cantidad de columnas"
+msgstr "Número de columnas"
 
 #: framework/theme-options/inti-options.php:405
 msgid "Exclude front page category"
-msgstr "Excluir de página principal"
+msgstr "Excluir categoría de página principal"
 
 #: framework/theme-options/inti-options.php:413
+#: framework/theme-options/inti-options.php:1220
 msgid "Hide breadcrumbs on front page"
-msgstr "Esconder ‘migas de pan’ de página principal"
+msgstr "Esconder ‘migas de pan’ de la página principal"
 
 #: framework/theme-options/inti-options.php:423
 msgid "Sharing"
@@ -1160,22 +1163,54 @@ msgstr "404"
 msgid "Message to display when page not found"
 msgstr "Mensaje a mostrar para una página no encontrada"
 
+#: framework/theme-options/inti-options.php:520
+msgid "Social media icons on nav bar"
+msgstr "Iconos de redes sociales en barra de navegación"
+
+#: framework/theme-options/inti-options.php:528
+msgid "Custom JavaScript in head"
+msgstr "JavaScript personalizado en el encabezado"
+
 #: framework/theme-options/inti-options.php:533
 msgid "Most custom JavaScript should go in the footer."
 msgstr "La mayoría los JavaScript personalizados deben ir en el pie de página."
 
+#: framework/theme-options/inti-options.php:539
+msgid "Custom CSS in head"
+msgstr "CSS personalizado en el encabezado"
+
+#: framework/theme-options/inti-options.php:547
+msgid "Custom Meta Tags in head"
+msgstr "Meta Tags personalizados en el encabezado"
+
+#: framework/theme-options/inti-options.php:555
+msgid "Custom Code immediately after body"
+msgstr "Código personalizado inmediatamente después del cuerpo"
+
+#: framework/theme-options/inti-options.php:593
+msgid "Social media icons in footer"
+msgstr "Iconos de redes sociales en el pie de página"
+
+#: framework/theme-options/inti-options.php:601
+msgid "Google Analytics ID"
+msgstr "ID de Google Analytics"
+
 #: framework/theme-options/inti-options.php:606
 msgid "Enter Your Analytics site ID (e.g. UA-XXXXX-X) here."
-msgstr "Agrega el ID de Analytics ID (e.g. UA-XXXXX-X) aquí."
+msgstr "Ingresa el ID de Analytics de tu sitio web (e.g. UA-XXXXX-X) aquí."
+
+#: framework/theme-options/inti-options.php:612
+msgid "Custom JavaScript in footer"
+msgstr "Java Script personalizado en el pie de página"
 
 #: framework/theme-options/inti-options.php:617
 msgid ""
 "Add custom javascript code to the footer (best place), modify the copyright "
 "text and set up other custom footer features."
 msgstr ""
-"Añadir un código JavaScript personalizado al pie de página (mejor lugar), "
-"modificar el texto de derechos de autor y otras características establecidas "
-"en el pie de página personalizado."
+"Ingresa un código personalizado de JavaScript al pie de página (mejor "
+"lugar), modifica el texto de derechos de autor y establecer otras "
+"características en el pie de página."
 
 #: framework/theme-options/inti-options.php:658
 #: framework/theme-options/inti-options.php:669
@@ -1188,22 +1223,36 @@ msgstr ""
 msgid "Complete URL"
 msgstr "URL Completo"
 
+#: framework/theme-options/inti-options.php:741
+msgid "Open links in new tabs"
+msgstr "Abrir enlaces en una nueva pestaña"
+
 #: framework/theme-options/inti-options.php:746
+#: framework/theme-options/inti-options.php:1537
 msgid "Open links to social media profiles in new tabs"
 msgstr "Abrir enlaces a perfiles de redes sociales en nuevas pestañas"
 
 #: framework/theme-options/inti-options.php:776
+#: framework/theme-options/inti-options.php:782
 msgid "Commenting System"
 msgstr "Sistema de Comentarios"
+
+#: framework/theme-options/inti-options.php:792
+msgid "Comments on pages"
+msgstr "Comentarios en páginas"
 
 #: framework/theme-options/inti-options.php:797
 msgid ""
 "By default comments are shown on pages and posts. Here you can hide them on "
 "pages. To turn comments off altogether, see Settings -> Discussion"
 msgstr ""
-"Por defecto los comentarios se muestran en las páginas y entradas. Aquí se "
-"pueden ocultar en las páginas. Para desactivar todos los comentarios a la "
-"vez, ver Ajustes -> Discusión"
+"Por defecto los comentarios se muestran en páginas y entradas. Aquí se "
+"pueden ocultar en páginas. Para desactivar todos los comentarios a la vez, "
+"ver Ajustes -> Discusión"
+
+#: framework/theme-options/inti-options.php:802
+msgid "Allowed tags message"
+msgstr "etiquetas permitidas en mensajes"
 
 #: framework/theme-options/inti-options.php:807
 msgid ""
@@ -1216,6 +1265,10 @@ msgstr ""
 #: framework/theme-options/inti-options.php:813
 msgid "DISQUS"
 msgstr "DISQUS"
+
+#: framework/theme-options/inti-options.php:819
+msgid "Disqus Shortname"
+msgstr "Nombre corto de Disqus"
 
 #: framework/theme-options/inti-options.php:824
 msgid ""
@@ -1234,43 +1287,63 @@ msgid ""
 "You'll need to register a Facebook App for your site. Please contact your "
 "developer if you need assistance."
 msgstr ""
-"Usted tendrá que registrar su aplicación de Facebook para su sitio. Por "
-"favor, póngase en contacto con su desarrollador si necesita ayuda."
+"Usted tendrá registrar su aplicación de Facebook para su sitio. Por favor, "
+"póngase en contacto con su desarrollador si necesita ayuda."
+
+#: framework/theme-options/inti-options.php:846
+msgid "Moderators"
+msgstr "Moderadores"
 
 #: framework/theme-options/inti-options.php:851
 msgid ""
 "By default, all users set as admins for the registered app can moderate "
-"comments. To add moderators, each Facebook Profile ID separated by a comma </"
-"strong>without spaces</strong>. Top find your Facebook Profile ID"
+"comments. To add moderators, each Facebook Profile ID should be separated by "
+"a comma <strong>without spaces</strong>. To find your Facebook Profile ID"
 msgstr ""
-"Por defecto, todos los usuarios establecidos como administradores para la "
+"Por defecto, todos los usuarios establecidos como administradores de la "
 "aplicación registrada pueden moderar los comentarios. Para agregar "
-"moderadores, cada Perfil de Facebook ID deben estar separados por una coma "
-"</ strong> sin espacios </ strong>. Para encontrar su ID de su Perfil de "
+"moderadores, cada Perfil de Facebook ID debe estar separado por una comas "
+"<strong> sin espacios </strong>. Para encontrar el ID de su Perfil de "
 "Facebook."
 
 #: framework/theme-options/inti-options.php:852
 msgid "click here"
 msgstr "presiona aquí"
 
+#: framework/theme-options/inti-options.php:857
+msgid "Language"
+msgstr "Idioma"
+
 #: framework/theme-options/inti-options.php:862
 msgid "Set this to be the same as your site language and locale."
 msgstr ""
-"Establece esto a ser el mismo idioma del sitio y la configuración local de "
-"esto."
+"Establece esto a ser el mismo idioma del sitio y la configuración local."
+
+#: framework/theme-options/inti-options.php:867
+msgid "Color Scheme"
+msgstr "Esquema de colores"
 
 #: framework/theme-options/inti-options.php:872
 msgid "For dark and light background sites."
-msgstr "Para sitios webs con fondos oscuros o claros"
+msgstr "Para sitios webs con fondos oscuros o claros."
+
+#: framework/theme-options/inti-options.php:877
+msgid "Show X Comments"
+msgstr "Mostrar X Comentarios"
 
 #: framework/theme-options/inti-options.php:882
 msgid "Number of comments to show at a time."
-msgstr "Cantidad de comentarios para mostrar."
+msgstr "Cantidad de comentarios para mostrar a la vez."
+
+#: framework/theme-options/inti-options.php:887
+#: framework/theme-options/inti-options.php:904
+msgid "Comment Area Width"
+msgstr "Ancho del Área de Comentarios"
 
 #: framework/theme-options/inti-options.php:892
 #: framework/theme-options/inti-options.php:909
 msgid "Give a width for your comment box in pixels."
-msgstr "Ancho (en pixeles) de caja de comentarios."
+msgstr "Ancho (en pixeles) de la caja de comentarios."
 
 #: framework/theme-options/inti-options.php:898
 msgid "Google+ Comments"
@@ -1290,16 +1363,16 @@ msgstr "Opciones para la Página Principal si existe la plantilla."
 
 #: framework/theme-options/inti-options.php:942
 msgid "Share posts and pages on social media platforms."
-msgstr "Compartir entradas y páginas a redes sociales"
+msgstr "Compartir entradas y páginas en redes sociales"
 
 #: framework/theme-options/inti-options.php:945
 msgid "What to show when a page is not found."
-msgstr "Que mostrar cuando no hay una página encontrada."
+msgstr "Que mostrar cuando una página no ha sido encontrada."
 
 #: framework/theme-options/inti-options.php:956
 msgid "Provide the URL to the social networks you'd like to display."
 msgstr ""
-"Proporcionar la dirección URL a las redes sociales que desea visualizar."
+"Proporcionar la dirección URL de las redes sociales que desea visualizar."
 
 #: framework/theme-options/inti-options.php:966
 msgid "Control what appears in your website's footer."
@@ -1331,16 +1404,89 @@ msgid ""
 "using Facebook."
 msgstr ""
 "Facebook requiere los siguientes datos para poder activar los comentarios "
-"que utilizan Facebook."
+"que están utilizando Facebook."
 
 #: framework/theme-options/inti-options.php:998
 msgid "Google comments are easier to work with than FB comments.."
 msgstr ""
-"Los comentarios de Google son más fáciles de manejar que los comentarios FB."
+"Los comentarios de Google son más fáciles de manejar que los comentarios del "
+"FB."
+
+#: framework/theme-options/inti-options.php:1054
+msgid "Option One (Standard)"
+msgstr "Opción Uno (Estándar)"
+
+#: framework/theme-options/inti-options.php:1058
+msgid "Option Two (Shorts)"
+msgstr "Opción Uno (Cortos)"
+
+#: framework/theme-options/inti-options.php:1073
+#: framework/theme-options/inti-options.php:1123
+msgid "None/Off"
+msgstr "Ninguno/No Mostrar"
+
+#: framework/theme-options/inti-options.php:1077
+msgid "Top Only"
+msgstr "Solo Arriba"
+
+#: framework/theme-options/inti-options.php:1081
+#: framework/theme-options/inti-options.php:1127
+msgid "Bottom Only"
+msgstr "Solo Abajo"
+
+#: framework/theme-options/inti-options.php:1085
+#: framework/theme-options/inti-options.php:1131
+msgid "Top and Bottom"
+msgstr "Arriba y Abajo"
+
+#: framework/theme-options/inti-options.php:1102
+msgid "Page Numbers"
+msgstr "Números de Páginas"
+
+#: framework/theme-options/inti-options.php:1106
+msgid "Next/Previous links"
+msgstr "Enlaces Siguiente/Anterior"
 
 #: framework/theme-options/inti-options.php:1147
 msgid "All Categories"
 msgstr "Todas las Categorías"
+
+#: framework/theme-options/inti-options.php:1208
+msgid "Exclude the front page post category from the rest of the blog"
+msgstr "Excluir la categoría usada en la página principal del índice del blog"
+
+#: framework/theme-options/inti-options.php:1232
+msgid "Allow sharing buttons on blog posts"
+msgstr "Permitir botones de compartir en entradas"
+
+#: framework/theme-options/inti-options.php:1244
+msgid "Allow sharing buttons on standard pages"
+msgstr "Permitir botones de compartir en páginas estándar"
+
+#: framework/theme-options/inti-options.php:1294
+msgid "Show social media profile icons in navigation bar"
+msgstr "Mostrar iconos de perfiles de redes sociales en la barra de navigación"
+
+#: framework/theme-options/inti-options.php:1374
+msgid "Show social media profile icons in footer area"
+msgstr "Mostrar iconos de perfiles de redes sociales en el pie de página"
+
+#: framework/theme-options/inti-options.php:1575
+msgid "Show comments on pages"
+msgstr "Mostrar comentarios en páginas"
+
+#: framework/theme-options/inti-options.php:1586
+msgid "Show allowed HTML tags message under comment box"
+msgstr ""
+"Mostrar las etiquetas de HTML permitidas debajo de cada caja de comentarios"
+
+#: framework/theme-options/inti-options.php:1723
+msgid "Light"
+msgstr "Claro"
+
+#: framework/theme-options/inti-options.php:1727
+msgid "Dark"
+msgstr "Oscuro"
 
 #: framework/widgets/flexvideo.php:12
 msgid "Add a video to your sidebar"
@@ -1381,12 +1527,14 @@ msgstr "Enlace URL:"
 
 #: framework/widgets/social-links.php:11
 msgid "Social Links"
-msgstr "Enlaces Redes Sociales"
+msgstr "Enlaces de Redes Sociales"
 
 #: framework/widgets/social-links.php:12
 msgid ""
 "Displays icons that link to social media profiles given in theme options"
-msgstr "Muestra iconos de redes sociales dados en Opciones de Tema"
+msgstr ""
+"Muestra los iconos que enlazan a los perfiles de redes sociales en Opciones "
+"de Tema"
 
 #: image.php:64
 #, php-format
@@ -1420,7 +1568,8 @@ msgid ""
 "Apologies, but no results were found. Perhaps searching will help find a "
 "related post."
 msgstr ""
-"Lo sentimos, no habían resultados. ¿Quizás podrías buscar algo relacionado?"
+"Lo sentimos, no se han encontrado resultados. Tal vez la búsqueda le ayudará "
+"a encontrar una entrada relacionada."
 
 #: search.php:58
 #, php-format
@@ -1439,6 +1588,31 @@ msgstr "Buscar"
 #, php-format
 msgid "Tag: %s"
 msgstr "Etiquetas: %s"
+
+#~ msgid ""
+#~ "By default, all users set as admins for the registered app can moderate "
+#~ "comments. To add moderators, each Facebook Profile ID separated by a "
+#~ "comma <strong>without spaces</strong>. To find your Facebook Profile ID"
+#~ msgstr ""
+#~ "Por defecto, todos los usuarios establecidos como administradores de la "
+#~ "aplicación registrada pueden moderar los comentarios. Para agregar "
+#~ "moderadores, cada Perfil de Facebook ID deben estar separados por una "
+#~ "coma <strong> sin espacios </strong>. Para encontrar su ID de su Perfil "
+#~ "de Facebook."
+
+#~ msgid ""
+#~ "By default, all users set as admins for the registered app can moderate "
+#~ "comments. To add moderators, each Facebook Profile ID separated by a "
+#~ "comma </strong>without spaces</strong>. Top find your Facebook Profile ID"
+#~ msgstr ""
+#~ "Por defecto, todos los usuarios establecidos como administradores de la "
+#~ "aplicación registrada pueden moderar los comentarios. Para agregar "
+#~ "moderadores, cada Perfil de Facebook ID deben estar separados por una "
+#~ "coma </ strong> sin espacios </ strong>. Para encontrar su ID de su "
+#~ "Perfil de Facebook."
+
+#~ msgid "Split Button"
+#~ msgstr "Botón dividido"
 
 #~ msgid "Website URL"
 #~ msgstr "Sito URL"
@@ -1466,9 +1640,6 @@ msgstr "Etiquetas: %s"
 
 #~ msgid "Linkedin URL"
 #~ msgstr "LinkedIn URL"
-
-#~ msgid "None"
-#~ msgstr "Ninguno"
 
 #~ msgid "Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec"
 #~ msgstr "Ene, Feb, Mar, Abr, May, Jun, Jul, Ago, Sep, Oct, Nov, Dic"
