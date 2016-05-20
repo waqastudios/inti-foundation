@@ -61,7 +61,7 @@ Styles for sidebars and the widgets they contain
 
 
 // Sticky Sidebars need to have extra top spacing if admin-bar is visible
-.admin-bar .sticky.is-stuck { 
+.admin-bar .sidebar .sticky.is-stuck { 
 	margin-top: 32px !important; transition: margin-top .25s ease;
 
 	@include breakpoint(782px down) { // only relevant if sticky turned on for mobile

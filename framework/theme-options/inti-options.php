@@ -303,7 +303,7 @@ if (!function_exists('inti_initialize_general_options')) {
 			// Next, we'll introduce the fields for toggling the visibility of content elements.
 			add_settings_field( 
 				'excerpt_limit',                      // ID used to identify the field throughout the theme
-				__( 'Except Limit', 'inti' ),                          // The label to the left of the option interface element
+				__( 'Excerpt Limit', 'inti' ),                          // The label to the left of the option interface element
 				'inti_excerpt_limit_callback',   // The name of the function responsible for rendering the option interface
 				'inti_general_options',    // The page on which this option will be displayed
 				'general_settings_section',         // The name of the section to which this field belongs
@@ -476,7 +476,7 @@ if (!function_exists('inti_initialize_general_options')) {
 				'inti_general_options',    // The page on which this option will be displayed
 				'general_settings_section_4',         // The name of the section to which this field belongs
 				array(                              // The array of arguments to pass to the callback. In this case, just a description.
-					__( '', 'inti' ),
+					'',
 				)
 			);
 		
@@ -784,7 +784,7 @@ if (!function_exists('inti_initialize_commenting_options')) {
 				'inti_commenting_options', 
 				'commenting_settings_section',   
 				array(                              // The array of arguments to pass to the callback. In this case, just a description.
-					__( '', 'inti' ),
+					'',
 				)        
 			);
 			add_settings_field( 

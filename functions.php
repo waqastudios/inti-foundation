@@ -101,6 +101,9 @@ if ( function_exists('childtheme_override_setup') ) {
 		
 		// editor stylesheet for TinyMCE
 		add_editor_style('/library/css/editor.css');
+
+		// load translations
+		load_theme_textdomain( 'inti' , get_template_directory() . '/languages');
 		
 	}
 }
