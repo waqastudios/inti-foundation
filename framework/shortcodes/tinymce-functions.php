@@ -96,7 +96,7 @@ add_filter( 'tiny_mce_before_init', 'inti_mce_google_fonts_array' );
  *
  */
 function inti_shortcode_interface_stylesheets($hook) {
-	if ($hook == "post.php"){
+	if ($hook == "post.php" || $hook == "post-new.php"){
 		wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/library/css/font-awesome-min.css', array(), '' );
 		wp_enqueue_style( 'inti-shortcodes-css', get_template_directory_uri() . '/framework/shortcodes/css/thickbox-shortcodes.css', array(), '' );
 	}
@@ -135,7 +135,7 @@ add_action('inti_shortcode_select', 'inti_shortcode_add_select');
  * @since 1.0.0
  */
 function inti_shortcode_enqueue_shortcodes($hook) {
-	if ($hook == "post.php"){
+	if ($hook == "post.php" || $hook == "post-new.php"){
 
 		wp_register_script('inti-shortcode-button', get_template_directory_uri() . '/framework/shortcodes/js/shortcode-button.js', '', filemtime(get_template_directory() . '/framework/shortcodes/js/shortcode-button.js'), TRUE);
 		wp_enqueue_script('inti-shortcode-button'); 
