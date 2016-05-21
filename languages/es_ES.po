@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Inti Foundation\n"
 "POT-Creation-Date: 2016-05-20 17:45-0500\n"
-"PO-Revision-Date: 2016-05-20 18:00-0500\n"
+"PO-Revision-Date: 2016-05-20 20:45-0500\n"
 "Last-Translator: \n"
 "Language-Team: Waqa Studios <team@waqa.pe>\n"
 "Language: es_ES\n"
@@ -1169,7 +1169,7 @@ msgstr "Iconos de redes sociales en barra de navegación"
 
 #: framework/theme-options/inti-options.php:528
 msgid "Custom JavaScript in head"
-msgstr "JavaScript personalizado en el encabezado"
+msgstr "JavaScript personalizado en el <em>head</em>"
 
 #: framework/theme-options/inti-options.php:533
 msgid "Most custom JavaScript should go in the footer."
@@ -1177,15 +1177,15 @@ msgstr "La mayoría los JavaScript personalizados deben ir en el pie de página.
 
 #: framework/theme-options/inti-options.php:539
 msgid "Custom CSS in head"
-msgstr "CSS personalizado en el encabezado"
+msgstr "CSS personalizado en el <em>head</em>"
 
 #: framework/theme-options/inti-options.php:547
 msgid "Custom Meta Tags in head"
-msgstr "Meta Tags personalizados en el encabezado"
+msgstr "Meta Tags personalizados en el <em>head</em>"
 
 #: framework/theme-options/inti-options.php:555
 msgid "Custom Code immediately after body"
-msgstr "Código personalizado inmediatamente después del cuerpo"
+msgstr "Código personalizado inmediatamente después del <em>body</em>"
 
 #: framework/theme-options/inti-options.php:593
 msgid "Social media icons in footer"
