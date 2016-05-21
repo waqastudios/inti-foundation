@@ -539,7 +539,10 @@ if (!function_exists('inti_initialize_headernav_options')) {
 				__('Custom CSS in head', 'inti' ),                         
 				'inti_head_css_callback',    
 				'inti_headernav_options', 
-				'headernav_settings_section'      
+				'headernav_settings_section'   ,   
+				array(                              // The array of arguments to pass to the callback. In this case, just a description.
+					__( 'Style tags are inserted for you, just add the raw CSS', 'inti' ),
+				)      
 			);
 
 			add_settings_field( 
@@ -1017,7 +1020,7 @@ function inti_excerpt_limit_callback($args) {
 	$html = '<input type="text" id="excerpt_limit" name="inti_general_options[excerpt_limit]" value="' . $data . '" />'; 
 	
 	// Here, we'll take the first argument of the array and add it to a label next to the input
-	$html .= '<p><small><label for="excerpt_limit">&nbsp;' . $args[0] . '</label></small></p>'; 
+	$html .= '<p><small><label for="excerpt_limit">&nbsp;' . (isset($args[0]) ? $args[0] : '' )  . '</label></small></p>'; 
 	
 	echo $html;
 	
@@ -1036,7 +1039,7 @@ function inti_read_more_text_callback($args) {
 	$html = '<input type="text" id="read_more_text" name="inti_general_options[read_more_text]" value="' . $data . '" />'; 
 	
 	// Here, we'll take the first argument of the array and add it to a label next to the input
-	$html .= '<p><small><label for="read_more_text">&nbsp;' . $args[0] . '</label></small></p>'; 
+	$html .= '<p><small><label for="read_more_text">&nbsp;' . (isset($args[0]) ? $args[0] : '' )  . '</label></small></p>'; 
 	
 	echo $html;
 	
@@ -1047,7 +1050,7 @@ function inti_blog_interface_callback($args) {
 	$options = get_option('inti_general_options');
 	
 
-	$html = '<div><img src="' . get_template_directory_uri() . '/framework/theme-options/images/blog_styles.png" alt="' . $args[0] . '"></div>';
+	$html = '<div><img src="' . get_template_directory_uri() . '/framework/theme-options/images/blog_styles.png" alt="' . (isset($args[0]) ? $args[0] : '' )  . '"></div>';
    
 	$html .= '<input type="radio" id="blog_interface_one" name="inti_general_options[blog_interface]" value="1"' . checked( 1, $options['blog_interface'], false ) . '/>';
 	$html .= '&nbsp;';
@@ -1058,7 +1061,7 @@ function inti_blog_interface_callback($args) {
 	$html .= '<label for="blog_interface_two">' . __('Option Two (Shorts)', 'inti') . '</label>';
 	
 	// Here, we'll take the first argument of the array and add it to a label next to the input
-	$html .= '<p><small><label for="blog_interface">&nbsp;' . $args[0] . '</label></small></p>'; 
+	$html .= '<p><small><label for="blog_interface">&nbsp;' . (isset($args[0]) ? $args[0] : '' )  . '</label></small></p>'; 
 	
 	echo $html;
 	
@@ -1087,7 +1090,7 @@ function inti_breadcrumbs_callback($args) {
 
 	
 	// Here, we'll take the first argument of the array and add it to a label next to the input
-	$html .= '<p><small><label for="breadcrumbs_none">&nbsp;' . $args[0] . '</label></small></p><br><br>'; 
+	$html .= '<p><small><label for="breadcrumbs_none">&nbsp;' . (isset($args[0]) ? $args[0] : '' )  . '</label></small></p><br><br>'; 
 	
 	echo $html;
 	
@@ -1108,7 +1111,7 @@ function inti_pagination_callback($args) {
 
 	
 	// Here, we'll take the first argument of the array and add it to a label next to the input
-	$html .= '<p><small><label for="pagination_numbered">&nbsp;' . $args[0] . '</label></small></p>'; 
+	$html .= '<p><small><label for="pagination_numbered">&nbsp;' . (isset($args[0]) ? $args[0] : '' )  . '</label></small></p>'; 
 	
 	echo $html;
 	
@@ -1133,7 +1136,7 @@ function inti_nextprev_post_links_callback($args) {
 
 	
 	// Here, we'll take the first argument of the array and add it to a label next to the input
-	$html .= '<p><small><label for="nextprev_post_links_none">&nbsp;' . $args[0] . '</label></small></p><br><br>'; 
+	$html .= '<p><small><label for="nextprev_post_links_none">&nbsp;' . (isset($args[0]) ? $args[0] : '' )  . '</label></small></p><br><br>'; 
 	
 	echo $html;
 	
@@ -1279,7 +1282,7 @@ function inti_page_not_found_callback($args) {
 	wp_editor($data, 'inti_general_options_page_not_found', array( 'textarea_name' => 'inti_general_options[page_not_found]','media_buttons' => true, 'wpautop' => true, 'textarea_rows' => '16' ));
 								
 	// Here, we'll take the first argument of the array and add it to a label next to the input
-	//$html .= '<p><small><label for="page_not_found">&nbsp;' . $args[0] . '</label></small></p>'; 
+	//$html .= '<p><small><label for="page_not_found">&nbsp;' . (isset($args[0]) ? $args[0] : '' )  . '</label></small></p>'; 
 	
    // echo $html;
 	
@@ -1308,7 +1311,7 @@ function inti_head_js_callback($args) {
 
 	$html = '<textarea id="head_js" name="inti_headernav_options[head_js]" value="1" rows="5" cols="50" class="widefat" />'.$data.'</textarea>';
 	
-	$html .= '<p><small><label for="head_js">&nbsp;' . $args[0] . '</label></small></p>'; 
+	$html .= '<p><small><label for="head_js">&nbsp;' . (isset($args[0]) ? $args[0] : '' )  . '</label></small></p>'; 
 	
 	echo $html;
 
@@ -1325,7 +1328,7 @@ function inti_head_css_callback($args) {
 
 	$html = '<textarea id="head_css" name="inti_headernav_options[head_css]" value="1" rows="5" cols="50" class="widefat" />'.$data.'</textarea>';
 	
-	$html .= '<p><small><label for="head_css">&nbsp;' . $args[0] . '</label></small></p>'; 
+	$html .= '<p><small><label for="head_css">&nbsp;' . (isset($args[0]) ? $args[0] : '' ) . '</label></small></p>'; 
 	
 	echo $html;
 
@@ -1342,7 +1345,7 @@ function inti_head_meta_callback($args) {
 
 	$html = '<textarea id="head_meta" name="inti_headernav_options[head_meta]" value="1" rows="5" cols="50" class="widefat" />'.$data.'</textarea>';
 	
-	$html .= '<p><small><label for="head_meta">&nbsp;' . $args[0] . '</label></small></p><br><br>'; 
+	$html .= '<p><small><label for="head_meta">&nbsp;' . (isset($args[0]) ? $args[0] : '' )  . '</label></small></p><br><br>'; 
 	
 	echo $html;
 
@@ -1359,7 +1362,7 @@ function inti_body_inside_callback($args) {
 
 	$html = '<textarea id="body_inside" name="inti_headernav_options[body_inside]" value="1" rows="5" cols="50" class="widefat" />'.$data.'</textarea>';
 	
-	$html .= '<p><small><label for="body_inside">&nbsp;' . $args[0] . '</label></small></p><br><br>'; 
+	$html .= '<p><small><label for="body_inside">&nbsp;' . (isset($args[0]) ? $args[0] : '' )  . '</label></small></p><br><br>'; 
 	
 	echo $html;
 
@@ -1389,7 +1392,7 @@ function inti_analytics_id_callback($args) {
 	$html = '<input type="text" id="analytics_id" name="inti_footer_options[analytics_id]" value="' . $id . '" />';
 
 	// Here, we'll take the first argument of the array and add it to a label next to the input
-	$html .= '<p><small><label for="analytics_id">&nbsp;' . $args[0] . '</label></small></p>'; 
+	$html .= '<p><small><label for="analytics_id">&nbsp;' . (isset($args[0]) ? $args[0] : '' )  . '</label></small></p>'; 
 
 	echo $html;
 	
@@ -1406,7 +1409,7 @@ function inti_footer_js_callback($args) {
 
 	$html = '<textarea id="footer_js" name="inti_footer_options[footer_js]" value="1" rows="5" cols="50" class="widefat" />'.$data.'</textarea>';
 	
-	$html .= '<small><label for="footer_js">&nbsp;' . $args[0] . '</label></small>'; 
+	$html .= '<small><label for="footer_js">&nbsp;' . (isset($args[0]) ? $args[0] : '' )  . '</label></small>'; 
 	
 	echo $html;
 
@@ -1424,7 +1427,7 @@ function inti_social_fb_callback($args) {
 	} // end if
 	
 	// Render the output
-	echo '<input type="text" id="social_fb" name="inti_social_options[social_fb]" value="' . $url . '" placeholder="' . $args[0] . '" />';
+	echo '<input type="text" id="social_fb" name="inti_social_options[social_fb]" value="' . $url . '" placeholder="' . (isset($args[0]) ? $args[0] : '' )  . '" />';
 	
 } // end inti_social_fb_callback
 
@@ -1440,7 +1443,7 @@ function inti_social_tw_callback($args) {
 	} // end if
 	
 	// Render the output
-	echo '<input type="text" id="social_tw" name="inti_social_options[social_tw]" value="' . $url . '" placeholder="' . $args[0] . '" />';
+	echo '<input type="text" id="social_tw" name="inti_social_options[social_tw]" value="' . $url . '" placeholder="' . (isset($args[0]) ? $args[0] : '' )  . '" />';
 	
 } // end inti_social_tw_callback
 
@@ -1454,7 +1457,7 @@ function inti_social_gp_callback($args) {
 	} // end if
 	
 	// Render the output
-	echo '<input type="text" id="social_gp" name="inti_social_options[social_gp]" value="' . $url . '" placeholder="' . $args[0] . '" />';
+	echo '<input type="text" id="social_gp" name="inti_social_options[social_gp]" value="' . $url . '" placeholder="' . (isset($args[0]) ? $args[0] : '' )  . '" />';
 	
 } // end inti_social_gp_callback
 
@@ -1468,7 +1471,7 @@ function inti_social_li_callback($args) {
 	} // end if
 	
 	// Render the output
-	echo '<input type="text" id="social_li" name="inti_social_options[social_li]" value="' . $url . '" placeholder="' . $args[0] . '" />';
+	echo '<input type="text" id="social_li" name="inti_social_options[social_li]" value="' . $url . '" placeholder="' . (isset($args[0]) ? $args[0] : '' )  . '" />';
 	
 } // end inti_social_li_callback
 
@@ -1482,7 +1485,7 @@ function inti_social_in_callback($args) {
 	} // end if
 	
 	// Render the output
-	echo '<input type="text" id="social_in" name="inti_social_options[social_in]" value="' . $url . '" placeholder="' . $args[0] . '" />';
+	echo '<input type="text" id="social_in" name="inti_social_options[social_in]" value="' . $url . '" placeholder="' . (isset($args[0]) ? $args[0] : '' )  . '" />';
 	
 } // end inti_social_in_callback
 
@@ -1496,7 +1499,7 @@ function inti_social_pi_callback($args) {
 	} // end if
 	
 	// Render the output
-	echo '<input type="text" id="social_pi" name="inti_social_options[social_pi]" value="' . $url . '" placeholder="' . $args[0] . '" />';
+	echo '<input type="text" id="social_pi" name="inti_social_options[social_pi]" value="' . $url . '" placeholder="' . (isset($args[0]) ? $args[0] : '' )  . '" />';
 	
 } // end inti_social_pi_callback
 
@@ -1510,7 +1513,7 @@ function inti_social_yt_callback($args) {
 	} // end if
 	
 	// Render the output
-	echo '<input type="text" id="social_yt" name="inti_social_options[social_yt]" value="' . $url . '" placeholder="' . $args[0] . '" />';
+	echo '<input type="text" id="social_yt" name="inti_social_options[social_yt]" value="' . $url . '" placeholder="' . (isset($args[0]) ? $args[0] : '' )  . '" />';
 	
 } // end inti_social_yt_callback
 
@@ -1524,7 +1527,7 @@ function inti_social_vi_callback($args) {
 	} // end if
 	
 	// Render the output
-	echo '<input type="text" id="social_vi" name="inti_social_options[social_vi]" value="' . $url . '" placeholder="' . $args[0] . '" /><p><br><br></p>';
+	echo '<input type="text" id="social_vi" name="inti_social_options[social_vi]" value="' . $url . '" placeholder="' . (isset($args[0]) ? $args[0] : '' )  . '" /><p><br><br></p>';
 	
 } // end inti_social_vi_callback
 
@@ -1560,7 +1563,7 @@ function inti_commenting_system_callback($args) {
 	$html .= '<label for="commenting_system_google"><i class="fa fa-google"></i> Google</label></p>';
 	
 	// Here, we'll take the first argument of the array and add it to a label next to the input
-	$html .= '<p><small><label for="commenting_system">&nbsp;' . $args[0] . '</label></small></p>'; 
+	$html .= '<p><small><label for="commenting_system">&nbsp;' . (isset($args[0]) ? $args[0] : '' )  . '</label></small></p>'; 
 	
 	echo $html;
 
@@ -1595,7 +1598,7 @@ function inti_disqus_shortname_callback($args) {
 	// Render the output
 	echo '<input type="text" id="disqus_shortname" name="inti_commenting_options[disqus_shortname]" value="' . $options['disqus_shortname'] . '" />';
 	// Here, we'll take the first argument of the array and add it to a label next to the input
-	echo '<p><small><label for="disqus_shortname">&nbsp;' . $args[0] . '</label></small></p><br><br>'; 
+	echo '<p><small><label for="disqus_shortname">&nbsp;' . (isset($args[0]) ? $args[0] : '' )  . '</label></small></p><br><br>'; 
 	
 } // end inti_disqus_shortname_callback
 
@@ -1606,7 +1609,7 @@ function inti_fbcomments_appid_callback($args) {
 	// Render the output
 	echo '<input type="text" id="fbcomments_appid" name="inti_commenting_options[fbcomments_appid]" value="' . $options['fbcomments_appid'] . '" />';
 	// Here, we'll take the first argument of the array and add it to a label next to the input
-	echo '<p><small><label for="fbcomments_appid">&nbsp;' . $args[0] . '</label></small></p><br><br>'; 
+	echo '<p><small><label for="fbcomments_appid">&nbsp;' . (isset($args[0]) ? $args[0] : '' )  . '</label></small></p><br><br>'; 
 	
 } // end inti_fbcomments_appid_callback
 
@@ -1617,7 +1620,7 @@ function inti_fbcomments_moderators_callback($args) {
 	// Render the output
 	echo '<input type="text" id="fbcomments_moderators" name="inti_commenting_options[fbcomments_moderators]" value="' . $options['fbcomments_moderators'] . '" />';
 	// Here, we'll take the first argument of the array and add it to a label next to the input
-	echo '<p><small><label for="fbcomments_moderators">&nbsp;' . $args[0] . '</label></small></p><br><br>'; 
+	echo '<p><small><label for="fbcomments_moderators">&nbsp;' . (isset($args[0]) ? $args[0] : '' )  . '</label></small></p><br><br>'; 
 	
 } // end inti_fbcomments_moderators_callback
 
@@ -1708,7 +1711,7 @@ function inti_fbcomments_lang_callback($args) {
 		</select>
 	<?
 	// Here, we'll take the first argument of the array and add it to a label next to the input
-	echo '<p><small><label for="fbcomments_lang">&nbsp;' . $args[0] . '</label></small></p><br><br>'; 
+	echo '<p><small><label for="fbcomments_lang">&nbsp;' . (isset($args[0]) ? $args[0] : '' )  . '</label></small></p><br><br>'; 
 	
 } // end inti_fbcomments_lang_callback
 
@@ -1728,7 +1731,7 @@ function inti_fbcomments_colorscheme_callback($args) {
 
 	echo $html;
 	// Here, we'll take the first argument of the array and add it to a label next to the input
-	echo '<p><small><label for="fbcomments_colorscheme">&nbsp;' . $args[0] . '</label></small></p><br><br>'; 
+	echo '<p><small><label for="fbcomments_colorscheme">&nbsp;' . (isset($args[0]) ? $args[0] : '' )  . '</label></small></p><br><br>'; 
 	
 } // end inti_fbcomments_colorscheme_callback
 
@@ -1739,7 +1742,7 @@ function inti_fbcomments_amount_callback($args) {
 	// Render the output
 	echo '<input type="number" id="fbcomments_amount" name="inti_commenting_options[fbcomments_amount]" min="1" max="10" value="' . $options['fbcomments_amount'] . '" />';
 	// Here, we'll take the first argument of the array and add it to a label next to the input
-	echo '<p><small><label for="fbcomments_amount">&nbsp;' . $args[0] . '</label></small></p><br><br>'; 
+	echo '<p><small><label for="fbcomments_amount">&nbsp;' . (isset($args[0]) ? $args[0] : '' )  . '</label></small></p><br><br>'; 
 	
 } // end inti_fbcomments_amount_callback
 
@@ -1750,7 +1753,7 @@ function inti_fbcomments_width_callback($args) {
 	// Render the output
 	echo '<input type="text" id="fbcomments_width" name="inti_commenting_options[fbcomments_width]" value="' . $options['fbcomments_width'] . '" />';
 	// Here, we'll take the first argument of the array and add it to a label next to the input
-	echo '<p><small><label for="fbcomments_width">&nbsp;' . $args[0] . '</label></small></p><br><br>'; 
+	echo '<p><small><label for="fbcomments_width">&nbsp;' . (isset($args[0]) ? $args[0] : '' )  . '</label></small></p><br><br>'; 
 	
 } // end inti_fbcomments_width_callback
 
@@ -1761,7 +1764,7 @@ function inti_gpcomments_width_callback($args) {
 	// Render the output
 	echo '<input type="text" id="gpcomments_width" name="inti_commenting_options[gpcomments_width]" value="' . $options['gpcomments_width'] . '" />';
 	// Here, we'll take the first argument of the array and add it to a label next to the input
-	echo '<p><small><label for="gpcomments_width">&nbsp;' . $args[0] . '</label></small></p><br><br>'; 
+	echo '<p><small><label for="gpcomments_width">&nbsp;' . (isset($args[0]) ? $args[0] : '' )  . '</label></small></p><br><br>'; 
 	
 } // end inti_gpcomments_width_callback
 
