@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Inti Foundation\n"
-"POT-Creation-Date: 2016-05-20 17:45-0500\n"
-"PO-Revision-Date: 2016-05-21 20:48-0500\n"
+"POT-Creation-Date: 2016-05-22 00:06-0500\n"
+"PO-Revision-Date: 2016-05-22 00:08-0500\n"
 "Last-Translator: \n"
 "Language-Team: Waqa Studios <team@waqa.pe>\n"
 "Language: es_ES\n"
@@ -29,10 +29,18 @@ msgstr "Archivos Diarios: %s"
 msgid "Monthly Archives: %s"
 msgstr "Archivos Mensuales: %s"
 
+#: archive.php:59
+msgid "F Y"
+msgstr ""
+
 #: archive.php:61
 #, php-format
 msgid "Yearly Archives: %s"
 msgstr "Archivos Anuales: %s"
+
+#: archive.php:61
+msgid "Y"
+msgstr ""
 
 #: archive.php:63
 msgid "Archives"
@@ -99,7 +107,7 @@ msgstr "Nombre"
 
 #: comments.php:78 comments.php:82
 msgid " (required)"
-msgstr "(obligatorio)"
+msgstr " (obligatorio)"
 
 #: comments.php:82
 msgid "Email (will not be published)"
@@ -147,7 +155,6 @@ msgstr "Entrada Destacada"
 
 #: framework/content/content-posts-pages.php:204
 #: framework/content/content-posts-pages.php:231
-#: framework/functions/pagination.php:159
 msgid "Keep reading:"
 msgstr "Seguir Leyendo:"
 
@@ -156,8 +163,8 @@ msgstr "Seguir Leyendo:"
 msgid "Edit"
 msgstr "Editar"
 
-#: framework/content/content-posts-pages.php:322
-#: framework/content/content-posts-pages.php:391
+#: framework/content/content-posts-pages.php:328
+#: framework/content/content-posts-pages.php:397
 msgid "Share with"
 msgstr "Compartir con"
 
@@ -529,25 +536,25 @@ msgstr "Dos Columnas, Derecha"
 msgid "One Column, Thin"
 msgstr "Una columna, Angosta"
 
-#: framework/functions/pagination.php:48
+#: framework/functions/pagination.php:50
 msgid "Older posts"
 msgstr "Entradas anteriores"
 
-#: framework/functions/pagination.php:51
+#: framework/functions/pagination.php:54
 msgid "Newer posts"
 msgstr "Entradas recientes"
 
-#: framework/functions/pagination.php:78
+#: framework/functions/pagination.php:81
 msgid "&laquo; Previous"
 msgstr "&laquo; Anterior"
 
-#: framework/functions/pagination.php:79
+#: framework/functions/pagination.php:82
 msgid "Next &raquo;"
 msgstr "Siguiente &raquo;"
 
-#: framework/functions/pagination.php:128
-msgid "&hellip;"
-msgstr "&hellip;"
+#: framework/functions/pagination.php:162
+msgid "Keep reading"
+msgstr "Seguir Leyendo"
 
 #: framework/functions/post-meta.php:26 framework/functions/post-meta.php:32
 #, php-format
@@ -1030,14 +1037,14 @@ msgstr "Encabezado de Página/Navegación"
 #: framework/theme-options/inti-options.php:77
 #: framework/theme-options/inti-options.php:78
 #: framework/theme-options/inti-options.php:113
-#: framework/theme-options/inti-options.php:586
+#: framework/theme-options/inti-options.php:589
 msgid "Footer/Analytics"
 msgstr "Pie de Página/Analytics"
 
 #: framework/theme-options/inti-options.php:86
 #: framework/theme-options/inti-options.php:87
 #: framework/theme-options/inti-options.php:114
-#: framework/theme-options/inti-options.php:645
+#: framework/theme-options/inti-options.php:648
 msgid "Social Media Profiles"
 msgstr "Perfil de Redes Sociales"
 
@@ -1135,7 +1142,7 @@ msgid "Exclude front page category"
 msgstr "Excluir categoría de página principal"
 
 #: framework/theme-options/inti-options.php:413
-#: framework/theme-options/inti-options.php:1220
+#: framework/theme-options/inti-options.php:1223
 msgid "Hide breadcrumbs on front page"
 msgstr "Esconder ‘migas de pan’ de la página principal"
 
@@ -1179,31 +1186,37 @@ msgstr "La mayoría los JavaScript personalizados deben ir en el pie de página.
 msgid "Custom CSS in head"
 msgstr "CSS personalizado en el <em>head</em>"
 
-#: framework/theme-options/inti-options.php:547
+#: framework/theme-options/inti-options.php:544
+msgid "Style tags are inserted for you, just add the raw CSS"
+msgstr ""
+"Las etiquetas HTML de <em>style</em> estarán insertadas automáticamente, "
+"solo hay que escribir el CSS"
+
+#: framework/theme-options/inti-options.php:550
 msgid "Custom Meta Tags in head"
 msgstr "Meta Tags personalizados en el <em>head</em>"
 
-#: framework/theme-options/inti-options.php:555
+#: framework/theme-options/inti-options.php:558
 msgid "Custom Code immediately after body"
 msgstr "Código personalizado inmediatamente después del <em>body</em>"
 
-#: framework/theme-options/inti-options.php:593
+#: framework/theme-options/inti-options.php:596
 msgid "Social media icons in footer"
 msgstr "Iconos de redes sociales en el pie de página"
 
-#: framework/theme-options/inti-options.php:601
+#: framework/theme-options/inti-options.php:604
 msgid "Google Analytics ID"
 msgstr "ID de Google Analytics"
 
-#: framework/theme-options/inti-options.php:606
+#: framework/theme-options/inti-options.php:609
 msgid "Enter Your Analytics site ID (e.g. UA-XXXXX-X) here."
 msgstr "Ingresa el ID de Analytics de tu sitio web (e.g. UA-XXXXX-X) aquí."
 
-#: framework/theme-options/inti-options.php:612
+#: framework/theme-options/inti-options.php:615
 msgid "Custom JavaScript in footer"
 msgstr "Java Script personalizado en el pie de página"
 
-#: framework/theme-options/inti-options.php:617
+#: framework/theme-options/inti-options.php:620
 msgid ""
 "Add custom javascript code to the footer (best place), modify the copyright "
 "text and set up other custom footer features."
@@ -1212,36 +1225,36 @@ msgstr ""
 "lugar), modifica el texto de derechos de autor y establecer otras "
 "características en el pie de página."
 
-#: framework/theme-options/inti-options.php:658
-#: framework/theme-options/inti-options.php:669
-#: framework/theme-options/inti-options.php:680
-#: framework/theme-options/inti-options.php:691
-#: framework/theme-options/inti-options.php:702
-#: framework/theme-options/inti-options.php:713
-#: framework/theme-options/inti-options.php:724
-#: framework/theme-options/inti-options.php:735
+#: framework/theme-options/inti-options.php:661
+#: framework/theme-options/inti-options.php:672
+#: framework/theme-options/inti-options.php:683
+#: framework/theme-options/inti-options.php:694
+#: framework/theme-options/inti-options.php:705
+#: framework/theme-options/inti-options.php:716
+#: framework/theme-options/inti-options.php:727
+#: framework/theme-options/inti-options.php:738
 msgid "Complete URL"
 msgstr "URL Completo"
 
-#: framework/theme-options/inti-options.php:741
+#: framework/theme-options/inti-options.php:744
 msgid "Open links in new tabs"
 msgstr "Abrir enlaces en una nueva pestaña"
 
-#: framework/theme-options/inti-options.php:746
-#: framework/theme-options/inti-options.php:1537
+#: framework/theme-options/inti-options.php:749
+#: framework/theme-options/inti-options.php:1540
 msgid "Open links to social media profiles in new tabs"
 msgstr "Abrir enlaces a perfiles de redes sociales en nuevas pestañas"
 
-#: framework/theme-options/inti-options.php:776
-#: framework/theme-options/inti-options.php:782
+#: framework/theme-options/inti-options.php:779
+#: framework/theme-options/inti-options.php:785
 msgid "Commenting System"
 msgstr "Sistema de Comentarios"
 
-#: framework/theme-options/inti-options.php:792
+#: framework/theme-options/inti-options.php:795
 msgid "Comments on pages"
 msgstr "Comentarios en páginas"
 
-#: framework/theme-options/inti-options.php:797
+#: framework/theme-options/inti-options.php:800
 msgid ""
 "By default comments are shown on pages and posts. Here you can hide them on "
 "pages. To turn comments off altogether, see Settings -> Discussion"
@@ -1250,11 +1263,11 @@ msgstr ""
 "pueden ocultar en páginas. Para desactivar todos los comentarios a la vez, "
 "ver Ajustes -> Discusión"
 
-#: framework/theme-options/inti-options.php:802
+#: framework/theme-options/inti-options.php:805
 msgid "Allowed tags message"
 msgstr "etiquetas permitidas en mensajes"
 
-#: framework/theme-options/inti-options.php:807
+#: framework/theme-options/inti-options.php:810
 msgid ""
 "By default a message is shown under the comments box informing commenters "
 "what HTML tags they are allowed to use."
@@ -1262,15 +1275,15 @@ msgstr ""
 "Por defecto se muestra un mensaje bajo el apartado de comentarios informando "
 "a los comentaristas lo que a las etiquetas HTML se les permite usar."
 
-#: framework/theme-options/inti-options.php:813
+#: framework/theme-options/inti-options.php:816
 msgid "DISQUS"
 msgstr "DISQUS"
 
-#: framework/theme-options/inti-options.php:819
+#: framework/theme-options/inti-options.php:822
 msgid "Disqus Shortname"
 msgstr "Nombre corto de Disqus"
 
-#: framework/theme-options/inti-options.php:824
+#: framework/theme-options/inti-options.php:827
 msgid ""
 "You'll get this at the end of the registration process. Please contact your "
 "developer if you need assistance."
@@ -1278,11 +1291,11 @@ msgstr ""
 "Usted conseguirá esto al final del proceso de inscripción. Por favor, "
 "póngase en contacto con su desarrollador si necesita ayuda."
 
-#: framework/theme-options/inti-options.php:830
+#: framework/theme-options/inti-options.php:833
 msgid "Facebook Comments"
 msgstr "Comentarios de Facebook"
 
-#: framework/theme-options/inti-options.php:841
+#: framework/theme-options/inti-options.php:844
 msgid ""
 "You'll need to register a Facebook App for your site. Please contact your "
 "developer if you need assistance."
@@ -1290,11 +1303,11 @@ msgstr ""
 "Usted tendrá registrar su aplicación de Facebook para su sitio. Por favor, "
 "póngase en contacto con su desarrollador si necesita ayuda."
 
-#: framework/theme-options/inti-options.php:846
+#: framework/theme-options/inti-options.php:849
 msgid "Moderators"
 msgstr "Moderadores"
 
-#: framework/theme-options/inti-options.php:851
+#: framework/theme-options/inti-options.php:854
 msgid ""
 "By default, all users set as admins for the registered app can moderate "
 "comments. To add moderators, each Facebook Profile ID should be separated by "
@@ -1306,50 +1319,50 @@ msgstr ""
 "<strong> sin espacios </strong>. Para encontrar el ID de su Perfil de "
 "Facebook."
 
-#: framework/theme-options/inti-options.php:852
+#: framework/theme-options/inti-options.php:855
 msgid "click here"
 msgstr "presiona aquí"
 
-#: framework/theme-options/inti-options.php:857
+#: framework/theme-options/inti-options.php:860
 msgid "Language"
 msgstr "Idioma"
 
-#: framework/theme-options/inti-options.php:862
+#: framework/theme-options/inti-options.php:865
 msgid "Set this to be the same as your site language and locale."
 msgstr ""
 "Establece esto a ser el mismo idioma del sitio y la configuración local."
 
-#: framework/theme-options/inti-options.php:867
+#: framework/theme-options/inti-options.php:870
 msgid "Color Scheme"
 msgstr "Esquema de colores"
 
-#: framework/theme-options/inti-options.php:872
+#: framework/theme-options/inti-options.php:875
 msgid "For dark and light background sites."
 msgstr "Para sitios webs con fondos oscuros o claros."
 
-#: framework/theme-options/inti-options.php:877
+#: framework/theme-options/inti-options.php:880
 msgid "Show X Comments"
 msgstr "Mostrar X Comentarios"
 
-#: framework/theme-options/inti-options.php:882
+#: framework/theme-options/inti-options.php:885
 msgid "Number of comments to show at a time."
 msgstr "Cantidad de comentarios para mostrar a la vez."
 
-#: framework/theme-options/inti-options.php:887
-#: framework/theme-options/inti-options.php:904
+#: framework/theme-options/inti-options.php:890
+#: framework/theme-options/inti-options.php:907
 msgid "Comment Area Width"
 msgstr "Ancho del Área de Comentarios"
 
-#: framework/theme-options/inti-options.php:892
-#: framework/theme-options/inti-options.php:909
+#: framework/theme-options/inti-options.php:895
+#: framework/theme-options/inti-options.php:912
 msgid "Give a width for your comment box in pixels."
 msgstr "Ancho (en pixeles) de la caja de comentarios."
 
-#: framework/theme-options/inti-options.php:898
+#: framework/theme-options/inti-options.php:901
 msgid "Google+ Comments"
 msgstr "Comentarios Google+"
 
-#: framework/theme-options/inti-options.php:936
+#: framework/theme-options/inti-options.php:939
 msgid ""
 "Basic settings that give you some control over how your site will look and "
 "feel."
@@ -1357,32 +1370,32 @@ msgstr ""
 "Ajustes básicos que le dan un cierto control sobre cómo su sitio se verá y "
 "sentirá."
 
-#: framework/theme-options/inti-options.php:939
+#: framework/theme-options/inti-options.php:942
 msgid "Options for the Front Page if template exists."
 msgstr "Opciones para la Página Principal si existe la plantilla."
 
-#: framework/theme-options/inti-options.php:942
+#: framework/theme-options/inti-options.php:945
 msgid "Share posts and pages on social media platforms."
 msgstr "Compartir entradas y páginas en redes sociales"
 
-#: framework/theme-options/inti-options.php:945
+#: framework/theme-options/inti-options.php:948
 msgid "What to show when a page is not found."
 msgstr "Que mostrar cuando una página no ha sido encontrada."
 
-#: framework/theme-options/inti-options.php:956
+#: framework/theme-options/inti-options.php:959
 msgid "Provide the URL to the social networks you'd like to display."
 msgstr ""
 "Proporcionar la dirección URL de las redes sociales que desea visualizar."
 
-#: framework/theme-options/inti-options.php:966
+#: framework/theme-options/inti-options.php:969
 msgid "Control what appears in your website's footer."
 msgstr "Controlar lo que aparece en el pie de página de su sitio web."
 
-#: framework/theme-options/inti-options.php:976
+#: framework/theme-options/inti-options.php:979
 msgid "Enter your social media profiles here."
 msgstr "Agregar sus perfiles de redes sociales aquí."
 
-#: framework/theme-options/inti-options.php:986
+#: framework/theme-options/inti-options.php:989
 msgid ""
 "You can turn on/off comments in the WordPress settings under 'Discussion'. "
 "Here you can choose which commenting system to use throught your site."
@@ -1391,14 +1404,14 @@ msgstr ""
 "Ajustes ”Discusión\". Aquí puede elegir qué sistema de comentarios desea "
 "usar en su sitio."
 
-#: framework/theme-options/inti-options.php:990
+#: framework/theme-options/inti-options.php:993
 msgid ""
 "Please enter your blog's DISQUS 'shortname' below to complete the process."
 msgstr ""
 "Por favor, introduzca abajo el \"nombre corto\" del DISQUS de su blog para "
 "completar el proceso."
 
-#: framework/theme-options/inti-options.php:994
+#: framework/theme-options/inti-options.php:997
 msgid ""
 "Facebook requires the following details to be able to activate comments "
 "using Facebook."
@@ -1406,85 +1419,85 @@ msgstr ""
 "Facebook requiere los siguientes datos para poder activar los comentarios "
 "que están utilizando Facebook."
 
-#: framework/theme-options/inti-options.php:998
+#: framework/theme-options/inti-options.php:1001
 msgid "Google comments are easier to work with than FB comments.."
 msgstr ""
 "Los comentarios de Google son más fáciles de manejar que los comentarios del "
 "FB."
 
-#: framework/theme-options/inti-options.php:1054
+#: framework/theme-options/inti-options.php:1057
 msgid "Option One (Standard)"
 msgstr "Opción Uno (Estándar)"
 
-#: framework/theme-options/inti-options.php:1058
+#: framework/theme-options/inti-options.php:1061
 msgid "Option Two (Shorts)"
 msgstr "Opción Uno (Cortos)"
 
-#: framework/theme-options/inti-options.php:1073
-#: framework/theme-options/inti-options.php:1123
+#: framework/theme-options/inti-options.php:1076
+#: framework/theme-options/inti-options.php:1126
 msgid "None/Off"
 msgstr "Ninguno/No Mostrar"
 
-#: framework/theme-options/inti-options.php:1077
+#: framework/theme-options/inti-options.php:1080
 msgid "Top Only"
 msgstr "Solo Arriba"
 
-#: framework/theme-options/inti-options.php:1081
-#: framework/theme-options/inti-options.php:1127
+#: framework/theme-options/inti-options.php:1084
+#: framework/theme-options/inti-options.php:1130
 msgid "Bottom Only"
 msgstr "Solo Abajo"
 
-#: framework/theme-options/inti-options.php:1085
-#: framework/theme-options/inti-options.php:1131
+#: framework/theme-options/inti-options.php:1088
+#: framework/theme-options/inti-options.php:1134
 msgid "Top and Bottom"
 msgstr "Arriba y Abajo"
 
-#: framework/theme-options/inti-options.php:1102
+#: framework/theme-options/inti-options.php:1105
 msgid "Page Numbers"
 msgstr "Números de Páginas"
 
-#: framework/theme-options/inti-options.php:1106
+#: framework/theme-options/inti-options.php:1109
 msgid "Next/Previous links"
 msgstr "Enlaces Siguiente/Anterior"
 
-#: framework/theme-options/inti-options.php:1147
+#: framework/theme-options/inti-options.php:1150
 msgid "All Categories"
 msgstr "Todas las Categorías"
 
-#: framework/theme-options/inti-options.php:1208
+#: framework/theme-options/inti-options.php:1211
 msgid "Exclude the front page post category from the rest of the blog"
 msgstr "Excluir la categoría usada en la página principal del índice del blog"
 
-#: framework/theme-options/inti-options.php:1232
+#: framework/theme-options/inti-options.php:1235
 msgid "Allow sharing buttons on blog posts"
 msgstr "Permitir botones de compartir en entradas"
 
-#: framework/theme-options/inti-options.php:1244
+#: framework/theme-options/inti-options.php:1247
 msgid "Allow sharing buttons on standard pages"
 msgstr "Permitir botones de compartir en páginas estándar"
 
-#: framework/theme-options/inti-options.php:1294
+#: framework/theme-options/inti-options.php:1297
 msgid "Show social media profile icons in navigation bar"
 msgstr "Mostrar iconos de perfiles de redes sociales en la barra de navigación"
 
-#: framework/theme-options/inti-options.php:1374
+#: framework/theme-options/inti-options.php:1377
 msgid "Show social media profile icons in footer area"
 msgstr "Mostrar iconos de perfiles de redes sociales en el pie de página"
 
-#: framework/theme-options/inti-options.php:1575
+#: framework/theme-options/inti-options.php:1578
 msgid "Show comments on pages"
 msgstr "Mostrar comentarios en páginas"
 
-#: framework/theme-options/inti-options.php:1586
+#: framework/theme-options/inti-options.php:1589
 msgid "Show allowed HTML tags message under comment box"
 msgstr ""
 "Mostrar las etiquetas de HTML permitidas debajo de cada caja de comentarios"
 
-#: framework/theme-options/inti-options.php:1723
+#: framework/theme-options/inti-options.php:1726
 msgid "Light"
 msgstr "Claro"
 
-#: framework/theme-options/inti-options.php:1727
+#: framework/theme-options/inti-options.php:1730
 msgid "Dark"
 msgstr "Oscuro"
 
@@ -1588,6 +1601,9 @@ msgstr "Buscar"
 #, php-format
 msgid "Tag: %s"
 msgstr "Etiquetas: %s"
+
+#~ msgid "&hellip;"
+#~ msgstr "&hellip;"
 
 #~ msgid ""
 #~ "By default, all users set as admins for the registered app can moderate "

@@ -128,7 +128,7 @@ if ( !function_exists('inti_filter_archive_pagination') ) {
 						$page_links[] = "<li><a class='page-numbers' href='" . esc_url( $link ) . "'>$n_display</a></li>";
 						$dots = true;
 					elseif ( $dots && !$show_all ) :
-						$page_links[] = '<li><a class="page-numbers dots">' . __('&hellip;', 'inti') . '</a></li>';
+						$page_links[] = '<li><a class="page-numbers dots">&hellip;</a></li>';
 						$dots = false;
 					endif;
 				endif;
