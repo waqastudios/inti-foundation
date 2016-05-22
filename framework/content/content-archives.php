@@ -31,7 +31,7 @@ add_action('inti_hook_loop_else', 'inti_do_loop_else', 1);
  * @since 1.0.0
  */
 function inti_do_archive_pagination() {
-	$pagination_type = get_inti_option('inti_general_options', 'pagination');
+	$pagination_type = get_inti_option('pagination', 'inti_general_options');
 	
 	if ( is_page_template('page-templates/front-page.php') && current_theme_supports('inti-pagination') ) {
 		$show_page_links = get_inti_option('frontpage_page_links', 0);

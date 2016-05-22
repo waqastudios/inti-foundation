@@ -41,15 +41,18 @@ if ( !function_exists('inti_filter_archive_pagination') ) {
 		 *
 		 * @since 1.0.0
 		 */
-		if ( 'prev_next' == $args['type'] ) {
+		if ( 'nextprev' == $args['type'] ) {
 		
-			$output .= '<nav class="content-navigation" role="navigation">' . "\n";
-			$output .= "\t" . '<div class="content-navigation-prev left">';
+			$output .= '<nav class="content-navigation between-older-newer" role="navigation">' . "\n";
+			$output .= "\t" . '<div class="row">';
+			$output .= "\t\t" . '<div class="medium-6 columns">';
+			$output .= "\t\t\t" . '<div class="float-left">';
 			$output .= get_next_posts_link('<span class="meta-nav meta-nav-next">&larr; ' . __('Older posts', 'inti') . '</span>', $the_query->max_num_pages);
-			$output .= '</div>';
-			$output .= "\t" . '<div class="content-navigation-next right">';
+			$output .= '</div></div>';
+			$output .= "\t\t" . '<div class="medium-6 columns">';
+			$output .= "\t\t\t" . '<div class="float-right">';
 			$output .= get_previous_posts_link('<span class="meta-nav meta-nav-prev">'. __('Newer posts', 'inti') . ' &rarr;</span>', $the_query->max_num_pages);
-			$output .= '</div>';
+			$output .= '</div></div></div>';
 			$output .= "\n" . '</nav><!-- .content-navigation -->';
 			
 		} else {
@@ -156,7 +159,7 @@ if ( !function_exists('inti_filter_archive_pagination') ) {
  */
 function inti_do_post_page_split_links( $args ){
 	$defaults = array(
-		'before'      => '<nav class="page-links"><span>' . __('Keep reading:', 'inti') . '</span><ul class="pagination">',
+		'before'      => '<nav class="page-links"><span>' . __('Keep reading', 'inti') . ':</span><ul class="pagination">',
 		'after'       => '</ul></nav>',
 		'link_before' => '',
 		'link_after'  => '',

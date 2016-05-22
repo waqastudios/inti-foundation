@@ -276,13 +276,19 @@ add_action('inti_hook_page_footer', 'inti_do_page_edit');
 function inti_do_nav_single() {
 	if ( is_single() ) { 
 	$exclude = ( get_inti_option('frontpage_exclude_cat', 'inti_general_options', 1) ) ? get_inti_option('frontpage_post_category', 'inti_general_options', -1) : ''; ?>
-		<nav class="nav-single">
-			<span class="nav-previous alignleft">
-			<?php previous_post_link('%link', '<span class="meta-nav">' . _x('&larr;', 'Previous post link', 'inti') . '</span> %title', false, $exclude); ?>
-			</span>
-			<span class="nav-next alignright">
-			<?php next_post_link('%link', '%title <span class="meta-nav">' . _x('&rarr;', 'Next post link', 'inti') . '</span>', false, $exclude); ?>
-			</span>
+		<nav class="content-navigation between-posts-navigation" role="navigation">
+			<div class="row">
+				<div class="medium-6 columns">
+					<div class="float-left">
+					<?php previous_post_link('%link', '<span class="meta-nav">&larr; %title</span>', false, $exclude); ?>
+					</div>
+				</div>
+				<div class="medium-6 columns">
+					<div class="float-right">
+					<?php next_post_link('%link', '%title <span class="meta-nav">%title &rarr;</span>', false, $exclude); ?>
+					</div>
+				</div>
+			</div>
 		</nav><!-- .nav-single -->
 <?php }
 }
