@@ -78,6 +78,8 @@ new styles, or the minimized inti-min.css file can be unqueued
 // Import Vendor CSS
 @import "foundation-icons";
 @import "../vendor/font-awesome/scss/font-awesome";
+@import "../vendor/slick-carousel/slick/slick.scss";
+@import "../vendor/slick-carousel/slick/slick-theme.scss";
 
 // Import mixins
 @import "mixins";
