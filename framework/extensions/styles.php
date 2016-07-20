@@ -26,7 +26,6 @@ function inti_enqueue_styles() {
 	if ( !is_admin() ) { 
 		// enqueue styles
 		wp_enqueue_style('inti'); 
-		wp_enqueue_style('fontawesome');
 		
 		// add style.css with child themes
 		if ( is_child_theme() ) {
