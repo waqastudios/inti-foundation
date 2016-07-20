@@ -98,13 +98,13 @@ if (!function_exists('inti_shortcode_flex_video')) {
 		$html = '<div class="flex-video '. $aspect .' '. $source .'">';
 		switch ($source) {
 			case 'youtube' :
-				$html .= '<iframe src="http://www.youtube.com/embed/'. $id .'?wmode=opaque&showsearch=0&rel=0&modestbranding=1&showinfo=0&controls=2" frameborder="0" allowfullscreen></iframe>';
+				$html .= '<iframe src="//www.youtube.com/embed/'. $id .'?wmode=opaque&showsearch=0&rel=0&modestbranding=1&showinfo=0&controls=2" frameborder="0" allowfullscreen></iframe>';
 				break;
 			case 'vimeo' :
-				$html .= '<iframe src="http://player.vimeo.com/video/'. $id .'?title=0&amp;byline=0&amp;portrait=0&amp;color=ff0179" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
+				$html .= '<iframe src="//player.vimeo.com/video/'. $id .'?title=0&amp;byline=0&amp;portrait=0&amp;color=ff0179" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
 				break;
 			case 'wistia' :
-				$html .= '<iframe src="http://fast.wistia.net/embed/iframe/'. $id .'?plugin%5Bsocialbar-v1%5D%5Bon%5D=false" frameborder="0" allowtransparency="true" allowfullscreen scrolling="no"></iframe>';
+				$html .= '<iframe src="//fast.wistia.net/embed/iframe/'. $id .'?plugin%5Bsocialbar-v1%5D%5Bon%5D=false" frameborder="0" allowtransparency="true" allowfullscreen scrolling="no"></iframe>';
 				break;
 		}
 		$html .= '';

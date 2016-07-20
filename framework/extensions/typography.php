@@ -135,6 +135,6 @@ function inti_do_typography_enqueue_google_font( $font ){
 	$font = preg_replace( '/[^A-Za-z0-9 ]/', '', $font );
 	$font = str_replace( ' ', '+', $font );
 	$handle = 'typography-' . $font;
-	$src = 'http://fonts.googleapis.com/css?family=' . $font;
+	$src = '//fonts.googleapis.com/css?family=' . $font;
 	wp_enqueue_style( $handle, $src, false, false, 'all' );
 }
