@@ -19,7 +19,6 @@ add_action('wp_enqueue_scripts', 'inti_enqueue_styles', 5);
 function inti_register_styles() {
 	// register styles
 	wp_register_style('inti', get_template_directory_uri() . '/library/css/inti-min.css', array(), filemtime(get_template_directory() . '/library/css/inti-min.css'), 'all');
-	wp_register_style('fontawesome', get_template_directory_uri() . '/library/css/font-awesome-min.css', array(), filemtime(get_template_directory() . '/library/css/font-awesome-min.css'), 'all');
 	wp_register_style('style', get_stylesheet_directory_uri() . '/style.css', array(), filemtime(get_template_directory() . '/style.css'), 'all');
 }
 

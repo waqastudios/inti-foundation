@@ -75,6 +75,12 @@ new styles, or the minimized inti-min.css file can be unqueued
 
 ******************************************************************/
 
+// Import Vendor CSS
+@import "foundation-icons";
+@import "../vendor/font-awesome/scss/font-awesome";
+
+// Import mixins
+@import "mixins";
 
 // Import components
 @import "inti-partials/wp-classes";
@@ -91,12 +97,6 @@ new styles, or the minimized inti-min.css file can be unqueued
 @import "inti-partials/shortcodes";
 @import "inti-partials/comments";
 @import "inti-partials/site-footer";
-
-// Import foundicons
-@import "foundation-icons";
-
-// Import mixins
-@import "mixins";
 
 /* General Inti Styles - fix this */
 body { }
