@@ -26,6 +26,7 @@ function inti_add_mce_button() {
 	}
 }
 add_action('admin_head', 'inti_add_mce_button');
+add_action('customize_controls_enqueue_scripts', 'inti_add_mce_button');
 
 // Declare script for new button
 function inti_add_tinymce_plugin( $plugin_array ) {
@@ -92,8 +93,8 @@ add_filter( 'tiny_mce_before_init', 'inti_mce_google_fonts_array' );
 
 
 /**
- * Functions we'll need for the TinyMCE shortcode popup.
- *
+ * Add stylesheets for TinyMCE
+ * @since 1.0.0
  */
 function inti_shortcode_interface_stylesheets($hook) {
 	if ($hook == "post.php" || $hook == "post-new.php" || is_customize_preview() ){
@@ -102,6 +103,7 @@ function inti_shortcode_interface_stylesheets($hook) {
 	}
 }
 add_action( 'admin_enqueue_scripts', 'inti_shortcode_interface_stylesheets', 100);
+add_action( 'customize_controls_enqueue_scripts', 'inti_shortcode_interface_stylesheets', 100);
 
 
 /**
@@ -134,7 +136,7 @@ add_action('inti_shortcode_select', 'inti_shortcode_add_select');
  * @since 1.0.0
  */
 function inti_shortcode_enqueue_shortcodes($hook) {
-	if ($hook == "post.php" || $hook == "post-new.php"){
+	if ($hook == "post.php" || $hook == "post-new.php" || $hook == is_customize_preview()){
 
 		wp_register_script('inti-shortcode-button', get_template_directory_uri() . '/framework/shortcodes/js/shortcode-button.js', '', filemtime(get_template_directory() . '/framework/shortcodes/js/shortcode-button.js'), TRUE);
 		wp_enqueue_script('inti-shortcode-button'); 
