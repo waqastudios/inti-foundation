@@ -86,8 +86,14 @@ new styles, or the minimized inti-min.css file can be unqueued
  * @see /framework/extensions/styles.php, /framework/shortcodes/tinymce-functions.php
  */
 // @import "../vendor/font-awesome/scss/font-awesome"; 
-@import "../vendor/slick-carousel/slick/slick.scss";
-@import "../vendor/slick-carousel/slick/slick-theme.scss";
+
+/**
+ * We might want to enqueue slick-slider in WP so that plugins
+ * can detect it and not load another copy. Uncomment this if you want to 
+ * use it here, remove enqueue if so. 
+ * @see /framework/extensions/styles.php
+ */
+// @import "../vendor/slick-carousel/slick/slick.scss";
 
 // Import mixins
 @import "mixins";
@@ -107,6 +113,9 @@ new styles, or the minimized inti-min.css file can be unqueued
 @import "inti-partials/shortcodes";
 @import "inti-partials/comments";
 @import "inti-partials/site-footer";
+
+// Import slick slider for inti
+@import "slick-inti-theme";
 
 /* General Inti Styles - fix this */
 body { }
