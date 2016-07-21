@@ -77,7 +77,15 @@ new styles, or the minimized inti-min.css file can be unqueued
 
 // Import Vendor CSS
 @import "foundation-icons";
-@import "../vendor/font-awesome/scss/font-awesome";
+
+/**
+ * We'll want to enqueue font-awesome separately in WP so that
+ * plugins can detect it and not load another copy, but also so
+ * we can have the file to include in the Dashboard side... so we
+ * use it in WP editor, in shortcodes, etc. 
+ * @see /framework/extensions/styles.php, /framework/shortcodes/tinymce-functions.php
+ */
+// @import "../vendor/font-awesome/scss/font-awesome"; 
 @import "../vendor/slick-carousel/slick/slick.scss";
 @import "../vendor/slick-carousel/slick/slick-theme.scss";
 
