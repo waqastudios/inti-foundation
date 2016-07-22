@@ -582,11 +582,11 @@ if ( !function_exists('inti_customize_register') ) {
 					'choices'     => $theme_layouts,
 					'priority'    => 6,
 				 ) );
-
 			$wp_customize->add_setting('inti_customizer_options[sticky_sidebars]', array( 
 				'default'        => 'static',
 				'type'           => 'option',
 				'capability'     => 'manage_options',
+				'theme_supports' => 'inti-sticky-sidebars',
 			 ) );
 				$wp_customize->add_control('inti_customizer_options[sticky_sidebars]', array( 
 					'label'			=> __('Sticky Sidebars', 'inti'),

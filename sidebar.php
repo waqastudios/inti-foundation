@@ -45,7 +45,7 @@ if ( is_page() ) : ?>
 	<?php 
 	if ( is_front_page() && $has_sidebar ) : ?>
 
-		<?php if ($sticky == "sticky"): ?>
+		<?php if ($sticky == "sticky" && current_theme_supports('inti-sticky-sidebars')): ?>
 
 			<div id="sidebar" class="sidebar <?php echo $column_classes; ?> columns" role="complementary" data-sticky-container>
 				<div class="sticky" data-sticky data-anchor="content" data-margin-top="0">
@@ -68,7 +68,7 @@ if ( is_page() ) : ?>
 	<?php 
 	elseif ( !is_front_page() && $has_sidebar ) : ?>
 
-		<?php if ($sticky == "sticky"): ?>
+		<?php if ($sticky == "sticky" && current_theme_supports('inti-sticky-sidebars')): ?>
 
 			<div id="sidebar" class="sidebar <?php echo $column_classes; ?> columns" role="complementary" data-sticky-container>
 				<div class="sticky" data-sticky data-anchor="content" data-margin-top="0">
@@ -96,7 +96,7 @@ if ( is_page() ) : ?>
 <?php elseif ( ( is_archive() || is_home() || is_search() ) && $has_sidebar ) : ?>
 
 
-		<?php if ($sticky == "sticky"): ?>
+		<?php if ($sticky == "sticky" && current_theme_supports('inti-sticky-sidebars')): ?>
 
 			<div id="sidebar" class="sidebar <?php echo $column_classes; ?> columns" role="complementary" data-sticky-container>
 				<div class="sticky" data-sticky data-anchor="content" data-margin-top="0">
@@ -118,7 +118,7 @@ if ( is_page() ) : ?>
 <?php elseif ( is_single() && $has_sidebar ) : ?>
 
 
-		<?php if ($sticky == "sticky"): ?>
+		<?php if ($sticky == "sticky" && current_theme_supports('inti-sticky-sidebars')): ?>
 
 			<div id="sidebar" class="sidebar <?php echo $column_classes; ?> columns" role="complementary" data-sticky-container>
 				<div class="sticky" data-sticky data-anchor="content" data-margin-top="0">
