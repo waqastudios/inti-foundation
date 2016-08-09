@@ -1709,7 +1709,7 @@ function inti_fbcomments_lang_callback($args) {
 			<option value="zh_HK" <?php selected( 'zh_HK', $options['fbcomments_lang'] ); ?>>Traditional Chinese (Hong Kong)</option>
 			<option value="zh_TW" <?php selected( 'zh_TW', $options['fbcomments_lang'] ); ?>>Traditional Chinese (Taiwan)</option>
 		</select>
-	<?
+	<?php
 	// Here, we'll take the first argument of the array and add it to a label next to the input
 	echo '<p><small><label for="fbcomments_lang">&nbsp;' . (isset($args[0]) ? $args[0] : '' )  . '</label></small></p><br><br>'; 
 	
