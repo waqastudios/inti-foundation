@@ -956,7 +956,7 @@ function inti_404_callback() {
  * in the add_settings_section function.
  */
 function inti_headernav_options_callback() {
-	echo '<p>' . __( 'Provide the URL to the social networks you\'d like to display.', 'inti' ) . '</p>';
+	echo '<p>' . __( 'Let\'s you control both the visible masthead of the site and things that go in or around the <head> tag', 'inti' ) . '</p>';
 } // end inti_general_options_callback
 
 /**
