@@ -24,7 +24,7 @@ function inti_options_scripts($hook) {
 
 	// CSS to add
 		wp_enqueue_style('thickbox');
-		wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/library/css/font-awesome-min.css', array(), '' );
+		wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/library/vendor/font-awesome/css/font-awesome.min.css', array(), '' );
 		wp_enqueue_style( 'inti-options-css', get_template_directory_uri() . '/framework/theme-options/css/inti-options.css', array(), '' );
 	}
 
