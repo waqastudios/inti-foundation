@@ -1089,4 +1089,3 @@ if ( !function_exists('inti_customize_register') ) {
 				 
 	}
 }
-?>

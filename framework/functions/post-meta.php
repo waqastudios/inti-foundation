@@ -282,4 +282,3 @@ function inti_get_post_page_footer_comments_link() {
 	$comments_link = ob_get_clean();
 	return $comments_link;
 }
-?>

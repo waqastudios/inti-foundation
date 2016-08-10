@@ -947,4 +947,3 @@ class Breadcrumb_Trail {
 		}
 	}
 }
-?>

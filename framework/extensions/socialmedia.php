@@ -203,6 +203,3 @@ if ( !function_exists( 'inti_get_widget_social_links' ) ) {
 		return apply_filters('inti_filter_footer_social_links', $html);
 	}
 }
-
-
-?>

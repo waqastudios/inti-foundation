@@ -130,4 +130,3 @@ class inti_widget_image extends WP_Widget {
  
 }
 add_action( 'widgets_init', function(){ register_widget( 'inti_widget_image' ); });
-?>

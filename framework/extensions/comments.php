@@ -99,4 +99,3 @@ class inti_comments extends Walker_Comment{
     <?php }
 }
 endif;
-?>

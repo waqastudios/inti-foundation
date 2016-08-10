@@ -37,6 +37,3 @@ function inti_filter_get_login_logo_url() {
 	}
 }
 add_filter('login_headerurl', 'inti_filter_get_login_logo_url');
-
-
-?>

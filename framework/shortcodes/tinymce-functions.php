@@ -736,6 +736,3 @@ function inti_shortcode_view() {
 	do_action('inti_shortcode_view');
 }
 
-
-
-?>

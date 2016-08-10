@@ -100,6 +100,3 @@ if (!function_exists('inti_get_theme_layouts')) {
 		return $theme_layouts;
 	}
 }
-
-
-?>

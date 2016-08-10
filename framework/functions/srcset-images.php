@@ -35,4 +35,3 @@ function inti_get_srcset_image ($url, $alt){
 function inti_do_srcset_image ($url, $alt){
 	echo inti_get_srcset_image ($url, $alt);
 }
-?>

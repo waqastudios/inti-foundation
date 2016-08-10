@@ -56,6 +56,3 @@ if (!function_exists('get_inti_option')) {
         return $default;
     }
 }
-
-
-?>

@@ -25,6 +25,3 @@ if( ! function_exists( 'inti_current_theme_supports' ) ) {
 		}
 	}
 }
-
-
-?>

@@ -1830,6 +1830,3 @@ function inti_sanitize_social_options( $input ) {
 
 } // end inti_sanitize_social_options
 
-
-
-?>

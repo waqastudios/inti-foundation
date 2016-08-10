@@ -539,4 +539,3 @@ if (!function_exists('inti_get_sticky_sidebars')) {
 		return $sticky;
 	}
 }
-?>

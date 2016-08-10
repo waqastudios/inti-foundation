@@ -122,4 +122,3 @@ class inti_widget_flexvideo extends WP_Widget {
  
 }
 add_action( 'widgets_init', function(){ register_widget( 'inti_widget_flexvideo' ); });
-?>
