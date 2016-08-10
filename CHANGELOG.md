@@ -41,3 +41,9 @@
 ### 1.2.7 (May 22, 2016)
 
 ### 1.2.8 (Jul 22, 2016)
+
+### 1.2.9 (Aug 9, 2016)
+- [#3](https://github.com/waqastudios/inti-foundation/pull/3) Removed stray PHP short tag in Inti Options, replaced with complete <?php. (@joffcrabtree)
+- Removed PHP closing tags for anything likely to get include-d, a stray newline found in the process.
+- Fixed Inti Options version of the font-awesome library after fixing the bower packagename in last version. Name and file location fixed, wasn't getting loaded before.
+- Fixed incorrect description on one of the Inti Options page tab's callbacks
