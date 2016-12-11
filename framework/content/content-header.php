@@ -104,7 +104,7 @@ function inti_do_site_off_canvas_header() {
 	?>
 	<div class="off-canvas-wrapper">
 		<div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
-			<div class="off-canvas-menu off-canvas position-left" id="inti-off-canvas-menu" data-off-canvas data-position="left">
+			<div class="off-canvas-menu off-canvas position-right" id="inti-off-canvas-menu" data-off-canvas data-position="right">
 				<?php inti_hook_off_canvas(); ?>
 			</div>
 			<div class="off-canvas-content" data-off-canvas-content>
