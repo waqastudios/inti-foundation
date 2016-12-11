@@ -47,3 +47,8 @@
 - Removed PHP closing tags for anything likely to get include-d, a stray newline found in the process.
 - Fixed Inti Options version of the font-awesome library after fixing the bower packagename in last version. Name and file location fixed, wasn't getting loaded before.
 - Fixed incorrect description on one of the Inti Options page tab's callbacks
+
+### 1.2.10 (Dec 10, 2016)
+- Updated Foundation for Sites to 6.2.4
+- Updated Font Awesome to 4.7.0
+- Switched Off Canvas to right hand side by default
