@@ -45,7 +45,7 @@ if ( !function_exists( 'inti_get_dropdown_social_links' ) ) {
 			// fontawesome
 			if ($fb) $html .= '<li class="social-fb"><a href="'. $fb .'"'. $blank .'><i class="fa fa-facebook"></i></a></li>';
 			if ($tw) $html .= '<li class="social-tw"><a href="'. $tw .'"'. $blank .'><i class="fa fa-twitter"></i></a></li>';
-			if ($gp) $html .= '<li class="social-gp"><a href="'. $gp .'"'. $blank .'><i class="fa fa-googleplus"></i></a></li>';
+			if ($gp) $html .= '<li class="social-gp"><a href="'. $gp .'"'. $blank .'><i class="fa fa-google-plus"></i></a></li>';
 			if ($li) $html .= '<li class="social-li"><a href="'. $li .'"'. $blank .'><i class="fa fa-linkedin"></i></a></li>';
 			if ($in) $html .= '<li class="social-in"><a href="'. $in .'"'. $blank .'><i class="fa fa-instagram"></i></a></li>';
 			if ($pi) $html .= '<li class="social-pi"><a href="'. $pi .'"'. $blank .'><i class="fa fa-pinterest"></i></a></li>';
@@ -94,7 +94,7 @@ if ( !function_exists( 'inti_get_off_canvas_social_links' ) ) {
 			// fontawesome
 			if ($fb) $html .= '<li class="social-fb"><a href="'. $fb .'"'. $blank .'><i class="fa fa-facebook"></i></a></li>';
 			if ($tw) $html .= '<li class="social-tw"><a href="'. $tw .'"'. $blank .'><i class="fa fa-twitter"></i></a></li>';
-			if ($gp) $html .= '<li class="social-gp"><a href="'. $gp .'"'. $blank .'><i class="fa fa-googleplus"></i></a></li>';
+			if ($gp) $html .= '<li class="social-gp"><a href="'. $gp .'"'. $blank .'><i class="fa fa-google-plus"></i></a></li>';
 			if ($li) $html .= '<li class="social-li"><a href="'. $li .'"'. $blank .'><i class="fa fa-linkedin"></i></a></li>';
 			if ($in) $html .= '<li class="social-in"><a href="'. $in .'"'. $blank .'><i class="fa fa-instagram"></i></a></li>';
 			if ($pi) $html .= '<li class="social-pi"><a href="'. $pi .'"'. $blank .'><i class="fa fa-pinterest"></i></a></li>';
@@ -144,7 +144,7 @@ if ( !function_exists( 'inti_get_footer_social_links' ) ) {
 			// fontawesome
 			if ($fb) $html .= '<li class="social-fb"><a href="'. $fb .'"'. $blank .'><i class="fa fa-facebook"></i></a></li>';
 			if ($tw) $html .= '<li class="social-tw"><a href="'. $tw .'"'. $blank .'><i class="fa fa-twitter"></i></a></li>';
-			if ($gp) $html .= '<li class="social-gp"><a href="'. $gp .'"'. $blank .'><i class="fa fa-googleplus"></i></a></li>';
+			if ($gp) $html .= '<li class="social-gp"><a href="'. $gp .'"'. $blank .'><i class="fa fa-google-plus"></i></a></li>';
 			if ($li) $html .= '<li class="social-li"><a href="'. $li .'"'. $blank .'><i class="fa fa-linkedin"></i></a></li>';
 			if ($in) $html .= '<li class="social-in"><a href="'. $in .'"'. $blank .'><i class="fa fa-instagram"></i></a></li>';
 			if ($pi) $html .= '<li class="social-pi"><a href="'. $pi .'"'. $blank .'><i class="fa fa-pinterest"></i></a></li>';
@@ -192,7 +192,7 @@ if ( !function_exists( 'inti_get_widget_social_links' ) ) {
 			// fontawesome
 			if ($fb) $html .= '<li class="social-fb"><a href="'. $fb .'"'. $blank .'><i class="fa fa-facebook"></i></a></li>';
 			if ($tw) $html .= '<li class="social-tw"><a href="'. $tw .'"'. $blank .'><i class="fa fa-twitter"></i></a></li>';
-			if ($gp) $html .= '<li class="social-gp"><a href="'. $gp .'"'. $blank .'><i class="fa fa-googleplus"></i></a></li>';
+			if ($gp) $html .= '<li class="social-gp"><a href="'. $gp .'"'. $blank .'><i class="fa fa-google-plus"></i></a></li>';
 			if ($li) $html .= '<li class="social-li"><a href="'. $li .'"'. $blank .'><i class="fa fa-linkedin"></i></a></li>';
 			if ($in) $html .= '<li class="social-in"><a href="'. $in .'"'. $blank .'><i class="fa fa-instagram"></i></a></li>';
 			if ($pi) $html .= '<li class="social-pi"><a href="'. $pi .'"'. $blank .'><i class="fa fa-pinterest"></i></a></li>';

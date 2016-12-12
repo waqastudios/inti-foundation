@@ -45,7 +45,7 @@ off canvas menu, and hides the main navigation menu
 			ul { display: none; } // Loads with display: none to prevent submenu flashes. 
 			ul.js-dropdown-active { display: block; }
 			
-			ul.sub-menu {}
+			ul.submenu {}
 
 			& .is-dropdown-submenu-parent.is-down-arrow {
 				> a::after { border-color: $white transparent transparent; }
