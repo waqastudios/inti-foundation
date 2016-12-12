@@ -52,3 +52,6 @@
 - Updated Foundation for Sites to 6.2.4
 - Updated Font Awesome to 4.7.0
 - Switched Off Canvas to right hand side by default
+
+### 1.2.11 (Dec 12, 2016)
+- Minor bug fixes
