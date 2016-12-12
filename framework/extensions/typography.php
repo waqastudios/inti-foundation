@@ -91,50 +91,61 @@ if ( !function_exists('inti_get_typography_font_sizes') ) {
  * Create an array of fonts to be enqueued
  *
  * @since 1.0.0
+ * @version 1.2.10
  */
-function inti_do_typography_google_fonts(){
-	$all_google_fonts = array_keys( inti_get_typography_google_fonts() );
-	// Get the font face for each option and put it in an array
-	$title_font = get_inti_option('title_font', 'inti_customizer_options', "'Helvetica Neue', Helvetica, Arial, sans-serif");
-	$paragraph_font = get_inti_option('paragraph_font', 'inti_customizer_options', "'Open Sans', sans-serif");
-	$h1_font = get_inti_option('h1_font', 'inti_customizer_options', "'Open Sans', sans-serif");
-	$h2_font = get_inti_option('h2_font', 'inti_customizer_options', "'Open Sans', sans-serif");
-	$h3_font = get_inti_option('h3_font', 'inti_customizer_options', "'Open Sans', sans-serif");
-	$h4_font = get_inti_option('h4_font', 'inti_customizer_options', "'Open Sans', sans-serif");
-	$h5_font = get_inti_option('h5_font', 'inti_customizer_options', "'Open Sans', sans-serif");
-	$h6_font = get_inti_option('h6_font', 'inti_customizer_options', "'Open Sans', sans-serif");
-	$selected_fonts = array(
-		$title_font,
-		$paragraph_font,
-		$h1_font,
-		$h2_font,
-		$h3_font,
-		$h4_font,
-		$h5_font,
-		$h6_font );
-	// Remove any duplicates in the list
-	$selected_fonts = array_unique( $selected_fonts );
-	// Check each of the unique fonts against the defined Google fonts
-	// If it is a Google font, go ahead and call the function to enqueue it
-	foreach ( $selected_fonts as $font ){
-		if ( in_array( $font, $all_google_fonts ) ){
-			inti_do_typography_enqueue_google_font( $font );
+if ( !function_exists('inti_do_typography_google_fonts') ) {
+	function inti_do_typography_google_fonts(){
+		$all_google_fonts = array_keys( inti_get_typography_google_fonts() );
+		// Get the font face for each option and put it in an array
+		$title_font = get_inti_option('title_font', 'inti_customizer_options', "'Helvetica Neue', Helvetica, Arial, sans-serif");
+		$paragraph_font = get_inti_option('paragraph_font', 'inti_customizer_options', "'Open Sans', sans-serif");
+		$h1_font = get_inti_option('h1_font', 'inti_customizer_options', "'Open Sans', sans-serif");
+		$h2_font = get_inti_option('h2_font', 'inti_customizer_options', "'Open Sans', sans-serif");
+		$h3_font = get_inti_option('h3_font', 'inti_customizer_options', "'Open Sans', sans-serif");
+		$h4_font = get_inti_option('h4_font', 'inti_customizer_options', "'Open Sans', sans-serif");
+		$h5_font = get_inti_option('h5_font', 'inti_customizer_options', "'Open Sans', sans-serif");
+		$h6_font = get_inti_option('h6_font', 'inti_customizer_options', "'Open Sans', sans-serif");
+		$selected_fonts = array(
+			$title_font,
+			$paragraph_font,
+			$h1_font,
+			$h2_font,
+			$h3_font,
+			$h4_font,
+			$h5_font,
+			$h6_font );
+		$selected_fonts = apply_filters('inti_filter_do_typography_google_fonts', $selected_fonts);
+		// Remove any duplicates in the list
+		$selected_fonts = array_unique( $selected_fonts );
+		// Check each of the unique fonts against the defined Google fonts
+
+		// Choose which weights/styles to enqueue
+		$weights = "400,600";
+		$weights = apply_filters('inti_filter_do_typography_weights', $weights);
+
+		// If it is a Google font, go ahead and call the function to enqueue it
+		foreach ( $selected_fonts as $font ){
+			if ( in_array( $font, $all_google_fonts ) ){
+				inti_do_typography_enqueue_google_font( $font, $weights );
+			}
 		}
 	}
+	add_action('wp_enqueue_scripts', 'inti_do_typography_google_fonts');
 }
-add_action('wp_enqueue_scripts', 'inti_do_typography_google_fonts');
 
 /**
  * Enqueues the Google $font that is passed
  *
  * @since 1.0.0
  */
-function inti_do_typography_enqueue_google_font( $font ){
-	$font = explode( ',', $font );
-	$font = $font[0];
-	$font = preg_replace( '/[^A-Za-z0-9 ]/', '', $font );
-	$font = str_replace( ' ', '+', $font );
-	$handle = 'typography-' . $font;
-	$src = '//fonts.googleapis.com/css?family=' . $font;
-	wp_enqueue_style( $handle, $src, false, false, 'all' );
+if ( !function_exists('inti_do_typography_enqueue_google_font') ) {
+	function inti_do_typography_enqueue_google_font( $font, $weights ){
+		$font = explode( ',', $font );
+		$font = $font[0];
+		$font = preg_replace( '/[^A-Za-z0-9 ]/', '', $font );
+		$font = str_replace( ' ', '+', $font );
+		$handle = 'typography-' . $font;
+		$src = '//fonts.googleapis.com/css?family=' . $font;
+		wp_enqueue_style( $handle, $src, false, false, 'all' );
+	}
 }
