@@ -1,0 +1,193 @@
+
+/******************************************************************
+
+Stylesheet: Navigation
+
+This style sheet contains styles for all page navigation menus. This
+includes the default F6 top-bar and off-canvas. This file also contains
+the common styles that would apply to page navigation widgets or the 
+footer menu that are part of Inti Foundation be default.
+
+** 
+This replaces _off-canvas.scss and _top-bar.scss from 
+Inti Foundation v1.2.11 
+**
+
+******************************************************************/
+
+$global-menu-background: $black;
+$global-menu-color: $white;
+
+
+// Common Nagivation elements and common styles
+ul.site-navigation {
+	background-color: transparent;
+
+	li {
+		a { color: $global-menu-color; }
+		a:hover { text-decoration: underline; }
+
+		&.current-menu-item > a { text-decoration: underline; }
+		&.current-menu-perent > a, &.current-menu-ancestor > a { text-decoration: underline; }
+
+		ul.submenu {
+			li {
+				a {}
+			}
+		}
+	}
+	
+		// individual menu styles
+		&.site-navigation-top-bar {}
+		&.site-navigation-drilldown {}
+		&.site-navigation-accordion {}
+		&.site-navigation-footer {} // overwritten in _sitefooter.scss
+		&.site-navigation-widget {} // overwritten in _sidebar.scss
+
+		// arrows
+		.is-dropdown-submenu-parent {
+			> a::after { border-color: $global-menu-color transparent transparent; }
+		}
+		.is-accordion-submenu-parent {
+			> a::after { border-color: $global-menu-color transparent transparent; }
+		}
+		.is-drilldown-submenu-parent {
+			> a::after { border-color: transparent $global-menu-color transparent; }
+		}
+}
+
+
+// Top Bar
+.top-bar {
+	background-color: $global-menu-background; // overwrites value in _settings.scss because we want to control all menus here
+		.top-bar-left {}
+		.top-bar-right {}
+
+
+			ul.dropdown.menu {
+				li {}
+
+				ul { display: none; } // Loads with display: none to prevent submenu flashes. 
+				ul.js-dropdown-active { display: block; }
+			}
+}
+
+// Trigger for off-canvas menu 
+.top-bar .off-canvas-button {
+	.hamburger {
+		width: 1.5rem; height: 0.875rem;
+		position: relative;
+		display: inline-block;
+		transform: rotate(0);
+
+			span {
+				display: block;
+				position: absolute;
+				height: 2px;
+				width: 100%;
+				background-color: $global-menu-color;
+				opacity: 1;
+				left: 0;
+				transform: rotate(0);
+				transition: transform 125ms linear;
+					&:nth-child(1) { top: 0; }
+					&:nth-child(2) { top: 0.4375rem; }
+					&:nth-child(3) { top: 0.875rem; }
+			}
+		&.is-active {
+			span {
+
+						&:nth-child(1) { top: 0.5rem; transform: rotate(135deg); }
+						&:nth-child(2) { top: 0.4375rem; opacity: 0; }
+						&:nth-child(3) { top: 0.5rem; transform: rotate(45deg); }
+			}
+		}
+	}
+}
+
+
+
+
+
+
+// Off Canvas menu
+.off-canvas-menu { 
+	background-color: $black;
+
+		.is-drilldown-submenu {}
+		.js-drilldown-back a::before { border-color: transparent $white transparent transparent; }
+	
+}
+.admin-bar>.off-canvas-menu {
+	padding-top: 32px !important;
+
+	@include breakpoint(782px down) { // only relevant if sticky turned on for mobile
+		& {
+			padding-top: 46px !important;
+		}	
+	}	
+}	
+
+
+
+/**
+ * Sticky Elements
+ *
+ * (The following goes in _top-bar because we generally just make the top bar sticky, not the whole
+ * site-header, though we could) 
+ *
+ * Notes: Generally we called anything less than mlarge "mobile" as this incompasses
+ * smaller tablets, tablets held in portrait and cell phones. This is where we switch
+ * to the off-canvas menu by default.
+ * 782px is the screen width that the Admin Bar in WordPress changes height from 32px to 46px
+ *
+ * This makes the existing top-bar sticky. If you have a sticky sidebar too, this will interfere,
+ * you'll have to add more top margin to the sidebar when both are sticky. Users are given the option
+ * to make sidebars sticky in Customize, in Page Options. You may want to hide that for your user.
+ *
+ * Foundation's Sticky feature makes the existing top-bar with the main navigation menu appear to stick
+ * to the top of the page. It would generaly have the same design. If in your design you are displaying
+ * the logo alongside the menu, you probably wrapped the sticky div around that too. If not, you might
+ * want to add a logo into the top-bar when it is sticky - the mobile banner logo is already there - you
+ * could show that.
+ *
+ * You can of course load a whole new top-bar once you scroll past the main one, and that can have its 
+ * own style, but then you don't need the sticky functionality. 
+ * 
+ */
+
+// Sticky top bar needs to have extra top margin if admin-bar is visible
+/** #wpadminbar { position: fixed; } // keep fixed so we dont have a gap
+.admin-bar .site-header .sticky.is-stuck { 
+	margin-top: 32px !important;
+
+		@include breakpoint(782px down) { // only relevant if sticky turned on for mobile
+			& {
+				margin-top: 46px !important;
+			}	
+		}	
+}
+
+// Sticky styles
+.site-header .sticky.is-stuck {
+	z-index: 6;
+
+		.top-bar { }
+
+		// Force display the mobile banner logo when the menu is sticky
+		@include breakpoint(medium up) {
+			//.mobile-banner { display: block !important; }
+		}
+
+ }
+
+// Styles needed to keep things in line
+.site-header .sticky {
+	max-width: none !important;
+	width: 100%;	
+
+		@include breakpoint(medium down) { // only relevant if sticky turned on for mobile
+				.top-bar { }
+		}	
+}*/
+

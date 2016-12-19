@@ -14,7 +14,7 @@
  * @since 1.0.1
  */
 function inti_widget_nav_menu_args($nav_menu_args){
-	$nav_menu_args['menu_class'] = 'menu vertical';
+	$nav_menu_args['menu_class'] = 'menu vertical site-navigation site-navigation-widget';
 	$nav_menu_args['menu_id'] = 'widget_nav_menu_' . md5(uniqid(rand(), true));
 	$nav_menu_args['items_wrap'] = '<ul id="%1$s" class="%2$s" data-accordion-menu>%3$s</ul>';
 

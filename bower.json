@@ -3,10 +3,10 @@
   "private": true,
   "ignore": [],
   "dependencies": {
-    "foundation-sites": "~6.2.4"
+    "foundation-sites": "~6.3.0"
   },
   "resolutions": {
-    "what-input": "~2.0.0",
+    "what-input": "~4.0.3",
     "jquery": "~2.2.0"
   }
 }

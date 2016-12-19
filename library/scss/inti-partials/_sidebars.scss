@@ -33,14 +33,24 @@ Styles for sidebars and the widgets they contain
 	.widget_nav_menu {
 		ul { 
 			margin: 0;
-			background-color: $light-gray;
+			background-color: $black;
 			
-				li { 
-					
-					&.current-menu-item { font-weight: bold; }
-					&.current-menu-parent > a { font-weight: bold; }
+				li { }
+				ul.submenu {
+					list-style: none;
+					margin-bottom: $global-margin;
+
+						li {
+							a {
+								display: block;
+								padding: .7rem 1rem;
+								line-height: 1;
+							}
+						}
 				}
-				ul.sub-menu {}
+				
+			ul { display: none; } // Loads with display: none to prevent submenu flashes. 
+			ul.js-dropdown-active { display: block; }
 		}
 	}
 	.widget_inti_image {}

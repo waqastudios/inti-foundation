@@ -102,13 +102,11 @@ add_action('inti_hook_site_before', 'inti_do_body_inside', 1);
  */
 function inti_do_site_off_canvas_header() {
 	?>
-	<div class="off-canvas-wrapper">
-		<div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
-			<div class="off-canvas-menu off-canvas position-right" id="inti-off-canvas-menu" data-off-canvas data-position="right">
-				<?php inti_hook_off_canvas(); ?>
-			</div>
-			<div class="off-canvas-content" data-off-canvas-content>
-				<?php inti_hook_off_canvas_content(); ?>
+	<div class="off-canvas-menu off-canvas position-right" id="inti-off-canvas-menu" data-off-canvas>
+		<?php inti_hook_off_canvas(); ?>
+	</div>
+	<div class="off-canvas-content" data-off-canvas-content>
+		<?php inti_hook_off_canvas_content(); ?>
 	<?php
 }
 add_action('inti_hook_site_before', 'inti_do_site_off_canvas_header');
@@ -121,9 +119,8 @@ add_action('inti_hook_site_before', 'inti_do_site_off_canvas_header');
  */
 function inti_do_site_off_canvas_footer() {
 	?>
-			</div><!-- .off-canvas-wrapper-content -->
-		</div><!-- .off-canvas-wrapper-inner -->
-	</div><!-- .off-canvas-wrapper -->
+	</div><!-- .off-canvas-wrapper-content -->
+
 	<?php
 }
 add_action('inti_hook_site_after', 'inti_do_site_off_canvas_footer');

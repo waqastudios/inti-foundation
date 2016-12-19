@@ -55,7 +55,7 @@ function inti_get_dropdown_menu() {
 	 $defaults = wp_nav_menu(array(
 		'container' => false,
 		'echo' => false,                           // Remove nav container
-		'menu_class' => 'dropdown menu',       // Adding custom nav class
+		'menu_class' => 'dropdown menu site-navigation site-navigation-top-bar',       // Adding custom nav class
 		'items_wrap' => '<ul id="%1$s" class="%2$s" data-dropdown-menu data-options="{disableHover:true}">%3$s</ul>',
 		'theme_location' => 'dropdown-menu',                 // Where it's located in the theme
 		'depth' => 5,                                   // Limit the depth of the nav
@@ -70,7 +70,7 @@ function inti_get_accordion_menu() {
 	 $defaults = wp_nav_menu(array(
 		'container' => false,
 		'echo' => false,                           // Remove nav container
-		'menu_class' => 'vertical menu',       // Adding custom nav class
+		'menu_class' => 'vertical menu site-navigation site-navigation-accordion',       // Adding custom nav class
 		'items_wrap' => '<ul id="%1$s" class="%2$s" data-accordion-menu>%3$s</ul>',
 		'theme_location' => 'off-canvas-menu',                 // Where it's located in the theme
 		'depth' => 5,                                   // Limit the depth of the nav
@@ -85,7 +85,7 @@ function inti_get_drilldown_menu() {
 	 $defaults = wp_nav_menu(array(
 		'container' => false,
 		'echo' => false,                           // Remove nav container
-		'menu_class' => 'vertical menu',       // Adding custom nav class
+		'menu_class' => 'vertical menu site-navigation site-navigation-drilldown',       // Adding custom nav class
 		'items_wrap' => '<ul id="%1$s" class="%2$s" data-drilldown>%3$s</ul>',
 		'theme_location' => 'off-canvas-menu',                 // Where it's located in the theme
 		'depth' => 5,                                   // Limit the depth of the nav
@@ -100,7 +100,7 @@ function inti_get_footer_menu() {
 	$defaults = wp_nav_menu(array(
 		'container' => false,
 		'echo' => false,                           // Remove nav container
-		'menu_class' => 'menu',       // Adding custom nav class
+		'menu_class' => 'menu site-navigation site-navigation-footer',       // Adding custom nav class
 		'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
 		'theme_location' => 'footer-menu',                 // Where it's located in the theme
 		'depth' => 1,                                   // Limit the depth of the nav

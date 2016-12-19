@@ -1,1 +1,1 @@
-!function(n){n(document).foundation()}(jQuery),function(n){}(jQuery);
+!function(n){n(document).foundation()}(jQuery),function(n){n(".off-canvas").on("opened.zf.offcanvas",function(){n(".hamburger").addClass("is-active")}),n(".off-canvas").on("closed.zf.offcanvas",function(){n(".hamburger").removeClass("is-active")})}(jQuery);
