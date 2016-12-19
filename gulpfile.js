@@ -40,8 +40,8 @@ gulp.task('styles', function() {
 gulp.task('site-js', function() {
   return gulp.src([	
 	  
-           // Grab your custom scripts
-  		  './library/js/scripts/*.js'
+        // Grab your custom scripts, compiled into parent directory
+  		  './library/js/source/*.js'
   		  
   ])
     .pipe(plumber())
@@ -141,7 +141,7 @@ gulp.task('watch', function() {
   gulp.watch('./library/scss/**/*.scss', ['styles']);
 
   // Watch site-js files
-  gulp.watch('./library/js/scripts/*.js', ['site-js']);
+  gulp.watch('./library/js/source/*.js', ['site-js']);
   
   // Watch foundation-js files
   gulp.watch('./library/vendor/foundation-sites/js/*.js', ['foundation-js']);

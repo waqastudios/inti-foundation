@@ -1,8 +1,6 @@
 (function($) {
-
 	/* Initialize Foundation Scripts */
 	$(document).foundation();
-
 })(jQuery);	
 
 
@@ -16,6 +14,5 @@
 	$('.off-canvas').on( "closed.zf.offcanvas", function(){
 		$('.hamburger').removeClass('is-active');
 	});
-	
-	
+
 })(jQuery);	
