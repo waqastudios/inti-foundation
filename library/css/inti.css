@@ -3612,6 +3612,12 @@ select {
     height: 100%; }
   .responsive-embed.widescreen, .flex-video.widescreen {
     padding-bottom: 56.25%; }
+  .responsive-embed.vertical, .flex-video.vertical {
+    padding-bottom: 177.77778%; }
+  .responsive-embed.panorama, .flex-video.panorama {
+    padding-bottom: 31.64062%; }
+  .responsive-embed.square, .flex-video.square {
+    padding-bottom: 100%; }
 
 .label {
   display: inline-block;

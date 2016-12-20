@@ -82,7 +82,6 @@ if (!function_exists('inti_shortcode_dropdown_button')) {
 }
 
 
-
 /* ---------------------------------------------------------------------- */
 /*	Flex Video
 /* ---------------------------------------------------------------------- */
@@ -113,6 +112,27 @@ if (!function_exists('inti_shortcode_flex_video')) {
 		return $html;
 	}
 	add_shortcode('flex-video', 'inti_shortcode_flex_video');
+}
+
+
+/* ---------------------------------------------------------------------- */
+/*	Responsive Embed
+/* ---------------------------------------------------------------------- */
+
+if (!function_exists('inti_shortcode_responsive_embed')) {
+	function inti_shortcode_responsive_embed( $atts, $content = null ) {	
+		$content = (trim($content)) ? do_shortcode($content) : '';		
+		extract( shortcode_atts( array(
+			'aspect' => '', // widescreen
+			'iframe' => ''
+		), $atts ) );
+		$html = '<div class="responsive-embed '. $aspect .'">';
+		$html .= $content;
+		$html .= '</div>';
+
+		return $html;
+	}
+	add_shortcode('responsive-embed', 'inti_shortcode_responsive_embed');
 }
 
 

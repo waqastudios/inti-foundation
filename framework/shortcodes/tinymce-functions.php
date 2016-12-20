@@ -115,6 +115,7 @@ function inti_shortcode_add_select() {
 		'inti-button' => __('Button', 'inti'),
 		'inti-dropdown-button' => __('Dropdown Button', 'inti'),
 		'inti-flex-video' => __('Video', 'inti'),
+		'inti-responsive-embed' => __('Responsive Embed', 'inti'),
 		'inti-callout' => __('Callout', 'inti'),
 		'inti-accordion' => __('Accordion', 'inti'),
 		'inti-tabs' => __('Tabs', 'inti'),
@@ -146,6 +147,9 @@ function inti_shortcode_enqueue_shortcodes($hook) {
 		
 		wp_register_script('inti-shortcode-flex-video', get_template_directory_uri() . '/framework/shortcodes/js/shortcode-flex-video.js', '', filemtime(get_template_directory() . '/framework/shortcodes/js/shortcode-flex-video.js'), TRUE);
 		wp_enqueue_script('inti-shortcode-flex-video'); 
+		
+		wp_register_script('inti-shortcode-responsive-embed', get_template_directory_uri() . '/framework/shortcodes/js/shortcode-responsive-embed.js', '', filemtime(get_template_directory() . '/framework/shortcodes/js/shortcode-responsive-embed.js'), TRUE);
+		wp_enqueue_script('inti-shortcode-responsive-embed'); 
 		
 		wp_register_script('inti-shortcode-callout', get_template_directory_uri() . '/framework/shortcodes/js/shortcode-callout.js', '', filemtime(get_template_directory() . '/framework/shortcodes/js/shortcode-callout.js'), TRUE);
 		wp_enqueue_script('inti-shortcode-callout'); 
@@ -405,6 +409,46 @@ function inti_shortcode_add_flex_video() {
 	echo $html;
 }
 add_action('inti_shortcode_view', 'inti_shortcode_add_flex_video');
+
+
+/**
+ * Responsive Embed shortcode - with options
+ * @since 1.0.0
+ */
+function inti_shortcode_add_responsive_embed() {
+	ob_start();?>
+
+	<tr class="option inti-responsive-embed">
+		<th class="label">
+			<label for="responsive-embed-aspect"><?php _e('Aspect Ratio', 'inti'); ?></label>
+		</th>
+
+		<td class="field">
+			<select name="responsive-embed-aspect" id="responsive-embed-aspect" class="widefat">
+				<option value="widescreen" selected><?php _e('Widescreen (16:9)', 'inti'); ?></option>
+				<option value="fourthree"><?php _e('Standard (4:3)', 'inti'); ?></option>
+				<option value="panorama"><?php _e('Panorama (256:81)', 'inti'); ?></option>
+				<option value="square"><?php _e('Square (1:1)', 'inti'); ?></option>
+				<option value="vertical"><?php _e('Vertical (9:16)', 'inti'); ?></option>
+			</select>
+		</td>
+	</tr>
+	<tr class="option inti-responsive-embed">
+		<th class="label">
+			<label for="responsive-embed-html"><?php _e('iframe HTML', 'inti'); ?></label>
+		</th>
+
+		<td class="field">
+			<input type="text" name="responsive-embed-html" id="responsive-embed-html" value="" class="widefat">
+		</td>
+	</tr>
+
+	<?php
+	$html = ob_get_clean();
+	$html = apply_filters('inti_shortcode_filter_responsive_embed', $html);
+	echo $html;
+}
+add_action('inti_shortcode_view', 'inti_shortcode_add_responsive_embed');
 
 
 /**

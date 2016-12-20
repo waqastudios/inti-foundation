@@ -48,13 +48,14 @@ Styles for sidebars and the widgets they contain
 							}
 						}
 				}
-				
+
 			ul { display: none; } // Loads with display: none to prevent submenu flashes. 
 			ul.js-dropdown-active { display: block; }
 		}
 	}
 	.widget_inti_image {}
 	.widget_inti_flexvideo {}
+	.widget_inti_responsive_embed {}
 	.widget_inti_social_links {
 		ul.social-icons {
 			margin: 0;

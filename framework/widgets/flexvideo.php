@@ -1,5 +1,7 @@
 <?php
-
+/** Flex video was removed in F6.3.0 in favor of a component that makes any embedded iframe responsive
+  * but video is probably the most common use, we'll keep this widget named as is.
+  */
 class inti_widget_flexvideo extends WP_Widget {
 
 	/**
