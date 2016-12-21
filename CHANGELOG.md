@@ -55,3 +55,9 @@
 
 ### 1.2.11 (Dec 12, 2016)
 - Minor bug fixes
+
+### 1.3.0 (Dec 21, 2016)
+- Happy Holidays!
+- Upgraded to Foundation for Sites 6.3.0, with support for new off-canvas
+- Combined _off-canvas and _top-bar into _navigation.scss
+- Added responsive-embed widget and shortcode
