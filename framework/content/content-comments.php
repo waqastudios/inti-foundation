@@ -91,10 +91,10 @@ function inti_do_post_page_comments() {
 					  var js, fjs = d.getElementsByTagName(s)[0];
 					  if (d.getElementById(id)) return;
 					  js = d.createElement(s); js.id = id;
-					  js.src = "//connect.facebook.net/<?php echo $lang; ?>/sdk.js#xfbml=1&appId=<?php echo $appid; ?>&version=v2.3";
+					  js.src = "//connect.facebook.net/<?php echo $lang; ?>/sdk.js#xfbml=1&appId=<?php echo $appid; ?>&version=v2.8";
 					  fjs.parentNode.insertBefore(js, fjs);
 					}(document, 'script', 'facebook-jssdk'));</script>
-					<fb:comments href="<?php the_permalink(); ?>" num_posts="<?php echo $amount ?>" width="<?php echo $width ?>" colorscheme="<?php echo $scheme ?>"></fb:comments>
+					<div class="fb-comments" data-href="<?php the_permalink(); ?>" data-numposts="<?php echo $amount ?>" data-colorscheme="<?php echo $scheme ?>"></div>
 				</section><!-- #comments -->
 				<?php
 			break; 
