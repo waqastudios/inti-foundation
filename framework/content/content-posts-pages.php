@@ -17,7 +17,7 @@
  * @since 1.0.0
  */
 function inti_do_page_header_title() {
-	if ( !is_page_template('page-templates/front-page.php') ) : 
+	if ( !is_front_page() ) : 
 		if ( !is_search() ) :
 		?>
 			<h1 class="entry-title"><?php the_title(); ?></h1>
