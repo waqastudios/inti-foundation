@@ -64,3 +64,6 @@
 
 ### 1.3.1 (Dec 26, 2016)
 - Minor bug fixes
+
+### 1.3.1 (Apr 11, 2017)
+- Minor bug fixes
