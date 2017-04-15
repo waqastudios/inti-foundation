@@ -67,3 +67,8 @@
 
 ### 1.3.2 (Apr 11, 2017)
 - Minor bug fixes
+
+### 1.3.3 (Apr 15, 2017)
+- Fixing FB comments showing up on loops they shouldn't be
+- Fixed accrodion shortcode by adding data-accordion-item
+- Updated Foundation for Sites to 6.3.1
