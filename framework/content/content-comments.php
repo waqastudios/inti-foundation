@@ -44,7 +44,9 @@ function inti_do_post_page_comments() {
 	$system = get_inti_option('commenting_system', 'inti_commenting_options');
 
 	if ( comments_open() || '0' != get_comments_number() ) :
-		if ( !is_front_page() ) :
+		
+		if ( is_single() || is_page() && !is_front_page() ) :
+
 			switch ( $system ) { 
 				case 'wordpress' : 
 					comments_template('', true);
