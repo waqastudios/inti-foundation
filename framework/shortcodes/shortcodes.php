@@ -199,7 +199,7 @@ if (!function_exists('inti_shortcode_accordion_item')) {
 			'title' => ''
 		), $atts));
 		$id = md5(uniqid(rand(), true));
-		return '<li class="accordion-item">
+		return '<li class="accordion-item" data-accordion-item>
 					<a href="#accordion-panel-'. $id .'" role="tab" id="accordion-panel-'. $id .'-heading" class="accordion-title" aria-controls="accordion-panel-'. $id .'">'. $title .'</a>' .
 					'<div class="accordion-content" roll="tabpanel" data-tab-content aria-labelledby="accordion-panel-heading">'. $content .
 				'</li>';
