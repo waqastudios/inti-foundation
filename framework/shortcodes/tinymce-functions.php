@@ -25,7 +25,7 @@ function inti_add_mce_button() {
 		add_filter( 'mce_buttons', 'inti_register_mce_button' );
 	}
 }
-add_action('admin_head', 'inti_add_mce_button');
+add_action('admin_enqueue_scripts', 'inti_add_mce_button');
 add_action('customize_controls_enqueue_scripts', 'inti_add_mce_button');
 
 // Declare script for new button
