@@ -72,3 +72,6 @@
 - Fixing FB comments showing up on loops they shouldn't be
 - Fixed accrodion shortcode by adding data-accordion-item
 - Updated Foundation for Sites to 6.3.1
+
+### 1.3.4 (Apr 15, 2017)
+- Fixed double title on single post navigation
