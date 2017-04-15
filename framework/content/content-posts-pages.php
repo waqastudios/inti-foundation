@@ -285,7 +285,7 @@ function inti_do_nav_single() {
 				</div>
 				<div class="medium-6 columns">
 					<div class="float-right">
-					<?php next_post_link('%link', '%title <span class="meta-nav">%title &rarr;</span>', false, $exclude); ?>
+					<?php next_post_link('%link', '<span class="meta-nav">%title &rarr;</span>', false, $exclude); ?>
 					</div>
 				</div>
 			</div>
