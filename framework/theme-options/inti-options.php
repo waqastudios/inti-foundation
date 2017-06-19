@@ -334,16 +334,18 @@ if (!function_exists('inti_initialize_general_options')) {
 				)
 			);
 		
-			add_settings_field( 
-				'breadcrumbs',                      
-				__( 'Show Breadcrumbs', 'inti' ),              
-				'inti_breadcrumbs_callback',   
-				'inti_general_options',
-				'general_settings_section',         
-				array(                              
-					__( 'They can be displayed before and after the content, or not at all.', 'inti' ),
-				)
-			);
+			if (current_theme_supports( 'inti-breadcrumbs' )) {
+				add_settings_field( 
+					'breadcrumbs',                      
+					__( 'Show Breadcrumbs', 'inti' ),              
+					'inti_breadcrumbs_callback',   
+					'inti_general_options',
+					'general_settings_section',         
+					array(                              
+						__( 'They can be displayed before and after the content, or not at all.', 'inti' ),
+					)
+				);
+			}
 		
 			add_settings_field( 
 				'pagination',                      
@@ -368,53 +370,56 @@ if (!function_exists('inti_initialize_general_options')) {
 			);
 
 
+		if (inti_current_theme_supports( 'inti-page-templates', 'front-page' )) {
+			add_settings_section(
+				'general_settings_section_2',         // ID used to identify this section and with which to register options
+				__( 'Front Page', 'inti' ),     // Title to be displayed on the administration page
+				'inti_frontpage_callback', // Callback used to render the description of the section
+				'inti_general_options'     // Page on which to add this section of options
+			);
+			
+				add_settings_field( 
+					'frontpage_post_category',                      // ID used to identify the field throughout the theme
+					__( 'Post Category to display', 'inti' ),                          // The label to the left of the option interface element
+					'inti_frontpage_post_category_callback',   // The name of the function responsible for rendering the option interface
+					'inti_general_options',    // The page on which this option will be displayed
+					'general_settings_section_2'
+				);
+			
+				add_settings_field( 
+					'frontpage_post_number',                      // ID used to identify the field throughout the theme
+					__( 'Number of posts to display', 'inti' ),                          // The label to the left of the option interface element
+					'inti_frontpage_post_number_callback',   // The name of the function responsible for rendering the option interface
+					'inti_general_options',    // The page on which this option will be displayed
+					'general_settings_section_2'
+				);
 
-		add_settings_section(
-			'general_settings_section_2',         // ID used to identify this section and with which to register options
-			__( 'Front Page', 'inti' ),     // Title to be displayed on the administration page
-			'inti_frontpage_callback', // Callback used to render the description of the section
-			'inti_general_options'     // Page on which to add this section of options
-		);
-		
-			add_settings_field( 
-				'frontpage_post_category',                      // ID used to identify the field throughout the theme
-				__( 'Post Category to display', 'inti' ),                          // The label to the left of the option interface element
-				'inti_frontpage_post_category_callback',   // The name of the function responsible for rendering the option interface
-				'inti_general_options',    // The page on which this option will be displayed
-				'general_settings_section_2'
-			);
-		
-			add_settings_field( 
-				'frontpage_post_number',                      // ID used to identify the field throughout the theme
-				__( 'Number of posts to display', 'inti' ),                          // The label to the left of the option interface element
-				'inti_frontpage_post_number_callback',   // The name of the function responsible for rendering the option interface
-				'inti_general_options',    // The page on which this option will be displayed
-				'general_settings_section_2'
-			);
+				add_settings_field( 
+					'frontpage_post_columns',                      // ID used to identify the field throughout the theme
+					__( 'Number of columns', 'inti' ),                          // The label to the left of the option interface element
+					'inti_frontpage_post_columns_callback',   // The name of the function responsible for rendering the option interface
+					'inti_general_options',    // The page on which this option will be displayed
+					'general_settings_section_2'
+				);
 
-			add_settings_field( 
-				'frontpage_post_columns',                      // ID used to identify the field throughout the theme
-				__( 'Number of columns', 'inti' ),                          // The label to the left of the option interface element
-				'inti_frontpage_post_columns_callback',   // The name of the function responsible for rendering the option interface
-				'inti_general_options',    // The page on which this option will be displayed
-				'general_settings_section_2'
-			);
+				add_settings_field( 
+					'frontpage_exclude_category',                      // ID used to identify the field throughout the theme
+					__( 'Exclude front page category', 'inti' ),                          // The label to the left of the option interface element
+					'inti_frontpage_exclude_category_callback',   // The name of the function responsible for rendering the option interface
+					'inti_general_options',    // The page on which this option will be displayed
+					'general_settings_section_2'
+				);
 
-			add_settings_field( 
-				'frontpage_exclude_category',                      // ID used to identify the field throughout the theme
-				__( 'Exclude front page category', 'inti' ),                          // The label to the left of the option interface element
-				'inti_frontpage_exclude_category_callback',   // The name of the function responsible for rendering the option interface
-				'inti_general_options',    // The page on which this option will be displayed
-				'general_settings_section_2'
-			);
-
-			add_settings_field( 
-				'frontpage_breadcrumbs',                      // ID used to identify the field throughout the theme
-				__( 'Hide breadcrumbs on front page', 'inti' ),                          // The label to the left of the option interface element
-				'inti_frontpage_breadcrumbs_callback',   // The name of the function responsible for rendering the option interface
-				'inti_general_options',    // The page on which this option will be displayed
-				'general_settings_section_2'
-			);
+				if (current_theme_supports( 'inti-breadcrumbs' )) {
+					add_settings_field( 
+						'frontpage_breadcrumbs',                      // ID used to identify the field throughout the theme
+						__( 'Hide breadcrumbs on front page', 'inti' ),                          // The label to the left of the option interface element
+						'inti_frontpage_breadcrumbs_callback',   // The name of the function responsible for rendering the option interface
+						'inti_general_options',    // The page on which this option will be displayed
+						'general_settings_section_2'
+					);
+				}
+		}
 
 
 
