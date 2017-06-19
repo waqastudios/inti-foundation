@@ -75,3 +75,8 @@
 
 ### 1.3.4 (Apr 15, 2017)
 - Fixed double title on single post navigation
+
+### 1.3.5 (Jun 19, 2017)
+– Improvements for translation
+- Renaming Inti's Image widget to Image Link to better reflect what it does compared to WP 4.8s new Image widget
+– Set up the theme support in theme options for Front Page template and for Breadcrumbs
