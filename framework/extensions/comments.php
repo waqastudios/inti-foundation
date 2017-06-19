@@ -54,8 +54,8 @@ class inti_comments extends Walker_Comment{
 			
 			<div class="author-meta vcard author">  
 			
-			<?php printf(__('<cite class="fn">%s</cite>', 'inti'), get_comment_author_link()) ?>
-			<time datetime="<?php echo comment_date('c') ?>"><a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ) ?>"><?php printf(__('%1$s', 'inti'), get_comment_date(),  get_comment_time()) ?></a></time>
+			<?php printf('<cite class="fn">%s</cite>', get_comment_author_link()) ?>
+			<time datetime="<?php echo comment_date('c') ?>"><a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ) ?>"><?php printf('%1$s', get_comment_date(), get_comment_time()) ?></a></time>
 			
 			</div><!-- /.comment-author -->
 			

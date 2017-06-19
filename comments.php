@@ -75,11 +75,11 @@ if ( comments_open() ) :
 		<p><?php printf(__('Logged in as <a href="%s/wp-admin/profile.php">%s</a>.', 'inti'), get_option('siteurl'), $user_identity); ?> <a href="<?php echo wp_logout_url(get_permalink()); ?>" title="<?php __('Log out of this account', 'inti'); ?>"><?php _e('Log out &raquo;', 'inti'); ?></a></p>
 		<?php else : ?>
 		<p>
-			<label for="author"><?php _e('Name', 'inti'); if ($req) _e(' (required)', 'inti'); ?></label>
+			<label for="author"><?php _e('Name', 'inti'); if ($req) : echo ' '; _e('(required)', 'inti'); endif; ?></label>
 			<input type="text" class="five" name="author" id="author" value="<?php echo esc_attr($comment_author); ?>" size="22" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?>>
 		</p>
 		<p>
-			<label for="email"><?php _e('Email (will not be published)', 'inti'); if ($req) _e(' (required)', 'inti'); ?></label>
+			<label for="email"><?php _e('Email (will not be published)', 'inti'); if ($req) : echo ' '; _e('(required)', 'inti'); endif; ?></label>
 			<input type="text" class="five" name="email" id="email" value="<?php echo esc_attr($comment_author_email); ?>" size="22" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?>>
 		</p>
 		<p>

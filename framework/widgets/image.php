@@ -87,21 +87,21 @@ class inti_widget_image extends WP_Widget {
 		wp_enqueue_script('image-widget');
 
 	?>
-		<p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'inti'); ?> <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" /></label></p>
+		<p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title', 'inti'); ?>: <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" /></label></p>
 
 		<p>
-			<label for="<?php echo $this->get_field_name('imgurl'); ?>"><?php _e('Image:', 'inti'); ?></label>
+			<label for="<?php echo $this->get_field_name('imgurl'); ?>"><?php _e('Image', 'inti'); ?>:</label>
 			<input class="widefat" style="margin-bottom:.5em;" type="text" name="<?php echo $this->get_field_name('imgurl'); ?>" id="<?php echo $this->get_field_id('imgurl'); ?>" value="<?php echo esc_attr( $imgurl );  ?>" />
 			<input class="uploadbutton button button-primary" style="width:66px; text-align: center;" name="<?php echo $this->get_field_id('imgurl'); ?>_button" id="<?php echo $this->get_field_id('imgurl'); ?>_button" value="Insert" />
 		</p>		
 
 		<p>
-			<label for="<?php echo $this->get_field_name('imgalt'); ?>"><?php _e('Alt text:', 'inti'); ?></label>
+			<label for="<?php echo $this->get_field_name('imgalt'); ?>"><?php _e('Alt text', 'inti'); ?>:</label>
 			<input class="widefat" style="margin-bottom:.5em;" type="text" name="<?php echo $this->get_field_name('imgalt'); ?>" id="<?php echo $this->get_field_id('imgalt'); ?>" value="<?php echo esc_attr( $imgalt );  ?>" />
 		</p>
 
 		<p>
-			<label for="<?php echo $this->get_field_name('linkurl'); ?>"><?php _e('Link URL:', 'inti' ); ?></label>
+			<label for="<?php echo $this->get_field_name('linkurl'); ?>"><?php _e('Link URL', 'inti' ); ?>:</label>
 			<input style="width: 100%;margin-bottom:.5em;" name="<?php echo $this->get_field_name('linkurl'); ?>" id="<?php echo $this->get_field_id('linkurl'); ?>" type="text" value="<?php echo esc_attr( $linkurl );  ?>" placeholder="http://google.com" />
 		</p>
 		

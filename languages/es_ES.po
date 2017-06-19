@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Inti Foundation\n"
-"POT-Creation-Date: 2016-05-22 00:06-0500\n"
-"PO-Revision-Date: 2016-05-22 00:08-0500\n"
+"POT-Creation-Date: 2017-05-26 18:39+0200\n"
+"PO-Revision-Date: 2017-06-02 19:22+0200\n"
 "Last-Translator: \n"
 "Language-Team: Waqa Studios <team@waqa.pe>\n"
 "Language: es_ES\n"
@@ -106,8 +106,8 @@ msgid "Name"
 msgstr "Nombre"
 
 #: comments.php:78 comments.php:82
-msgid " (required)"
-msgstr " (obligatorio)"
+msgid "(required)"
+msgstr "(obligatorio)"
 
 #: comments.php:82
 msgid "Email (will not be published)"
@@ -130,7 +130,7 @@ msgid "Submit Comment"
 msgstr "Enviar Comentario"
 
 #: framework/content/content-footer.php:71
-msgid "Powered by "
+msgid "Powered by"
 msgstr "Con Tecnología de"
 
 #: framework/content/content-footer.php:71
@@ -187,7 +187,7 @@ msgstr "Título del Sitio"
 
 #: framework/customizer/customize.php:387
 msgid "Tagline"
-msgstr "Lema o frase"
+msgstr "Lema"
 
 #: framework/customizer/customize.php:399
 msgid "Show Title & Tagline"
@@ -462,16 +462,6 @@ msgstr "Una respuesta para"
 msgid "% Responses to"
 msgstr "% Respuestas para"
 
-#: framework/extensions/comments.php:57
-#, php-format
-msgid "<cite class=\"fn\">%s</cite>"
-msgstr "<cite class=\"fn\">%s</cite>"
-
-#: framework/extensions/comments.php:58
-#, php-format
-msgid "%1$s"
-msgstr "%1$s"
-
 #: framework/extensions/menus.php:30
 msgid "Main Desktop Menu"
 msgstr "Menú principal en computador de escritorio"
@@ -608,259 +598,295 @@ msgstr "Decide si mostrar u ocultar el sidebar y dónde colocarlo."
 msgid "Sticky Sidebar"
 msgstr "Sidebar Pegajoso"
 
-#: framework/shortcodes/tinymce-functions.php:113
+#: framework/shortcodes/tinymce-functions.php:115
 msgid "Button"
 msgstr "Botón"
 
-#: framework/shortcodes/tinymce-functions.php:114
+#: framework/shortcodes/tinymce-functions.php:116
 msgid "Dropdown Button"
 msgstr "Botón desplegable"
 
-#: framework/shortcodes/tinymce-functions.php:115
-#: framework/widgets/flexvideo.php:11
+#: framework/shortcodes/tinymce-functions.php:117
+#: framework/widgets/flexvideo.php:13
 msgid "Video"
 msgstr "Video"
 
-#: framework/shortcodes/tinymce-functions.php:116
-msgid "Callout"
-msgstr "Llamada de atención"
+#: framework/shortcodes/tinymce-functions.php:118
+#: framework/widgets/responsive-embed.php:16
+msgid "Responsive Embed"
+msgstr ""
 
-#: framework/shortcodes/tinymce-functions.php:117
+#: framework/shortcodes/tinymce-functions.php:119
+msgid "Callout"
+msgstr "Caja de Llamada"
+
+#: framework/shortcodes/tinymce-functions.php:120
 msgid "Accordion"
 msgstr "Acordeón"
 
-#: framework/shortcodes/tinymce-functions.php:118
+#: framework/shortcodes/tinymce-functions.php:121
 msgid "Tabs"
 msgstr "Pestañas"
 
-#: framework/shortcodes/tinymce-functions.php:119
+#: framework/shortcodes/tinymce-functions.php:122
 msgid "Tooltip"
-msgstr "Información de herramientas"
+msgstr "Globo de ayuda"
 
-#: framework/shortcodes/tinymce-functions.php:120
+#: framework/shortcodes/tinymce-functions.php:123
 msgid "Label"
 msgstr "Etiqueta"
 
-#: framework/shortcodes/tinymce-functions.php:176
+#: framework/shortcodes/tinymce-functions.php:182
 msgid "Buttons are convenient tools when you need more traditional actions."
 msgstr ""
-"Los Botones son herramientas convenientes cuando se necesita acciones más "
+"Los botones son herramientas convenientes cuando se necesita acciones más "
 "tradicionales."
 
-#: framework/shortcodes/tinymce-functions.php:181
-#: framework/shortcodes/tinymce-functions.php:268
+#: framework/shortcodes/tinymce-functions.php:187
+#: framework/shortcodes/tinymce-functions.php:274
 msgid "Button Text"
 msgstr "Texto de Botón"
 
-#: framework/shortcodes/tinymce-functions.php:190
+#: framework/shortcodes/tinymce-functions.php:196
 msgid "URL"
 msgstr "URL"
 
-#: framework/shortcodes/tinymce-functions.php:199
+#: framework/shortcodes/tinymce-functions.php:205
 msgid "Open link in a new window/tab"
 msgstr "Abrir enlace en una nueva página/pestaña"
 
-#: framework/shortcodes/tinymce-functions.php:208
-#: framework/shortcodes/tinymce-functions.php:277
-#: framework/shortcodes/tinymce-functions.php:422
-#: framework/shortcodes/tinymce-functions.php:627
-#: framework/shortcodes/tinymce-functions.php:695
+#: framework/shortcodes/tinymce-functions.php:214
+#: framework/shortcodes/tinymce-functions.php:283
+#: framework/shortcodes/tinymce-functions.php:468
+#: framework/shortcodes/tinymce-functions.php:673
+#: framework/shortcodes/tinymce-functions.php:741
 msgid "Type"
 msgstr "Tipo"
 
-#: framework/shortcodes/tinymce-functions.php:213
-#: framework/shortcodes/tinymce-functions.php:282
-#: framework/shortcodes/tinymce-functions.php:428
-#: framework/shortcodes/tinymce-functions.php:700
+#: framework/shortcodes/tinymce-functions.php:219
+#: framework/shortcodes/tinymce-functions.php:288
+#: framework/shortcodes/tinymce-functions.php:474
+#: framework/shortcodes/tinymce-functions.php:746
 msgid "Primary"
 msgstr "Principal"
 
-#: framework/shortcodes/tinymce-functions.php:214
-#: framework/shortcodes/tinymce-functions.php:283
-#: framework/shortcodes/tinymce-functions.php:429
-#: framework/shortcodes/tinymce-functions.php:701
+#: framework/shortcodes/tinymce-functions.php:220
+#: framework/shortcodes/tinymce-functions.php:289
+#: framework/shortcodes/tinymce-functions.php:475
+#: framework/shortcodes/tinymce-functions.php:747
 msgid "Secondary"
 msgstr "Secundario"
 
-#: framework/shortcodes/tinymce-functions.php:215
-#: framework/shortcodes/tinymce-functions.php:284
-#: framework/shortcodes/tinymce-functions.php:430
-#: framework/shortcodes/tinymce-functions.php:702
+#: framework/shortcodes/tinymce-functions.php:221
+#: framework/shortcodes/tinymce-functions.php:290
+#: framework/shortcodes/tinymce-functions.php:476
+#: framework/shortcodes/tinymce-functions.php:748
 msgid "Success"
 msgstr "Éxito"
 
-#: framework/shortcodes/tinymce-functions.php:216
-#: framework/shortcodes/tinymce-functions.php:285
-#: framework/shortcodes/tinymce-functions.php:431
-#: framework/shortcodes/tinymce-functions.php:704
+#: framework/shortcodes/tinymce-functions.php:222
+#: framework/shortcodes/tinymce-functions.php:291
+#: framework/shortcodes/tinymce-functions.php:477
+#: framework/shortcodes/tinymce-functions.php:750
 msgid "Alert"
 msgstr "Alerta"
 
-#: framework/shortcodes/tinymce-functions.php:217
-#: framework/shortcodes/tinymce-functions.php:286
-#: framework/shortcodes/tinymce-functions.php:432
-#: framework/shortcodes/tinymce-functions.php:703
+#: framework/shortcodes/tinymce-functions.php:223
+#: framework/shortcodes/tinymce-functions.php:292
+#: framework/shortcodes/tinymce-functions.php:478
+#: framework/shortcodes/tinymce-functions.php:749
 msgid "Warning"
 msgstr "Advertencia"
 
-#: framework/shortcodes/tinymce-functions.php:218
-#: framework/shortcodes/tinymce-functions.php:287
+#: framework/shortcodes/tinymce-functions.php:224
+#: framework/shortcodes/tinymce-functions.php:293
 msgid "Disabled"
 msgstr "Desactivado"
 
-#: framework/shortcodes/tinymce-functions.php:219
+#: framework/shortcodes/tinymce-functions.php:225
 msgid "Primary Hollow"
 msgstr "Botón (vacío con borde) principal"
 
-#: framework/shortcodes/tinymce-functions.php:220
+#: framework/shortcodes/tinymce-functions.php:226
 msgid "Secondary Hollow"
 msgstr "Botón (vacío con borde) secundario"
 
-#: framework/shortcodes/tinymce-functions.php:221
+#: framework/shortcodes/tinymce-functions.php:227
 msgid "Success Hollow"
 msgstr "Botón (vacío con borde) de éxito"
 
-#: framework/shortcodes/tinymce-functions.php:222
+#: framework/shortcodes/tinymce-functions.php:228
 msgid "Alert Hollow"
 msgstr "Botón (vacío con borde) de alerta"
 
-#: framework/shortcodes/tinymce-functions.php:223
+#: framework/shortcodes/tinymce-functions.php:229
 msgid "Warning Hollow"
 msgstr "Botón (vacío con borde) de advertencia"
 
-#: framework/shortcodes/tinymce-functions.php:224
+#: framework/shortcodes/tinymce-functions.php:230
 msgid "Disabled Hollow"
 msgstr "Botón (vacío con borde) desactivado"
 
-#: framework/shortcodes/tinymce-functions.php:230
-#: framework/shortcodes/tinymce-functions.php:293
-#: framework/shortcodes/tinymce-functions.php:438
-#: framework/shortcodes/tinymce-functions.php:557
+#: framework/shortcodes/tinymce-functions.php:236
+#: framework/shortcodes/tinymce-functions.php:299
+#: framework/shortcodes/tinymce-functions.php:484
+#: framework/shortcodes/tinymce-functions.php:603
 msgid "Style"
 msgstr "Estilo"
 
-#: framework/shortcodes/tinymce-functions.php:235
-#: framework/shortcodes/tinymce-functions.php:298
-#: framework/shortcodes/tinymce-functions.php:443
+#: framework/shortcodes/tinymce-functions.php:241
+#: framework/shortcodes/tinymce-functions.php:304
+#: framework/shortcodes/tinymce-functions.php:489
 msgid "Default"
-msgstr "Defecto"
+msgstr "Estándar"
 
-#: framework/shortcodes/tinymce-functions.php:236
-#: framework/shortcodes/tinymce-functions.php:299
+#: framework/shortcodes/tinymce-functions.php:242
+#: framework/shortcodes/tinymce-functions.php:305
 msgid "Tiny"
 msgstr "Muy pequeño"
 
-#: framework/shortcodes/tinymce-functions.php:237
-#: framework/shortcodes/tinymce-functions.php:300
-#: framework/shortcodes/tinymce-functions.php:444
+#: framework/shortcodes/tinymce-functions.php:243
+#: framework/shortcodes/tinymce-functions.php:306
+#: framework/shortcodes/tinymce-functions.php:490
 msgid "Small"
 msgstr "Pequeño"
 
-#: framework/shortcodes/tinymce-functions.php:238
-#: framework/shortcodes/tinymce-functions.php:301
-#: framework/shortcodes/tinymce-functions.php:445
+#: framework/shortcodes/tinymce-functions.php:244
+#: framework/shortcodes/tinymce-functions.php:307
+#: framework/shortcodes/tinymce-functions.php:491
 msgid "Large"
 msgstr "Grande"
 
-#: framework/shortcodes/tinymce-functions.php:239
+#: framework/shortcodes/tinymce-functions.php:245
 msgid "Default Expanded"
-msgstr "Expandido por defecto"
+msgstr "Estándar, expandido"
 
-#: framework/shortcodes/tinymce-functions.php:240
+#: framework/shortcodes/tinymce-functions.php:246
 msgid "Tiny Expanded"
-msgstr "Expandido muy pequeño"
+msgstr "Estándar, muy pequeño"
 
-#: framework/shortcodes/tinymce-functions.php:241
+#: framework/shortcodes/tinymce-functions.php:247
 msgid "Small Expanded"
 msgstr "Expandido pequeño"
 
-#: framework/shortcodes/tinymce-functions.php:242
+#: framework/shortcodes/tinymce-functions.php:248
 msgid "Large Expanded"
 msgstr "Expandido grande"
 
-#: framework/shortcodes/tinymce-functions.php:263
+#: framework/shortcodes/tinymce-functions.php:269
 msgid ""
 "Dropdown Buttons aren't clickable on their own, clicking them displays more "
 "options."
 msgstr ""
-"Los Botones desplegables no tienen la acción en sí mismos, al hacer click se "
-"despliegan más opciones."
+"Los botones desplegables no tienen una acción en sí mismos, al hacer click "
+"se despliegan más opciones."
 
-#: framework/shortcodes/tinymce-functions.php:302
+#: framework/shortcodes/tinymce-functions.php:308
 msgid "Expanded"
 msgstr "Expandido"
 
-#: framework/shortcodes/tinymce-functions.php:308
+#: framework/shortcodes/tinymce-functions.php:314
 msgid "Reveal Content Alignment"
 msgstr "Revelar alineación de contenido"
 
-#: framework/shortcodes/tinymce-functions.php:313
+#: framework/shortcodes/tinymce-functions.php:319
 msgid "Below Button"
 msgstr "Debajo del Botón"
 
-#: framework/shortcodes/tinymce-functions.php:314
+#: framework/shortcodes/tinymce-functions.php:320
 msgid "Above Button"
 msgstr "Arriba del Botón"
 
-#: framework/shortcodes/tinymce-functions.php:315
+#: framework/shortcodes/tinymce-functions.php:321
 msgid "Right of Button"
 msgstr "A la derecha del Botón"
 
-#: framework/shortcodes/tinymce-functions.php:316
+#: framework/shortcodes/tinymce-functions.php:322
 msgid "Left of Button"
 msgstr "A la izquierda del Botón"
 
-#: framework/shortcodes/tinymce-functions.php:322
+#: framework/shortcodes/tinymce-functions.php:328
 msgid "Reveal on hover"
 msgstr "Revelar Botón presionado"
 
-#: framework/shortcodes/tinymce-functions.php:331
+#: framework/shortcodes/tinymce-functions.php:337
 msgid "Show arrow icon"
 msgstr "Mostrar ícono de flecha"
 
-#: framework/shortcodes/tinymce-functions.php:340
+#: framework/shortcodes/tinymce-functions.php:346
 msgid "Revealed Content"
 msgstr "Contenido revelado"
 
-#: framework/shortcodes/tinymce-functions.php:367
-#: framework/widgets/flexvideo.php:83
+#: framework/shortcodes/tinymce-functions.php:373
+#: framework/shortcodes/tinymce-functions.php:423
+#: framework/widgets/flexvideo.php:85 framework/widgets/responsive-embed.php:75
 msgid "Aspect Ratio"
 msgstr "Relación de Aspecto"
 
-#: framework/shortcodes/tinymce-functions.php:372
-#: framework/widgets/flexvideo.php:85
+#: framework/shortcodes/tinymce-functions.php:378
+#: framework/widgets/flexvideo.php:87
 msgid "Widescreen"
 msgstr "Widescreen"
 
-#: framework/shortcodes/tinymce-functions.php:373
-#: framework/widgets/flexvideo.php:86
+#: framework/shortcodes/tinymce-functions.php:379
+#: framework/widgets/flexvideo.php:88
 msgid "4:3"
 msgstr "4:3"
 
-#: framework/shortcodes/tinymce-functions.php:379
+#: framework/shortcodes/tinymce-functions.php:385
 msgid "Source"
 msgstr "Fuente"
 
-#: framework/shortcodes/tinymce-functions.php:384
-#: framework/widgets/flexvideo.php:92
+#: framework/shortcodes/tinymce-functions.php:390
+#: framework/widgets/flexvideo.php:94
 msgid "YouTube"
 msgstr "YouTube"
 
-#: framework/shortcodes/tinymce-functions.php:385
-#: framework/widgets/flexvideo.php:93
+#: framework/shortcodes/tinymce-functions.php:391
+#: framework/widgets/flexvideo.php:95
 msgid "Vimeo"
 msgstr "Vimeo"
 
-#: framework/shortcodes/tinymce-functions.php:386
-#: framework/widgets/flexvideo.php:94
+#: framework/shortcodes/tinymce-functions.php:392
+#: framework/widgets/flexvideo.php:96
 msgid "Wistia"
 msgstr "Wistia"
 
-#: framework/shortcodes/tinymce-functions.php:392
+#: framework/shortcodes/tinymce-functions.php:398
 msgid "Video ID"
 msgstr "ID de Video"
 
-#: framework/shortcodes/tinymce-functions.php:417
+#: framework/shortcodes/tinymce-functions.php:428
+#: framework/widgets/responsive-embed.php:77
+msgid "Widescreen (16:9)"
+msgstr ""
+
+#: framework/shortcodes/tinymce-functions.php:429
+#: framework/widgets/responsive-embed.php:78
+msgid "Standard (4:3)"
+msgstr ""
+
+#: framework/shortcodes/tinymce-functions.php:430
+#: framework/widgets/responsive-embed.php:79
+msgid "Panorama (256:81)"
+msgstr ""
+
+#: framework/shortcodes/tinymce-functions.php:431
+#: framework/widgets/responsive-embed.php:80
+msgid "Square (1:1)"
+msgstr ""
+
+#: framework/shortcodes/tinymce-functions.php:432
+#: framework/widgets/responsive-embed.php:81
+msgid "Vertical (9:16)"
+msgstr ""
+
+#: framework/shortcodes/tinymce-functions.php:438
+#: framework/widgets/responsive-embed.php:85
+msgid "iframe HTML"
+msgstr ""
+
+#: framework/shortcodes/tinymce-functions.php:463
 msgid ""
 "Outline sections of your page easily but wrapping them in a box. Set the "
 "area as a 'closable alert' to make an alert box, which can communicate "
@@ -871,19 +897,19 @@ msgstr ""
 "cuadro de alerta, el cual puede comunicar éxito, advertencias, falla o "
 "simplemente información."
 
-#: framework/shortcodes/tinymce-functions.php:427
+#: framework/shortcodes/tinymce-functions.php:473
 msgid "None"
 msgstr "Ninguno"
 
-#: framework/shortcodes/tinymce-functions.php:451
+#: framework/shortcodes/tinymce-functions.php:497
 msgid "Callout Content"
-msgstr "Llamada de Contenido"
+msgstr "Contenido de Caja de Llamada"
 
-#: framework/shortcodes/tinymce-functions.php:460
+#: framework/shortcodes/tinymce-functions.php:506
 msgid "Closable Alert"
-msgstr "Alerta cerrada"
+msgstr "Alerta cerrable"
 
-#: framework/shortcodes/tinymce-functions.php:484
+#: framework/shortcodes/tinymce-functions.php:530
 msgid ""
 "Accordions are elements used to expand and collapse content that is broken "
 "into logical sections, much like tabs."
@@ -891,30 +917,30 @@ msgstr ""
 "Los Acordeones son elementos que se utilizan para expandir y contraer "
 "contenido que se divide en secciones lógicas, al igual que las pestañas."
 
-#: framework/shortcodes/tinymce-functions.php:489
+#: framework/shortcodes/tinymce-functions.php:535
 msgid "Allow more than one open at a time"
 msgstr "Permitir más de uno abierto a la vez"
 
-#: framework/shortcodes/tinymce-functions.php:498
+#: framework/shortcodes/tinymce-functions.php:544
 msgid "Allow closing of all tabs"
 msgstr "Permitir cierre de toda las pestañas"
 
-#: framework/shortcodes/tinymce-functions.php:508
-#: framework/shortcodes/tinymce-functions.php:569
+#: framework/shortcodes/tinymce-functions.php:554
+#: framework/shortcodes/tinymce-functions.php:615
 msgid "Item Title"
 msgstr "Título de Ítem"
 
-#: framework/shortcodes/tinymce-functions.php:518
-#: framework/shortcodes/tinymce-functions.php:579
+#: framework/shortcodes/tinymce-functions.php:564
+#: framework/shortcodes/tinymce-functions.php:625
 msgid "Item Text"
 msgstr "Texto de Ítem"
 
-#: framework/shortcodes/tinymce-functions.php:531
-#: framework/shortcodes/tinymce-functions.php:592
+#: framework/shortcodes/tinymce-functions.php:577
+#: framework/shortcodes/tinymce-functions.php:638
 msgid "Add item"
 msgstr "Agregar Ítem"
 
-#: framework/shortcodes/tinymce-functions.php:552
+#: framework/shortcodes/tinymce-functions.php:598
 msgid ""
 "Tabs are elements that help you organize and navigate multiple documents in "
 "a single container. They can be used for switching between items in the "
@@ -924,15 +950,15 @@ msgstr ""
 "documentos en un solo contenedor. Pueden ser utilizados para la conmutación "
 "entre los ítems en el contenedor."
 
-#: framework/shortcodes/tinymce-functions.php:562
+#: framework/shortcodes/tinymce-functions.php:608
 msgid "Horizontal"
 msgstr "Horizontal"
 
-#: framework/shortcodes/tinymce-functions.php:563
+#: framework/shortcodes/tinymce-functions.php:609
 msgid "Vertical"
 msgstr "Vertical"
 
-#: framework/shortcodes/tinymce-functions.php:613
+#: framework/shortcodes/tinymce-functions.php:659
 msgid ""
 "Tooltips are a quick way to provide extended information on a term or action "
 "on a page. You can wrap these around words, buttons, images or just about "
@@ -942,48 +968,50 @@ msgstr ""
 "un término o acción en una página. Se puede envolver alrededor de palabras, "
 "botones, imágenes o cualquier otra cosa en su página."
 
-#: framework/shortcodes/tinymce-functions.php:618
-#: framework/shortcodes/tinymce-functions.php:686
+#: framework/shortcodes/tinymce-functions.php:664
+#: framework/shortcodes/tinymce-functions.php:732
+#: framework/widgets/image.php:90 framework/widgets/responsive-embed.php:73
+#: framework/widgets/social-links.php:54
 msgid "Title"
 msgstr "Título"
 
-#: framework/shortcodes/tinymce-functions.php:632
+#: framework/shortcodes/tinymce-functions.php:678
 msgid "Block"
 msgstr "Bloque"
 
-#: framework/shortcodes/tinymce-functions.php:633
+#: framework/shortcodes/tinymce-functions.php:679
 msgid "Inline"
 msgstr "En línea"
 
-#: framework/shortcodes/tinymce-functions.php:639
+#: framework/shortcodes/tinymce-functions.php:685
 msgid "Direction"
 msgstr "Dirección"
 
-#: framework/shortcodes/tinymce-functions.php:644
+#: framework/shortcodes/tinymce-functions.php:690
 msgid "Bottom"
 msgstr "Abajo"
 
-#: framework/shortcodes/tinymce-functions.php:645
+#: framework/shortcodes/tinymce-functions.php:691
 msgid "Left"
 msgstr "Izquierdo"
 
-#: framework/shortcodes/tinymce-functions.php:646
+#: framework/shortcodes/tinymce-functions.php:692
 msgid "Right"
 msgstr "Derecho"
 
-#: framework/shortcodes/tinymce-functions.php:647
+#: framework/shortcodes/tinymce-functions.php:693
 msgid "Top"
 msgstr "Arriba"
 
-#: framework/shortcodes/tinymce-functions.php:654
+#: framework/shortcodes/tinymce-functions.php:700
 msgid "Tooltip Content"
 msgstr "Contenido de Atributo"
 
-#: framework/shortcodes/tinymce-functions.php:659
+#: framework/shortcodes/tinymce-functions.php:705
 msgid "Content the tooltip will be wrapped around."
 msgstr "El Contenido del atributo será envuelto alrededor."
 
-#: framework/shortcodes/tinymce-functions.php:681
+#: framework/shortcodes/tinymce-functions.php:727
 msgid ""
 "Labels are useful inline styles that can be dropped into body copy to call "
 "out certain sections or to attach metadata. For example, you can attach a "
@@ -994,7 +1022,7 @@ msgstr ""
 "ejemplo, se puede adjuntar una etiqueta que señala cuando algo se ha "
 "actualizado."
 
-#: framework/shortcodes/tinymce-functions.php:710
+#: framework/shortcodes/tinymce-functions.php:756
 msgid "Icon"
 msgstr "Icono"
 
@@ -1072,7 +1100,7 @@ msgstr "¿Cuántos caracteres quieres mostrar en el extracto de texto?"
 
 #: framework/theme-options/inti-options.php:317
 msgid "Read More text"
-msgstr "Texto ‘Leer Más’"
+msgstr "Texto de ‘Leer Más’"
 
 #: framework/theme-options/inti-options.php:322
 msgid ""
@@ -1096,7 +1124,7 @@ msgstr ""
 
 #: framework/theme-options/inti-options.php:339
 msgid "Show Breadcrumbs"
-msgstr "Mostrar ‘Migas de pan’"
+msgstr "Mostrar Rastro de Migas"
 
 #: framework/theme-options/inti-options.php:344
 msgid "They can be displayed before and after the content, or not at all."
@@ -1122,8 +1150,8 @@ msgid ""
 "Move from one post to the next or previous post directly with Next/Previous "
 "links"
 msgstr ""
-"Pasa de una entrada a la siguiente o la anterior publicación directamente "
-"con los enlaces de Siguiente/Anterior"
+"Pasa de una entrada a la siguiente o la anterior directamente con los "
+"enlaces de Siguiente/Anterior"
 
 #: framework/theme-options/inti-options.php:381
 msgid "Post Category to display"
@@ -1144,7 +1172,7 @@ msgstr "Excluir categoría de página principal"
 #: framework/theme-options/inti-options.php:413
 #: framework/theme-options/inti-options.php:1223
 msgid "Hide breadcrumbs on front page"
-msgstr "Esconder ‘migas de pan’ de la página principal"
+msgstr "Esconder ‘Rastro de Migas’ de la página principal"
 
 #: framework/theme-options/inti-options.php:423
 msgid "Sharing"
@@ -1168,7 +1196,7 @@ msgstr "404"
 
 #: framework/theme-options/inti-options.php:474
 msgid "Message to display when page not found"
-msgstr "Mensaje a mostrar para una página no encontrada"
+msgstr "Mensaje a mostrar cuando una página no es encontrada"
 
 #: framework/theme-options/inti-options.php:520
 msgid "Social media icons on nav bar"
@@ -1383,9 +1411,12 @@ msgid "What to show when a page is not found."
 msgstr "Que mostrar cuando una página no ha sido encontrada."
 
 #: framework/theme-options/inti-options.php:959
-msgid "Provide the URL to the social networks you'd like to display."
+msgid ""
+"Let's you control both the visible masthead of the site and things that go "
+"in or around the &lt;head&gt; tag"
 msgstr ""
-"Proporcionar la dirección URL de las redes sociales que desea visualizar."
+"Te permite controlar la cabecera visible del sitio web y las cosas que van "
+"adentro o alredador de la etiqueta &lt;head&gt;"
 
 #: framework/theme-options/inti-options.php:969
 msgid "Control what appears in your website's footer."
@@ -1501,24 +1532,23 @@ msgstr "Claro"
 msgid "Dark"
 msgstr "Oscuro"
 
-#: framework/widgets/flexvideo.php:12
+#: framework/widgets/flexvideo.php:14
 msgid "Add a video to your sidebar"
 msgstr "Agregar un video a su sidebar"
 
-#: framework/widgets/flexvideo.php:81 framework/widgets/image.php:90
-#: framework/widgets/social-links.php:54
+#: framework/widgets/flexvideo.php:83
 msgid "Title:"
 msgstr "Título"
 
-#: framework/widgets/flexvideo.php:90
+#: framework/widgets/flexvideo.php:92
 msgid "Video Source"
 msgstr "Fuente del Video"
 
-#: framework/widgets/flexvideo.php:98
+#: framework/widgets/flexvideo.php:100
 msgid "Video ID (just the ID)"
 msgstr "ID del Video (solo ID)"
 
-#: framework/widgets/image.php:11
+#: framework/widgets/image.php:11 framework/widgets/image.php:93
 msgid "Image"
 msgstr "Imagen"
 
@@ -1526,17 +1556,17 @@ msgstr "Imagen"
 msgid "Displays a linkable image in the sidebar"
 msgstr "Mostrar imagen con enlace en sidebar"
 
-#: framework/widgets/image.php:93
-msgid "Image:"
-msgstr "Imagen:"
-
 #: framework/widgets/image.php:99
-msgid "Alt text:"
-msgstr "Texto Alt:"
+msgid "Alt text"
+msgstr "Texto alt"
 
 #: framework/widgets/image.php:104
-msgid "Link URL:"
-msgstr "Enlace URL:"
+msgid "Link URL"
+msgstr "Enlace"
+
+#: framework/widgets/responsive-embed.php:17
+msgid "Add an iframe to your sidebar"
+msgstr "Agregar un iframe a tu sidebar"
 
 #: framework/widgets/social-links.php:11
 msgid "Social Links"
@@ -1548,21 +1578,6 @@ msgid ""
 msgstr ""
 "Muestra los iconos que enlazan a los perfiles de redes sociales en Opciones "
 "de Tema"
-
-#: image.php:64
-#, php-format
-msgid ""
-"<span class=\"meta-prep meta-prep-entry-date\">Published </span> <span class="
-"\"post-date\"><time class=\"post-date\" datetime=\"%1$s\" pubdate>%2$s</"
-"time></span> at <a href=\"%3$s\" title=\"Link to full-size image\">%4$s "
-"&times; %5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s\" rel=\"gallery"
-"\">%8$s</a>."
-msgstr ""
-"<span class=\"meta-prep meta-prep-entry-date\">Publicado </span> <span class="
-"\"post-date\"><time class=\"post-date\" datetime=\"%1$s\" pubdate>%2$s</"
-"time></span> at <a href=\"%3$s\" title=“Enlace a imagen full-size\">%4$s "
-"&times; %5$s</a> in <a href=\"%6$s\" title=“Regresa a %7$s\" rel=\"gallery\">"
-"%8$s</a>."
 
 #: image.php:79
 msgid "&larr; Previous"
@@ -1601,6 +1616,44 @@ msgstr "Buscar"
 #, php-format
 msgid "Tag: %s"
 msgstr "Etiquetas: %s"
+
+#~ msgid ""
+#~ "<span class=\"meta-prep meta-prep-entry-date\">Published </span> <span "
+#~ "class=\"post-date\"><time class=\"post-date\" datetime=\"%1$s\" pubdate>"
+#~ "%2$s</time></span> at <a href=\"%3$s\" title=\"Link to full-size image\">"
+#~ "%4$s &times; %5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s\" rel="
+#~ "\"gallery\">%8$s</a>."
+#~ msgstr ""
+#~ "<span class=\"meta-prep meta-prep-entry-date\">Publicado </span> <span "
+#~ "class=\"post-date\"><time class=\"post-date\" datetime=\"%1$s\" pubdate>"
+#~ "%2$s</time></span> at <a href=\"%3$s\" title=“Enlace a imagen full-size\">"
+#~ "%4$s &times; %5$s</a> in <a href=\"%6$s\" title=“Regresa a %7$s\" rel="
+#~ "\"gallery\">%8$s</a>."
+
+#~ msgid "Image:"
+#~ msgstr "Imagen:"
+
+#~ msgid "Alt text:"
+#~ msgstr "Texto Alt:"
+
+#~ msgid "Link URL:"
+#~ msgstr "Enlace URL:"
+
+#~ msgid "<cite class=\"fn\">%s</cite>"
+#~ msgstr "<cite class=\"fn\">%s</cite>"
+
+#~ msgid "%1$s"
+#~ msgstr "%1$s"
+
+#~ msgid "Powered by "
+#~ msgstr "Con Tecnología de"
+
+#~ msgid " (required)"
+#~ msgstr " (obligatorio)"
+
+#~ msgid "Provide the URL to the social networks you'd like to display."
+#~ msgstr ""
+#~ "Proporcionar la dirección URL de las redes sociales que desea visualizar."
 
 #~ msgid "&hellip;"
 #~ msgstr "&hellip;"

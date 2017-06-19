@@ -70,7 +70,7 @@ class inti_widget_responsive_embed extends WP_Widget {
 		$iframeaspect = $instance['iframeaspect'];
 		$iframehtml = $instance['iframehtml'];
 	?>
-	<p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'inti'); ?> <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" /></label></p>
+	<p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title', 'inti'); ?>: <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" /></label></p>
 
 	<p><label for="<?php echo $this->get_field_id('iframeaspect'); ?>"><?php _e('Aspect Ratio', 'inti') ?>: 
 		<select name="<?php echo $this->get_field_name('iframeaspect'); ?>" id="<?php echo $this->get_field_id('iframeaspect'); ?>" class="widefat">

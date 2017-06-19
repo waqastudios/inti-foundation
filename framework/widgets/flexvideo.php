@@ -80,7 +80,7 @@ class inti_widget_flexvideo extends WP_Widget {
 		$videosource = $instance['videosource'];
 		$videoid = $instance['videoid'];
 	?>
-	<p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'inti'); ?> <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" /></label></p>
+	<p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title', 'inti'); ?>: <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" /></label></p>
 
 	<p><label for="<?php echo $this->get_field_id('videoaspect'); ?>"><?php _e('Aspect Ratio', 'inti') ?>: 
 		<select name="<?php echo $this->get_field_name('videoaspect'); ?>" id="<?php echo $this->get_field_id('videoaspect'); ?>" class="widefat">
