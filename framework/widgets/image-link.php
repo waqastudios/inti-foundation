@@ -1,14 +1,14 @@
 <?php
 
-class inti_widget_image extends WP_Widget {
+class inti_widget_image_link extends WP_Widget {
 
 	/**
 	 * Register widget with WordPress.
 	 */
 	function __construct() {
 		parent::__construct(
-			'inti_image', // Base ID
-			__( 'Image', 'inti' ), // Name
+			'inti_image_link', // Base ID
+			__( 'Image Link', 'inti' ), // Name
 			array( 'description' => __( 'Displays a linkable image in the sidebar', 'inti' ), ) // Args
 		);
 	}
@@ -83,7 +83,7 @@ class inti_widget_image extends WP_Widget {
 		wp_enqueue_media();	
 		wp_enqueue_style('thickbox');
 		wp_enqueue_script('thickbox');
-		wp_register_script( 'image-widget', get_template_directory_uri() . '/framework/widgets/js/image.js', array('jquery'), "", TRUE );
+		wp_register_script( 'image-widget', get_template_directory_uri() . '/framework/widgets/js/image-link.js', array('jquery'), "", TRUE );
 		wp_enqueue_script('image-widget');
 
 	?>
@@ -129,4 +129,4 @@ class inti_widget_image extends WP_Widget {
 
  
 }
-add_action( 'widgets_init', function(){ register_widget( 'inti_widget_image' ); });
+add_action( 'widgets_init', function(){ register_widget( 'inti_widget_image_link' ); });
