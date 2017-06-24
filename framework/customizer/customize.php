@@ -26,12 +26,19 @@ function inti_customizer_css() {
 	if ( 0 == get_inti_option('show_title', 'inti_customizer_options', 1) ) {
 		$output .= "\n" . '.site-banner .title-area { display: none; }';
 	}	
-	if ( 'none' == get_inti_option('show_nav_logo_title', 'inti_customizer_options', 1) ) {
-		$output .= "\n" . '.top-bar .site-logo, .top-bar .site-title { display: none; }';
-	} elseif ( 'image' == get_inti_option('show_nav_logo_title', 'inti_customizer_options', 1) ) {
-		$output .= "\n" . '.top-bar .site-title { display: none; }';
+	if ( 'none' == get_inti_option('show_nav_logo_title', 'inti_customizer_options', 'none') ) {
+		$output .= "\n" . '.top-bar .mobile-logo .site-logo, .top-bar .mobile-logo .site-title { display: none; }';
+	} elseif ( 'image' == get_inti_option('show_nav_logo_title', 'inti_customizer_options', 'none') ) {
+		$output .= "\n" . '.top-bar .mobile-logo .site-title { display: none; }  .top-bar .mobile-logo .site-logo { display: block; }';
 	} else {
-		$output .= "\n" . '.top-bar .site-logo { display: none; }';
+		$output .= "\n" . '.top-bar .mobile-logo .site-logo { display: none; } .top-bar .mobile-logo .site-title { display: block; }';
+	}
+	if ( 'none' == get_inti_option('show_sticky_logo_title', 'inti_customizer_options', 'none') ) {
+		$output .= "\n" . '.top-bar .sticky-logo { display: none; }';
+	} elseif ( 'image' == get_inti_option('show_sticky_logo_title', 'inti_customizer_options', 'none') ) {
+		$output .= "\n" . '.top-bar .sticky-logo, .top-bar .site-title { display: none; } .top-bar .sticky-logo .site-logo { display: block; }';
+	} else {
+		$output .= "\n" . '.top-bar .sticky-logo, .top-bar .site-logo { display: none; } .top-bar .sticky-logo .site-title { display: block; }';
 	}
 
 
@@ -374,7 +381,7 @@ if ( !function_exists('inti_customize_register') ) {
 				$wp_customize->add_control('blogname', array( 
 					'label'    => __('Site Title', 'inti'),
 					'section'  => 'inti_customizer_general',
-					'priority' => 1,
+					'priority' => 2,
 				 ) );
 
 			$wp_customize->add_setting('blogdescription', array( 
@@ -386,7 +393,7 @@ if ( !function_exists('inti_customize_register') ) {
 				$wp_customize->add_control('blogdescription', array( 
 					'label'    => __('Tagline', 'inti'),
 					'section'  => 'inti_customizer_general',
-					'priority' => 2,
+					'priority' => 4,
 				 ) );
 
 			$wp_customize->add_setting('inti_customizer_options[show_title]', array( 
@@ -399,7 +406,7 @@ if ( !function_exists('inti_customize_register') ) {
 					'label'    => __('Show Title & Tagline', 'inti'),
 					'section'  => 'inti_customizer_general',
 					'type'     => 'checkbox',
-					'priority' => 3,
+					'priority' => 6,
 				 ) );
 
 			$wp_customize->add_setting('inti_customizer_options[logo_image]', array( 
@@ -408,25 +415,11 @@ if ( !function_exists('inti_customize_register') ) {
 				'capability' => 'manage_options',
 			 ) );
 				$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'inti_logo_image', array( 
-					'label'    => __('Site Banner/Logo', 'inti'),
+					'label'    => __('Site Logo', 'inti'),
 					'section'  => 'inti_customizer_general',
 					'settings' => 'inti_customizer_options[logo_image]',
-					'priority' => 4,
+					'priority' => 8,
 				 ) ) );
-
-			$wp_customize->add_setting('inti_customizer_options[show_site_banner_mobile]', array( 
-				'default'    => 1,
-				'type'       => 'option',
-				'capability' => 'manage_options',
-				'transport'  => 'postMessage',
-			 ) );	
-				$wp_customize->add_control('inti_customizer_options[show_site_banner_mobile]', array( 
-					'label'    => __('Show main Site Banner/Logo on Mobile', 'inti'),
-					'description' => __('Uncheck if you will show the logo in Mobile Nav','inti'),
-					'section'  => 'inti_customizer_general',
-					'type'     => 'checkbox',
-					'priority' => 5,
-				 ) );
 
 			$wp_customize->add_setting('inti_customizer_options[nav_logo_image]', array( 
 				'default'    => '',
@@ -434,28 +427,47 @@ if ( !function_exists('inti_customize_register') ) {
 				'capability' => 'manage_options',
 			 ) );
 				$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'inti_nav_logo_image', array( 
-					'label'    => __('Site Logo for Mobile Nav', 'inti'),
+					'label'    => __('Site Logo (miniature)', 'inti'),
+					'description' => _('Icon or small version for use on small screens or inside the navegation bar'),
 					'section'  => 'inti_customizer_general',
 					'settings' => 'inti_customizer_options[nav_logo_image]',
-					'priority' => 6,
+					'priority' => 10,
 				 ) ) );
 
 			$wp_customize->add_setting('inti_customizer_options[show_nav_logo_title]', array( 
-				'default'    => 1,
+				'default'    => 'none',
 				'type'       => 'option',
 				'capability' => 'manage_options',
-				'transport'  => 'postMessage',
+				//'transport'  => 'postMessage',
 			 ) );	
 				$wp_customize->add_control('inti_customizer_options[show_nav_logo_title]', array( 
-					'label'    => __('Show Logo/Title in Mobile Nav', 'inti'),
+					'label'    => __('What to show on nav bar on small screens', 'inti'),
 					'section'  => 'inti_customizer_general',
 					'type'     => 'select',
 					'choices'  => array(
 						'none' => __('Nothing', 'inti'),
-						'image' => __('Image/Logo', 'inti'),
+						'image' => __('Miniature Logo', 'inti'),
 						'title' => __('Site Title', 'inti')
 								),
-					'priority' => 7,
+					'priority' => 12,
+				 ) );
+
+			$wp_customize->add_setting('inti_customizer_options[show_sticky_logo_title]', array( 
+				'default'    => 'none',
+				'type'       => 'option',
+				'capability' => 'manage_options',
+				//'transport'  => 'postMessage',
+			 ) );	
+				$wp_customize->add_control('inti_customizer_options[show_sticky_logo_title]', array( 
+					'label'    => __('What to show on nav bar on sticky navigation', 'inti'),
+					'section'  => 'inti_customizer_general',
+					'type'     => 'select',
+					'choices'  => array(
+						'none' => __('Nothing', 'inti'),
+						'image' => __('Miniature Logo', 'inti'),
+						'title' => __('Site Title', 'inti')
+								),
+					'priority' => 14,
 				 ) );
 
 			$wp_customize->add_setting('inti_customizer_options[favicon_image]', array( 
@@ -467,7 +479,7 @@ if ( !function_exists('inti_customize_register') ) {
 					'label'    => __('Favicon', 'inti'),
 					'section'  => 'inti_customizer_general',
 					'settings' => 'inti_customizer_options[favicon_image]',
-					'priority' => 8,
+					'priority' => 16,
 				 ) ) );
 
 			$wp_customize->add_setting('inti_customizer_options[apple_touch_icon]', array( 
@@ -479,7 +491,7 @@ if ( !function_exists('inti_customize_register') ) {
 					'label'    => __('Apple Touch Icon', 'inti'),
 					'section'  => 'inti_customizer_general',
 					'settings' => 'inti_customizer_options[apple_touch_icon]',
-					'priority' => 9,
+					'priority' => 18,
 				 ) ) );
 
 			$wp_customize->add_setting('inti_customizer_options[ms_tile_color]', array( 
@@ -491,7 +503,7 @@ if ( !function_exists('inti_customize_register') ) {
 					'label'    => __('Windows Tile Color', 'inti'),
 					'section'  => 'inti_customizer_general',
 					'settings' => 'inti_customizer_options[ms_tile_color]',
-					'priority' => 10,
+					'priority' => 20,
 				 ) ) );
 
 			$wp_customize->add_setting('inti_customizer_options[ms_tile_image]', array( 
@@ -503,7 +515,7 @@ if ( !function_exists('inti_customize_register') ) {
 					'label'    => __('Windows Tile Image', 'inti'),
 					'section'  => 'inti_customizer_general',
 					'settings' => 'inti_customizer_options[ms_tile_image]',
-					'priority' => 11,
+					'priority' => 22,
 				 ) ) );
 
 			$wp_customize->add_setting('inti_customizer_options[theme_color]', array( 
@@ -515,7 +527,7 @@ if ( !function_exists('inti_customize_register') ) {
 					'label'    => __('Theme Color', 'inti'),
 					'section'  => 'inti_customizer_general',
 					'settings' => 'inti_customizer_options[theme_color]',
-					'priority' => 12,
+					'priority' => 24,
 				 ) ) );
 		
 		

@@ -12,9 +12,9 @@
 			/**
 			* Add logo or site title to the site-banner, hidden in on smaller screens where another logo is shown on top-bar
 			*/
-			$mainbanner = get_inti_option('logo_image', 'inti_customizer_options');
+			$logo = get_inti_option('logo_image', 'inti_customizer_options');
 
-			if ( $mainbanner ) : ?>
+			if ( $logo ) : ?>
 			<div class="site-logo">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 					<?php inti_do_srcset_image(get_inti_option('logo_image', 'inti_customizer_options'), esc_attr( get_bloginfo('name', 'display') . ' logo')); ?>

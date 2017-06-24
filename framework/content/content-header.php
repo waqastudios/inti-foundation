@@ -134,46 +134,70 @@ add_action('inti_hook_site_after', 'inti_do_site_off_canvas_footer');
  */
 function inti_do_main_dropdown_menu() {
    //adds the main menu
-	if ( has_nav_menu('dropdown-menu') ) {?>
-		<div class="row">
-			<nav class="top-bar" id="top-bar-menu">
-			<?php 
-				/**
-				* Add logo or site title to the navigation bar, in addition or instead of having the site banner
-				*/
-				$mobilebanner = get_inti_option('show_nav_logo_title', 'inti_customizer_options', 'none');
+	if ( has_nav_menu('dropdown-menu') ) {?>	
+		<div id="site-banner-sticky-container" class="sticky-container" data-sticky-container>
+			<div class="sticky" data-sticky data-sticky-on="small" data-top-anchor="primary" data-margin-top="0">	
+				<nav class="top-bar" id="top-bar-menu">
+					<div class="row column">
+					<?php
 
-				if ($mobilebanner != 'none') :
-			?>
-				<div class="top-bar-left float-left hide-for-mlarge mobile-banner">
-					<ul class="menu">
-						<li class="menu-text site-logo">
-							<?php if ( get_inti_option('nav_logo_image', 'inti_customizer_options') ) : ?>
-								<?php inti_do_srcset_image(get_inti_option('nav_logo_image', 'inti_customizer_options'), esc_attr( get_bloginfo('name', 'display') . ' logo')); ?>
-							<?php endif; ?>
-						</li>
-						<li class="menu-text site-title"><?php bloginfo('name'); ?></li>
-					</ul>
-				</div>
-			<?php endif; ?>
-				<div class="top-bar-left show-for-mlarge main-dropdown-menu">
-					<?php echo inti_get_dropdown_menu();
-					$showsocial = get_inti_option('nav_social', 'inti_headernav_options');
-					if ($showsocial) echo inti_get_dropdown_social_links(); 
-					?>
-				</div>
-				<div class="top-bar-right float-right hide-for-mlarge">
-					<ul class="menu">
-						<li class="menu-text off-canvas-button"><a data-toggle="inti-off-canvas-menu">
-							<div class="hamburger">
-								<span></span>
-								<span></span>
-								<span></span>
+					/**
+					* Add logo or site title to the navigation bar
+					* i. if one is set for the 'mobile nav' in customizer
+					* ii. if a different one is to be shown on the nav bar if it's currently sticky
+					*/
+					$mobile_logo = get_inti_option('show_nav_logo_title', 'inti_customizer_options', 'none');
+					$sticky_logo = get_inti_option('show_sticky_logo_title', 'inti_customizer_options', 'none');
+					
+					// logo in nav on small screens
+					if ('none' != $mobile_logo) : ?>
+						<div class="top-bar-left hide-for-mlarge mobile-logo">
+							<div class="site-logo">
+								<?php if ( get_inti_option('nav_logo_image', 'inti_customizer_options') ) : ?>
+									<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+										<?php inti_do_srcset_image(get_inti_option('nav_logo_image', 'inti_customizer_options'), esc_attr( get_bloginfo('name', 'display') . ' logo')); ?>
+									</a>
+								<?php endif; ?>
 							</div>
-						</a></li>
-					</ul>
-				</div>
-			</nav>
+							<div class="site-title"><?php bloginfo('name'); ?></div>
+						</div>
+
+					<?php endif; 
+
+					// logo on nav when sticky (needs CSS _navigation.scss)
+					if ('none' != $sticky_logo) : ?>
+						<div class="top-bar-left show-for-mlarge sticky-logo animated fadeInLeft">
+							<div class="site-logo">
+								<?php if ( get_inti_option('nav_logo_image', 'inti_customizer_options') ) : ?>
+									<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+										<?php inti_do_srcset_image(get_inti_option('nav_logo_image', 'inti_customizer_options'), esc_attr( get_bloginfo('name', 'display') . ' logo')); ?>
+									</a>
+								<?php endif; ?>
+							</div>
+							<div class="site-title"><?php bloginfo('name'); ?></div>
+						</div>
+
+					<?php endif; ?>
+						<div class="top-bar-left show-for-mlarge main-dropdown-menu">
+							<?php echo inti_get_dropdown_menu();
+							$showsocial = get_inti_option('nav_social', 'inti_headernav_options');
+							if ($showsocial) echo inti_get_dropdown_social_links(); 
+							?>
+						</div>
+						<div class="top-bar-right hide-for-mlarge">
+							<ul class="menu">
+								<li class="menu-text off-canvas-button"><a data-toggle="inti-off-canvas-menu">
+									<div class="hamburger">
+										<span></span>
+										<span></span>
+										<span></span>
+									</div>
+								</a></li>
+							</ul>
+						</div>
+					</div>
+				</nav>
+			</div>
 		</div>
 	<?php
 	}

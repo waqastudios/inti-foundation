@@ -66,23 +66,40 @@ ul.site-navigation {
 		.site-logo {}
 		.site-title { color: $white; }
 
-			ul.dropdown.menu {
-				li {}
+		.mobile-logo {
+			.site-logo {}
+			.site-title {}		
+		}
+		.sticky-logo {
+			display: none;
+		}
 
-				ul { display: none; } // Loads with display: none to prevent submenu flashes. 
-				ul.js-dropdown-active { display: block; }
-			}
+.is-stuck & {
+		.sticky-logo {
+			display: block;
+				.site-logo {}
+				.site-title {}		
+		}
+}
+		ul.dropdown.menu {
+			li {}
+
+			ul { display: none; } // Loads with display: none to prevent submenu flashes. 
+			ul.js-dropdown-active { display: block; }
+		}
 }
 
 // Trigger for off-canvas menu 
 .top-bar .off-canvas-button {
+	$size-multiplier: 1.5;
+
 	text-align: right;
 	> a { 
-		padding: $global-padding; 
+		padding: $global-padding; // cen be reduced if the button is larger
 		display: inline-block; 
 
 			.hamburger {
-				width: 1.5rem; height: 0.875rem;
+				width: 1.5rem * $size-multiplier; height: 0.875rem * $size-multiplier;
 				position: relative;
 				display: inline-block;
 				transform: rotate(0);
@@ -90,7 +107,7 @@ ul.site-navigation {
 					span {
 						display: block;
 						position: absolute;
-						height: 2px;
+						height: 2px * $size-multiplier;
 						width: 100%;
 						background-color: $global-menu-color;
 						opacity: 1;
@@ -98,15 +115,15 @@ ul.site-navigation {
 						transform: rotate(0);
 						transition: transform 125ms linear;
 							&:nth-child(1) { top: 0; }
-							&:nth-child(2) { top: 0.4375rem; }
-							&:nth-child(3) { top: 0.875rem; }
+							&:nth-child(2) { top: 0.4375rem * $size-multiplier; }
+							&:nth-child(3) { top: 0.875rem * $size-multiplier; }
 					}
 				&.is-active {
 					span {
 
-								&:nth-child(1) { top: 0.5rem; transform: rotate(135deg); }
-								&:nth-child(2) { top: 0.4375rem; opacity: 0; }
-								&:nth-child(3) { top: 0.5rem; transform: rotate(45deg); }
+								&:nth-child(1) { top: 0.5rem * $size-multiplier; transform: rotate(135deg); }
+								&:nth-child(2) { top: 0.4375rem * $size-multiplier; opacity: 0; }
+								&:nth-child(3) { top: 0.5rem * $size-multiplier; transform: rotate(45deg); }
 					}
 				}
 			}
