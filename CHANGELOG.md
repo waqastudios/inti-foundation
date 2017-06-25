@@ -80,3 +80,7 @@
 – Improvements for translation
 - Renaming Inti's Image widget to Image Link to better reflect what it does compared to WP 4.8s new Image widget
 – Set up the theme support in theme options for Front Page template and for Breadcrumbs
+
+### 1.4.0 (Jun 25, 2017)
+– Zurb sticky added to navigation by default
+- Customize option added for miniature logo to be used on small-screen navigation and sticky navigation (perfect for inti-kitchen-sink changes)
