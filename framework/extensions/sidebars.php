@@ -46,9 +46,13 @@ function inti_register_sidebars() {
 	}
 
 	if ( in_array( 'footer', $sidebars[0] ) ) {
-		$footer  = '<div id="%1$s" class="widget top-bar-widget ';
-		$footer .= 'large-' . inti_get_horizontal_sidebar_widget_columns('sidebar-footer');
-		$footer .= ' columns %2$s">';
+		$cells = inti_get_horizontal_sidebar_widget_columns('sidebar-footer');
+
+		$footer  = '<div id="%1$s" class="widget footer-widget';
+		$footer .= ' small-12';
+		$footer .= ' medium-' . $cells['medium'];
+		$footer .= ' large-' . $cells['large'];
+		$footer .= ' cell %2$s">';
 		register_sidebar( array(
 			'name'          => __('Footer', 'inti'),
 			'id'            => 'sidebar-footer',
@@ -85,20 +89,38 @@ if ( !function_exists( 'inti_get_horizontal_sidebar_widget_columns' ) ) {
 			return __('Invalid sidebar ID', 'inti');
 		}
 		
-		/* count number of widgets in the sidebar
+		/** count number of widgets in the sidebar
 		and do some simple math to calculate the columns */
-		$num = count( $the_sidebars[$sidebar_id] );
-		switch( $num ) {
-			case 1 : $num = $columns; break;
-			case 2 : $num = $columns / 2; break;
-			case 3 : $num = $columns / 3; break;
-			case 4 : $num = $columns / 4; break;
-			case 5 : $num = $columns / 5; break;
-			case 6 : $num = $columns / 6; break;
-			case 7 : $num = $columns / 7; break;
-			case 8 : $num = $columns / 8; break;
+
+		$num_large = count( $the_sidebars[$sidebar_id] );
+		switch( $num_large ) {
+			case 1 : $num_large = $columns; break;
+			case 2 : $num_large = $columns / 2; break;
+			case 3 : $num_large = $columns / 3; break;
+			case 4 : $num_large = $columns / 4; break;
+			case 5 : $num_large = $columns / 5; break;
+			case 6 : $num_large = $columns / 6; break;
+			case 7 : $num_large = $columns / 7; break;
+			case 8 : $num_large = $columns / 8; break;
 		}
-		$num = floor( $num );
-		return $num;
+		$num_large = floor( $num_large );
+
+		/**	add your own divisions to control column/cell
+		numbers at different breakpoints */ 
+		$num_medium = count( $the_sidebars[$sidebar_id] );
+		switch( $num_medium ) {
+			case 1 : $num_medium = $columns; break;
+			case 2 : $num_medium = $columns / 2; break;
+			case 3 : $num_medium = $columns / 2; break;
+			case 4 : $num_medium = $columns / 2; break;
+			case 5 : $num_medium = $columns / 2; break;
+			case 6 : $num_medium = $columns / 2; break;
+			case 7 : $num_medium = $columns / 2; break;
+			case 8 : $num_medium = $columns / 2; break;
+		}
+		$num_medium = floor( $num_medium );
+
+
+		return array('medium' => $num_medium, 'large' => $num_large );
 	}
 }

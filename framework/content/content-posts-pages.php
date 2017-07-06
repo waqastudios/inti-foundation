@@ -39,20 +39,22 @@ add_action('inti_hook_page_header', 'inti_do_page_header_title');
  */
 
 function inti_woo_wrapper_start() { ?>
-	<div class="row">
-		<div class="large-8 columns">
+	<div class="grid-container">
+		<div class="grix-x grid-padding-x">
+			<div class="large-8 cell">
 <?php }
 
 add_action('woocommerce_before_main_content', 'inti_woo_wrapper_start', 10);
 
 function inti_woo_wrapper_end() { ?> 
-		</div><!-- .columns -->
+		</div><!-- .cell -->
 <?php }
 
 add_action('woocommerce_after_main_content', 'inti_woo_wrapper_end', 10);
 
 function inti_woo_after_sidebar() { ?> 
-	</div><!-- .row -->
+		</div><!-- .grix-x -->
+	</div><!-- .grix-container -->
 <?php }
 
 add_action('woocommerce_sidebar', 'inti_woo_after_sidebar', 999);
@@ -277,19 +279,21 @@ function inti_do_nav_single() {
 	if ( is_single() ) { 
 	$exclude = ( get_inti_option('frontpage_exclude_cat', 'inti_general_options', 1) ) ? get_inti_option('frontpage_post_category', 'inti_general_options', -1) : ''; ?>
 		<nav class="content-navigation between-posts-navigation" role="navigation">
-			<div class="row">
-				<div class="medium-6 columns">
-					<div class="float-left">
-					<?php previous_post_link('%link', '<span class="meta-nav">&larr; %title</span>', false, $exclude); ?>
+			<div class="grid-container">
+				<div class="grid-x grid-padding-x">
+					<div class="small-12 medium-6 cell">
+						<div class="float-left">
+						<?php previous_post_link('%link', '<span class="meta-nav">&larr; %title</span>', false, $exclude); ?>
+						</div>
 					</div>
-				</div>
-				<div class="medium-6 columns">
-					<div class="float-right">
-					<?php next_post_link('%link', '<span class="meta-nav">%title &rarr;</span>', false, $exclude); ?>
+					<div class="small-12 medium-6 cell">
+						<div class="float-right">
+						<?php next_post_link('%link', '<span class="meta-nav">%title &rarr;</span>', false, $exclude); ?>
+						</div>
 					</div>
-				</div>
-			</div>
-		</nav><!-- .nav-single -->
+				</div><!-- .grid-x -->
+			</div><!-- .grid-container -->
+		</nav><!-- .between-posts-navigation -->
 <?php }
 }
 add_action('inti_hook_post_after', 'inti_do_nav_single', 1);

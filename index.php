@@ -7,8 +7,6 @@
  * @since 1.0.0
  */
 
-$layout = inti_get_layout('');
-
 get_header(); ?>
 
 
@@ -17,49 +15,18 @@ get_header(); ?>
 		<?php inti_hook_content_before(); ?>
 	
 		<div id="content" role="main" class="<?php apply_filters('inti_filter_content_classes', ''); ?>">
-			<div class="row">
-				<?php switch ( $layout ) { 
-
-					case '1c': ?>
-
-				<div class="small-12 medium-12 large-12 columns">
 				
-
-
-				<?php break;
-					case '2c-l': ?>
-
-				<div class="small-12 medium-7 large-8 columns">
-				
-
-
-				<?php break;
-					case '2c-r': ?>
-
-				<div class="small-12 medium-7 medium-push-5 large-8 large-push-4 columns">
-				
-
-
-				<?php break;
-					case '1c-thin': ?>
-
-				<div class="small-12 medium-10 medium-centered large-9 columns">
-				
-
-				<?php } //end switch ?>
+			<?php inti_hook_grid_open(); ?>
 					
-					<?php inti_hook_inner_content_before(); ?>
+				<?php inti_hook_inner_content_before(); ?>
 
-					<?php // get the main loop
-					get_template_part('loops/loop', 'index'); ?>
-					
-					<?php inti_hook_inner_content_after(); ?>
+				<?php // get the main loop
+				get_template_part('loops/loop', 'index'); ?>
 				
-				</div><!-- .columns -->
+				<?php inti_hook_inner_content_after(); ?>
 				
-				<?php get_sidebar(); ?>
-				
-			</div><!-- .row -->
+			<?php inti_hook_grid_close(); ?>
+
 		</div><!-- #content -->
 		
 		<?php inti_hook_content_after(); ?>

@@ -128,7 +128,6 @@ add_action('inti_hook_site_after', 'inti_do_site_off_canvas_footer');
 
 /**
  * Add main menu before or after site banner
- * add or remove .row to control max width
  * 
  * @since 1.0.0
  */
@@ -136,9 +135,10 @@ function inti_do_main_dropdown_menu() {
    //adds the main menu
 	if ( has_nav_menu('dropdown-menu') ) {?>	
 		<div id="site-banner-sticky-container" class="sticky-container" data-sticky-container>
-			<div class="sticky" data-sticky data-sticky-on="small" data-top-anchor="primary" data-margin-top="0">	
-				<nav class="top-bar" id="top-bar-menu">
-					<div class="row column">
+			<div class="sticky" data-sticky data-sticky-on="small" data-top-anchor="primary" data-margin-top="0">
+				<div class="site-top-bar-container">
+					<nav class="top-bar" id="top-bar-menu">
+				
 					<?php
 
 					/**
@@ -195,8 +195,10 @@ function inti_do_main_dropdown_menu() {
 								</a></li>
 							</ul>
 						</div>
-					</div>
-				</nav>
+
+					
+					</nav>
+				</div>	
 			</div>
 		</div>
 	<?php

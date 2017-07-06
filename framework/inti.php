@@ -7,7 +7,7 @@
  * @package Inti
  * @author Waqa Studios
  * @since 1.0.0
- * @version 1.0.8
+ * @version 1.5.0
  * @license GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
  */
 
@@ -69,6 +69,7 @@ class Inti {
 		require_once locate_template('/framework/functions/get-options.php');
 		require_once locate_template('/framework/functions/helpers.php');
 		require_once locate_template('/framework/functions/layouts.php');
+		require_once locate_template('/framework/functions/xy-grid.php');
 		require_once locate_template('/framework/functions/post-meta.php');
 		require_once locate_template('/framework/functions/srcset-images.php');
 		require_once locate_template('/framework/functions/theme-supports.php');

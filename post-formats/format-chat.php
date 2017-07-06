@@ -30,18 +30,20 @@ if ($interface == 1 || is_single()) : // standard interface
 			</header><!-- .entry-header -->
 
 			<?php inti_hook_post_header_after(); ?>
-			
-			<header class="entry-header large-2 small-2 columns">
-				<?php echo get_avatar( get_the_author_meta('ID'), apply_filters('inti_status_avatar', '57') ); ?>
-				<p class="entry-author"><?php the_author(); ?></p>
-			</header><!-- .entry-header -->
-	
-			<div class="entry-content large-offset-2 small-offset-2">
-				<?php inti_hook_post_content_before_the_content(); ?>
-				<?php the_content(); ?>
-				<?php inti_hook_post_content_after_the_content(); ?>
-			</div><!-- .entry-content -->
-	
+
+			<div class="grid-x grid-padding-x">
+				<header class="entry-summary small-3 large-2 cell">
+					<?php echo get_avatar( get_the_author_meta('ID'), apply_filters('inti_status_avatar', '57') ); ?>
+					<p class="entry-author"><?php the_author(); ?></p>
+				</header><!-- .entry-header -->
+		
+				<div class="entry-content small-9 large-10 cell">
+					<?php inti_hook_post_content_before_the_content(); ?>
+					<?php the_content(); ?>
+					<?php inti_hook_post_content_after_the_content(); ?>
+				</div><!-- .entry-content -->
+			</div>
+
 			<footer class="entry-footer">
 				<?php inti_hook_post_footer(); ?>
 			</footer><!-- .entry-footer -->
@@ -62,14 +64,16 @@ else : // short interface with excerpt ?>
 
 			<?php inti_hook_post_header_after(); ?>
 			
-			<header class="entry-header large-2 small-2 columns">
-				<?php echo get_avatar( get_the_author_meta('ID'), apply_filters('inti_status_avatar', '64') ); ?>
-				<p class="entry-author"><?php the_author(); ?></p>
-			</header><!-- .entry-header -->
-	
-			<div class="entry-summary large-offset-2 small-offset-2">
-				<?php the_excerpt(); ?>
-			</div><!-- .entry-summary -->
+			<div class="grid-x grid-padding-x">
+
+				<header class="entry-summary small-3 large-2 cell">
+					<?php echo get_avatar( get_the_author_meta('ID'), apply_filters('inti_status_avatar', '64') ); ?>
+					<p class="entry-author"><?php the_author(); ?></p>
+				</header><!-- .entry-header -->
+		
+				<div class="entry-summary small-9 large-10 cell">
+					<?php the_excerpt(); ?>
+				</div><!-- .entry-summary -->
 	
 			<footer class="entry-footer">
 				<?php inti_hook_post_footer(); ?>

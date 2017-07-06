@@ -95,8 +95,8 @@ if ( function_exists('childtheme_override_setup') ) {
 		
 		add_theme_support('post-thumbnails');
 		
-		add_image_size('thumb-300', 300, 250, true);
-		add_image_size('thumb-200', 200, 150, true);
+		// add_image_size('thumb-300', 300, 250, true);
+		// add_image_size('thumb-200', 200, 150, true);
 		
 		
 		// RSS feed links to header.php for posts and comments.

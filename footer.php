@@ -7,7 +7,7 @@
  * @since 1.0.0
  */
 ?>
-					<?php get_template_part('template-parts/part', 'footer-wide') ?>
+					<?php get_template_part('template-parts/part', 'footer-contained') ?>
 
 				</div><!-- #page .webpage -->
 	<?php inti_hook_site_after(); ?>

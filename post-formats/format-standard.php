@@ -59,8 +59,8 @@ else : // short interface with excerpt ?>
 	<article id="post-<?php the_ID(); ?>" <?php post_class('short'); ?>>
 		<div class="entry-body">
 			<?php  if ( has_post_thumbnail() ) : ?>
-				<div class="row large-up-2">
-					<div class="large-4 columns">
+				<div class="grid-x grid-padding-x grid-padding-y large-up-2">
+					<div class="large-4 cell">
 						<div class="entry-thumbnail">
 							<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
 								<?php the_post_thumbnail( 'blog-thumbnail', array( 'class' => 'blog-thumbnail', 'alt' => get_the_title() ) ); ?>
@@ -69,7 +69,7 @@ else : // short interface with excerpt ?>
 					</div>
 
 				
-					<div class="large-8 columns"> 
+					<div class="large-8 cell"> 
 
 						<?php inti_hook_post_header_before(); ?>
 						<header class="entry-header">

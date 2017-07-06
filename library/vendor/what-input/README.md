@@ -2,9 +2,14 @@
 
 __A global utility for tracking the current input method (mouse, keyboard or touch).__
 
-## What Input is now v4
+## What Input is now v4.1.6
 
 What Input adds data attributes to the `<html>` tag based on the type of input being used. It also exposes a simple API that can be used for scripting interactions.
+
+### June 12, 2017
+
+* Added: passive event listener for `wheel` event.
+* Added: ability to fire custom functions when 'intent' or 'input' changes.
 
 ### Changes from v3
 
@@ -50,7 +55,7 @@ npm install what-input
 Include the script directly in your project.
 
 ```html
-<script src="assets/scripts/what-input.js"></script>
+<script src="dist/what-input.min.js"></script>
 ```
 
 Or require with a script loader.
@@ -61,6 +66,16 @@ require('what-input');
 // or
 
 var whatInput = require('what-input');
+
+// or
+
+requirejs.config({
+  paths: {
+    whatInput: 'path/to/what-input'
+  }
+});
+
+require(['whatInput'], function() {});
 ```
 
 What Input will start doing its thing while you do yours.
@@ -142,6 +157,27 @@ Ask What Input to return an array of all the input types that have been used _so
 
 ```javascript
 whatInput.types(); // ex. returns ['mouse', 'keyboard']
+```
+
+Set a custom array of keycodes that will be ignored when pressed.
+
+```javascript
+whatInput.ignoreKeys([1, 2, 3])
+```
+
+Fire a function when the input or intent changes.
+
+```javascript
+// create a function to be fired
+var myFunction = function(type) {
+  console.log(type)
+};
+
+// fire `myFunction` when the intent changes
+whatInput.onChange(myFunction, 'intent');
+
+// fire `myFunction` when the input changes
+whatInput.onChange(myFunction, 'input');
 ```
 
 ## Compatibility

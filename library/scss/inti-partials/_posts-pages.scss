@@ -72,14 +72,6 @@ article {
 	}
 }
 
-nav.nav-single {
-	@include grid-row;
+nav.between-posts-navigation {
 	margin: $global-margin 0;
-
-	.alignleft { margin: 0 0 $global-margin 0; display: inline-block; }
-
-	@include breakpoint(medium up) {
-		.alignleft { @include grid-column(5, 0); margin: 0; } 
-		.alignright { @include grid-column(5, 0); text-align: right; }
-	}
 }

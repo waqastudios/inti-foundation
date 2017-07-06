@@ -56,8 +56,10 @@ ul.site-navigation {
 		}
 }
 
+// Top Bar Container, used with #site-header-contained in part-header-contained.php
+.site-top-bar-container { background-color: $dark-gray; }
 
-// Top Bar
+// Top Bar in all variations
 .top-bar {
 	background-color: $global-menu-background; // overwrites value in _settings.scss because we want to control all menus here
 		.top-bar-left {}
@@ -73,7 +75,10 @@ ul.site-navigation {
 		.sticky-logo {
 			display: none;
 		}
-
+// Used in part-header-contained.php
+#site-header-contained & {
+	max-width: $global-width; margin: 0 auto;
+}
 .is-stuck & {
 		.sticky-logo {
 			display: block;

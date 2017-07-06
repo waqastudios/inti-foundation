@@ -184,6 +184,28 @@ function inti_hook_inner_content_after() {
 }
 
 /**
+ * Register hook: inti_hook_grid_open()
+ *
+ * in page template files, the markup to create the grid with the
+ * default number of cells (columns) goes here
+ * @since 1.5.0 
+ */
+function inti_hook_grid_open() {
+	do_action('inti_hook_grid_open');
+}
+
+/**
+ * Register hook: inti_hook_grid_close
+ *
+ * in page template files, the markup to create the grid with the
+ * default number of cells (columns) goes here
+ * @since 1.5.0 
+ */
+function inti_hook_grid_close() {
+	do_action('inti_hook_grid_close');
+}
+
+/**
  * Register hook: inti_hook_sidebar_before
  *
  * in page template files, index.php, home.php before #sidebar

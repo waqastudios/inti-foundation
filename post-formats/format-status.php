@@ -32,17 +32,17 @@ if ($interface == 1 || is_single()) : // standard interface
 			<?php inti_hook_post_header_after(); ?>
 	
 			<div class="entry-content">
-				<div class="row">
-					<div class="large-2 small-2 columns">
+				<div class="grid-x grid-padding-x">
+					<div class="small-3 large-2 cell">
 						<?php echo get_avatar( get_the_author_meta('ID'), apply_filters('inti_status_avatar', '64') ); ?>
 						<p class="entry-author"><?php the_author(); ?></p>
 					</div>
-					<div class="large-8 small-8 large-offset-2 small-offset-2">
+					<div class="small-9 large-10 cell">
 						<?php inti_hook_post_content_before_the_content(); ?>
 						<?php the_content(); ?>
 						<?php inti_hook_post_content_after_the_content(); ?>
 					</div>
-				</div>
+				</div><!-- .grid-x -->
 			</div><!-- .entry-content -->
 	
 			<footer class="entry-footer">
@@ -67,12 +67,12 @@ else : // short interface with excerpt ?>
 			<?php inti_hook_post_header_after(); ?>
 	
 			<div class="entry-summary">
-				<div class="row">
-					<div class="large-2 small-2 columns">
+				<div class="grid-x grid-padding-x">
+					<div class="small-3 large-2 cell">
 						<?php echo get_avatar( get_the_author_meta('ID'), apply_filters('inti_status_avatar', '64') ); ?>
 						<p class="entry-author"><?php the_author(); ?></p>
 					</div>
-					<div class="large-8 small-8 large-offset-2 small-offset-2">
+					<div class="small-9 large-10 cell">
 						<?php // status post shows the full content
 						// the_excerpt(); 
 						the_content(); ?>

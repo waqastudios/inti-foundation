@@ -26,11 +26,13 @@ function inti_do_content_before_breadcrumbs() {
 			} else { ?>
 
 				<div class="breadcrumbs top">
-					<div class="row">
-						<div class="columns">
-							<?php echo inti_get_breadcrumbs(); ?>
-						</div><!-- .columns -->
-					</div><!-- .row -->
+					<div class="grid-container">
+						<div class="grid-x grid-padding-x">
+							<div class="small-12 cell">
+								<?php echo inti_get_breadcrumbs(); ?>
+							</div><!-- .cell -->
+						</div><!-- .grid-x -->
+					</div>
 				</div><!-- .breadcrumbs -->
 <?php 
 			}
@@ -55,11 +57,13 @@ function inti_do_content_after_breadcrumbs() {
 			} else { ?>
 
 				<div class="breadcrumbs bottom">
-					<div class="row">
-						<div class="columns">
-							<?php echo inti_get_breadcrumbs(); ?>
-						</div><!-- .columns -->
-					</div><!-- .row -->
+					<div class="grid-container">
+						<div class="grid-x grid-padding-x">
+							<div class="small-12 cell">
+								<?php echo inti_get_breadcrumbs(); ?>
+							</div><!-- .cell -->
+						</div><!-- .grid-x -->
+					</div>
 				</div><!-- .breadcrumbs -->
 <?php 
 			}

@@ -7,14 +7,19 @@ footer can be wide or contained.
 
 ******************************************************************/
 
-#footer {
-
-}
+.site-footer {}
+#site-footer-wide {}
+#site-footer-contained {}
 
 .footer-widgets {
 	padding: $global-padding 0;
-	background-color: $light-gray; 
+	background-color: $light-gray;
+
+	#site-footer-contained & {
+		@include xy-grid-container;
+	}
 }
+
 .footer-menu { 
 	background-color: $black; 
 
@@ -23,7 +28,11 @@ footer can be wide or contained.
 			li { display: inline-block; }
 		}
 
+	#site-footer-contained & {
+		@include xy-grid-container;
+	}
 }
+
 .footer-social { 
 	padding: $global-padding 0;
 	background-color: $light-gray; 
@@ -32,10 +41,18 @@ footer can be wide or contained.
 			li { display: inline-block; }
 			a { padding: 5px; }
 		}
+	#site-footer-contained & {
+		@include xy-grid-container;
+	}
 }
+
 .footer-info {
 	background-color: $light-gray; 
 
 		span.copyright {}
 		span.site-credits {}
+
+	#site-footer-contained & {
+		@include xy-grid-container;
+	}
 }

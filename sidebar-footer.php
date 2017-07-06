@@ -7,6 +7,8 @@
  * @since 1.0.0
  */?>
 
-<div class="sidebar">
-	<?php dynamic_sidebar('sidebar-footer'); ?>	
+<div id="site-footer-sidebar" class="sidebar">
+	<div class="grid-x grid-padding-x grid-padding-y">
+		<?php dynamic_sidebar('sidebar-footer'); ?>	
+	</div>
 </div>
