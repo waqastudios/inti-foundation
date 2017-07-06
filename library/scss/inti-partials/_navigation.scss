@@ -143,10 +143,10 @@ ul.site-navigation {
 
 // Off Canvas menu
 .off-canvas-menu { 
-	background-color: $black;
+	background-color: $global-menu-background;
 
 		.is-drilldown-submenu {}
-		.js-drilldown-back a::before { border-color: transparent $white transparent transparent; }
+		.js-drilldown-back a::before { border-color: transparent $global-menu-color transparent transparent; }
 	
 }
 .admin-bar>.off-canvas-menu {

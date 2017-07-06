@@ -85,7 +85,7 @@ function inti_get_drilldown_menu() {
 	 $defaults = wp_nav_menu(array(
 		'container' => false,
 		'echo' => false,                           // Remove nav container
-		'menu_class' => 'vertical menu site-navigation site-navigation-drilldown',       // Adding custom nav class
+		'menu_class' => 'vertical menu drilldown site-navigation site-navigation-drilldown',       // Adding custom nav class
 		'items_wrap' => '<ul id="%1$s" class="%2$s" data-drilldown>%3$s</ul>',
 		'theme_location' => 'off-canvas-menu',                 // Where it's located in the theme
 		'depth' => 5,                                   // Limit the depth of the nav
