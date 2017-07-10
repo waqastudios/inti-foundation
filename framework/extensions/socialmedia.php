@@ -32,25 +32,15 @@ if ( !function_exists( 'inti_get_dropdown_social_links' ) ) {
 
 		$html = '<ul class="social-icons left menu">';
 			
-			// foundicons
-			// if ($fb) $html .= '<li class="social-fb"><a href="'. $fb .'"'. $blank .'><i class="fi fi-social-facebook"></i></a></li>';
-			// if ($tw) $html .= '<li class="social-tw"><a href="'. $tw .'"'. $blank .'><i class="fi fi-social-twitter"></i></a></li>';
-			// if ($gp) $html .= '<li class="social-gp"><a href="'. $gp .'"'. $blank .'><i class="fi fi-social-google-plus"></i></a></li>';
-			// if ($li) $html .= '<li class="social-li"><a href="'. $li .'"'. $blank .'><i class="fi fi-social-linkedin"></i></a></li>';
-			// if ($in) $html .= '<li class="social-in"><a href="'. $in .'"'. $blank .'><i class="fi fi-social-instagram"></i></a></li>';
-			// if ($pi) $html .= '<li class="social-pi"><a href="'. $pi .'"'. $blank .'><i class="fi fi-social-pinterest"></i></a></li>';
-			// if ($yt) $html .= '<li class="social-yt"><a href="'. $yt .'"'. $blank .'><i class="fi fi-social-youtube"></i></a></li>';
-			// if ($vi) $html .= '<li class="social-vi"><a href="'. $vi .'"'. $blank .'><i class="fi fi-social-vimeo"></i></a></li>';
-
-			// fontawesome
-			if ($fb) $html .= '<li class="social-fb"><a href="'. $fb .'"'. $blank .'><i class="fa fa-facebook"></i></a></li>';
-			if ($tw) $html .= '<li class="social-tw"><a href="'. $tw .'"'. $blank .'><i class="fa fa-twitter"></i></a></li>';
-			if ($gp) $html .= '<li class="social-gp"><a href="'. $gp .'"'. $blank .'><i class="fa fa-google-plus"></i></a></li>';
-			if ($li) $html .= '<li class="social-li"><a href="'. $li .'"'. $blank .'><i class="fa fa-linkedin"></i></a></li>';
-			if ($in) $html .= '<li class="social-in"><a href="'. $in .'"'. $blank .'><i class="fa fa-instagram"></i></a></li>';
-			if ($pi) $html .= '<li class="social-pi"><a href="'. $pi .'"'. $blank .'><i class="fa fa-pinterest"></i></a></li>';
-			if ($yt) $html .= '<li class="social-yt"><a href="'. $yt .'"'. $blank .'><i class="fa fa-youtube"></i></a></li>';
-			if ($vi) $html .= '<li class="social-vi"><a href="'. $vi .'"'. $blank .'><i class="fa fa-vimeo"></i></a></li>';
+		// fontawesome
+		if ($fb) $html .= '<li class="social-fb"><a href="'. $fb .'"'. $blank .'><i class="fa fa-facebook"></i></a></li>';
+		if ($tw) $html .= '<li class="social-tw"><a href="'. $tw .'"'. $blank .'><i class="fa fa-twitter"></i></a></li>';
+		if ($gp) $html .= '<li class="social-gp"><a href="'. $gp .'"'. $blank .'><i class="fa fa-google-plus"></i></a></li>';
+		if ($li) $html .= '<li class="social-li"><a href="'. $li .'"'. $blank .'><i class="fa fa-linkedin"></i></a></li>';
+		if ($in) $html .= '<li class="social-in"><a href="'. $in .'"'. $blank .'><i class="fa fa-instagram"></i></a></li>';
+		if ($pi) $html .= '<li class="social-pi"><a href="'. $pi .'"'. $blank .'><i class="fa fa-pinterest"></i></a></li>';
+		if ($yt) $html .= '<li class="social-yt"><a href="'. $yt .'"'. $blank .'><i class="fa fa-youtube"></i></a></li>';
+		if ($vi) $html .= '<li class="social-vi"><a href="'. $vi .'"'. $blank .'><i class="fa fa-vimeo"></i></a></li>';
 
 		$html.='</ul>';
 		return apply_filters('inti_filter_dropdown_social_links', $html);
@@ -80,16 +70,6 @@ if ( !function_exists( 'inti_get_off_canvas_social_links' ) ) {
 		if ($blank) $blank = ' target="_blank"'; 
 
 		$html = '<ul class="social-icons menu">';
-			
-			// foundicons
-			// if ($fb) $html .= '<li class="social-fb"><a href="'. $fb .'"'. $blank .'><i class="fi fi-social-facebook"></i></a></li>';
-			// if ($tw) $html .= '<li class="social-tw"><a href="'. $tw .'"'. $blank .'><i class="fi fi-social-twitter"></i></a></li>';
-			// if ($gp) $html .= '<li class="social-gp"><a href="'. $gp .'"'. $blank .'><i class="fi fi-social-google-plus"></i></a></li>';
-			// if ($li) $html .= '<li class="social-li"><a href="'. $li .'"'. $blank .'><i class="fi fi-social-linkedin"></i></a></li>';
-			// if ($in) $html .= '<li class="social-in"><a href="'. $in .'"'. $blank .'><i class="fi fi-social-instagram"></i></a></li>';
-			// if ($pi) $html .= '<li class="social-pi"><a href="'. $pi .'"'. $blank .'><i class="fi fi-social-pinterest"></i></a></li>';
-			// if ($yt) $html .= '<li class="social-yt"><a href="'. $yt .'"'. $blank .'><i class="fi fi-social-youtube"></i></a></li>';
-			// if ($vi) $html .= '<li class="social-vi"><a href="'. $vi .'"'. $blank .'><i class="fi fi-social-vimeo"></i></a></li>';
 
 			// fontawesome
 			if ($fb) $html .= '<li class="social-fb"><a href="'. $fb .'"'. $blank .'><i class="fa fa-facebook"></i></a></li>';
@@ -131,16 +111,6 @@ if ( !function_exists( 'inti_get_footer_social_links' ) ) {
 
 		$html = '<ul class="social-icons">';
 			
-			// foundicons
-			// if ($fb) $html .= '<li class="social-fb"><a href="'. $fb .'"'. $blank .'><i class="fi fi-social-facebook"></i></a></li>';
-			// if ($tw) $html .= '<li class="social-tw"><a href="'. $tw .'"'. $blank .'><i class="fi fi-social-twitter"></i></a></li>';
-			// if ($gp) $html .= '<li class="social-gp"><a href="'. $gp .'"'. $blank .'><i class="fi fi-social-google-plus"></i></a></li>';
-			// if ($li) $html .= '<li class="social-li"><a href="'. $li .'"'. $blank .'><i class="fi fi-social-linkedin"></i></a></li>';
-			// if ($in) $html .= '<li class="social-in"><a href="'. $in .'"'. $blank .'><i class="fi fi-social-instagram"></i></a></li>';
-			// if ($pi) $html .= '<li class="social-pi"><a href="'. $pi .'"'. $blank .'><i class="fi fi-social-pinterest"></i></a></li>';
-			// if ($yt) $html .= '<li class="social-yt"><a href="'. $yt .'"'. $blank .'><i class="fi fi-social-youtube"></i></a></li>';
-			// if ($vi) $html .= '<li class="social-vi"><a href="'. $vi .'"'. $blank .'><i class="fi fi-social-vimeo"></i></a></li>';
-
 			// fontawesome
 			if ($fb) $html .= '<li class="social-fb"><a href="'. $fb .'"'. $blank .'><i class="fa fa-facebook"></i></a></li>';
 			if ($tw) $html .= '<li class="social-tw"><a href="'. $tw .'"'. $blank .'><i class="fa fa-twitter"></i></a></li>';
@@ -178,17 +148,6 @@ if ( !function_exists( 'inti_get_widget_social_links' ) ) {
 		if ($blank) $blank = ' target="_blank"'; 
 
 		$html = '<ul class="social-icons">';
-			
-			// foundicons
-			// if ($fb) $html .= '<li class="social-fb"><a href="'. $fb .'"'. $blank .'><i class="fi fi-social-facebook"></i></a></li>';
-			// if ($tw) $html .= '<li class="social-tw"><a href="'. $tw .'"'. $blank .'><i class="fi fi-social-twitter"></i></a></li>';
-			// if ($gp) $html .= '<li class="social-gp"><a href="'. $gp .'"'. $blank .'><i class="fi fi-social-google-plus"></i></a></li>';
-			// if ($li) $html .= '<li class="social-li"><a href="'. $li .'"'. $blank .'><i class="fi fi-social-linkedin"></i></a></li>';
-			// if ($in) $html .= '<li class="social-in"><a href="'. $in .'"'. $blank .'><i class="fi fi-social-instagram"></i></a></li>';
-			// if ($pi) $html .= '<li class="social-pi"><a href="'. $pi .'"'. $blank .'><i class="fi fi-social-pinterest"></i></a></li>';
-			// if ($yt) $html .= '<li class="social-yt"><a href="'. $yt .'"'. $blank .'><i class="fi fi-social-youtube"></i></a></li>';
-			// if ($vi) $html .= '<li class="social-vi"><a href="'. $vi .'"'. $blank .'><i class="fi fi-social-vimeo"></i></a></li>';
-
 			// fontawesome
 			if ($fb) $html .= '<li class="social-fb"><a href="'. $fb .'"'. $blank .'><i class="fa fa-facebook"></i></a></li>';
 			if ($tw) $html .= '<li class="social-tw"><a href="'. $tw .'"'. $blank .'><i class="fa fa-twitter"></i></a></li>';
