@@ -30,6 +30,7 @@ rdoc
 spec/reports
 npm-debug.log
 _debug.json
+dist
 
 *.orig
 node_modules
@@ -46,7 +47,7 @@ test/version_tmp
 tmp
 testing/_build
 
-lost-inca-treasures/
+the-klingon-empire/
 data.json
 docs/*
 npm-debug.log

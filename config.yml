@@ -1,0 +1,56 @@
+# Config in en_SC
+# "Hello, computer."
+
+# Your project's server will run on localhost:xxxxx at this port
+HOST: "localhost"
+PORT: 8020
+PROXY: "http://192.168.0.4/inti-foundation/wordpress/"
+
+# Autoprefixer will make sure ye CSS works wi these browsers it will
+COMPATIBILITY:
+  - "last 2 versions"
+  - "ie >= 9"
+  - "ios >= 7"
+  - "Android >= 2.3"
+
+# Gulp will reference these paths when it copies files
+PATHS:
+
+  # Path tae dist folder
+  dist: "library/dist" 
+
+  # Paths tae the font files tae be hard-copied tae dist
+  staticfonts:
+    - "library/src/fonts/*"
+    - "node_modules/slick-carousel/slick/fonts/*"
+    - "node_modules/font-awesome/fonts/*"
+
+  # Paths tae any build tae be hard-copied tae dist (for individual enqueue in styles.php)
+  # remove here an in gulpfile.babel.js, styles.php an then
+  # uncomment in sass: below tae parse in sass task
+  # uncomment in inti.scss to @import
+  staticcss:
+    - "node_modules/font-awesome/css/*"
+    - "node_modules/slick-carousel/slick/slick.css"
+
+  # Paths tae Sass libraries, which can then be loaded wi @import
+  sass:
+    - "node_modules/foundation-sites/scss"
+    - "node_modules/motion-ui/src"
+    - "library/src/scss/**/*.scss"
+    - "node_modules/toastr/build/*.scss"
+    # - "node_modules/font-awesome/scss"
+    # - "node_modules/slick-carousel/slick/slick.scss"
+    - "library/src/**/*.scss"
+
+  # "The keyboard...How quaint...."
+  foundationjs:
+    - "library/src/js/inti.js"
+
+  # Paths tae individual vendor JS, nae tae be cominbed for wp_register_script()
+  vendorjs:
+    - "node_modules/toastr/build/toastr.min.js"
+    - "node_modules/slick-carousel/slick/slick.js"
+    - "node_modules/jquery.cookie/jquery.cookie.js"
+
+  # "She canna take any more, captain.  She's gonna blow!"
