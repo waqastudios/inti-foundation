@@ -2,18 +2,25 @@
 
 [![GitHub version](https://badge.fury.io/gh/waqastudios%2Finti-foundation.svg)](https://badge.fury.io/gh/waqastudios%2Finti-foundation)
 
-Inti Foundation is a WordPress parent theme that uses Foundation for Sites 6, the most advanced responsive front-end framework in the world. 
+Inti Foundation is a WordPress parent theme that uses Foundation for Sites 6.4, the most advanced responsive front-end framework in the world. Foundation for Sites 6.4, unlike earlier versions, uses a flexbox based grid system called [XY Grid](http://foundation.zurb.com/sites/docs/xy-grid.html)
 
 **As a theme** it is a starting point for you to build a WordPress/Foundation site from scratch.
 
-**As a parent theme** it allows you to create unique child themes harnessing the functionality of the parent while allowing you to upgrade the parent when new features are released.
+**As a parent theme** it allows you to create unique child themes harnessing the functionality of the parent while still allowing you to upgrade the parent when new features are released.
 
 **As a framework** it comes packed with tonnes of WordPress functionality baked-in and ready to expand upon, all neatly organized into easy to understand directories and files.
 
 ## Getting Started
 ### Gulp
 Inti Foundation and its child themes come configured with a Gulp file that will compile your Sass and javascript changes for you with its watch function. (If your workflow doesn’t include Gulp, please review this file to see what library elements need to be compiled into a final CSS file with your own tools).
- 
+
+#### To begin:
+ * Modify config.yml file for your setup
+ * `npm install`
+ * `npm build`
+ * `npm default`, a new browser window will open pointing to a BrowserSync server displaying the WordPress installtion (via BrowserSync).
+
+
 > The best way to customize Inti Foundation is to create a child theme. Consider doing that before making edits to the parent theme.
 
 ### Activating

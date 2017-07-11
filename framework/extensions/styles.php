@@ -20,7 +20,7 @@ function inti_register_styles() {
 	// register styles
 	wp_register_style('inti', get_template_directory_uri() . '/library/dist/css/inti.css', array(), filemtime(get_template_directory() . '/library/dist/css/inti.css'), 'all');
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/library/dist/css/font-awesome.min.css', array(), filemtime(get_template_directory() . '/library/dist/css/font-awesome.min.css') );
-	wp_enqueue_style( 'slick-carousel', get_stylesheet_directory_uri() . '/library/dist/css/slick.css', array(), filemtime(get_stylesheet_directory() . '/library/dist/css/slick.css') );
+	wp_enqueue_style( 'slick-carousel', get_template_directory_uri() . '/library/dist/css/slick.css', array(), filemtime(get_template_directory() . '/library/dist/css/slick.css') );
 	wp_register_style('style', get_stylesheet_directory_uri() . '/style.css', array(), filemtime(get_template_directory() . '/style.css'), 'all');
 }
 
