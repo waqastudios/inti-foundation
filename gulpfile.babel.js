@@ -28,7 +28,7 @@ function loadConfig() {
 
 // Build the "dist" folder by running all of the below tasks
 gulp.task('build',
- gulp.series(clean, gulp.parallel(sass, foundationjs, vendorjs, images, copyFonts, copyStaticCss), styleGuide));
+ gulp.series(clean, gulp.parallel(sass, foundationjs, vendorjs, images, copyFonts, copyStaticCss, editorSass), styleGuide));
 
 // Build the site, run the server, and watch for file changes
 gulp.task('default',
@@ -81,6 +81,19 @@ function sass() {
     .pipe(gulp.dest(PATHS.dist + '/css'))
     .pipe(browser.reload({ stream: true }));
 }
+// Compile Css for Editor
+function editorSass() {
+  return gulp.src('library/src/scss/editor.scss')
+    .pipe($.sass({
+      includePaths: PATHS.editorsass
+    })
+      .on('error', $.sass.logError))
+    .pipe($.autoprefixer({
+      browsers: COMPATIBILITY
+    }))
+    .pipe(gulp.dest(PATHS.dist + '/css'));
+}
+
 
 let webpackConfig = {
   rules: [

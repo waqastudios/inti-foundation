@@ -43,6 +43,11 @@ PATHS:
     # - "node_modules/slick-carousel/slick/slick.scss"
     - "library/src/**/*.scss"
 
+  # Path tae Sass for the wp_editor/tinymce, added in functions.php
+  # TODO: Make Sass above ignore this one file
+  editorsass:
+    - "library/src/editor.scss"
+
   # "The keyboard...How quaint...."
   foundationjs:
     - "library/src/js/inti.js"
