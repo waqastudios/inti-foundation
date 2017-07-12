@@ -84,3 +84,9 @@
 ### 1.4.0 (Jun 25, 2017)
 – Zurb sticky added to navigation by default
 - Customize option added for miniature logo to be used on small-screen navigation and sticky navigation (perfect for inti-kitchen-sink changes)
+
+### 1.5.0 (July 12, 2017)
+- Updated for Foundation 6.4.1
+- All template files updated for XY Grid
+- Completely reworked gulp file and build process
+- Vendor files come from and are managed by npm
