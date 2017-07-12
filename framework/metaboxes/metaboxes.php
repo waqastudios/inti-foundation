@@ -59,18 +59,19 @@ function inti_register_layout_metabox() {
 		'default' => 'default',
 		'options' => inti_get_theme_layouts(true) // get theme layouts, with customizer default = true
 	) );
-
-	$cmb_layout->add_field( array(
-		'name'    => __( 'Sticky Sidebar', 'inti' ),
-		'desc'    => __( 'Keep sidebar widgets in view as you scroll down the page.', 'inti' ),
-		'id'      => $prefix . 'stickysidebars',
-		'type'    => 'radio',
-		'default' => 'default',
-		'options'          => array(
-			'default' => __( 'As Set In Customize', 'inti' ),
-			'static'   => __( 'Static', 'inti' ),
-			'sticky'     => __( 'Sticky', 'inti' ),
-		),
-	) );
-
+	
+	if (current_theme_supports('inti-sticky-sidebars')) {
+		$cmb_layout->add_field( array(
+			'name'    => __( 'Sticky Sidebar', 'inti' ),
+			'desc'    => __( 'Keep sidebar widgets in view as you scroll down the page.', 'inti' ),
+			'id'      => $prefix . 'stickysidebars',
+			'type'    => 'radio',
+			'default' => 'default',
+			'options'          => array(
+				'default' => __( 'As Set In Customize', 'inti' ),
+				'static'   => __( 'Static', 'inti' ),
+				'sticky'     => __( 'Sticky', 'inti' ),
+			),
+		) );
+	}
 }
