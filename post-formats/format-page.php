@@ -17,7 +17,7 @@
  */
 $interface = get_inti_option('blog_interface', 'inti_general_options');
 
-if ($interface == 1 || !is_search()) : // standard interface
+if ($interface == 1 && !is_search()) : // standard interface
 ?>
 
 
