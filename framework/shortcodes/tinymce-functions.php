@@ -98,7 +98,14 @@ add_filter( 'tiny_mce_before_init', 'inti_mce_google_fonts_array' );
  */
 function inti_shortcode_interface_stylesheets($hook) {
 	if ($hook == "post.php" || $hook == "post-new.php" || is_customize_preview() ){
-		wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/library/dist/css/font-awesome.min.css', array(), filemtime(get_template_directory() . '/library/dist/css/font-awesome.min.css') );
+		// From dist files after build 
+		if ( is_child_theme() ) {
+			wp_enqueue_style( 'font-awesome', get_stylesheet_directory_uri() . '/library/dist/css/font-awesome.min.css', array(), filemtime(get_stylesheet_directory() . '/library/dist/css/font-awesome.min.css') );
+		} else {
+			wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/library/dist/css/font-awesome.min.css', array(), filemtime(get_template_directory() . '/library/dist/css/font-awesome.min.css') );
+		}
+
+		// From framework file that aren't built
 		wp_enqueue_style( 'inti-shortcodes-css', get_template_directory_uri() . '/framework/shortcodes/css/thickbox-shortcodes.css', array(), filemtime(get_template_directory() . '/framework/shortcodes/css/thickbox-shortcodes.css') );
 	}
 }
