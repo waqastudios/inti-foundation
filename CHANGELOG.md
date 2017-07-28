@@ -90,3 +90,7 @@
 - All template files updated for XY Grid
 - Completely reworked gulp file and build process
 - Vendor files come from and are managed by npm
+
+### 1.5.1 (July 28, 2017)
+- [#5](https://github.com/waqastudios/inti-foundation/issues/5) Footer sidebar columns can now never be more than 12 columns
+- FontAwesome issue in WPEditor for child themes fixed

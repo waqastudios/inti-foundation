@@ -3,7 +3,7 @@
   "private": true,
   "ignore": [],
   "dependencies": {
-    "foundation-sites": "~6.4.0"
+    "foundation-sites": "~6.4.1"
   },
   "resolutions": {
     "jquery": ">= 3.0.0",
