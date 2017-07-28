@@ -102,6 +102,11 @@ if ( !function_exists( 'inti_get_horizontal_sidebar_widget_columns' ) ) {
 			case 6 : $num_large = $columns / 6; break;
 			case 7 : $num_large = $columns / 7; break;
 			case 8 : $num_large = $columns / 8; break;
+			case 9 : $num_large = $columns / 9; break;
+			case 10 : $num_large = $columns / 10; break;
+			case 11 : $num_large = $columns / 11; break;
+			case 12 : $num_large = $columns / 12; break;
+			default: $num_large = $columns;
 		}
 		$num_large = floor( $num_large );
 
@@ -117,6 +122,11 @@ if ( !function_exists( 'inti_get_horizontal_sidebar_widget_columns' ) ) {
 			case 6 : $num_medium = $columns / 2; break;
 			case 7 : $num_medium = $columns / 2; break;
 			case 8 : $num_medium = $columns / 2; break;
+			case 9 : $num_medium = $columns / 2; break;
+			case 10 : $num_medium = $columns / 2; break;
+			case 11 : $num_medium = $columns / 2; break;
+			case 12 : $num_medium = $columns / 2; break;
+			default: $num_large = $columns / 2;;
 		}
 		$num_medium = floor( $num_medium );
 
