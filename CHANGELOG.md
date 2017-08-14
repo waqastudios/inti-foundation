@@ -94,3 +94,7 @@
 ### 1.5.1 (July 28, 2017)
 - [#5](https://github.com/waqastudios/inti-foundation/issues/5) Footer sidebar columns can now never be more than 12 columns
 - FontAwesome issue in WPEditor for child themes fixed
+
+### 1.5.2 (Aug 14, 2017)
+– Less confusion on how front-page loops work, and a tweak to options to remove a fetching of the loop
+- Limit footer widget columns to 4 columns – anything more and you can't see anything
