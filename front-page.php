@@ -24,9 +24,9 @@ get_header(); ?>
 					<?php 
 					/**
 					 * Get the page loop
-					 * Content of the page that set as the front-page is 
-					 * displayed as a header as a kind of header to the
-					 * rest of the what is displayed...
+					 * Content of the page that is set as the front-page is 
+					 * displayed as a kind of header to the rest of
+					 * what is displayed later displayed...
 					 */
 					get_template_part('loops/loop', 'page'); ?>
 				</header><!-- .archive-header -->
@@ -34,7 +34,7 @@ get_header(); ?>
 				<?php 
 				/** 
 				 * Get the main loop
-				 * ...while by default we also how the loop of posts
+				 * ...by default we also place the loop of posts
 				 * under the front-page content. Modify as needed or
 				 * overwrite front-page.php with a child theme version.
 				 */
