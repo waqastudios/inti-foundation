@@ -47,6 +47,14 @@ function inti_register_sidebars() {
 
 	if ( in_array( 'footer', $sidebars[0] ) ) {
 		$cells = inti_get_horizontal_sidebar_widget_columns('sidebar-footer');
+		$medium_cells = "6";
+		$large_cells = "6";
+		if (isset($cells['medium'])) { 
+			$medium_cells = $cells['medium']; 
+		}
+		if (isset($cells['large'])) { 
+			$large_cells = $cells['large']; 
+		}
 
 		$footer  = '<div id="%1$s" class="widget footer-widget';
 		$footer .= ' small-12';
@@ -93,19 +101,20 @@ if ( !function_exists( 'inti_get_horizontal_sidebar_widget_columns' ) ) {
 		and do some simple math to calculate the columns */
 
 		$num_large = count( $the_sidebars[$sidebar_id] );
+		echo $num_large;
 		switch( $num_large ) {
 			case 1 : $num_large = $columns; break;
 			case 2 : $num_large = $columns / 2; break;
-			case 3 : $num_large = $columns / 3; break;
-			case 4 : $num_large = $columns / 4; break;
-			case 5 : $num_large = $columns / 5; break;
-			case 6 : $num_large = $columns / 6; break;
-			case 7 : $num_large = $columns / 7; break;
-			case 8 : $num_large = $columns / 8; break;
-			case 9 : $num_large = $columns / 9; break;
-			case 10 : $num_large = $columns / 10; break;
-			case 11 : $num_large = $columns / 11; break;
-			case 12 : $num_large = $columns / 12; break;
+			case 3 : $num_large = $columns / 2; break;
+			case 4 : $num_large = $columns / 3; break;
+			case 5 : $num_large = $columns / 3; break;
+			case 6 : $num_large = $columns / 4; break;
+			case 7 : $num_large = $columns / 4; break;
+			case 8 : $num_large = $columns / 4; break;
+			case 9 : $num_large = $columns / 4; break;
+			case 10 : $num_large = $columns / 4; break;
+			case 11 : $num_large = $columns / 4; break;
+			case 12 : $num_large = $columns / 4; break;
 			default: $num_large = $columns;
 		}
 		$num_large = floor( $num_large );
