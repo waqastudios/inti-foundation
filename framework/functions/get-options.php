@@ -23,9 +23,9 @@ if (!function_exists('get_inti_option')) {
             
             // if posts page is set in reading settings get the page id
             if ( 'page' == get_option('show_on_front') && get_option('page_for_posts') && is_home() ) {
-                the_post();
+                // the_post();
                 $post_id = get_option('page_for_posts');
-                wp_reset_postdata();
+                // wp_reset_postdata();
             }
             
             // get the meta from the database

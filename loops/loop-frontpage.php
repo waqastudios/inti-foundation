@@ -12,18 +12,24 @@
 		$post_category = get_inti_option('frontpage_post_category', 'inti_general_options', -1);
 		$number_posts = get_inti_option('frontpage_number_posts', 'inti_general_options', 3);
 		$post_columns = get_inti_option('frontpage_post_columns', 'inti_general_options', 1);
-
 	?>
 
 	<?php // start the loop
 		$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
-		$args = array( 
-			'post_type'           => 'post',
-			'cat'                 => $post_category,
-			'posts_per_page'      => $number_posts,
-			'ignore_sticky_posts' => 1,
-			'paged'               => $paged );
-		
+		if (-1 != $post_category) {
+			$args = array( 
+				'post_type'           => 'post',
+				'cat'                 => $post_category,
+				'posts_per_page'      => $number_posts,
+				'ignore_sticky_posts' => 1,
+				'paged'               => $paged );
+		} else {
+			$args = array( 
+				'post_type'           => 'post',
+				'posts_per_page'      => $number_posts,
+				'ignore_sticky_posts' => 1,
+				'paged'               => $paged );
+		}
 		global $frontpage_query;
 		$frontpage_query = new WP_Query( $args ); ?>
 			  
