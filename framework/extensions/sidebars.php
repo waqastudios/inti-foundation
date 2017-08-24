@@ -58,8 +58,8 @@ function inti_register_sidebars() {
 
 		$footer  = '<div id="%1$s" class="widget footer-widget';
 		$footer .= ' small-12';
-		$footer .= ' medium-' . $cells['medium'];
-		$footer .= ' large-' . $cells['large'];
+		$footer .= ' medium-' . $medium_cells;
+		$footer .= ' large-' . $large_cells;
 		$footer .= ' cell %2$s">';
 		register_sidebar( array(
 			'name'          => __('Footer', 'inti'),
@@ -101,7 +101,6 @@ if ( !function_exists( 'inti_get_horizontal_sidebar_widget_columns' ) ) {
 		and do some simple math to calculate the columns */
 
 		$num_large = count( $the_sidebars[$sidebar_id] );
-		echo $num_large;
 		switch( $num_large ) {
 			case 1 : $num_large = $columns; break;
 			case 2 : $num_large = $columns / 2; break;
