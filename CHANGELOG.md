@@ -98,3 +98,6 @@
 ### 1.5.2 (Aug 14, 2017)
 – Less confusion on how front-page loops work, and a tweak to options to remove a fetching of the loop
 - Limit footer widget columns to 4 columns – anything more and you can't see anything
+
+### 1.5.3 (Aug 24, 2017)
+- Bug fixes to unfinished code
