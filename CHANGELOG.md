@@ -101,3 +101,7 @@
 
 ### 1.5.3 (Aug 24, 2017)
 - Bug fixes to unfinished code
+
+### 1.5.4 (Oct 16, 2017)
+- PHP 7.1 bug fix
+- Page template bug fix
