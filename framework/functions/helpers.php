@@ -404,7 +404,7 @@ function inti_comment_reply_class( $link ) {
  * @since 1.0.0
  */ 
 function inti_exclude_category( $query ) {
-	$exclude = ( get_inti_option('frontpage_exclude_category', 'inti_general_options', 1) ) ? -get_inti_option('frontpage_post_category', 'inti_general_options', '') : '';
+	$exclude = ( get_inti_option('frontpage_exclude_category', 'inti_general_options', 1) ) ? -get_inti_option('frontpage_post_category', 'inti_general_options', 0) : 0;
 	if ($exclude != 1) { 
 		if ( $query->is_home() && $query->is_main_query() ) {
 			$query->set( 'cat', $exclude );
