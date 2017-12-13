@@ -9,14 +9,14 @@
 	<?php if ( get_inti_option('favicon_image', 'inti_customizer_options') ) : ?>
 		<link rel="icon" href="<?php echo get_inti_option('favicon_image', 'inti_customizer_options'); ?>">
 	<?php else : ?>
-		<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/library/img/favicon.png">
+		<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/library/dist/img/favicon.png">
 	<?php endif; ?>
 
 	<!-- App Icon -->
 	<?php if ( get_inti_option('apple_touch_icon', 'inti_customizer_options') ) : ?>
 		<link href="<?php echo get_inti_option('apple_touch_icon', 'inti_customizer_options'); ?>" rel="apple-touch-icon" />
 	<?php else : ?>
-		<link href="<?php echo get_template_directory_uri(); ?>/library/img/apple-touch-icon.png" rel="apple-touch-icon" />
+		<link href="<?php echo get_template_directory_uri(); ?>/library/dist/img/apple-touch-icon.png" rel="apple-touch-icon" />
 	<?php endif; ?>
 
 	<!-- Ms App Tile Color -->
@@ -30,7 +30,7 @@
 	<?php if ( get_inti_option('ms_tile_image', 'inti_customizer_options') ) : ?>
 		<meta name="msapplication-TileImage" content="<?php echo get_inti_option('ms_tile_image', 'inti_customizer_options'); ?>">
 	<?php else : ?>
-		<meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/library/img/win-tile-icon.png">
+		<meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/library/dist/img/win-tile-icon.png">
 	<?php endif; ?>
 
 	<!-- Site Theme Color -->
