@@ -40,7 +40,7 @@ add_action('inti_hook_page_header', 'inti_do_page_header_title');
 
 function inti_woo_wrapper_start() { ?>
 	<div class="grid-container">
-		<div class="grix-x grid-padding-x">
+		<div class="grid-x grid-padding-x">
 			<div class="large-8 cell">
 <?php }
 
@@ -53,8 +53,8 @@ function inti_woo_wrapper_end() { ?>
 add_action('woocommerce_after_main_content', 'inti_woo_wrapper_end', 10);
 
 function inti_woo_after_sidebar() { ?> 
-		</div><!-- .grix-x -->
-	</div><!-- .grix-container -->
+		</div><!-- .grid-x -->
+	</div><!-- .grid-container -->
 <?php }
 
 add_action('woocommerce_sidebar', 'inti_woo_after_sidebar', 999);

@@ -5,7 +5,7 @@
 
 				<?php inti_hook_site_banner_before(); // inti_do_main_dropwdown_menu() is placed above or below banner ?>
 <div class="grid-container">
-	<div class="grix-x">
+	<div class="grid-x">
 		<div class="small-12 cell">
 				<div id="site-banner" class="site-banner<?php if ( !get_inti_option('show_site_banner_mobile', 'inti_customizer_options') ) echo " show-for-mlarge"; ?>" role="banner">
 					<?php inti_hook_site_banner_site_logo_before(); ?>
