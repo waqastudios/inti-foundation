@@ -743,6 +743,28 @@ if (!function_exists('inti_initialize_social_options')) {
 					__( 'Complete URL', 'inti' ),
 				)        
 			);
+			
+			add_settings_field( 
+				'social_sc',                     
+				'<i class="fa fa-2x fa-soundcloud"></i> SoundCloud',                         
+				'inti_social_sc_callback',    
+				'inti_social_options', 
+				'social_settings_section',   
+				array(                              // The array of arguments to pass to the callback. In this case, just a description.
+					__( 'Complete URL', 'inti' ),
+				)        
+			);
+			
+			add_settings_field( 
+				'social_sn',                     
+				'<i class="fa fa-2x fa-snapchat"></i> Snapchat',                         
+				'inti_social_sn_callback',    
+				'inti_social_options', 
+				'social_settings_section',   
+				array(                              // The array of arguments to pass to the callback. In this case, just a description.
+					__( 'Complete URL', 'inti' ),
+				)        
+			);
 
 			add_settings_field( 
 				'social_open_new',                     
@@ -1532,9 +1554,37 @@ function inti_social_vi_callback($args) {
 	} // end if
 	
 	// Render the output
-	echo '<input type="text" id="social_vi" name="inti_social_options[social_vi]" value="' . $url . '" placeholder="' . (isset($args[0]) ? $args[0] : '' )  . '" /><p><br><br></p>';
+	echo '<input type="text" id="social_vi" name="inti_social_options[social_vi]" value="' . $url . '" placeholder="' . (isset($args[0]) ? $args[0] : '' )  . '" />';
 	
 } // end inti_social_vi_callback
+
+function inti_social_sc_callback($args) {
+	
+	$options = get_option( 'inti_social_options' );
+	
+	$url = '';
+	if( isset( $options['social_sc'] ) ) {
+		$url = esc_url( $options['social_sc'] );
+	} // end if
+	
+	// Render the output
+	echo '<input type="text" id="social_sc" name="inti_social_options[social_sc]" value="' . $url . '" placeholder="' . (isset($args[0]) ? $args[0] : '' )  . '" />';
+	
+} // end inti_social_sc_callback
+
+function inti_social_sn_callback($args) {
+	
+	$options = get_option( 'inti_social_options' );
+	
+	$url = '';
+	if( isset( $options['social_sn'] ) ) {
+		$url = esc_url( $options['social_sn'] );
+	} // end if
+	
+	// Render the output
+	echo '<input type="text" id="social_sn" name="inti_social_options[social_sn]" value="' . $url . '" placeholder="' . (isset($args[0]) ? $args[0] : '' )  . '" /><p><br><br></p>';
+	
+} // end inti_social_sn_callback
 
 function inti_social_open_new_callback($args) {
 	

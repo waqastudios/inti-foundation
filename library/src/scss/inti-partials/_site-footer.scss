@@ -37,9 +37,11 @@ footer can be wide or contained.
 	padding: $global-padding 0;
 	background-color: $light-gray; 
 
-		ul { list-style: none;
-			li { display: inline-block; }
-			a { padding: 5px; }
+		ul.social-icons { 
+			margin: 0;
+			list-style: none;
+				li { display: inline-block; }
+				a { padding: 5px; }
 		}
 	#site-footer-contained & {
 		@include xy-grid-container;

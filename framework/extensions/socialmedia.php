@@ -26,6 +26,8 @@ if ( !function_exists( 'inti_get_dropdown_social_links' ) ) {
 		$pi = get_inti_option('social_pi', 'inti_social_options');
 		$yt = get_inti_option('social_yt', 'inti_social_options');
 		$vi = get_inti_option('social_vi', 'inti_social_options');
+		$sc = get_inti_option('social_sc', 'inti_social_options');
+		$sn = get_inti_option('social_sn', 'inti_social_options');
 
 		$blank = get_inti_option('social_open_new', 'inti_social_options');
 		if ($blank) $blank = ' target="_blank"'; 
@@ -41,6 +43,8 @@ if ( !function_exists( 'inti_get_dropdown_social_links' ) ) {
 		if ($pi) $html .= '<li class="social-pi"><a href="'. $pi .'"'. $blank .'><i class="fa fa-pinterest"></i></a></li>';
 		if ($yt) $html .= '<li class="social-yt"><a href="'. $yt .'"'. $blank .'><i class="fa fa-youtube"></i></a></li>';
 		if ($vi) $html .= '<li class="social-vi"><a href="'. $vi .'"'. $blank .'><i class="fa fa-vimeo"></i></a></li>';
+		if ($sc) $html .= '<li class="social-sc"><a href="'. $sc .'"'. $blank .'><i class="fa fa-soundcloud"></i></a></li>';
+		if ($sn) $html .= '<li class="social-sn"><a href="'. $sn .'"'. $blank .'><i class="fa fa-snapchat"></i></a></li>';
 
 		$html.='</ul>';
 		return apply_filters('inti_filter_dropdown_social_links', $html);
@@ -65,6 +69,8 @@ if ( !function_exists( 'inti_get_off_canvas_social_links' ) ) {
 		$pi = get_inti_option('social_pi', 'inti_social_options');
 		$yt = get_inti_option('social_yt', 'inti_social_options');
 		$vi = get_inti_option('social_vi', 'inti_social_options');
+		$sc = get_inti_option('social_sc', 'inti_social_options');
+		$sn = get_inti_option('social_sn', 'inti_social_options');
 
 		$blank = get_inti_option('social_open_new', 'inti_social_options');
 		if ($blank) $blank = ' target="_blank"'; 
@@ -80,6 +86,8 @@ if ( !function_exists( 'inti_get_off_canvas_social_links' ) ) {
 			if ($pi) $html .= '<li class="social-pi"><a href="'. $pi .'"'. $blank .'><i class="fa fa-pinterest"></i></a></li>';
 			if ($yt) $html .= '<li class="social-yt"><a href="'. $yt .'"'. $blank .'><i class="fa fa-youtube"></i></a></li>';
 			if ($vi) $html .= '<li class="social-vi"><a href="'. $vi .'"'. $blank .'><i class="fa fa-vimeo"></i></a></li>';
+			if ($sc) $html .= '<li class="social-sc"><a href="'. $sc .'"'. $blank .'><i class="fa fa-soundcloud"></i></a></li>';
+			if ($sn) $html .= '<li class="social-sn"><a href="'. $sn .'"'. $blank .'><i class="fa fa-snapchat"></i></a></li>';
 
 		$html.='</ul>';
 		return apply_filters('inti_filter_off_canvas_social_links', $html);
@@ -105,6 +113,8 @@ if ( !function_exists( 'inti_get_footer_social_links' ) ) {
 		$pi = get_inti_option('social_pi', 'inti_social_options');
 		$yt = get_inti_option('social_yt', 'inti_social_options');
 		$vi = get_inti_option('social_vi', 'inti_social_options');
+		$sc = get_inti_option('social_sc', 'inti_social_options');
+		$sn = get_inti_option('social_sn', 'inti_social_options');
 
 		$blank = get_inti_option('social_open_new', 'inti_social_options');
 		if ($blank) $blank = ' target="_blank"'; 
@@ -120,6 +130,8 @@ if ( !function_exists( 'inti_get_footer_social_links' ) ) {
 			if ($pi) $html .= '<li class="social-pi"><a href="'. $pi .'"'. $blank .'><i class="fa fa-pinterest"></i></a></li>';
 			if ($yt) $html .= '<li class="social-yt"><a href="'. $yt .'"'. $blank .'><i class="fa fa-youtube"></i></a></li>';
 			if ($vi) $html .= '<li class="social-vi"><a href="'. $vi .'"'. $blank .'><i class="fa fa-vimeo"></i></a></li>';
+			if ($sc) $html .= '<li class="social-sc"><a href="'. $sc .'"'. $blank .'><i class="fa fa-soundcloud"></i></a></li>';
+			if ($sn) $html .= '<li class="social-sn"><a href="'. $sn .'"'. $blank .'><i class="fa fa-snapchat"></i></a></li>';
 
 		$html.='</ul>';
 		return apply_filters('inti_filter_footer_social_links', $html);
@@ -143,6 +155,8 @@ if ( !function_exists( 'inti_get_widget_social_links' ) ) {
 		$pi = get_inti_option('social_pi', 'inti_social_options');
 		$yt = get_inti_option('social_yt', 'inti_social_options');
 		$vi = get_inti_option('social_vi', 'inti_social_options');
+		$sc = get_inti_option('social_sc', 'inti_social_options');
+		$sn = get_inti_option('social_sn', 'inti_social_options');
 
 		$blank = get_inti_option('social_open_new', 'inti_social_options');
 		if ($blank) $blank = ' target="_blank"'; 
@@ -157,6 +171,8 @@ if ( !function_exists( 'inti_get_widget_social_links' ) ) {
 			if ($pi) $html .= '<li class="social-pi"><a href="'. $pi .'"'. $blank .'><i class="fa fa-pinterest"></i></a></li>';
 			if ($yt) $html .= '<li class="social-yt"><a href="'. $yt .'"'. $blank .'><i class="fa fa-youtube"></i></a></li>';
 			if ($vi) $html .= '<li class="social-vi"><a href="'. $vi .'"'. $blank .'><i class="fa fa-vimeo"></i></a></li>';
+			if ($sc) $html .= '<li class="social-sc"><a href="'. $sc .'"'. $blank .'><i class="fa fa-soundcloud"></i></a></li>';
+			if ($sn) $html .= '<li class="social-sn"><a href="'. $sn .'"'. $blank .'><i class="fa fa-snapchat"></i></a></li>';
 
 		$html.='</ul>';
 		return apply_filters('inti_filter_footer_social_links', $html);
