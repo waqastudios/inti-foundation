@@ -45,7 +45,7 @@ if ( !function_exists('inti_filter_archive_pagination') ) {
 		
 			$output .= '<nav class="content-navigation between-older-newer" role="navigation">' . "\n";
 			$output .= "" . '<div class="grid-container">';
-			$output .= "\t" . '<div class="grid-x grid-padding-x">';
+			$output .= "\t" . '<div class="grid-x grid-margin-x">';
 			$output .= "\t\t" . '<div class="small-12 medium-6 cell">';
 			$output .= "\t\t\t" . '<div class="float-left">';
 			$output .= get_next_posts_link('<span class="meta-nav meta-nav-next">&larr; ' . __('Older posts', 'inti') . '</span>', $the_query->max_num_pages);

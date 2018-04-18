@@ -59,7 +59,7 @@ else : // short interface with excerpt ?>
 	<article id="post-<?php the_ID(); ?>" <?php post_class('short'); ?>>
 		<div class="entry-body">
 			<?php  if ( has_post_thumbnail() ) : ?>
-				<div class="grid-x grid-padding-x grid-padding-y large-up-2">
+				<div class="grid-x grid-margin-x grid-margin-y large-up-2">
 					<div class="large-4 cell">
 						<div class="entry-thumbnail">
 							<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">

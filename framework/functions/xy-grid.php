@@ -17,7 +17,7 @@ if (!function_exists('inti_xy_grid_open')) {
 			case '1c': ?>
 
 			<div class="grid-container">
-				<div class="grid-x grid-padding-x">
+				<div class="grid-x grid-margin-x">
 					<div class="small-12 medium-12 large-12 cell">
 			
 
@@ -26,7 +26,7 @@ if (!function_exists('inti_xy_grid_open')) {
 			case '2c-l': ?>
 
 			<div class="grid-container">
-				<div class="grid-x grid-padding-x">
+				<div class="grid-x grid-margin-x">
 					<div class="small-12 medium-7 large-8 cell">
 			
 
@@ -35,7 +35,7 @@ if (!function_exists('inti_xy_grid_open')) {
 			case '2c-r': ?>
 
 			<div class="grid-container">
-				<div class="grid-x grid-padding-x">
+				<div class="grid-x grid-margin-x">
 					<div class="small-12 medium-7 medium-order-2 large-8 cell">
 			
 
@@ -44,7 +44,7 @@ if (!function_exists('inti_xy_grid_open')) {
 			case '1c-thin': ?>
 
 			<div class="grid-container">
-				<div class="grid-x grid-padding-x align-center-middle">
+				<div class="grid-x grid-margin-x align-center-middle">
 					<div class="small-12 medium-10 large-9 cell">
 			
 

@@ -27,7 +27,7 @@ function inti_do_content_before_breadcrumbs() {
 
 				<div class="breadcrumbs top">
 					<div class="grid-container">
-						<div class="grid-x grid-padding-x">
+						<div class="grid-x grid-margin-x">
 							<div class="small-12 cell">
 								<?php echo inti_get_breadcrumbs(); ?>
 							</div><!-- .cell -->
@@ -58,7 +58,7 @@ function inti_do_content_after_breadcrumbs() {
 
 				<div class="breadcrumbs bottom">
 					<div class="grid-container">
-						<div class="grid-x grid-padding-x">
+						<div class="grid-x grid-margin-x">
 							<div class="small-12 cell">
 								<?php echo inti_get_breadcrumbs(); ?>
 							</div><!-- .cell -->

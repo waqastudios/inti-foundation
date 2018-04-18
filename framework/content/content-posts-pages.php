@@ -40,7 +40,7 @@ add_action('inti_hook_page_header', 'inti_do_page_header_title');
 
 function inti_woo_wrapper_start() { ?>
 	<div class="grid-container">
-		<div class="grid-x grid-padding-x">
+		<div class="grid-x grid-margin-x">
 			<div class="large-8 cell">
 <?php }
 
@@ -280,7 +280,7 @@ function inti_do_nav_single() {
 	$exclude = ( get_inti_option('frontpage_exclude_cat', 'inti_general_options', 1) ) ? get_inti_option('frontpage_post_category', 'inti_general_options', -1) : ''; ?>
 		<nav class="content-navigation between-posts-navigation" role="navigation">
 			<div class="grid-container">
-				<div class="grid-x grid-padding-x">
+				<div class="grid-x grid-margin-x">
 					<div class="small-12 medium-6 cell">
 						<div class="float-left">
 						<?php previous_post_link('%link', '<span class="meta-nav">&larr; %title</span>', false, $exclude); ?>

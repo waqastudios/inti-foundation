@@ -38,7 +38,7 @@
 		<?php inti_hook_loop_before(); ?>
 		
 			<?php // if more than one column use block-grid
-			if ( $post_columns != 1 ) echo '<div class="grid-x grid-padding-x small-up-1 medium-up-1 mlarge-up-' . $post_columns . '">'; ?>
+			if ( $post_columns != 1 ) echo '<div class="grid-x grid-margin-x small-up-1 medium-up-1 mlarge-up-' . $post_columns . '">'; ?>
 			
 				<?php while ( $frontpage_query->have_posts() ) : $frontpage_query->the_post(); global $more; $more = 0; ?>
 					

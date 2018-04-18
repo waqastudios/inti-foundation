@@ -32,7 +32,7 @@ if ($interface == 1 || is_single()) : // standard interface
 			<?php inti_hook_post_header_after(); ?>
 	
 			<div class="entry-content">
-				<div class="grid-x grid-padding-x">
+				<div class="grid-x grid-margin-x">
 					<div class="small-3 large-2 cell">
 						<?php echo get_avatar( get_the_author_meta('ID'), apply_filters('inti_status_avatar', '64') ); ?>
 						<p class="entry-author"><?php the_author(); ?></p>
@@ -67,7 +67,7 @@ else : // short interface with excerpt ?>
 			<?php inti_hook_post_header_after(); ?>
 	
 			<div class="entry-summary">
-				<div class="grid-x grid-padding-x">
+				<div class="grid-x grid-margin-x">
 					<div class="small-3 large-2 cell">
 						<?php echo get_avatar( get_the_author_meta('ID'), apply_filters('inti_status_avatar', '64') ); ?>
 						<p class="entry-author"><?php the_author(); ?></p>
