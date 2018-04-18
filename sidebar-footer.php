@@ -8,7 +8,7 @@
  */?>
 
 <div id="site-footer-sidebar" class="sidebar">
-	<div class="grid-x grid-margin-x grid-margin-y">
+	<div class="grid-x grid-padding-x grid-margin-x grid-margin-y">
 		<?php dynamic_sidebar('sidebar-footer'); ?>	
 	</div>
 </div>

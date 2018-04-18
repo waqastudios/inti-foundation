@@ -108,3 +108,8 @@
 
 ### 1.5.5 (Dec 13, 2017)
 – Minor bug fix
+
+### 1.6.0 (Apr 19, 2018)
+– Updated Foundation for Sites to 6.4.3
+- Transitioned from grid-padding to grid-margin layouts as per (https://github.com/zurb/foundation-sites/pull/10371)
+- Added two social media link options

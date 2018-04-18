@@ -19,12 +19,13 @@
  */
 function inti_do_footer_widgets() { ?>
 	<div class="footer-widgets">
-
+		<div class="grid-container fluid">
 			<div class="grid-x grid-margin-x">
 				<div class="small-12 cell">
 					<?php get_sidebar('footer'); ?>  
 				</div><!-- .cell -->
-			</div><!-- .grid-x -->   
+			</div><!-- .grid-x -->  
+		</div> 
 
 	</div><!-- .footer-widgets -->
 <?php 
@@ -41,13 +42,13 @@ add_action('inti_hook_footer_inside', 'inti_do_footer_widgets', 1);
 function inti_do_footer_menu() { 
 	if ( has_nav_menu('footer-menu') ) : ?>
 		<div class="footer-menu">
-
+			<div class="grid-container fluid">
 				<div class="grid-x grid-margin-x">
 					<div class="small-12 cell">
 						<?php echo inti_get_footer_menu();	?>
 					</div><!-- .cell -->
 				</div><!-- .grid-x -->
-
+			</div>
 		</div><!-- .footer-menu -->
 <?php
 	endif;
@@ -64,7 +65,7 @@ add_action('inti_hook_footer_inside', 'inti_do_footer_menu', 2);
  */
 function inti_do_footer_info() { ?>
 	<div class="footer-info">
-
+		<div class="grid-container fluid">
 			<div class="grid-x grid-margin-x">
 				<div class="small-12 cell">
 									
@@ -78,7 +79,7 @@ function inti_do_footer_info() { ?>
 				
 				</div><!-- .cell -->
 			</div><!-- .grid-x -->
-
+		</div>
 	</div><!-- .footer-info -->
 <?php 
 }
@@ -94,14 +95,14 @@ add_action('inti_hook_footer_inside', 'inti_do_footer_info', 4);
 function inti_do_footer_social() { 
 	if ( get_inti_option('footer_social', 'inti_footer_options') ) { ?>
 		<div class="footer-social">
-
+			<div class="grid-container fluid">
 				<div class="grid-x grid-margin-x">
 					<div class="small-12 cell">
 						<?php echo inti_get_footer_social_links(); ?>
 					</div><!-- .cell -->
 					
 				</div><!-- .grid-x -->
-
+			</div>
 		</div><!-- .footer-social -->
 <?php 
 	}
