@@ -5,7 +5,7 @@
 # If it's already runnning (i.e. Apache via MAMP), use proxy instead
 HOST: "localhost"
 PORT: 8020
-# PROXY: "http://192.168.0.4/inti-foundation/wordpress/"
+PROXY: "http://192.168.0.4/inti-foundation/wordpress/"
 
 # Autoprefixer will make sure ye CSS works wi these browsers it will
 COMPATIBILITY:
