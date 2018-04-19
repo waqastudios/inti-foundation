@@ -15,10 +15,10 @@ Inti Foundation is a WordPress parent theme that uses Foundation for Sites 6.4, 
 Inti Foundation and its child themes come configured with a Gulp file that will compile your Sass and javascript changes for you with its watch function. (If your workflow doesn’t include Gulp, please review this file to see what library elements need to be compiled into a final CSS file with your own tools).
 
 #### To begin:
- * Modify config.yml file for your setup
+ * Modify config.yml file for your setup, then run:
  * `npm install`
- * `npm build`
- * `npm default`, a new browser window will open pointing to a BrowserSync server displaying the WordPress installtion (via BrowserSync).
+ * `gulp build`
+ * `gulp default`, a new browser window will open pointing to a BrowserSync server displaying the WordPress installtion (via BrowserSync).
 
 
 > The best way to customize Inti Foundation is to create a child theme. Consider doing that before making edits to the parent theme.
