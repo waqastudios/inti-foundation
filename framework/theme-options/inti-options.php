@@ -62,6 +62,15 @@ if (!function_exists('inti_options_setup')) {
 			'inti_theme_options&tab=general_options',    // The ID used to represent this submenu item
 			'inti_options_interface'             // The callback function used to render the options for this submenu item
 		);
+
+		add_submenu_page(
+			'inti_theme_options',
+			__( 'Privacy/Cookies', 'inti' ),
+			__( 'Privacy/Cookies', 'inti' ),
+			'manage_options',
+			'inti_theme_options&tab=privacy_options',
+			create_function( null, 'inti_options_interface( "privacy_options" );' )
+		);
 		
 		add_submenu_page(
 			'inti_theme_options',
@@ -109,6 +118,7 @@ if (!function_exists('inti_options_setup')) {
 function inti_options_interface( $active_tab = '' ) {
 	$tabs = array(
 		'general_options' => __('General', 'inti'),
+		'privacy_options' => __('Privacy/Cookies', 'inti'),
 		'headernav_options' => __('Header/Navigation', 'inti'),
 		'footer_options' => __('Footer/Analytics', 'inti'),
 		'social_options' => __('Social Media Profiles', 'inti'),
@@ -193,7 +203,7 @@ function inti_default_general_options() {
 		'frontpage_post_category' => '-1',
 		'frontpage_post_number' => '3',
 		'frontpage_post_columns' => '1',
-		'frontpage_exclude_category'  =>  '1',
+		'frontpage_exclude_category'  =>  '0',
 		'frontpage_breadcrumbs'  =>  '0',
 		'sharing_on_posts'      =>  '1',
 		'sharing_on_pages'      =>  '1',
@@ -206,12 +216,30 @@ function inti_default_general_options() {
 
 
 /**
+ * Provides default values for the Privacy/Cookies.
+ */
+function inti_default_privacy_options() {
+	
+	$defaults = array(
+		'privacy_allow_no_cookies'			=>  '0',
+		'privacy_cookie_text'				=>  __('This website uses cookies', 'inti'),
+		'privacy_cookie_accept_button_text' =>  __('Accept & Close', 'inti'),
+	);
+	
+	return apply_filters( 'inti_default_privacy_options', $defaults );
+	
+} // end inti_default_privacy_options
+
+
+/**
  * Provides default values for the Header/Navigation.
  */
 function inti_default_headernav_options() {
 	
 	$defaults = array(
-		'nav_social'       =>  '0'
+		'nav_social'			=> '0',
+		'head_js_cookies'		=> 'none',
+		'body_inside_cookies'	=> 'none'
 	);
 	
 	return apply_filters( 'inti_default_headernav_options', $defaults );
@@ -225,7 +253,9 @@ function inti_default_headernav_options() {
 function inti_default_footer_options() {
 	
 	$defaults = array(
-		'footer_social'       =>  '1'
+		'footer_social'			=>  '1',
+		'analytics_cookies'		=> 'none',
+		'footer_js_cookies'		=> 'none'
 	);
 	
 	return apply_filters( 'inti_default_footer_options', $defaults );
@@ -263,6 +293,7 @@ function inti_default_commenting_options() {
 		'commenting_system'     =>  'wordpress',
 		'comments_on_pages'     =>  '1',
 		'comments_show_allowed_tags'     =>  '1',
+		'comments_cookies'	=> 'none',
 		'disqus_shortname'  =>  '',
 		'fbcomments_apiid'  =>  '',
 		'fbcomments_moderators'  =>  '',
@@ -501,6 +532,62 @@ if (!function_exists('inti_initialize_general_options')) {
 
 
 /**
+ * Initializes the theme's Privacy/Cookies section by registering the Sections,
+ * Fields, and Settings.
+ *
+ * This function is registered with the 'admin_init' hook.
+ */
+if (!function_exists('inti_initialize_privacy_options')) {
+	function inti_initialize_privacy_options() {
+
+		if( false == get_option( 'inti_privacy_options' ) ) {   
+			add_option( 'inti_privacy_options', apply_filters( 'inti_default_privacy_options', inti_default_privacy_options() ) );
+		} // end if
+		
+		add_settings_section(
+			'privacy_settings_section',          // ID used to identify this section and with which to register options
+			__( 'Privacy/Cookies', 'inti' ),      // Title to be displayed on the administration page
+			'inti_privacy_options_callback',  // Callback used to render the description of the section
+			'inti_privacy_options'      // Page on which to add this section of options
+		);
+		
+			add_settings_field( 
+				'privacy_allow_no_cookies',                      
+				__('Allow user to block <i>all</i> cookies', 'inti' ),                          
+				'inti_privacy_allow_no_cookies_callback', 
+				'inti_privacy_options', 
+				'privacy_settings_section'           
+			);
+		
+			add_settings_field( 
+				'privacy_cookie_text',                      
+				__('Message displayed to user regarding cookie policy', 'inti' ),                          
+				'inti_privacy_cookie_text_callback', 
+				'inti_privacy_options', 
+				'privacy_settings_section'           
+			);
+		
+			add_settings_field( 
+				'privacy_cookie_accept_button_text',                      
+				__('Text on button to accept cookie policy', 'inti' ),                          
+				'inti_privacy_cookie_accept_button_text_callback', 
+				'inti_privacy_options', 
+				'privacy_settings_section'           
+			);
+
+
+		register_setting(
+			'inti_privacy_options',
+			'inti_privacy_options'
+			//'inti_sanitize_privacy_options'
+		);
+		
+	} // end inti_initialize_headernav_options
+	add_action( 'admin_init', 'inti_initialize_privacy_options' );
+}
+
+
+/**
  * Initializes the theme's Header/Navidation sections by registering the Sections,
  * Fields, and Settings.
  *
@@ -540,6 +627,17 @@ if (!function_exists('inti_initialize_headernav_options')) {
 			);
 
 			add_settings_field( 
+				'head_js_cookies',                     
+				__('Cookie Level', 'inti' ),                         
+				'inti_head_js_cookies_callback',    
+				'inti_headernav_options', 
+				'headernav_settings_section',   
+				array(                              // The array of arguments to pass to the callback. In this case, just a description.
+					__( 'Set cookie level for field', 'inti' ),
+				)        
+			);
+
+			add_settings_field( 
 				'head_css',                     
 				__('Custom CSS in head', 'inti' ),                         
 				'inti_head_css_callback',    
@@ -564,6 +662,17 @@ if (!function_exists('inti_initialize_headernav_options')) {
 				'inti_body_inside_callback',    
 				'inti_headernav_options', 
 				'headernav_settings_section'      
+			);
+
+			add_settings_field( 
+				'body_inside_cookies',                     
+				__('Cookie Level', 'inti' ),                         
+				'inti_body_inside_cookies_callback',    
+				'inti_headernav_options', 
+				'headernav_settings_section',   
+				array(                              // The array of arguments to pass to the callback. In this case, just a description.
+					__( 'Set cookie level for field', 'inti' ),
+				)        
 			);
 		
 		register_setting(
@@ -616,6 +725,17 @@ if (!function_exists('inti_initialize_footer_options')) {
 			);
 
 			add_settings_field( 
+				'analytics_cookies',                     
+				__('Cookie Level', 'inti' ),                         
+				'inti_analytics_cookies_callback',    
+				'inti_footer_options', 
+				'footer_settings_section',   
+				array(                              // The array of arguments to pass to the callback. In this case, just a description.
+					__( 'Set cookie level for field', 'inti' ),
+				)        
+			);
+
+			add_settings_field( 
 				'footer_js',                     
 				__('Custom JavaScript in footer', 'inti' ),                         
 				'inti_footer_js_callback',    
@@ -624,6 +744,17 @@ if (!function_exists('inti_initialize_footer_options')) {
 				array(                              // The array of arguments to pass to the callback. In this case, just a description.
 					__( 'Add custom javascript code to the footer (best place), modify the copyright text and set up other custom footer features.', 'inti' ),
 				)       
+			);
+
+			add_settings_field( 
+				'footer_js_cookies',                     
+				__('Cookie Level', 'inti' ),                         
+				'inti_footer_js_cookies_callback',    
+				'inti_footer_options', 
+				'footer_settings_section',   
+				array(                              // The array of arguments to pass to the callback. In this case, just a description.
+					__( 'Set cookie level for field', 'inti' ),
+				)        
 			);
 		
 		register_setting(
@@ -837,6 +968,17 @@ if (!function_exists('inti_initialize_commenting_options')) {
 					__( 'By default a message is shown under the comments box informing commenters what HTML tags they are allowed to use.', 'inti' ),
 				)        
 			);
+			add_settings_field( 
+				'comments_cookies',                     
+				__('Cookie Level', 'inti' ),                         
+				'inti_comments_cookies_callback',    
+				'inti_commenting_options', 
+				'commenting_settings_section',   
+				array(                              // The array of arguments to pass to the callback. In this case, just a description.
+					__( 'Set cookie level for comments functionality', 'inti' ),
+				)        
+			);
+		
 	 
 		add_settings_section(
 			'commenting_settings_section_disqus',          // ID used to identify this section and with which to register options
@@ -977,6 +1119,27 @@ function inti_404_callback() {
 // end inti_general_options_callback
 
 /**
+ * This function provides a simple description for the Privacy/Cookies page. 
+ *
+ * It's called from the 'inti_initialize_privacy_options' function by being passed as a parameter
+ * in the add_settings_section function.
+ */
+function inti_privacy_options_callback() {
+	echo '<p>' . __( 'Set options for cookies. ', 'inti' ) . '</p>';
+	echo '<p>' . __( 'The types of cookies that exist on this website are: ', 'inti' ) . '</p>';
+
+	$cookietypes = get_theme_support( 'inti-cookies' );
+	$cookietypes = $cookietypes[0];
+	$cookietypes_text = "";
+	foreach ($cookietypes as $key => $value) {
+		$cookietypes_text .= '<code>[' . $value . ']</code> ';
+	}
+	echo $cookietypes_text;
+
+
+} // end inti_privacy_options_callback
+
+/**
  * This function provides a simple description for the Header/Navigation page. 
  *
  * It's called from the 'inti_initialize_headernav_options' function by being passed as a parameter
@@ -984,7 +1147,7 @@ function inti_404_callback() {
  */
 function inti_headernav_options_callback() {
 	echo '<p>' . __( 'Let\'s you control both the visible masthead of the site and things that go in or around the &lt;head&gt; tag', 'inti' ) . '</p>';
-} // end inti_general_options_callback
+} // end inti_headernave_options_callback
 
 /**
  * This function provides a simple description for the Footer/Analytics page.
@@ -1172,7 +1335,7 @@ function inti_nextprev_post_links_callback($args) {
 function inti_frontpage_post_category_callback($args) {
 	
 	$options = get_option('inti_general_options');
-	
+
 	wp_dropdown_categories(array(
 		'show_option_none' => __("All Categories", 'inti'),
 		'show_count' => true,
@@ -1231,7 +1394,12 @@ function inti_frontpage_post_columns_callback($args) {
 
 function inti_frontpage_exclude_category_callback() {
 
-	$options = get_option( 'inti_general_options' );
+	$options = get_option( 'inti_general_options' );	
+
+	if ( !array_key_exists('frontpage_exclude_category', $options) ) {
+		$array = inti_default_general_options();
+		$options['frontpage_exclude_category'] = $array['frontpage_exclude_category']; 
+	}
 	
 	$html = '<input type="checkbox" id="frontpage_exclude_category" name="inti_general_options[frontpage_exclude_category]" value="1"' . checked( 1, $options['frontpage_exclude_category'], false ) . '/>';
 	$html .= '&nbsp;';
@@ -1244,6 +1412,11 @@ function inti_frontpage_exclude_category_callback() {
 function inti_frontpage_breadcrumbs_callback() {
 
 	$options = get_option( 'inti_general_options' );
+
+	if ( !array_key_exists('frontpage_breadcrumbs', $options) ) {
+		$array = inti_default_general_options();
+		$options['frontpage_breadcrumbs'] = $array['frontpage_breadcrumbs']; 
+	}
 	
 	$html = '<input type="checkbox" id="frontpage_breadcrumbs" name="inti_general_options[frontpage_breadcrumbs]" value="1"' . checked( 1, $options['frontpage_breadcrumbs'], false ) . '/>';
 	$html .= '&nbsp;';
@@ -1315,6 +1488,55 @@ function inti_page_not_found_callback($args) {
 	
 }
 
+function inti_privacy_allow_no_cookies_callback() {
+
+	$options = get_option( 'inti_privacy_options' );
+
+	if ( !array_key_exists('privacy_allow_no_cookies', $options) ) {
+		$array = inti_default_privacy_options();
+		$options['privacy_allow_no_cookies'] = $array['privacy_allow_no_cookies']; 
+	}
+
+	$html = '<input type="checkbox" id="privacy_allow_no_cookies" name="inti_privacy_options[privacy_allow_no_cookies]" value="0"' . checked( 1, $options['privacy_allow_no_cookies'], false ) . '/>';
+	$html .= '&nbsp;';
+	$html .= '<label for="privacy_allow_no_cookies">' . __('Users will be able to block all cookies, even those deemed a priority, and still browse the website', 'inti') . '</label><br><br><br><br>';
+	
+	echo $html;
+
+}
+
+function inti_privacy_cookie_text_callback($args) {
+
+	$options = get_option( 'inti_privacy_options' );
+
+	$data = "";
+	if( isset( $options['privacy_cookie_text'] ) ) {
+		$data = $options['privacy_cookie_text'];
+	} // end if
+
+	wp_editor($data, 'inti_privacy_cookie_text', array( 'textarea_name' => 'inti_privacy_options[privacy_cookie_text]','media_buttons' => false, 'wpautop' => true, 'textarea_rows' => '4', 'teeny' => true ));
+
+}
+
+function inti_privacy_cookie_accept_button_text_callback($args) {
+
+	$options = get_option( 'inti_privacy_options' );
+
+	$data = "";
+	if( isset( $options['privacy_cookie_accept_button_text'] ) ) {
+		$data = $options['privacy_cookie_accept_button_text'];
+	} // end if
+
+	$html = '<input type="text" id="privacy_cookie_accept_button_text" name="inti_privacy_options[privacy_cookie_accept_button_text]" value="' . $data . '" />'; 
+
+	// Here, we'll take the first argument of the array and add it to a label next to the input
+	$html .= '<p><small><label for="privacy_cookie_accept_button_text">&nbsp;' . (isset($args[0]) ? $args[0] : '' )  . '</label></small></p>'; 
+	
+	echo $html;
+}
+
+
+
 function inti_nav_social_callback() {
 
 	$options = get_option( 'inti_headernav_options' );
@@ -1336,13 +1558,45 @@ function inti_head_js_callback($args) {
 		$data = $options['head_js'];
 	} // end if
 
-	$html = '<textarea id="head_js" name="inti_headernav_options[head_js]" value="1" rows="5" cols="50" class="widefat" />'.$data.'</textarea>';
+	$html = '<hr><textarea id="head_js" name="inti_headernav_options[head_js]" value="1" rows="5" cols="50" class="widefat" />'.$data.'</textarea>';
 	
-	$html .= '<p><small><label for="head_js">&nbsp;' . (isset($args[0]) ? $args[0] : '' )  . '</label></small></p>'; 
+	if (isset($args[0])) {
+		$html .= '<p><small><label for="head_js">&nbsp;' . $args[0]  . '</label></small></p>'; 
+	}
 	
 	echo $html;
 
 }
+
+function inti_head_js_cookies_callback($args) {
+	
+	$options = get_option( 'inti_headernav_options' );
+
+	if ( !array_key_exists('head_js_cookies', $options) ) {
+		$array = inti_default_headernav_options();
+		$options['head_js_cookies'] = $array['head_js_cookies']; 
+	}
+
+	// Render the output
+	?>
+		<select name="inti_headernav_options[head_js_cookies]">
+			<option value="none" <?php selected( 'none', $options['head_js_cookies'] ); ?>>None</option>
+		<?php 
+				$cookietypes = get_theme_support( 'inti-cookies' );
+				$cookietypes = $cookietypes[0];
+				foreach ($cookietypes as $key => $value) { ?>
+
+					<option value="<?php echo $value; ?>" <?php selected( $value, $options['head_js_cookies'] ); ?>><?php echo $value; ?></option>
+
+					<?php
+				}
+		 ?>
+		</select>
+	<?php
+	// Here, we'll take the first argument of the array and add it to a label next to the input
+	echo '<p><small><label for="head_js_cookies">&nbsp;' . (isset($args[0]) ? $args[0] : '' )  . '</label></small></p><hr><br><br><br><br>'; 
+	
+} // end inti_head_js_cookies_callback
 
 function inti_head_css_callback($args) {
 
@@ -1387,13 +1641,44 @@ function inti_body_inside_callback($args) {
 		$data = $options['body_inside'];
 	} // end if
 
-	$html = '<textarea id="body_inside" name="inti_headernav_options[body_inside]" value="1" rows="5" cols="50" class="widefat" />'.$data.'</textarea>';
-	
-	$html .= '<p><small><label for="body_inside">&nbsp;' . (isset($args[0]) ? $args[0] : '' )  . '</label></small></p><br><br>'; 
+	$html = '<hr><textarea id="body_inside" name="inti_headernav_options[body_inside]" value="1" rows="5" cols="50" class="widefat" />'.$data.'</textarea>';
+	if (isset($args[0])) {
+		$html .= '<p><small><label for="body_inside">&nbsp;' . $args[0]  . '</label></small></p>'; 
+	}
 	
 	echo $html;
 
 }
+
+function inti_body_inside_cookies_callback($args) {
+	
+	$options = get_option( 'inti_headernav_options' );
+
+	if ( !array_key_exists('body_inside_cookies', $options) ) {
+		$array = inti_default_headernav_options();
+		$options['body_inside_cookies'] = $array['body_inside_cookies']; 
+	}
+
+	// Render the output
+	?>
+		<select name="inti_headernav_options[body_inside_cookies]">
+			<option value="none" <?php selected( 'none', $options['body_inside_cookies'] ); ?>>None</option>
+		<?php 
+				$cookietypes = get_theme_support( 'inti-cookies' );
+				$cookietypes = $cookietypes[0];
+				foreach ($cookietypes as $key => $value) { ?>
+
+					<option value="<?php echo $value; ?>" <?php selected( $value, $options['body_inside_cookies'] ); ?>><?php echo $value; ?></option>
+
+					<?php
+				}
+		 ?>
+		</select>
+	<?php
+	// Here, we'll take the first argument of the array and add it to a label next to the input
+	echo '<p><small><label for="body_inside_cookies">&nbsp;' . (isset($args[0]) ? $args[0] : '' )  . '</label></small></p><hr><br><br><br><br>'; 
+	
+} // end inti_body_inside_cookies_callback
 
 function inti_footer_social_callback() {
 
@@ -1401,7 +1686,7 @@ function inti_footer_social_callback() {
 	
 	$html = '<input type="checkbox" id="footer_social" name="inti_footer_options[footer_social]" value="1"' . checked( 1, $options['footer_social'], false ) . '/>';
 	$html .= '&nbsp;';
-	$html .= '<label for="footer_social">' . __('Show social media profile icons in footer area', 'inti') . '</label>';
+	$html .= '<label for="footer_social">' . __('Show social media profile icons in footer area', 'inti') . '</label><br><br><br><br>';
 	
 	echo $html;
 
@@ -1416,7 +1701,7 @@ function inti_analytics_id_callback($args) {
 	$id = $options['analytics_id'];
 	
 	// Render the output
-	$html = '<input type="text" id="analytics_id" name="inti_footer_options[analytics_id]" value="' . $id . '" />';
+	$html = '<hr><input type="text" id="analytics_id" name="inti_footer_options[analytics_id]" value="' . $id . '" />';
 
 	// Here, we'll take the first argument of the array and add it to a label next to the input
 	$html .= '<p><small><label for="analytics_id">&nbsp;' . (isset($args[0]) ? $args[0] : '' )  . '</label></small></p>'; 
@@ -1424,6 +1709,36 @@ function inti_analytics_id_callback($args) {
 	echo $html;
 	
 } // end inti_analytics_id_callback
+
+function inti_analytics_cookies_callback($args) {
+	
+	$options = get_option( 'inti_footer_options' );
+
+	if ( !array_key_exists('analytics_cookies', $options) ) {
+		$array = inti_default_footer_options();
+		$options['analytics_cookies'] = $array['analytics_cookies']; 
+	}
+
+	// Render the output
+	?>
+		<select name="inti_footer_options[analytics_cookies]">
+			<option value="none" <?php selected( 'none', $options['analytics_cookies'] ); ?>>None</option>
+		<?php 
+				$cookietypes = get_theme_support( 'inti-cookies' );
+				$cookietypes = $cookietypes[0];
+				foreach ($cookietypes as $key => $value) { ?>
+
+					<option value="<?php echo $value; ?>" <?php selected( $value, $options['analytics_cookies'] ); ?>><?php echo $value; ?></option>
+
+					<?php
+				}
+		 ?>
+		</select>
+	<?php
+	// Here, we'll take the first argument of the array and add it to a label next to the input
+	echo '<p><small><label for="analytics_cookies">&nbsp;' . (isset($args[0]) ? $args[0] : '' )  . '</label></small></p><hr><br><br><br><br>'; 
+	
+} // end inti_analytics_cookies_callback
 
 function inti_footer_js_callback($args) {
 
@@ -1434,7 +1749,7 @@ function inti_footer_js_callback($args) {
 		$data = $options['footer_js'];
 	} // end if
 
-	$html = '<textarea id="footer_js" name="inti_footer_options[footer_js]" value="1" rows="5" cols="50" class="widefat" />'.$data.'</textarea>';
+	$html = '<hr><textarea id="footer_js" name="inti_footer_options[footer_js]" value="1" rows="5" cols="50" class="widefat" />'.$data.'</textarea>';
 	
 	$html .= '<small><label for="footer_js">&nbsp;' . (isset($args[0]) ? $args[0] : '' )  . '</label></small>'; 
 	
@@ -1442,7 +1757,35 @@ function inti_footer_js_callback($args) {
 
 }
 
+function inti_footer_js_cookies_callback($args) {
+	
+	$options = get_option( 'inti_footer_options' );
 
+	if ( !array_key_exists('footer_js_cookies', $options) ) {
+		$array = inti_default_footer_options();
+		$options['footer_js_cookies'] = $array['footer_js_cookies']; 
+	}
+
+	// Render the output
+	?>
+		<select name="inti_footer_options[footer_js_cookies]">
+			<option value="none" <?php selected( 'none', $options['footer_js_cookies'] ); ?>>None</option>
+		<?php 
+				$cookietypes = get_theme_support( 'inti-cookies' );
+				$cookietypes = $cookietypes[0];
+				foreach ($cookietypes as $key => $value) { ?>
+
+					<option value="<?php echo $value; ?>" <?php selected( $value, $options['footer_js_cookies'] ); ?>><?php echo $value; ?></option>
+
+					<?php
+				}
+		 ?>
+		</select>
+	<?php
+	// Here, we'll take the first argument of the array and add it to a label next to the input
+	echo '<p><small><label for="footer_js_cookies">&nbsp;' . (isset($args[0]) ? $args[0] : '' )  . '</label></small></p><hr><br><br><br><br>'; 
+	
+} // end inti_footer_js_cookies_callback
 
 function inti_social_fb_callback($args) {
 	
@@ -1645,6 +1988,36 @@ function inti_comments_show_allowed_tags_callback($args) {
 	
 	echo $html;
 }
+
+function inti_comments_cookies_callback($args) {
+	
+	$options = get_option( 'inti_commenting_options' );
+
+	if ( !array_key_exists('comments_cookies', $options) ) {
+		$array = inti_default_commenting_options();
+		$options['comments_cookies'] = $array['comments_cookies']; 
+	}
+
+	// Render the output
+	?>
+		<select name="inti_commenting_options[comments_cookies]">
+			<option value="none" <?php selected( 'none', $options['comments_cookies'] ); ?>>None</option>
+		<?php 
+				$cookietypes = get_theme_support( 'inti-cookies' );
+				$cookietypes = $cookietypes[0];
+				foreach ($cookietypes as $key => $value) { ?>
+
+					<option value="<?php echo $value; ?>" <?php selected( $value, $options['comments_cookies'] ); ?>><?php echo $value; ?></option>
+
+					<?php
+				}
+		 ?>
+		</select>
+	<?php
+	// Here, we'll take the first argument of the array and add it to a label next to the input
+	echo '<p><small><label for="comments_cookies">&nbsp;' . (isset($args[0]) ? $args[0] : '' )  . '</label></small></p><br><br><br><br>'; 
+	
+} // end inti_comments_cookies_callback
 
 function inti_disqus_shortname_callback($args) {
 	

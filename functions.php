@@ -74,7 +74,12 @@ if ( function_exists('childtheme_override_setup') ) {
 		
 		//add_theme_support('inti-sticky-sidebars');
 		
-		add_theme_support('inti-custom-login');
+		add_theme_support('inti-custom-login');		
+
+		add_theme_support(
+			'inti-cookies',
+			array('NEEDED', 'FUNCTIONAL', 'OPTIONAL')
+		);
 		
 		
 		/**
