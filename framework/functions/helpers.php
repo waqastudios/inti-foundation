@@ -34,6 +34,8 @@
  * 21. Exclude Front Page Posts
  * 22. Get an attachment ID given a URL.
  * 23. Generate a tinyurl.com tiny URL
+ * 24. Work out if a page should have sticky sidebars
+ * 25. Check cookie permissions
  */
 
 /**
@@ -537,5 +539,58 @@ if (!function_exists('inti_get_sticky_sidebars')) {
 
 		// return final sticky
 		return $sticky;
+	}
+}
+
+
+/**
+ * 25. Check the value of the cookie permissions in Theme Options / Inti Options
+ *     against those stored in cookies
+ * 
+ * @package Inti
+ * @since 1.6.1
+ */
+if (!function_exists('inti_check_cookie_allowed')) {
+	function inti_check_cookie_allowed( $perms ) {
+
+		// get status of cookies
+		// Warning: this loads cookies on first visit, with the option to
+		// remove them shortly thereafter in the options, which is not strictly
+		// how it should be done. 
+		// In the future we'll need to load all cookie types asychronously AFTER
+		// settings have been accepted by the client.
+		if ( isset($_COOKIE["needed-cookies"]) ) {
+			$needed = $_COOKIE["needed-cookies"];
+		} else {
+			$needed = 'true';
+		}
+		if ( isset($_COOKIE["functional-cookies"]) ) {
+			$functional = $_COOKIE["functional-cookies"];
+		} else {
+			$functional = 'true';
+		}
+		if ( isset($_COOKIE["optional-cookies"]) ) {
+			$optional = $_COOKIE["optional-cookies"];
+		} else {
+			$optional = 'true';
+		}
+
+		$allow = false;
+
+		switch ($perms) {
+			case 'NEEDED':
+				$allow = ($needed == 'true') ? true : false;
+			break;
+
+			case 'FUNCTIONAL':
+				$allow = ($functional == 'true') ? true : false;
+			break;
+
+			case 'OPTIONAL':
+				$allow = ($optional == 'true') ? true : false;
+			break;
+		}
+
+		return $allow;
 	}
 }

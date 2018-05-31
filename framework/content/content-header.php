@@ -30,13 +30,19 @@ add_action('wp_head', 'inti_do_inti_head', 1);
  */
 function inti_do_head_js() { 
 	$customjs = stripslashes(get_inti_option('head_js', 'inti_headernav_options'));
-	if ( $customjs ) { ?>
-		<!-- Custom JS -->
-		<script>
-			<?php echo $customjs; ?>
-		</script>
-		<!-- End Custom JS -->
+	// get cookie permissions
+	$perms = get_inti_option('head_js_cookies', 'inti_headernav_options');
+	$allow = inti_check_cookie_allowed($perms);
+
+	if ($allow) {
+		if ( $customjs ) { ?>
+			<!-- Custom JS -->
+			<script>
+				<?php echo $customjs; ?>
+			</script>
+			<!-- End Custom JS -->
 <?php 
+		}
 	}
 }
 add_action('inti_hook_head', 'inti_do_head_js', 1);
@@ -86,10 +92,16 @@ add_action('inti_hook_head', 'inti_do_head_meta', 1);
  * @since 1.0.0
  */
 function inti_do_body_inside() { 
-	$custombodyinside = get_inti_option('body_inside', 'inti_headernav_options');
-	if ( $custombodyinside ) { ?>
-		<?php echo trim($custombodyinside); ?>
+	$custombodyinside = get_inti_option('body_inside', 'inti_headernav_options');	
+	// get cookie permissions
+	$perms = get_inti_option('body_inside_cookies', 'inti_headernav_options');
+	$allow = inti_check_cookie_allowed($perms);
+
+	if ($allow) {
+		if ( $custombodyinside ) { ?>
+			<?php echo trim($custombodyinside); ?>
 <?php 
+		}
 	}
 }
 add_action('inti_hook_site_before', 'inti_do_body_inside', 1);

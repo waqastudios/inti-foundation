@@ -117,21 +117,27 @@ add_action('inti_hook_footer_inside', 'inti_do_footer_social', 3);
  * @since 1.0.0
  */
 function inti_do_footer_analytics() { 
-	$analytics_id = stripslashes(get_inti_option('analytics_id', 'inti_footer_options'));
-	if ( $analytics_id ) { ?>
-		<!-- Google Analytics -->
-		<script>
-		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	// get cookie permissions for analytics
+	$perms = get_inti_option('analytics_cookies', 'inti_footer_options');
+	$allow = inti_check_cookie_allowed($perms);
 
-		ga('create', '<?php echo $analytics_id; ?>', 'auto');
-		ga('set', 'anonymizeIp', true);
-		ga('send', 'pageview');
-		</script>
-		<!-- End Google Analytics -->
+	if ($allow) {
+		$analytics_id = stripslashes(get_inti_option('analytics_id', 'inti_footer_options'));
+		if ( $analytics_id ) { ?>
+			<!-- Google Analytics -->
+			<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			ga('create', '<?php echo $analytics_id; ?>', 'auto');
+			ga('set', 'anonymizeIp', true);
+			ga('send', 'pageview');
+			</script>
+			<!-- End Google Analytics -->
 <?php 
+		}
 	}
 }
 add_action('inti_hook_footer', 'inti_do_footer_analytics', 2);
@@ -158,14 +164,20 @@ add_action('inti_hook_footer_inside', 'inti_do_footer_cookie_policy', 4);
  * @since 1.0.0
  */
 function inti_do_footer_js() { 
-	$customjs = stripslashes(get_inti_option('footer_js', 'inti_footer_options'));
-	if ( $customjs ) { ?>
-		<!-- Custom JS -->
-		<script>
-			<?php echo $customjs; ?>
-		</script>
-		<!-- End Custom JS -->
+	$customjs = stripslashes(get_inti_option('footer_js', 'inti_footer_options'));	
+	// get cookie permissions for other footer js that might set cookies
+	$perms = get_inti_option('footer_js_cookies', 'inti_footer_options');
+	$allow = inti_check_cookie_allowed($perms);
+
+	if ($allow) {
+		if ( $customjs ) { ?>
+			<!-- Custom JS -->
+			<script>
+				<?php echo $customjs; ?>
+			</script>
+			<!-- End Custom JS -->
 <?php 
+		}
 	}
 }
 add_action('inti_hook_footer', 'inti_do_footer_js', 3);

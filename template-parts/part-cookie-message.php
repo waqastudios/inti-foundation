@@ -24,7 +24,12 @@
 		<h1>Manage Options</h1>
 
 		<?php 
-		// Get existing cookie states
+		// Get existing cookie states		
+		// Warning: this loads cookies on first visit, with the option to
+		// remove them shortly thereafter in the options, which is not strictly
+		// how it should be done. 
+		// In the future we'll need to load all cookie types asychronously AFTER
+		// settings have been accepted by the client.
 		if ( isset($_COOKIE["needed-cookies"]) ) {
 			$needed = $_COOKIE["needed-cookies"];
 		} else {
