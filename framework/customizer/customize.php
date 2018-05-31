@@ -243,6 +243,7 @@ if ( !function_exists('inti_customize_register') ) {
 						}
 					</style>
 					<label><span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+					<span class="description customize-control-description"><?php echo $this->description; ?></span>
 					<input type="hidden" <?php $this->link(); ?> value="<?php echo esc_textarea( $this->value() ); ?>">
 						<?php
 						$content = $this->value();
@@ -1009,28 +1010,7 @@ if ( !function_exists('inti_customize_register') ) {
 		$wp_customize->add_section('inti_customizer_footer', array( 
 			'title'          => __('Footer', 'inti'),
 			'priority'       => 55
-		 ) );
-	
-			// $wp_customize->add_setting('inti_customizer_options[custom_copyright]', array( 
-			// 	'default'		=> '',
-			// 	'type'			=> 'option',
-			// 	'capability'	=> 'manage_options',
-			// 	// 'transport'  => 'postMessage',
-			//  ) );
-			// 	$wp_customize->add_control(
-			// 		new WP_Customize_Textarea_Control(
-			// 			$wp_customize,
-			// 			'inti_customizer_options[custom_copyright]', 
-			// 			array( 
-			// 				'label'			=> __('Copyright Text', 'inti'),
-			// 				'description'	=> __('There is a custom copyright notice in the footer by default, to replace it with a custom notice, enter your text here. Leave blank to see the default notice.', 'inti'),
-			// 				'section'		=> 'inti_customizer_footer',
-			// 				'settings'		=> 'inti_customizer_options[custom_copyright]',
-			// 				'type'			=> 'textarea',
-			// 				'priority'		=> 1,
-			// 			)
-			// 		)
-			// 	);					
+		 ) );			
 
 			$wp_customize->add_setting('inti_customizer_options[custom_copyright]', array( 
 				'default'        => '',
@@ -1043,7 +1023,7 @@ if ( !function_exists('inti_customize_register') ) {
 						'inti_customizer_options[custom_copyright]', 
 						array( 
 							'label'			=> __('Copyright Text', 'inti'),
-							'description'	=> __('There is a custom copyright notice in the footer by default, to replace it with a custom notice, enter your text here. Leave blank to see the default notice.', 'inti'),
+							'description'	=> __('There is a custom copyright notice in the footer by default, to replace it with a custom notice, enter your text here. Leave blank to see the default notice.', 'inti') . __('To add the cookie management link (if enabled), use the shortcode <code>[cookie_manager]link text[/cookie_manager]</code>.', 'inti'),
 							'section'		=> 'inti_customizer_footer',
 							'settings'		=> 'inti_customizer_options[custom_copyright]',
 							'type'			=> 'wysiwyg',

@@ -139,6 +139,3 @@
 	</div>
 
 </div>
-	<div class="button-group">
-		<button class="button" data-open="inti-cookie-policy">Click me for a modal</button>
-	</div>

@@ -324,3 +324,23 @@ if (!function_exists('inti_shortcode_label')) {
 	}
 	add_shortcode('label', 'inti_shortcode_label');
 }
+
+
+/* ---------------------------------------------------------------------- */
+/*	Cookie manager link/button
+/* ---------------------------------------------------------------------- */
+
+if (!function_exists('inti_shortcode_cookie_manager')) {
+	function inti_shortcode_cookie_manager( $atts, $content = null ) {
+		if ( current_theme_supports('inti-cookies') ) {
+			$content = (trim($content)) ? do_shortcode($content) : '';		
+
+			$html = '<a class="inti-cookie-manager" data-open="inti-cookie-policy">';
+			$html .= $content;
+			$html .= '</a>';
+
+			return $html;
+		}
+	}
+	add_shortcode('cookie_manager', 'inti_shortcode_cookie_manager');
+}

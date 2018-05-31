@@ -70,12 +70,16 @@ function inti_do_footer_info() { ?>
 				<div class="small-12 cell">
 									
 						<?php 
-						if ( get_inti_option('custom_copyright', 'inti_customizer_options') ) : 
-							echo get_inti_option('custom_copyright', 'inti_customizer_options'); 
-						else : ?>
+						// if ( get_inti_option('custom_copyright', 'inti_customizer_options') ) : 
+						// 	echo do_shortcode(wpautop(get_inti_option('custom_copyright', 'inti_customizer_options'))); 
+						// else : ?>
 							<p><span class="copyright">Copyright &copy; <?php echo date_i18n('Y'); ?> <?php bloginfo('name'); ?> | </span>
-							<span class="site-credits"><?php _e('Powered by', 'inti'); ?> <a href="<?php echo esc_url('http://wordpress.org/'); ?>" title="<?php esc_attr_e('Personal Publishing Platform', 'inti'); ?>">WordPress</a> &amp; <a href="<?php echo esc_url('http://inti.waqastudios.com/') ?>" title="<?php esc_attr_e('Foundation 6 WordPress Framework', 'inti'); ?>" rel="nofollow">Inti Foundation</a></span></p>
-						<?php endif; ?>
+							<span class="site-credits"><?php _e('Powered by', 'inti'); ?> <a href="<?php echo esc_url('http://wordpress.org/'); ?>" title="<?php esc_attr_e('Personal Publishing Platform', 'inti'); ?>">WordPress</a> &amp; <a href="<?php echo esc_url('http://inti.waqastudios.com/') ?>" title="<?php esc_attr_e('Foundation 6 WordPress Framework', 'inti'); ?>" rel="nofollow">Inti Foundation</a> |</span> 
+							<?php if ( current_theme_supports('inti-cookies') ) : ?>
+								<span><?php echo do_shortcode("[cookie_manager]Manage Cookies[/cookie_manager]"); ?></span>
+							<?php endif; ?>
+							</p>
+						<?php // endif; ?>
 				
 				</div><!-- .cell -->
 			</div><!-- .grid-x -->
