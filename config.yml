@@ -57,6 +57,6 @@ PATHS:
   vendorjs:
     - "node_modules/toastr/build/toastr.min.js"
     - "node_modules/slick-carousel/slick/slick.js"
-    - "node_modules/jquery.cookie/jquery.cookie.js"
+    - "node_modules/js-cookie/js.cookie.js"
 
   # "She canna take any more, captain.  She's gonna blow!"

@@ -1497,7 +1497,7 @@ function inti_privacy_allow_no_cookies_callback() {
 		$options['privacy_allow_no_cookies'] = $array['privacy_allow_no_cookies']; 
 	}
 
-	$html = '<input type="checkbox" id="privacy_allow_no_cookies" name="inti_privacy_options[privacy_allow_no_cookies]" value="0"' . checked( 1, $options['privacy_allow_no_cookies'], false ) . '/>';
+	$html = '<input type="checkbox" id="privacy_allow_no_cookies" name="inti_privacy_options[privacy_allow_no_cookies]" value="1"' . checked( 1, $options['privacy_allow_no_cookies'], false ) . '/>';
 	$html .= '&nbsp;';
 	$html .= '<label for="privacy_allow_no_cookies">' . __('Users will be able to block all cookies, even those deemed a priority, and still browse the website', 'inti') . '</label><br><br><br><br>';
 	

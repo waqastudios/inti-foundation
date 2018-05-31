@@ -58,3 +58,21 @@ footer can be wide or contained.
 		@include xy-grid-container;
 	}
 }
+
+.cookies#inti-cookie-policy {
+	width: 100%; max-width: none !important;
+	height: 100%;
+	position: fixed;
+	bottom: 0;  top: 0;
+	background-color: rgba($white, .9);
+
+	@include breakpoint(mlarge up) {
+		width: 90%;
+		height: 20vh;
+		position: fixed;
+		right: 5%; left: 5%;
+		bottom: 0 !important;  top: 80vh !important; margin-bottom: 20vh;
+	}
+
+	
+}
