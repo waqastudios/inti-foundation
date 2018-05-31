@@ -62,15 +62,6 @@ if (!function_exists('inti_options_setup')) {
 			'inti_theme_options&tab=general_options',    // The ID used to represent this submenu item
 			'inti_options_interface'             // The callback function used to render the options for this submenu item
 		);
-
-		add_submenu_page(
-			'inti_theme_options',
-			__( 'Privacy/Cookies', 'inti' ),
-			__( 'Privacy/Cookies', 'inti' ),
-			'manage_options',
-			'inti_theme_options&tab=privacy_options',
-			create_function( null, 'inti_options_interface( "privacy_options" );' )
-		);
 		
 		add_submenu_page(
 			'inti_theme_options',
@@ -108,6 +99,17 @@ if (!function_exists('inti_options_setup')) {
 			create_function( null, 'inti_options_interface( "commenting_options" );' )
 		);
 
+if ( current_theme_supports('inti-cookies') ) {
+		add_submenu_page(
+			'inti_theme_options',
+			__( 'Privacy/Cookies', 'inti' ),
+			__( 'Privacy/Cookies', 'inti' ),
+			'manage_options',
+			'inti_theme_options&tab=privacy_options',
+			create_function( null, 'inti_options_interface( "privacy_options" );' )
+		);
+}
+
 
 	} // end inti_options_setup
 }
@@ -118,12 +120,17 @@ if (!function_exists('inti_options_setup')) {
 function inti_options_interface( $active_tab = '' ) {
 	$tabs = array(
 		'general_options' => __('General', 'inti'),
-		'privacy_options' => __('Privacy/Cookies', 'inti'),
 		'headernav_options' => __('Header/Navigation', 'inti'),
 		'footer_options' => __('Footer/Analytics', 'inti'),
 		'social_options' => __('Social Media Profiles', 'inti'),
 		'commenting_options' => __('Commenting', 'inti')
 		);
+
+
+	if ( current_theme_supports('inti-cookies') ) {
+		$tabs['privacy_options'] = __('Privacy/Cookies', 'inti');
+	}
+
 	$tabs = apply_filters('inti_options_interface_filter_tabs', $tabs);
 
 	// First, set an active tab.
@@ -583,7 +590,9 @@ if (!function_exists('inti_initialize_privacy_options')) {
 		);
 		
 	} // end inti_initialize_headernav_options
-	add_action( 'admin_init', 'inti_initialize_privacy_options' );
+	if ( current_theme_supports('inti-cookies') ) {
+		add_action( 'admin_init', 'inti_initialize_privacy_options' );
+	}
 }
 
 
