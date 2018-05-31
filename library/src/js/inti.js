@@ -44,10 +44,10 @@ $(document).ready(function(){
 		// Open cookie message modal
 		$cookiemodal.open();
 
-		// Set initial recommended cookie settings
-		Cookies.set('needed-cookies', true, { expires: 90 });
-		Cookies.set('functional-cookies', true, { expires: 90 });
-		Cookies.set('optional-cookies', true, { expires: 90 });
+		// Set initial recommended cookie settings for 1 minute
+		Cookies.set('needed-cookies', true, { expires: 1/24/60 });
+		Cookies.set('functional-cookies', true, { expires: 1/24/60 });
+		Cookies.set('optional-cookies', true, { expires: 1/24/60 });
 
 		// Warning: this loads cookies on first visit, with the option to
 		// remove them shortly thereafter in the options, which is not strictly
