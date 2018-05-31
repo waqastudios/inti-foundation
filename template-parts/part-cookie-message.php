@@ -14,14 +14,14 @@
 					<span><?php echo $cookie_accept_button_text; ?></span>
 				</button>
 				<button class="secondary button hollow" data-open="inti-cookie-policy-manage">
-					<span>Manage Options</span>
+					<span><?php _e('Manage Cookies', 'inti'); ?></span>
 				</button>
 			</div>
 		</div>
 	</div>
 
 	<div class="reveal cookies" id="inti-cookie-policy-manage" data-reveal data-close-on-click="false">
-		<h1>Manage Options</h1>
+		<h1><?php _e('Manage Cookies', 'inti'); ?></h1>
 
 		<?php 
 		// Get existing cookie states		
@@ -52,22 +52,22 @@
 		<!-- Accept All / [NEEDED]-->
 		<div class="grid-x grid-margin-x grid-margin-y align-middle">
 			<div class="mlarge-9 cell">
-				<h3>Strictly Necessary</h3>
-				<p>Cookies needed for the website to work correctly.</p>
+				<h3><?php _e('Strictly Necessary', 'inti'); ?></h3>
+				<p><?php _e('Cookies needed for the website to work correctly.', 'inti'); ?></p>
 			</div>
 			<div class="mlarge-3 cell">
 				<div class="switch">
 					<?php if ($allow_no_cookies) : ?>
 						<input class="switch-input" id="needed-cookies" type="checkbox" name="needed-cookies" <?php if ($needed == 'true') { echo 'checked'; } ?>>
 						<label class="switch-paddle" for="needed-cookies">
-							<span class="show-for-sr">Allow Strictly Necessary Cookies?</span>
-							<span class="switch-active" aria-hidden="true">Yes</span>
-							<span class="switch-inactive" aria-hidden="true">No</span>
+							<span class="show-for-sr"><?php _e('Allow Strictly Necessary Cookies?', 'inti'); ?></span>
+							<span class="switch-active" aria-hidden="true"><?php _e('Yes', 'inti'); ?></span>
+							<span class="switch-inactive" aria-hidden="true"><?php _e('No', 'inti'); ?></span>
 						</label>
 					<?php else : 
 						// Force-set cookie permissions to yes
 					?>
-						<button class="button hollow" id="needed-cookies-forced" disabled>Always On</button>
+						<button class="button hollow" id="needed-cookies-forced" disabled><?php _e('Always On', 'inti'); ?></button>
 					<?php endif; ?>
 					
 				</div>
@@ -77,16 +77,16 @@
 		<!-- [FUNCTIONAL] -->
 		<div class="grid-x grid-margin-x grid-margin-y align-middle">
 			<div class="mlarge-9 cell">
-				<h3>Important functions</h3>
-				<p>Cookies that are needed for the website to work optimally and to remember who you are.</p>
+				<h3><?php _e('Important functions', 'inti'); ?></h3>
+				<p><?php _e('Cookies that are needed for the website to work optimally and to remember who you are.', 'inti'); ?></p>
 			</div>
 			<div class="mlarge-3 cell">
 				<div class="switch">
 					<input class="switch-input" id="functional-cookies" type="checkbox" name="functional-cookies" <?php if ($functional == 'true') { echo 'checked'; } ?>>
 					<label class="switch-paddle" for="functional-cookies">
-						<span class="show-for-sr">Allow Important Functional Cookies?</span>
-						<span class="switch-active" aria-hidden="true">Yes</span>
-						<span class="switch-inactive" aria-hidden="true">No</span>
+						<span class="show-for-sr"><?php _e('Allow Important Functional Cookies?', 'inti'); ?></span>
+						<span class="switch-active" aria-hidden="true"><?php _e('Yes', 'inti'); ?></span>
+						<span class="switch-inactive" aria-hidden="true"><?php _e('No', 'inti'); ?></span>
 					</label>
 				</div>
 			</div>
@@ -95,16 +95,16 @@
 		<!-- [OPTIONAL] -->
 		<div class="grid-x grid-margin-x grid-margin-y align-middle">
 			<div class="mlarge-9 cell">
-				<h3>Optional</h3>
-				<p>Cookies that allow us to record statistics that can improve our service and that provide you relevant information.</p>
+				<h3><?php _e('Optional', 'inti'); ?></h3>
+				<p><?php _e('Cookies that allow us to record statistics that can improve our service and that provide you relevant information.', 'inti'); ?></p>
 			</div>
 			<div class="mlarge-3 cell">
 				<div class="switch">
 					<input class="switch-input" id="optional-cookies" type="checkbox" name="optional-cookies" <?php if ($optional == 'true') { echo 'checked'; } ?>>
 					<label class="switch-paddle" for="optional-cookies">
-						<span class="show-for-sr">Allow Optional Cookies?</span>
-						<span class="switch-active" aria-hidden="true">Yes</span>
-						<span class="switch-inactive" aria-hidden="true">No</span>
+						<span class="show-for-sr"><?php _e('Allow Optional Cookies?', 'inti'); ?></span>
+						<span class="switch-active" aria-hidden="true"><?php _e('Yes', 'inti'); ?></span>
+						<span class="switch-inactive" aria-hidden="true"><?php _e('No', 'inti'); ?></span>
 					</label>
 				</div>
 			</div>
@@ -113,25 +113,25 @@
 
 		<div class="expanded button-group">
 			<button class="accept-all-cookies primary button" id="accept-all-cookies-2" type="button">
-				<span>Allow all cookies</span>
+				<span><?php _e('Allow all cookies', 'inti'); ?></span>
 			</button>
 			<button class="keep-these-settings secondary button hollow" type="button">
-				<span>Keep these settings</span>
+				<span><?php _e('Keep these settings', 'inti'); ?></span>
 			</button>
 			<button class="block-all-cookies secondary button hollow" type="button">
-				<span>Block all cookies</span>
+				<span><?php _e('Block all cookies', 'inti'); ?></span>
 			</button>
 		</div>
 
 
 		<div class="reveal cookies" id="inti-cookie-block" data-reveal data-close-on-click="false">
-			<p>Cookies have been blocked and this website is no longer accessible. To manage your cookie configuration, click one of the buttons below.</p>
+			<p><?php _e('Cookies have been blocked and this website is no longer accessible. To manage your cookie configuration, click one of the buttons below.', 'inti'); ?></p>
 			<div class="expanded button-group">
 				<button class="accept-all-cookies primary button" id="accept-all-cookies-3" type="button">
-					<span><?php echo $cookie_accept_button_text; ?></span>
+					<span><?php _e('Allow all cookies', 'inti'); ?></span>
 				</button>
 				<button class="secondary button hollow" data-open="inti-cookie-policy-manage">
-					<span>Manage Options</span>
+					<span><?php _e('Manage Cookies', 'inti'); ?></span>
 				</button>
 			</div>
 		</div>

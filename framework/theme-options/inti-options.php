@@ -1134,8 +1134,8 @@ function inti_404_callback() {
  * in the add_settings_section function.
  */
 function inti_privacy_options_callback() {
-	echo '<p>' . __( 'Set options for cookies. ', 'inti' ) . '</p>';
-	echo '<p>' . __( 'The types of cookies that exist on this website are: ', 'inti' ) . '</p>';
+	echo '<p>' . __( 'Set options for cookies.', 'inti' ) . '</p>';
+	echo '<p>' . __( 'The types of cookies that exist on this website are:', 'inti' ) . '</p>';
 
 	$cookietypes = get_theme_support( 'inti-cookies' );
 	$cookietypes = $cookietypes[0];
