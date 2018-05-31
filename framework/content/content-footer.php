@@ -127,6 +127,7 @@ function inti_do_footer_analytics() {
 		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
 		ga('create', '<?php echo $analytics_id; ?>', 'auto');
+		ga('set', 'anonymizeIp', true);
 		ga('send', 'pageview');
 		</script>
 		<!-- End Google Analytics -->
