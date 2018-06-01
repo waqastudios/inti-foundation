@@ -24,7 +24,7 @@ function inti_options_scripts($hook) {
 
 	// CSS to add
 		wp_enqueue_style('thickbox');
-		wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/library/vendor/font-awesome/css/font-awesome.min.css', array(), '' );
+		wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/library/dist/css/font-awesome.min.css', array(), '' );
 		wp_enqueue_style( 'inti-options-css', get_template_directory_uri() . '/framework/theme-options/css/inti-options.css', array(), '' );
 	}
 
@@ -1963,7 +1963,7 @@ function inti_commenting_system_callback($args) {
 
 	$html .= '<p><input type="radio" id="commenting_system_facebook" name="inti_commenting_options[commenting_system]" value="facebook"' . checked( 'facebook', $options['commenting_system'], false ) . '/>';
 	$html .= '&nbsp;';
-	$html .= '<label for="commenting_system_facebook">Facebook</label></p>';
+	$html .= '<label for="commenting_system_facebook"><i class="fa fa-facebook-square"></i> Facebook</label></p>';
 
 	$html .= '<p><input type="radio" id="commenting_system_google" name="inti_commenting_options[commenting_system]" value="google"' . checked( 'google', $options['commenting_system'], false ) . '/>';
 	$html .= '&nbsp;';
