@@ -224,18 +224,42 @@ if (!function_exists('inti_shortcode_tab')) {
 		$GLOBALS['tab_id'] = md5(uniqid(rand(), true));
 
 		$id = md5(uniqid(rand(), true));
-		$output = '<div class="tabs-wrapper">';
 
-		$output .= '<ul class="tabs '. $orientation .'" data-tabs id="inti-tabs-' . $id . '">';
-		$output .= do_shortcode($content);
-		$output .= '</ul><!--/.tabs -->';
-		
-		$GLOBALS['tab_counter'] = 0;
-		$GLOBALS['tab_title'] = false;
-		$output .= '<div class="tabs-content" data-tabs-content="inti-tabs-' . $id . '">';
-		$output .= do_shortcode($content);
-		$output .= '</div><!-- /.tabs-content -->';
-		$output .= '</div><!-- /.tabs-wrapper -->';
+		if ( $orientation == "horizontal" ) : 
+
+			$output = '<div class="tabs-wrapper">';
+
+			$output .= '<ul class="tabs '. $orientation .'" data-tabs id="inti-tabs-' . $id . '">';
+			$output .= do_shortcode($content);
+			$output .= '</ul><!--/.tabs -->';
+			
+			$GLOBALS['tab_counter'] = 0;
+			$GLOBALS['tab_title'] = false;
+			$output .= '<div class="tabs-content" data-tabs-content="inti-tabs-' . $id . '">';
+			$output .= do_shortcode($content);
+			$output .= '</div><!-- /.tabs-content -->';
+			$output .= '</div><!-- /.tabs-wrapper -->';
+
+		else :
+			$output = '<div class="tabs-wrapper grid-x">';
+
+			$output .= '<div class="cell medium-3">';
+			$output .= '<ul class="tabs '. $orientation .'" data-tabs id="inti-tabs-' . $id . '">';
+			$output .= do_shortcode($content);
+			$output .= '</ul><!--/.tabs -->';
+			$output .= '</div>';
+			
+
+			$output .= '<div class="cell medium-9">';
+			$GLOBALS['tab_counter'] = 0;
+			$GLOBALS['tab_title'] = false;
+			$output .= '<div class="tabs-content '. $orientation .'" data-tabs-content="inti-tabs-' . $id . '">';
+			$output .= do_shortcode($content);
+			$output .= '</div><!-- /.tabs-content -->';
+			$output .= '</div>';
+			$output .= '</div><!-- /.tabs-wrapper -->';
+
+		endif;
 
 		return $output;
 	}
