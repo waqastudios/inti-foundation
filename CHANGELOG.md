@@ -116,3 +116,7 @@
 
 ### 1.6.1 (Jun 1, 2018)
 - Added basic tool for GDPR cookie compliance. Allows overall setting and removing of cookies by the visitor, for the site owner to categorize cookie-setting JS into one of three (or more) types and the visitor to allow/disallow each cookie category individually.
+
+### 1.6.2 (Aug 24, 2018)
+- Upgraded to FontAwesome 5
+- Improve Vertical Tabs shortcode 
