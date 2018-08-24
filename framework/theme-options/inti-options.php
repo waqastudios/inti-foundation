@@ -24,7 +24,11 @@ function inti_options_scripts($hook) {
 
 	// CSS to add
 		wp_enqueue_style('thickbox');
-		wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/library/dist/css/font-awesome.min.css', array(), '' );
+		wp_enqueue_style( 'fontawesome-free', get_template_directory_uri() . '/library/dist/css/fontawesome.min.css', array(), filemtime(get_template_directory() . '/library/dist/css/fontawesome.min.css') );
+		wp_enqueue_style( 'fontawesome-free-regular', get_template_directory_uri() . '/library/dist/css/regular.min.css', array(), filemtime(get_template_directory() . '/library/dist/css/regular.min.css') );
+		wp_enqueue_style( 'fontawesome-free-solid', get_template_directory_uri() . '/library/dist/css/solid.min.css', array(), filemtime(get_template_directory() . '/library/dist/css/solid.min.css') );
+		wp_enqueue_style( 'fontawesome-free-brands', get_template_directory_uri() . '/library/dist/css/brands.min.css', array(), filemtime(get_template_directory() . '/library/dist/css/brands.min.css') );
+		wp_enqueue_style( 'fontawesome-free-v4-shims', get_template_directory_uri() . '/library/dist/css/v4-shims.min.css', array(), filemtime(get_template_directory() . '/library/dist/css/v4-shims.min.css') );
 		wp_enqueue_style( 'inti-options-css', get_template_directory_uri() . '/framework/theme-options/css/inti-options.css', array(), '' );
 	}
 
@@ -798,7 +802,7 @@ if (!function_exists('inti_initialize_social_options')) {
 
 			add_settings_field( 
 				'social_fb',                     
-				'<i class="fa fa-2x fa-facebook-square"></i> Facebook',                         
+				'<i class="fab fa-2x fa-facebook-square"></i> Facebook',                         
 				'inti_social_fb_callback',    
 				'inti_social_options', 
 				'social_settings_section',   
@@ -809,7 +813,7 @@ if (!function_exists('inti_initialize_social_options')) {
 			
 			add_settings_field( 
 				'social_tw',                     
-				'<i class="fa fa-2x fa-twitter-square"></i> Twitter',                         
+				'<i class="fab fa-2x fa-twitter-square"></i> Twitter',                         
 				'inti_social_tw_callback',    
 				'inti_social_options', 
 				'social_settings_section',   
@@ -820,7 +824,7 @@ if (!function_exists('inti_initialize_social_options')) {
 			
 			add_settings_field( 
 				'social_gp',                     
-				'<i class="fa fa-2x fa-google-plus-square"></i>  Google+',                         
+				'<i class="fab fa-2x fa-google-plus-square"></i>  Google+',                         
 				'inti_social_gp_callback',    
 				'inti_social_options', 
 				'social_settings_section',   
@@ -831,7 +835,7 @@ if (!function_exists('inti_initialize_social_options')) {
 			
 			add_settings_field( 
 				'social_li',                     
-				'<i class="fa fa-2x fa-linkedin-square"></i> LinkedIn',                         
+				'<i class="fab fa-2x fa-linkedin-square"></i> LinkedIn',                         
 				'inti_social_li_callback',    
 				'inti_social_options', 
 				'social_settings_section',   
@@ -842,7 +846,7 @@ if (!function_exists('inti_initialize_social_options')) {
 			
 			add_settings_field( 
 				'social_in',                     
-				'<i class="fa fa-2x fa-instagram"></i> Instagram',                         
+				'<i class="fab fa-2x fa-instagram"></i> Instagram',                         
 				'inti_social_in_callback',    
 				'inti_social_options', 
 				'social_settings_section',   
@@ -853,7 +857,7 @@ if (!function_exists('inti_initialize_social_options')) {
 			
 			add_settings_field( 
 				'social_pi',                     
-				'<i class="fa fa-2x fa-pinterest-square"></i> Pinterest',                         
+				'<i class="fab fa-2x fa-pinterest-square"></i> Pinterest',                         
 				'inti_social_pi_callback',    
 				'inti_social_options', 
 				'social_settings_section',   
@@ -864,7 +868,7 @@ if (!function_exists('inti_initialize_social_options')) {
 			
 			add_settings_field( 
 				'social_yt',                     
-				'<i class="fa fa-2x fa-youtube-square"></i> YouTube',                         
+				'<i class="fab fa-2x fa-youtube-square"></i> YouTube',                         
 				'inti_social_yt_callback',    
 				'inti_social_options', 
 				'social_settings_section',   
@@ -875,7 +879,7 @@ if (!function_exists('inti_initialize_social_options')) {
 			
 			add_settings_field( 
 				'social_vi',                     
-				'<i class="fa fa-2x fa-vimeo-square"></i> Vimeo',                         
+				'<i class="fab fa-2x fa-vimeo-square"></i> Vimeo',                         
 				'inti_social_vi_callback',    
 				'inti_social_options', 
 				'social_settings_section',   
@@ -886,7 +890,7 @@ if (!function_exists('inti_initialize_social_options')) {
 			
 			add_settings_field( 
 				'social_sc',                     
-				'<i class="fa fa-2x fa-soundcloud"></i> SoundCloud',                         
+				'<i class="fab fa-2x fa-soundcloud"></i> SoundCloud',                         
 				'inti_social_sc_callback',    
 				'inti_social_options', 
 				'social_settings_section',   
@@ -897,7 +901,7 @@ if (!function_exists('inti_initialize_social_options')) {
 			
 			add_settings_field( 
 				'social_sn',                     
-				'<i class="fa fa-2x fa-snapchat"></i> Snapchat',                         
+				'<i class="fab fa-2x fa-snapchat"></i> Snapchat',                         
 				'inti_social_sn_callback',    
 				'inti_social_options', 
 				'social_settings_section',   
@@ -1955,7 +1959,7 @@ function inti_commenting_system_callback($args) {
 
 	$html = '<p><input type="radio" id="commenting_system_wordpress" name="inti_commenting_options[commenting_system]" value="wordpress"' . checked( 'wordpress', $options['commenting_system'], false ) . '/>';
 	$html .= '&nbsp;';
-	$html .= '<label for="commenting_system_wordpress"><i class="fa fa-wordpress"></i> WordPress</label></p>';
+	$html .= '<label for="commenting_system_wordpress"><i class="fab fa-wordpress"></i> WordPress</label></p>';
 
 	$html .= '<p><input type="radio" id="commenting_system_disqus" name="inti_commenting_options[commenting_system]" value="disqus"' . checked( 'disqus', $options['commenting_system'], false ) . '/>';
 	$html .= '&nbsp;';
@@ -1963,11 +1967,11 @@ function inti_commenting_system_callback($args) {
 
 	$html .= '<p><input type="radio" id="commenting_system_facebook" name="inti_commenting_options[commenting_system]" value="facebook"' . checked( 'facebook', $options['commenting_system'], false ) . '/>';
 	$html .= '&nbsp;';
-	$html .= '<label for="commenting_system_facebook"><i class="fa fa-facebook-square"></i> Facebook</label></p>';
+	$html .= '<label for="commenting_system_facebook"><i class="fab fa-facebook-square"></i> Facebook</label></p>';
 
 	$html .= '<p><input type="radio" id="commenting_system_google" name="inti_commenting_options[commenting_system]" value="google"' . checked( 'google', $options['commenting_system'], false ) . '/>';
 	$html .= '&nbsp;';
-	$html .= '<label for="commenting_system_google"><i class="fa fa-google"></i> Google</label></p>';
+	$html .= '<label for="commenting_system_google"><i class="fab fa-google"></i> Google</label></p>';
 	
 	// Here, we'll take the first argument of the array and add it to a label next to the input
 	$html .= '<p><small><label for="commenting_system">&nbsp;' . (isset($args[0]) ? $args[0] : '' )  . '</label></small></p>'; 

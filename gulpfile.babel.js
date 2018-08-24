@@ -45,7 +45,7 @@ function clean(done) {
 // Copies webfonts from the font src to dist
 function copyFonts() {
   return gulp.src(PATHS.staticfonts)
-    .pipe(gulp.dest(PATHS.dist + '/fonts'));
+    .pipe(gulp.dest(PATHS.dist + '/webfonts'));
 }
 // Copies vendor CSS files that we don't want to parse or combine( for individual enqueue in styles.php)
 function copyStaticCss() {

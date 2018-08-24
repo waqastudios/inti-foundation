@@ -24,14 +24,18 @@ PATHS:
   staticfonts:
     - "library/src/fonts/*"
     - "node_modules/slick-carousel/slick/fonts/*"
-    - "node_modules/font-awesome/fonts/*"
+    - "node_modules/@fortawesome/fontawesome-free/webfonts/*"
 
   # Paths tae any build tae be hard-copied tae dist (for individual enqueue in styles.php)
   # remove here an in gulpfile.babel.js, styles.php an then
   # uncomment in sass: below tae parse in sass task
   # uncomment in inti.scss to @import
   staticcss:
-    - "node_modules/font-awesome/css/*"
+    - "node_modules/@fortawesome/fontawesome-free/css/fontawesome.min.css"
+    - "node_modules/@fortawesome/fontawesome-free/css/regular.min.css"
+    - "node_modules/@fortawesome/fontawesome-free/css/solid.min.css"
+    - "node_modules/@fortawesome/fontawesome-free/css/brands.min.css"
+    - "node_modules/@fortawesome/fontawesome-free/css/v4-shims.min.css"
     - "node_modules/slick-carousel/slick/slick.css"
 
   # Paths tae Sass libraries, which can then be loaded wi @import
@@ -56,7 +60,5 @@ PATHS:
   # Paths tae individual vendor JS, nae tae be cominbed for wp_register_script()
   vendorjs:
     - "node_modules/toastr/build/toastr.min.js"
-    - "node_modules/slick-carousel/slick/slick.js"
-    - "node_modules/js-cookie/js.cookie.js"
 
   # "She canna take any more, captain.  She's gonna blow!"

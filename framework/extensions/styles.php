@@ -19,7 +19,11 @@ add_action('wp_enqueue_scripts', 'inti_enqueue_styles', 5);
 function inti_register_styles() {
 	// register styles
 	wp_register_style('inti', get_template_directory_uri() . '/library/dist/css/inti.css', array(), filemtime(get_template_directory() . '/library/dist/css/inti.css'), 'all');
-	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/library/dist/css/font-awesome.min.css', array(), filemtime(get_template_directory() . '/library/dist/css/font-awesome.min.css') );
+	wp_register_style( 'fontawesome-free', get_template_directory_uri() . '/library/dist/css/fontawesome.min.css', array(), filemtime(get_template_directory() . '/library/dist/css/fontawesome.min.css') );
+	wp_register_style( 'fontawesome-free-regular', get_template_directory_uri() . '/library/dist/css/regular.min.css', array(), filemtime(get_template_directory() . '/library/dist/css/regular.min.css') );
+	wp_register_style( 'fontawesome-free-solid', get_template_directory_uri() . '/library/dist/css/solid.min.css', array(), filemtime(get_template_directory() . '/library/dist/css/solid.min.css') );
+	wp_register_style( 'fontawesome-free-brands', get_template_directory_uri() . '/library/dist/css/brands.min.css', array(), filemtime(get_template_directory() . '/library/dist/css/brands.min.css') );
+	wp_register_style( 'fontawesome-free-v4-shims', get_template_directory_uri() . '/library/dist/css/v4-shims.min.css', array(), filemtime(get_template_directory() . '/library/dist/css/v4-shims.min.css') );
 	wp_enqueue_style( 'slick-carousel', get_template_directory_uri() . '/library/dist/css/slick.css', array(), filemtime(get_template_directory() . '/library/dist/css/slick.css') );
 	wp_register_style('style', get_stylesheet_directory_uri() . '/style.css', array(), filemtime(get_template_directory() . '/style.css'), 'all');
 }
@@ -27,8 +31,12 @@ function inti_register_styles() {
 function inti_enqueue_styles() {
 	if ( !is_admin() ) { 
 		// enqueue styles
-		wp_enqueue_style('inti'); 
-		wp_enqueue_style('font-awesome'); 
+		wp_enqueue_style('inti'); 		
+		wp_enqueue_style('fontawesome-free'); 
+		wp_enqueue_style('fontawesome-free-regular'); 
+		wp_enqueue_style('fontawesome-free-solid'); 
+		wp_enqueue_style('fontawesome-free-brands'); 
+		wp_enqueue_style('fontawesome-free-v4-shims'); 
 		wp_enqueue_style('slick-carousel'); 
 		
 		// add style.css with child themes

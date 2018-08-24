@@ -18,8 +18,6 @@ add_action('wp_enqueue_scripts', 'inti_enqueue_scripts');
 function inti_register_scripts() {
 	// register scripts
 	wp_register_script('toastr-js', get_template_directory_uri() . '/library/dist/js/toastr.min.js', array(), filemtime(get_template_directory() . '/library/dist/js/toastr.min.js'), true);
-	wp_register_script('slick-js', get_template_directory_uri() . '/library/dist/js/slick.js', array(), filemtime(get_template_directory() . '/library/dist/js/slick.js'), true);
-	wp_register_script('jquery-cookie-js', get_template_directory_uri() . '/library/dist/js/jquery.cookie.js', array(), filemtime(get_template_directory() . '/library/dist/js/jquery.cookie.js'), true);
 	wp_register_script('inti-js', get_template_directory_uri() . '/library/dist/js/inti.js', array(), filemtime(get_template_directory() . '/library/dist/js/inti.js'), true);
 
 }
@@ -29,8 +27,6 @@ function inti_enqueue_scripts() {
 		// enqueue scripts
 		wp_enqueue_script('jquery');
 		wp_enqueue_script('toastr-js');
-		wp_enqueue_script('slick-js');
-		wp_enqueue_script('jquery-cookie-js');
 		wp_enqueue_script('inti-js');
 
 		// comment reply script for threaded comments
