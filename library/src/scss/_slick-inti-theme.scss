@@ -5,17 +5,19 @@
 // Font Awesome icon entity codes outputs the following
 // "\f060" outputs ascii character "←"
 // "\f061" outputs ascii character "→"
+// "\f104" outputs ascii character "<"
+// "\f105" outputs ascii character ">"
 // "\f111" outputs ascii character "•"
 
-$slick-font-family: "FontAwesome" !default;
+$slick-font-family: "Font Awesome 5 Free" !default;
 $slick-loader-path: "./" !default;
 $slick-arrow-color: $black !default;
 $slick-dot-color: $black !default;
 $slick-dot-color-active: $slick-dot-color !default;
-$slick-prev-character: "\f060" !default;
-$slick-next-character: "\f061" !default;
+$slick-prev-character: "\f053" !default;
+$slick-next-character: "\f054" !default;
 $slick-dot-character: "\f111" !default;
-$slick-dot-size: 6px !default;
+$slick-dot-size: 16px !default;
 $slick-opacity-default: 0.75 !default;
 $slick-opacity-on-hover: 1 !default;
 $slick-opacity-not-active: 0.25 !default;
@@ -52,10 +54,11 @@ $slick-opacity-not-active: 0.25 !default;
 
 .slick-prev,
 .slick-next {
+	z-index: 1;
 	position: absolute;
 	display: block;
-	height: 20px;
-	width: 20px;
+	height: 30px;
+	width: 30px;
 	line-height: 0px;
 	font-size: 0px;
 	cursor: pointer;
@@ -81,7 +84,8 @@ $slick-opacity-not-active: 0.25 !default;
 	}
 	&:before {
 		font-family: $slick-font-family;
-		font-size: 20px;
+		font-weight: 600;
+		font-size: 32px;
 		line-height: 1;
 		color: $slick-arrow-color;
 		opacity: $slick-opacity-default;
@@ -91,10 +95,10 @@ $slick-opacity-not-active: 0.25 !default;
 }
 
 .slick-prev {
-	left: -25px;
+	left: -($global-margin*2);
 	[dir="rtl"] & {
 		left: auto;
-		right: -25px;
+		right: -($global-margin*2);
 	}
 	&:before {
 		content: $slick-prev-character;
@@ -105,9 +109,9 @@ $slick-opacity-not-active: 0.25 !default;
 }
 
 .slick-next {
-	right: -25px;
+	right: -($global-margin*2);
 	[dir="rtl"] & {
-		left: -25px;
+		left: -($global-margin*2);
 		right: auto;
 	}
 	&:before {
@@ -181,4 +185,7 @@ $slick-opacity-not-active: 0.25 !default;
 			opacity: $slick-opacity-default;
 		}
 	}
+}
+.sidebar .widget ul.slick-dots {
+	margin: 0;
 }
