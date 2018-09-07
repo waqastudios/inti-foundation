@@ -44,7 +44,6 @@ PATHS:
     - "node_modules/motion-ui/src"
     - "library/src/scss/**/*.scss"
     - "node_modules/toastr/build/*.scss"
-    # - "node_modules/font-awesome/scss"
     # - "node_modules/slick-carousel/slick/slick.scss"
     - "library/src/**/*.scss"
 
