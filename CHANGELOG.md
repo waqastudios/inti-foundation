@@ -120,3 +120,6 @@
 ### 1.6.2 (Aug 24, 2018)
 - Upgraded to FontAwesome 5
 - Improve Vertical Tabs shortcode 
+
+### 1.6.3 (Sep 7, 2018)
+- Bug fixes
