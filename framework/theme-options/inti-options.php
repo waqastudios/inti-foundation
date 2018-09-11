@@ -24,12 +24,12 @@ function inti_options_scripts($hook) {
 
 	// CSS to add
 		wp_enqueue_style('thickbox');
-		wp_enqueue_style( 'fontawesome-free', get_template_directory_uri() . '/library/dist/css/fontawesome.min.css', array(), filemtime(get_template_directory() . '/library/dist/css/fontawesome.min.css') );
-		wp_enqueue_style( 'fontawesome-free-regular', get_template_directory_uri() . '/library/dist/css/regular.min.css', array(), filemtime(get_template_directory() . '/library/dist/css/regular.min.css') );
-		wp_enqueue_style( 'fontawesome-free-solid', get_template_directory_uri() . '/library/dist/css/solid.min.css', array(), filemtime(get_template_directory() . '/library/dist/css/solid.min.css') );
-		wp_enqueue_style( 'fontawesome-free-brands', get_template_directory_uri() . '/library/dist/css/brands.min.css', array(), filemtime(get_template_directory() . '/library/dist/css/brands.min.css') );
-		wp_enqueue_style( 'fontawesome-free-v4-shims', get_template_directory_uri() . '/library/dist/css/v4-shims.min.css', array(), filemtime(get_template_directory() . '/library/dist/css/v4-shims.min.css') );
-		wp_enqueue_style( 'inti-options-css', get_template_directory_uri() . '/framework/theme-options/css/inti-options.css', array(), '' );
+		wp_enqueue_style( 'fontawesome-free', get_stylesheet_directory_uri() . '/library/dist/css/fontawesome.min.css', array(), filemtime(get_stylesheet_directory() . '/library/dist/css/fontawesome.min.css') );
+		wp_enqueue_style( 'fontawesome-free-regular', get_stylesheet_directory_uri() . '/library/dist/css/regular.min.css', array(), filemtime(get_stylesheet_directory() . '/library/dist/css/regular.min.css') );
+		wp_enqueue_style( 'fontawesome-free-solid', get_stylesheet_directory_uri() . '/library/dist/css/solid.min.css', array(), filemtime(get_stylesheet_directory() . '/library/dist/css/solid.min.css') );
+		wp_enqueue_style( 'fontawesome-free-brands', get_stylesheet_directory_uri() . '/library/dist/css/brands.min.css', array(), filemtime(get_stylesheet_directory() . '/library/dist/css/brands.min.css') );
+		wp_enqueue_style( 'fontawesome-free-v4-shims', get_stylesheet_directory_uri() . '/library/dist/css/v4-shims.min.css', array(), filemtime(get_stylesheet_directory() . '/library/dist/css/v4-shims.min.css') );
+		wp_enqueue_style( 'inti-options-css', get_stylesheet_directory_uri() . '/framework/theme-options/css/inti-options.css', array(), '' );
 	}
 
 }
@@ -835,7 +835,7 @@ if (!function_exists('inti_initialize_social_options')) {
 			
 			add_settings_field( 
 				'social_li',                     
-				'<i class="fab fa-2x fa-linkedin-square"></i> LinkedIn',                         
+				'<i class="fab fa-2x fa-linkedin"></i> LinkedIn',                         
 				'inti_social_li_callback',    
 				'inti_social_options', 
 				'social_settings_section',   
