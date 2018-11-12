@@ -39,7 +39,7 @@ $(document).ready(function(){
 
 	// Next, check to see if the visitor has been here before, if they have,
 	// they'll have the needed-cookies cookie, if not it'll be undefined
-	if (typeof Cookies.get('needed-cookies') === "undefined") {
+	if (typeof Cookies.get('needed-cookies') === "undefined" || typeof Cookies.get('functional-cookies') === "undefined") {
 		// First time visitor
 		// Open cookie message modal
 		$cookiemodal.open();
