@@ -73,7 +73,7 @@ if (!function_exists('inti_options_setup')) {
 			__( 'Header/Navigation', 'inti' ),
 			'manage_options',
 			'inti_theme_options&tab=headernav_options',
-			create_function( null, 'inti_options_interface( "headernav_options" );' )
+			function() { inti_options_interface( "headernav_options" ); }
 		);
 
 		add_submenu_page(
@@ -82,7 +82,7 @@ if (!function_exists('inti_options_setup')) {
 			__( 'Footer/Analytics', 'inti' ),
 			'manage_options',
 			'inti_theme_options&tab=footer_options',
-			create_function( null, 'inti_options_interface( "footer_options" );' )
+			function() { inti_options_interface( "footer_options" ); }
 		);
 
 		add_submenu_page(
@@ -91,7 +91,7 @@ if (!function_exists('inti_options_setup')) {
 			__( 'Social Media Profiles', 'inti' ),
 			'manage_options',
 			'inti_theme_options&tab=social_options',
-			create_function( null, 'inti_options_interface( "social_options" );' )
+			function() { inti_options_interface( "social_options" ); }
 		);
 		
 		add_submenu_page(
@@ -100,7 +100,7 @@ if (!function_exists('inti_options_setup')) {
 			__( 'Commenting', 'inti' ),
 			'manage_options',
 			'inti_theme_options&tab=commenting_options',
-			create_function( null, 'inti_options_interface( "commenting_options" );' )
+			function() { inti_options_interface( "commenting_options" ); }
 		);
 
 if ( current_theme_supports('inti-cookies') ) {
@@ -110,7 +110,7 @@ if ( current_theme_supports('inti-cookies') ) {
 			__( 'Privacy/Cookies', 'inti' ),
 			'manage_options',
 			'inti_theme_options&tab=privacy_options',
-			create_function( null, 'inti_options_interface( "privacy_options" );' )
+			function() { inti_options_interface( "privacy_options" ); }
 		);
 }
 
