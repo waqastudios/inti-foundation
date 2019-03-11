@@ -7,31 +7,30 @@ Classes output by WordPress to do all the WordPressy things
 ******************************************************************/
 
 .wp-caption {
-	img {
-		@include thumbnail;
+	margin-bottom: calc(1.5 * 1rem);
+}
+
+@media only screen and (min-width: 768px) {
+	.wp-caption.aligncenter {
+		position: relative;
+		left: calc( calc(8 * (100vw / 12) - 28px) / 2);
+		transform: translateX(-50%);
 	}
-	br { display: none; }
-	.wp-caption-text {
-		margin: -($global-margin / 2) 0 $global-margin 0;
-		padding: 0 $global-padding;
-		font-style: italic;
+}
+
+@media only screen and (min-width: 1168px) {
+	.wp-caption.aligncenter {
+	left: calc( calc(6 * (100vw / 12) - 28px) / 2);
 	}
 }
 
-.alignleft {
-	display: inline;
-	float: left;
-}
 
-.alignright {
-	display: inline;
-	float: right;
-}
-
-.aligncenter {
+.wp-caption img[class*="wp-image-"] {
 	display: block;
-	margin-right: auto;
-	margin-left: auto;
+}
+
+.wp-caption-text {
+	@extend small;
 }
 
 

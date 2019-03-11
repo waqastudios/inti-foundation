@@ -86,9 +86,6 @@ if ( !function_exists('inti_wp_helpers') ) {
 		// changes content more link
 		add_filter('the_content_more_link', 'inti_content_more', 10, 2); 
 		
-		// add html5 captions
-		add_filter('img_caption_shortcode', 'inti_cleaner_caption', 10, 3);
-		
 		// clean up gallery output in wp
 		add_filter('gallery_style', 'inti_gallery_style');
 				
