@@ -161,7 +161,8 @@ function reload(done) {
 
 // Watch for changes to static, Sass, and JavaScript
 function watch() {
-  gulp.watch(PATHS.static, copyFonts, copyStaticCss);
+  gulp.watch(PATHS.staticfonts, copyFonts);
+  gulp.watch(PATHS.staticcss, copyStaticCss);
   gulp.watch('library/src/scss/**/*.scss').on('all', sass);
   gulp.watch('library/src/js/**/*.js').on('all', gulp.series(foundationjs, browser.reload));
   gulp.watch('library/src/img/**/*').on('all', gulp.series(images, browser.reload));

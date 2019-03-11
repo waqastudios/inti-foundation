@@ -22,7 +22,7 @@ PATHS:
 
   # Paths tae the font files tae be hard-copied tae dist
   staticfonts:
-    - "library/src/fonts/*"
+    - "library/src/webfonts/*"
     - "node_modules/slick-carousel/slick/fonts/*"
     - "node_modules/@fortawesome/fontawesome-free/webfonts/*"
 
