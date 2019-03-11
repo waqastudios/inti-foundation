@@ -7,23 +7,9 @@ Classes output by WordPress to do all the WordPressy things
 ******************************************************************/
 
 .wp-caption {
-	margin-bottom: calc(1.5 * 1rem);
+	margin-bottom: $global-margin;
+	position: relative;
 }
-
-@media only screen and (min-width: 768px) {
-	.wp-caption.aligncenter {
-		position: relative;
-		left: calc( calc(8 * (100vw / 12) - 28px) / 2);
-		transform: translateX(-50%);
-	}
-}
-
-@media only screen and (min-width: 1168px) {
-	.wp-caption.aligncenter {
-	left: calc( calc(6 * (100vw / 12) - 28px) / 2);
-	}
-}
-
 
 .wp-caption img[class*="wp-image-"] {
 	display: block;
@@ -34,29 +20,27 @@ Classes output by WordPress to do all the WordPressy things
 }
 
 
-blockquote.alignleft,
-.wp-caption.alignleft,
-img.alignleft {
-	margin: ($global-margin / 2) $global-margin $global-margin 0;
+@media only screen and (min-width: #{map-get($breakpoints, mlarge)} ) {
+	.wp-caption.aligncenter {
+		position: relative;
+		left: calc( calc(7 * (100vw / 12) - 28px) / 2);
+		transform: translateX(-50%);
+	}
+
+	.wp-caption.alignright {
+		right: 0; float: right;
+		margin-left: $global-margin;
+	}
+
+	.wp-caption.alignleft {
+		right: 0; float: left;
+		margin-right: $global-margin;
+	}
+
 }
 
-blockquote.alignright,
-.wp-caption.alignright,
-img.alignright {
-	margin: ($global-margin / 2) 0 $global-margin $global-margin;
+@media only screen and (min-width: #{map-get($breakpoints, large)} ) {
+	.wp-caption.aligncenter {
+	left: calc( calc(7 * (100vw / 12) - 28px) / 2);
+	}
 }
-
-blockquote.aligncenter,
-.wp-caption.aligncenter,
-img.aligncenter {
-	clear: both;
-	margin-top: ($global-margin / 2);
-	margin-bottom: $global-margin;
-}
-
-.wp-caption.alignleft,
-.wp-caption.alignright,
-.wp-caption.aligncenter {
-	margin-bottom: $global-margin;
-}
-

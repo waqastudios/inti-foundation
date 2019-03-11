@@ -359,7 +359,7 @@ if (!function_exists('inti_shortcode_cookie_manager')) {
 		if ( current_theme_supports('inti-cookies') ) {
 			$content = (trim($content)) ? do_shortcode($content) : '';		
 
-			$html = '<a class="inti-cookie-manager" data-open="inti-cookie-policy">';
+			$html = '<a class="inti-cookie-manager open">';
 			$html .= $content;
 			$html .= '</a>';
 

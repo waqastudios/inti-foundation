@@ -55,6 +55,13 @@ $(document).ready(function(){
 		// In the future we'll need to load all cookie types asychronously AFTER
 		// settings have been accepted by the client.
 	}
+		
+	// Open instances of visible link to open cookie manager, i.e. from cookie manager shortcode
+	$('.inti-cookie-manager.open').on( "click", function(){
+		// close programatically created Reveal modal
+		$cookiemodal.open();
+	});
+
 	
 	// Vistor's Manage Options page has controls to change the three default cookie types
 	$('.switch-input#needed-cookies').on( "change", function(){
