@@ -129,3 +129,10 @@
 
 ### 1.6.5 (Nov 12, 2018)
 - Bug fixes
+
+### 1.7.0 (Mar 13, 2019)
+– Updated Foundation for Sites to 6.5.3
+- Bug fixes for PHP 7.2
+- Tweaks for image captions
+- Fixed bug that changes focus on Cookie Manager link
+- [#9](https://github.com/waqastudios/inti-foundation/pull/9) Fix npm gulp dependency, since there is no longer a 4.0 branch of gulpjs
