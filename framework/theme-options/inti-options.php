@@ -638,7 +638,7 @@ if (!function_exists('inti_initialize_headernav_options')) {
 					__( 'Most custom JavaScript should go in the footer.', 'inti' ),
 				)        
 			);
-
+if ( current_theme_supports('inti-cookies') ) {
 			add_settings_field( 
 				'head_js_cookies',                     
 				__('Cookie Level', 'inti' ),                         
@@ -649,7 +649,7 @@ if (!function_exists('inti_initialize_headernav_options')) {
 					__( 'Set cookie level for field', 'inti' ),
 				)        
 			);
-
+}
 			add_settings_field( 
 				'head_css',                     
 				__('Custom CSS in head', 'inti' ),                         
@@ -676,7 +676,7 @@ if (!function_exists('inti_initialize_headernav_options')) {
 				'inti_headernav_options', 
 				'headernav_settings_section'      
 			);
-
+if ( current_theme_supports('inti-cookies') ) {
 			add_settings_field( 
 				'body_inside_cookies',                     
 				__('Cookie Level', 'inti' ),                         
@@ -687,7 +687,7 @@ if (!function_exists('inti_initialize_headernav_options')) {
 					__( 'Set cookie level for field', 'inti' ),
 				)        
 			);
-		
+}		
 		register_setting(
 			'inti_headernav_options',
 			'inti_headernav_options'
@@ -736,7 +736,7 @@ if (!function_exists('inti_initialize_footer_options')) {
 					__( 'Enter Your Analytics site ID (e.g. UA-XXXXX-X) here.', 'inti' ),
 				)        
 			);
-
+if ( current_theme_supports('inti-cookies') ) {
 			add_settings_field( 
 				'analytics_cookies',                     
 				__('Cookie Level', 'inti' ),                         
@@ -747,7 +747,7 @@ if (!function_exists('inti_initialize_footer_options')) {
 					__( 'Set cookie level for field', 'inti' ),
 				)        
 			);
-
+}
 			add_settings_field( 
 				'footer_js',                     
 				__('Custom JavaScript in footer', 'inti' ),                         
@@ -758,7 +758,7 @@ if (!function_exists('inti_initialize_footer_options')) {
 					__( 'Add custom javascript code to the footer (best place), modify the copyright text and set up other custom footer features.', 'inti' ),
 				)       
 			);
-
+if ( current_theme_supports('inti-cookies') ) {
 			add_settings_field( 
 				'footer_js_cookies',                     
 				__('Cookie Level', 'inti' ),                         
@@ -769,7 +769,7 @@ if (!function_exists('inti_initialize_footer_options')) {
 					__( 'Set cookie level for field', 'inti' ),
 				)        
 			);
-		
+}		
 		register_setting(
 			'inti_footer_options',
 			'inti_footer_options'
@@ -981,6 +981,7 @@ if (!function_exists('inti_initialize_commenting_options')) {
 					__( 'By default a message is shown under the comments box informing commenters what HTML tags they are allowed to use.', 'inti' ),
 				)        
 			);
+if ( current_theme_supports('inti-cookies') ) {			
 			add_settings_field( 
 				'comments_cookies',                     
 				__('Cookie Level', 'inti' ),                         
@@ -991,7 +992,7 @@ if (!function_exists('inti_initialize_commenting_options')) {
 					__( 'Set cookie level for comments functionality', 'inti' ),
 				)        
 			);
-		
+}		
 	 
 		add_settings_section(
 			'commenting_settings_section_disqus',          // ID used to identify this section and with which to register options
