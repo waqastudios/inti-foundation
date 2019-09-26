@@ -127,7 +127,7 @@ function inti_head_cleanup() {
 	// links for adjacent posts
 	remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
 	// remove WP version from css
-	// add_filter('style_loader_src', 'inti_remove_wp_ver_css_js', 9999);
+	add_filter('style_loader_src', 'inti_remove_wp_ver_css_js', 9999);
 	 // remove Wp version from scripts
 	add_filter('script_loader_src', 'inti_remove_wp_ver_css_js', 9999);
 }
@@ -145,8 +145,19 @@ function inti_rss_version() {return '';}
  * @since 1.0.0
  */
 function inti_remove_wp_ver_css_js( $src ) {
-	if ( strpos( $src, 'ver=') )
-		$src = remove_query_arg('ver', $src );
+	global $wp_version;
+	if ( strpos( $src, 'ver=') ) {
+		$parsed = parse_url($src);
+		parse_str($parsed['query'], $query);
+		if ( array_key_exists('ver', $query) ) {
+			$ver = $query['ver'];
+
+			// If this is the WP version number we should hide it for extra security
+			if ($ver == $wp_version) {
+				$src = remove_query_arg('ver', $src );
+			}
+		}
+	}
 	return $src;
 }
 
