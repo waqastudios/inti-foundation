@@ -16,26 +16,29 @@
  * @since 1.0.0
  */
 if ( !function_exists('inti_get_categories_meta') ) {
-	function inti_get_categories_meta( $args = '' ) {
+	function inti_get_categories_meta( $args = '', $links = true ) {
 		$count = 0;
 		$categories_list = '';
 		$categories = get_the_category();			
 		foreach ( $categories as $category ) {
 			$count++;
-			if ( $args['show_uncategorized'] ) {
-				$categories_list .= '<a href="' . get_category_link( $category->term_id ) . '" title="'.sprintf( __('View all posts in %s', 'inti'), $category->name ) . '"><span class="label category">' . $category->name . '</span></a>';
-				if ( $count != count( $categories ) ){
-					$categories_list .= ' '; //separator
-				}
-			} else {
-				if ( $category->slug != 'uncategorized' || $category->name != 'Uncategorized' ) {
-					$categories_list .= '<a href="' . get_category_link( $category->term_id ) . '" title="'.sprintf( __('View all posts in %s', 'inti'), $category->name ) . '"><span class="label category">' . $category->name . '</span></a>';
+			if ( $links ) {
+				if ( $args['show_uncategorized'] ) {
+					$categories_list .= '<a href="' . get_category_link( $category->term_id ) . '" title="'. sprintf( __('View all posts in %s', 'inti'), $category->name ) . '"><span class="label category">' . $category->name . '</span></a>';
 					if ( $count != count( $categories ) ){
 						$categories_list .= ' '; //separator
 					}
+				} else {
+					if ( $category->slug != 'uncategorized' || $category->name != 'Uncategorized' ) {
+						$categories_list .= '<span title="' . $category->name . '"><span class="label category">' . $category->name . '</span></span>';
+						if ( $count != count( $categories ) ){
+							$categories_list .= ' '; //separator
+						}
+					}
 				}
+			} else {
+
 			}
-				
 		}
 		return $categories_list;
 	}
@@ -48,16 +51,23 @@ if ( !function_exists('inti_get_categories_meta') ) {
  * @since 1.0.0
  */
 if ( !function_exists('inti_get_tags_meta') ) {
-	function inti_get_tags_meta( $args = '' ) {
+	function inti_get_tags_meta( $args = '', $links = true ) {
 		$count = 0;
 		$tags_list = '';
 		$tags = get_the_tags();	
 		if ($tags) {		
 			foreach ( $tags as $tag ) {
 				$count++;
-				$tags_list .= '<a href="' . get_tag_link( $tag->term_id ) . '" title="'.sprintf( __('View all posts tagged %s', 'inti'), $tag->name ) . '"><span class="label tag">' . $tag->name . '</span></a>';
-				if ( $count != count( $tags ) ){
-					$tags_list .= ' '; //separator
+				if ( $links ) {
+					$tags_list .= '<a href="' . get_tag_link( $tag->term_id ) . '" title="'.sprintf( __('View all posts tagged %s', 'inti'), $tag->name ) . '"><span class="label tag">' . $tag->name . '</span></a>';
+					if ( $count != count( $tags ) ){
+						$tags_list .= ' '; //separator
+					}
+				} else {
+					$tags_list .= '<span title="'.sprintf( __('View all posts tagged %s', 'inti'), $tag->name ) . '"><span class="label tag">' . $tag->name . '</span></span>';
+					if ( $count != count( $tags ) ){
+						$tags_list .= ' '; //separator
+					}
 				}
 			}
 		}
@@ -72,13 +82,22 @@ if ( !function_exists('inti_get_tags_meta') ) {
  * @since 1.0.0
  */
 if ( !function_exists('inti_get_date_meta') ) {
-	function inti_get_date_meta( $args = '' ) {
-		$date = sprintf('<a href="%1$s" title="%2$s" rel="bookmark"><time class="pubdate" datetime="%3$s" pubdate>%4$s</time></a>',
-			esc_url( get_month_link( get_the_time('Y'), get_the_time('m') ) ),
-			esc_attr( sprintf( __('View all posts from %s %s', 'inti'), get_the_time('M'), get_the_time('Y') ) ),
-			esc_attr( get_the_date('c') ),
-			esc_html( get_the_date() )
-		);
+	function inti_get_date_meta( $args = '', $links = true ) {
+		if ( $links ) {
+			$date = sprintf('<a href="%1$s" title="%2$s" rel="bookmark"><time class="pubdate" datetime="%3$s" pubdate>%4$s</time></a>',
+				esc_url( get_month_link( get_the_time('Y'), get_the_time('m') ) ),
+				esc_attr( sprintf( __('View all posts from %s %s', 'inti'), get_the_time('M'), get_the_time('Y') ) ),
+				esc_attr( get_the_date('c') ),
+				esc_html( get_the_date() )
+			);
+		} else {
+			$date = sprintf('<span title="%2$s" rel="bookmark"><time class="pubdate" datetime="%3$s" pubdate>%4$s</time></span>',
+				esc_url( get_month_link( get_the_time('Y'), get_the_time('m') ) ),
+				esc_attr( sprintf( __('View all posts from %s %s', 'inti'), get_the_time('M'), get_the_time('Y') ) ),
+				esc_attr( get_the_date('c') ),
+				esc_html( get_the_date() )
+			);
+		}
 
 		return $date;
 	}
@@ -91,13 +110,20 @@ if ( !function_exists('inti_get_date_meta') ) {
  * @since 1.0.0
  */
 if ( !function_exists('inti_get_author_meta') ) {
-	function inti_get_author_meta( $args = '' ) {
-		$author = sprintf('<a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a>',
-			esc_url( get_author_posts_url( get_the_author_meta('ID') ) ),
-			esc_attr( sprintf( __('View all posts by %s', 'inti'), get_the_author() ) ),
-			get_the_author()
-		);
-
+	function inti_get_author_meta( $args = '', $links = true ) {
+		if ( $links ) {
+			$author = sprintf('<a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a>',
+				esc_url( get_author_posts_url( get_the_author_meta('ID') ) ),
+				esc_attr( sprintf( __('View all posts by %s', 'inti'), get_the_author() ) ),
+				get_the_author()
+			);
+		} else {
+			$author = sprintf('<span class="fn n" title="%2$s" rel="author">%3$s</span>',
+				esc_url( get_author_posts_url( get_the_author_meta('ID') ) ),
+				esc_attr( sprintf( __('View all posts by %s', 'inti'), get_the_author() ) ),
+				get_the_author()
+			);
+		}
 		return $author;
 	}
 }
@@ -111,7 +137,7 @@ if ( !function_exists('inti_get_author_meta') ) {
  * @version 1.0.7
  */
 if ( !function_exists('inti_get_post_header_meta') ) {
-	function inti_get_post_header_meta( $args = '' ) {
+	function inti_get_post_header_meta( $args = '', $links = true ) {
 
 		do_action('inti_get_post_header_meta', $args);
 		
@@ -128,10 +154,10 @@ if ( !function_exists('inti_get_post_header_meta') ) {
 		 );
 		$args = wp_parse_args( $args, $defaults );
 		
-		$categories_list = inti_get_categories_meta($args);
-		$tag_list = inti_get_tags_meta();
-		$date = inti_get_date_meta();
-		$author = inti_get_author_meta();
+		$categories_list = inti_get_categories_meta($args, $links);
+		$tag_list = inti_get_tags_meta('', $links);
+		$date = inti_get_date_meta('', $links);
+		$author = inti_get_author_meta('', $links);
 
 		/**
 		 * 1 is category, 2 is tag, 3 is the date and 4 is the author's name
@@ -177,7 +203,7 @@ if ( !function_exists('inti_get_post_header_meta') ) {
  * @version 1.0.7
  */
 if ( !function_exists('inti_get_post_footer_meta') ) {
-	function inti_get_post_footer_meta( $args = '' ) {
+	function inti_get_post_footer_meta( $args = '', $links = true ) {
 
 		do_action('inti_get_post_footer_meta', $args);
 		
@@ -194,10 +220,10 @@ if ( !function_exists('inti_get_post_footer_meta') ) {
 		 );
 		$args = wp_parse_args( $args, $defaults );
 		
-		$categories_list = inti_get_categories_meta($args);
-		$tag_list = inti_get_tags_meta();
-		$date = inti_get_date_meta();
-		$author = inti_get_author_meta();
+		$categories_list = inti_get_categories_meta($args, $links);
+		$tag_list = inti_get_tags_meta('', $links);
+		$date = inti_get_date_meta('', $links);
+		$author = inti_get_author_meta('', $links);
 
 		/**
 		 * 1 is category, 2 is tag, 3 is the date and 4 is the author's name
