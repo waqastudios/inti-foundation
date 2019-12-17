@@ -136,3 +136,7 @@
 - Tweaks for image captions
 - Fixed bug that changes focus on Cookie Manager link
 - [#9](https://github.com/waqastudios/inti-foundation/pull/9) Fix npm gulp dependency, since there is no longer a 4.0 branch of gulpjs
+
+### 1.8.0 (Dec 17, 2019)
+– Bug fixes
+– Removing G+
