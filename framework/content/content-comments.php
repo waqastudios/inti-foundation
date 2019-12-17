@@ -110,19 +110,6 @@ function inti_do_post_page_comments() {
 						</section><!-- #comments -->
 						<?php
 					break; 
-					case 'google' : ?>
-						<section id="comments">
-							<script src="https://apis.google.com/js/plusone.js">
-							</script>
-							<div class="g-comments"
-								data-href = window.location
-								data-width = "650"
-								data-first_party_property = "BLOGGER"
-								data-view_type = "FILTERED_POSTMOD">
-							</div>
-						</section><!-- #comments -->
-						<?php 
-					break; 
 				}
 			endif;
 		endif;

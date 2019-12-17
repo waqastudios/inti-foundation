@@ -344,10 +344,6 @@ function inti_do_post_sharing() {
 				<li class="share-facebook"><a href="//www.facebook.com/sharer/sharer.php?u=<?php echo urlencode(get_permalink()); ?>&t=<?php echo urlencode(get_the_title()); ?>" title="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
 			<?php endif; ?>
 
-			<?php if ($google) : ?>
-				<li class="share-google"><a href="//plus.google.com/share?url=<?php echo urlencode(get_permalink()); ?>" title="Google+" target="_blank"><i class="fab fa-google-plus"></i></a></li>
-			<?php endif; ?>
-
 			<?php if ($linkedin) : ?>
 				<li class="share-linkedin"><a href="//www.linkedin.com/cws/share?url=<?php echo urlencode(get_permalink()); ?>" title="LinkedIn" target="_blank"><i class="fab fa-linkedin"></i></a></li>
 			<?php endif; ?>
@@ -379,7 +375,6 @@ function inti_do_page_sharing() {
 	$sharing_pages = get_inti_option('sharing_on_pages', 'inti_general_options', false);
 	$twitter = get_inti_option('sharing_platforms_twitter', 'inti_general_options', false);
 	$facebook = get_inti_option('sharing_platforms_facebook', 'inti_general_options', false);
-	$google = get_inti_option('sharing_platforms_google', 'inti_general_options', false);
 	$linkedin = get_inti_option('sharing_platforms_linkedin', 'inti_general_options', false);
 	$pinterest = get_inti_option('sharing_platforms_pinterest', 'inti_general_options', false);
 	$tumblr = get_inti_option('sharing_platforms_tumblr', 'inti_general_options', false);
@@ -411,10 +406,6 @@ function inti_do_page_sharing() {
 
 			<?php if ($facebook) : ?>
 				<li class="share-facebook"><a href="//www.facebook.com/sharer/sharer.php?u=<?php echo urlencode(get_permalink()); ?>&t=<?php echo urlencode(get_the_title()); ?>" title="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-			<?php endif; ?>
-
-			<?php if ($google) : ?>
-				<li class="share-google"><a href="//plus.google.com/share?url=<?php echo urlencode(get_permalink()); ?>" title="Google+" target="_blank"><i class="fab fa-google-plus"></i></a></li>
 			<?php endif; ?>
 
 			<?php if ($linkedin) : ?>

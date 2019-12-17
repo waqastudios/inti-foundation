@@ -268,10 +268,6 @@ msgstr ""
 msgid "Twitter URL"
 msgstr ""
 
-#: example-functions.php:503
-msgid "Google+ URL"
-msgstr ""
-
 #: example-functions.php:510
 msgid "Linkedin URL"
 msgstr ""

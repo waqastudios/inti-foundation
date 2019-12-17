@@ -498,7 +498,6 @@ if (!function_exists('inti_initialize_general_options')) {
 					'options'   =>  array (
 										'twitter'   =>  'Twitter',
 										'facebook'   =>  'Facebook',
-										'google'   =>  'Google+',
 										'linkedin'   =>  'LinkedIn',
 										'pinterest'   =>  'Pinterest',
 										'tumblr'   =>  'Tumblr',
@@ -823,17 +822,6 @@ if (!function_exists('inti_initialize_social_options')) {
 			);
 			
 			add_settings_field( 
-				'social_gp',                     
-				'<i class="fab fa-2x fa-google-plus-square"></i>  Google+',                         
-				'inti_social_gp_callback',    
-				'inti_social_options', 
-				'social_settings_section',   
-				array(                              // The array of arguments to pass to the callback. In this case, just a description.
-					__( 'Complete URL', 'inti' ),
-				)        
-			);
-			
-			add_settings_field( 
 				'social_li',                     
 				'<i class="fab fa-2x fa-linkedin"></i> LinkedIn',                         
 				'inti_social_li_callback',    
@@ -1078,26 +1066,7 @@ if ( current_theme_supports('inti-cookies') ) {
 					__( 'Give a width for your comment box in pixels.', 'inti' ),
 				)        
 			);
-	 
-		add_settings_section(
-			'commenting_settings_section_gp',          // ID used to identify this section and with which to register options
-			__( 'Google+ Comments', 'inti' ),      // Title to be displayed on the administration page
-			'inti_gpcomments_options_callback',  // Callback used to render the description of the section
-			'inti_commenting_options'      // Page on which to add this section of options
-		);
-			add_settings_field( 
-				'gpcomments_width',                     
-				__('Comment Area Width', 'inti'),                         
-				'inti_gpcomments_width_callback',    
-				'inti_commenting_options', 
-				'commenting_settings_section_gp',   
-				array(                              // The array of arguments to pass to the callback. In this case, just a description.
-					__( 'Give a width for your comment box in pixels.', 'inti' ),
-				)        
-			);
 			
-		  
-		
 		register_setting(
 			'inti_commenting_options',
 			'inti_commenting_options'
@@ -1969,10 +1938,6 @@ function inti_commenting_system_callback($args) {
 	$html .= '<p><input type="radio" id="commenting_system_facebook" name="inti_commenting_options[commenting_system]" value="facebook"' . checked( 'facebook', $options['commenting_system'], false ) . '/>';
 	$html .= '&nbsp;';
 	$html .= '<label for="commenting_system_facebook"><i class="fab fa-facebook-square"></i> Facebook</label></p>';
-
-	$html .= '<p><input type="radio" id="commenting_system_google" name="inti_commenting_options[commenting_system]" value="google"' . checked( 'google', $options['commenting_system'], false ) . '/>';
-	$html .= '&nbsp;';
-	$html .= '<label for="commenting_system_google"><i class="fab fa-google"></i> Google</label></p>';
 	
 	// Here, we'll take the first argument of the array and add it to a label next to the input
 	$html .= '<p><small><label for="commenting_system">&nbsp;' . (isset($args[0]) ? $args[0] : '' )  . '</label></small></p>'; 
@@ -2199,16 +2164,6 @@ function inti_fbcomments_width_callback($args) {
 	
 } // end inti_fbcomments_width_callback
 
-function inti_gpcomments_width_callback($args) {
-	
-	$options = get_option( 'inti_commenting_options' );
-	
-	// Render the output
-	echo '<input type="text" id="gpcomments_width" name="inti_commenting_options[gpcomments_width]" value="' . $options['gpcomments_width'] . '" />';
-	// Here, we'll take the first argument of the array and add it to a label next to the input
-	echo '<p><small><label for="gpcomments_width">&nbsp;' . (isset($args[0]) ? $args[0] : '' )  . '</label></small></p><br><br>'; 
-	
-} // end inti_gpcomments_width_callback
 
 
 

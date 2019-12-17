@@ -501,13 +501,6 @@ function yourprefix_register_user_profile_metabox() {
 	) );
 
 	$cmb_user->add_field( array(
-		'name' => __( 'Google+ URL', 'cmb2' ),
-		'desc' => __( 'field description (optional)', 'cmb2' ),
-		'id'   => $prefix . 'googleplusurl',
-		'type' => 'text_url',
-	) );
-
-	$cmb_user->add_field( array(
 		'name' => __( 'Linkedin URL', 'cmb2' ),
 		'desc' => __( 'field description (optional)', 'cmb2' ),
 		'id'   => $prefix . 'linkedinurl',

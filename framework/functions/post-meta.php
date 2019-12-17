@@ -295,13 +295,6 @@ function inti_get_post_page_footer_comments_link() {
 				</div><!-- .comments-link -->
 				<?php
 			break; 
-			case 'google' : ?>
-				<div class="comments-link">
-					<i class="fi fi-comments" title="Comments"></i>
-					<span class="leave-comment"><div class="g-commentcount" data-href="<?php the_permalink(); ?>"></div></span>
-				</div><!-- .comments-link -->
-				<?php 
-			break; 
 		}
 	endif;
 
