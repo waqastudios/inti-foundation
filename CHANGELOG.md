@@ -77,12 +77,12 @@
 - Fixed double title on single post navigation
 
 ### 1.3.5 (Jun 19, 2017)
-– Improvements for translation
+- Improvements for translation
 - Renaming Inti's Image widget to Image Link to better reflect what it does compared to WP 4.8s new Image widget
-– Set up the theme support in theme options for Front Page template and for Breadcrumbs
+- Set up the theme support in theme options for Front Page template and for Breadcrumbs
 
 ### 1.4.0 (Jun 25, 2017)
-– Zurb sticky added to navigation by default
+- Zurb sticky added to navigation by default
 - Customize option added for miniature logo to be used on small-screen navigation and sticky navigation (perfect for inti-kitchen-sink changes)
 
 ### 1.5.0 (July 12, 2017)
@@ -96,7 +96,7 @@
 - FontAwesome issue in WPEditor for child themes fixed
 
 ### 1.5.2 (Aug 14, 2017)
-– Less confusion on how front-page loops work, and a tweak to options to remove a fetching of the loop
+- Less confusion on how front-page loops work, and a tweak to options to remove a fetching of the loop
 - Limit footer widget columns to 4 columns – anything more and you can't see anything
 
 ### 1.5.3 (Aug 24, 2017)
@@ -107,10 +107,10 @@
 - Page template bug fix
 
 ### 1.5.5 (Dec 13, 2017)
-– Minor bug fix
+- Minor bug fix
 
 ### 1.6.0 (Apr 19, 2018)
-– Updated Foundation for Sites to 6.4.3
+- Updated Foundation for Sites to 6.4.3
 - Transitioned from grid-padding to grid-margin layouts as per (https://github.com/zurb/foundation-sites/pull/10371)
 - Added two social media link options
 
@@ -131,12 +131,12 @@
 - Bug fixes
 
 ### 1.7.0 (Mar 13, 2019)
-– Updated Foundation for Sites to 6.5.3
+- Updated Foundation for Sites to 6.5.3
 - Bug fixes for PHP 7.2
 - Tweaks for image captions
 - Fixed bug that changes focus on Cookie Manager link
 - [#9](https://github.com/waqastudios/inti-foundation/pull/9) Fix npm gulp dependency, since there is no longer a 4.0 branch of gulpjs
 
 ### 1.8.0 (Dec 17, 2019)
-– Bug fixes
-– Removing G+
+- Bug fixes
+- Removing G+

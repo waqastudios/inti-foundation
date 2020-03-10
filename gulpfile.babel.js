@@ -1,16 +1,20 @@
-'use strict';
+var plugins       = require('gulp-load-plugins');
+var yargs         = require('yargs');
+var browser       = require('browser-sync');
+var gulp          = require('gulp');
+var rimraf        = require('rimraf');
+var sherpa        = require('style-sherpa');
+var dateFormat    = require('dateformat');
+var yaml          = require('js-yaml');
+var fs            = require('fs');
+var webpackStream = require('webpack-stream');
+var webpack4      = require('webpack');
+var named         = require('vinyl-named');
+var autoprefixer  = require('gulp-autoprefixer');
+var imagemin      = require('gulp-imagemin');
+var terser        = require('gulp-terser');
+var sourcemaps    = require('gulp-sourcemaps');
 
-import plugins       from 'gulp-load-plugins';
-import yargs         from 'yargs';
-import browser       from 'browser-sync';
-import gulp          from 'gulp';
-import rimraf        from 'rimraf';
-import sherpa        from 'style-sherpa';
-import yaml          from 'js-yaml';
-import fs            from 'fs';
-import webpackStream from 'webpack-stream';
-import webpack2      from 'webpack';
-import named         from 'vinyl-named';
 
 // Load all Gulp plugins into one variable
 const $ = plugins();
@@ -26,13 +30,33 @@ function loadConfig() {
   return yaml.load(ymlFile);
 }
 
+
+
 // Build the "dist" folder by running all of the below tasks
 gulp.task('build',
- gulp.series(clean, gulp.parallel(sass, foundationjs, vendorjs, images, copyFonts, copyStaticCss, editorSass), styleGuide));
+ gulp.series(
+  clean, 
+  sass, 
+  foundationjs, 
+  vendorjs, 
+  images, 
+  copyFonts, 
+  copyStaticCss, 
+  editorSass, 
+  styleGuide,
+  // archive
+  )
+ );
 
 // Build the site, run the server, and watch for file changes
 gulp.task('default',
   gulp.series('build', server, watch));
+
+// Package the WP theme
+gulp.task('package',
+  gulp.series('build', archive));
+
+
 
 // Delete the "dist" folder
 // This happens every time a build starts
@@ -73,8 +97,8 @@ function sass() {
       includePaths: PATHS.sass
     })
       .on('error', $.sass.logError))
-    .pipe($.autoprefixer({
-      browsers: COMPATIBILITY
+    .pipe(autoprefixer({
+      overrideBrowserslist: COMPATIBILITY
     }))
     .pipe($.if(PRODUCTION, $.cleanCss({ compatibility: 'ie9' })))
     .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
@@ -88,34 +112,45 @@ function editorSass() {
       includePaths: PATHS.editorsass
     })
       .on('error', $.sass.logError))
-    .pipe($.autoprefixer({
-      browsers: COMPATIBILITY
+    .pipe(autoprefixer({
+      overrideBrowserslist: COMPATIBILITY
     }))
     .pipe(gulp.dest(PATHS.dist + '/css'));
 }
 
 
-let webpackConfig = {
-  rules: [
-    {
-      test: /.js$/,
-      use: [
-        {
-          loader: 'babel-loader'
-        }
-      ]
-    }
-  ]
+
+var webpackConfig = {
+  mode: 'development',
+  module: {
+    rules: [
+      {
+        test: /.js$/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              plugins: ["@babel/plugin-transform-shorthand-properties"],
+              presets: ["@babel/preset-env"]
+            }
+          }
+        ]
+      }
+    ]
+  }
 }
+
 // Combine JavaScript into one file
 // In production, the file is minified
 function foundationjs() {
   return gulp.src(PATHS.foundationjs)
     .pipe(named())
     .pipe($.sourcemaps.init())
-    .pipe(webpackStream({module: webpackConfig}, webpack2))
-    .pipe($.if(PRODUCTION, $.uglify()
-      .on('error', e => { console.log(e); })
+    .pipe(webpackStream(webpackConfig, webpack4))
+    .pipe($.if(PRODUCTION, $.terser({
+      compress: {}
+    })
+     .on('error', e => { console.log(e); })
     ))
     .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
     .pipe(gulp.dest(PATHS.dist + '/js'));
@@ -127,9 +162,8 @@ function vendorjs() {
   return gulp.src(PATHS.vendorjs)
     .pipe(named())
     .pipe($.sourcemaps.init())
-    .pipe(webpackStream({module: webpackConfig}, webpack2))
-    .pipe($.if(PRODUCTION, $.uglify()
-      .on('error', e => { console.log(e); })
+    .pipe($.if(PRODUCTION, $.terser()
+     .on('error', e => { console.log(e); })
     ))
     .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
     .pipe(gulp.dest(PATHS.dist + '/js'));
@@ -138,17 +172,26 @@ function vendorjs() {
 // In production, the images are compressed
 function images() {
   return gulp.src('library/src/img/**/*')
-    .pipe($.if(PRODUCTION, $.imagemin({
-      progressive: true
-    })))
+    .pipe($.if(PRODUCTION, imagemin()))
     .pipe(gulp.dest(PATHS.dist + '/img'));
+}
+
+// Create a .zip archive of the theme
+function archive() {
+  var time = dateFormat(new Date(), "yyyy-mm-dd_HH-MM");
+  var pkg = JSON.parse(fs.readFileSync('./package.json'));
+  var title = pkg.name + '_' + time + '.zip';
+
+  return gulp.src(PATHS.package)
+    .pipe($.zip(title))
+    .pipe(gulp.dest('packaged'));
 }
 
 // Start a server with BrowserSync to preview the site in
 function server(done) {
   browser.init({
-    server: PATHS.dist, port: PORT
-    // proxy: PROXY
+    //server: PATHS.dist, port: PORT
+    proxy: PROXY
   });
   done();
 }

@@ -46,6 +46,7 @@ test/tmp
 test/version_tmp
 tmp
 testing/_build
+packaged
 
 the-klingon-empire/
 data.json
