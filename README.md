@@ -2,7 +2,7 @@
 
 [![GitHub version](https://badge.fury.io/gh/waqastudios%2Finti-foundation.svg)](https://badge.fury.io/gh/waqastudios%2Finti-foundation)
 
-Inti Foundation is a WordPress parent theme that uses Foundation for Sites 6.4, the most advanced responsive front-end framework in the world. Foundation for Sites 6.4, unlike earlier versions, uses a flexbox based grid system called [XY Grid](http://foundation.zurb.com/sites/docs/xy-grid.html)
+Inti Foundation is a WordPress parent theme that uses Foundation for Sites 6.4, the most advanced responsive front-end framework in the world. Foundation for Sites 6.6, unlike earlier versions, uses a flexbox based grid system called [XY Grid](https://get.foundation/sites/docs/xy-grid.html)
 
 **As a theme** it is a starting point for you to build a WordPress/Foundation site from scratch.
 
@@ -18,7 +18,7 @@ Inti Foundation and its child themes come configured with a Gulp file that will 
  * Modify config.yml file for your setup, then run:
  * `npm install`
  * `gulp build`
- * `gulp default`, a new browser window will open pointing to a BrowserSync server displaying the WordPress installtion (via BrowserSync).
+ * `gulp default`, a new browser window will open pointing to a BrowserSync server displaying the WordPress installation (via BrowserSync).
 
 
 > The best way to customize Inti Foundation is to create a child theme. Consider doing that before making edits to the parent theme.
@@ -39,6 +39,8 @@ The theme has a template for the home page which contains two elements,
 This loop has been placed here as an example of how to add more custom elements to the front page. A theme options page has been added so that this element can be configured. Additional elements can be added in the same way.
 
 > An example child theme has been created that expands on this idea. Numerous 'front page blocks' has been added with accompanying post types, metaboxes, taxonomies, widgetsa and shortcodes – all configured through the WordPress Customizer. [View the inti-kitchen-sink theme on GitHub](https://github.com/waqastudios/inti-kitchen-sink)
+
+> If you use Advanced Custom Fields Pro you'll be looking for this child theme. [View the inti-acf-starter theme on GitHub](https://github.com/waqastudios/inti-acf-starter)
 
 ### Options
 The theme can be configured, and more options can be added as you develop your own theme, with either an Options page or with Customizer in live preview mode. Both methods have been added by default in Inti Foundation so that you can choose which you'd prefer to you for your own options. By default, options that are more to do with global settings have been added to an Options page called "Inti Options" and options that are more to do with visual elements have been added in Customizer. Feel free to modify these as you see fit.

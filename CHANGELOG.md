@@ -140,3 +140,6 @@
 ### 1.8.0 (Dec 17, 2019)
 - Bug fixes
 - Removing G+
+
+### 1.9.0 (Mar 10, 2020)
+- Updated Foundation for Sites to 6.6.1
