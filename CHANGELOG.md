@@ -143,3 +143,6 @@
 
 ### 1.9.0 (Mar 10, 2020)
 - Updated Foundation for Sites to 6.6.1
+
+### 1.9.1 (Aug 16, 2020)
+- Refactored old JS
