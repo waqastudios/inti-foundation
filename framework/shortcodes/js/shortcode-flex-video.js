@@ -1,12 +1,12 @@
 (function($) {
 
-	$('#shortcode-picker').live('change', function() {
+	$('body').on('change', '#shortcode-picker', function() {
 		var $currentShortcode = $('#shortcode-picker').val();
 		if( $currentShortcode === 'inti-flex-video' ) {
 			$('#yourshortcode').text('[flex-video aspect="" source="youtube" id="0000"][/flex-video]');
 		}
 	});
-	$('#shortcode-insert').live('click', function() {
+	$('body').on('click', '#shortcode-insert', function() {
 		var $currentShortcode = $('#shortcode-picker').val();
 		if( $currentShortcode === 'inti-flex-video' ) {
 				var flexvideoaspect     = $('#flex-video-aspect').val(),

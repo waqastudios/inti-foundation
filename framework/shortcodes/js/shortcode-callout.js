@@ -1,12 +1,12 @@
 (function($) {
 
-	$('#shortcode-picker').live('change', function() {
+	$('body').on('change', '#shortcode-picker', function() {
 		var $currentShortcode = $('#shortcode-picker').val();
 		if( $currentShortcode === 'inti-callout' ) {
 			$('#yourshortcode').text('[callout type="" style=""][/callout]');
 		}
 	});
-	$('#shortcode-insert').live('click', function() {
+	$('body').on('click', '#shortcode-insert', function() {
 		var $currentShortcode = $('#shortcode-picker').val();
 		if( $currentShortcode === 'inti-callout' ) {
 				var callouttype     = $('#callout-type').val(),

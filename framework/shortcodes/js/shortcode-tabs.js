@@ -1,12 +1,12 @@
 (function($) {
 
-	$('#shortcode-picker').live('change', function() {
+	$('body').on('change', '#shortcode-picker', function() {
 		var $currentShortcode = $('#shortcode-picker').val();
 		if( $currentShortcode === 'inti-tabs' ) {
 			$('#yourshortcode').text('[tabs][tabs-item title=""]content[/tabs-item][/tabs]');
 		}
 	});
-	$('#shortcode-insert').live('click', function() {
+	$('body').on('click', '#shortcode-insert', function() {
 		var $currentShortcode = $('#shortcode-picker').val();
 		if( $currentShortcode === 'inti-tabs' ) {
 				var taborientation     = $('#tabs-orientation').val();

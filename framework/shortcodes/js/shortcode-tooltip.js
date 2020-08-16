@@ -1,12 +1,12 @@
 (function($) {
 
-	$('#shortcode-picker').live('change', function() {
+	$('body').on('change', '#shortcode-picker', function() {
 		var $currentShortcode = $('#shortcode-picker').val();
 		if( $currentShortcode === 'inti-tooltip' ) {
 			$('#yourshortcode').text('[tooltip title="" type="" direction=""]content wrapped in tooltip[/tooltip]');
 		}
 	});
-	$('#shortcode-insert').live('click', function() {
+	$('body').on('click', '#shortcode-insert', function() {
 		var $currentShortcode = $('#shortcode-picker').val();
 		if( $currentShortcode === 'inti-tooltip' ) {
 				var tooltiptitle     	= $('#tooltip-title').val(),

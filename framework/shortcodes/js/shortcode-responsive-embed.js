@@ -1,12 +1,12 @@
 (function($) {
 
-	$('#shortcode-picker').live('change', function() {
+	$('body').on('change', '#shortcode-picker', function() {
 		var $currentShortcode = $('#shortcode-picker').val();
 		if( $currentShortcode === 'inti-responsive-embed' ) {
 			$('#yourshortcode').text('[responsive-embed aspect=""]iframe html[/responsive-embed]');
 		}
 	});
-	$('#shortcode-insert').live('click', function() {
+	$('body').on('click', '#shortcode-insert', function() {
 		var $currentShortcode = $('#shortcode-picker').val();
 		if( $currentShortcode === 'inti-responsive-embed' ) {
 				var flexvideoaspect     = $('#responsive-embed-aspect').val(),
