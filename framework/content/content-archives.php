@@ -42,7 +42,7 @@ function inti_do_archive_pagination() {
 		inti_filter_archive_pagination( array('type' => $pagination_type) );
 	}
 }
-add_action('inti_hook_loop_after', 'inti_do_archive_pagination', 1);
+add_action('inti_hook_inner_content_after', 'inti_do_archive_pagination', 1);
 
 
 ?>

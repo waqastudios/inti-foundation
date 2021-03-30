@@ -16,9 +16,9 @@ get_header(); ?>
 	
 		<div id="content" role="main" class="<?php apply_filters('inti_filter_content_classes', ''); ?>">
 				
-			<?php inti_hook_grid_open(); ?>
+			<?php inti_hook_inner_content_before(); ?>
 				
-				<?php inti_hook_inner_content_before(); ?>
+			<?php inti_hook_grid_open(); ?>
 
 				<header class="archive-header">
 					<?php 
@@ -40,9 +40,9 @@ get_header(); ?>
 				 */
 				get_template_part('loops/loop', 'frontpage'); ?>
 				
-				<?php inti_hook_inner_content_after(); ?>
-				
 			<?php inti_hook_grid_close(); ?>
+				
+			<?php inti_hook_inner_content_after(); ?>
 
 		</div><!-- #content -->
 		

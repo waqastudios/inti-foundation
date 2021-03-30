@@ -16,9 +16,9 @@ get_header(); ?>
 	
 		<div id="content" role="main" class="<?php apply_filters('inti_filter_content_classes', ''); ?>">
 				
+			<?php inti_hook_inner_content_before(); ?>
+
 			<?php inti_hook_grid_open(); ?>
-				
-				<?php inti_hook_inner_content_before(); ?>
 
 				<?php // start the loop
 				while ( have_posts() ) : the_post(); ?>
@@ -32,10 +32,10 @@ get_header(); ?>
 				<?php inti_hook_post_after(); ?>
 	
 				<?php endwhile; // end of the loop ?>
-			
-				<?php inti_hook_inner_content_after(); ?>
 				
 			<?php inti_hook_grid_close(); ?>
+				
+			<?php inti_hook_inner_content_after(); ?>
 
 		</div><!-- #content -->
 		

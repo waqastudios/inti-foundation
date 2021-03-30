@@ -104,6 +104,9 @@ if ( !function_exists('inti_filter_archive_pagination') ) {
 			$dots = false;
 			
 			$output = '<nav class="content-navigation" role="navigation">' . "\n";
+			$output .= "" . '<div class="grid-container">';
+			$output .= "\t" . '<div class="grid-x grid-margin-x">';
+			$output .= "\t\t" . '<div class="small-12 cell">';
 			$output .= "<ul class='pagination'>";
 
 			if ( $prev_next && $current && 1 < $current ) :
@@ -145,6 +148,7 @@ if ( !function_exists('inti_filter_archive_pagination') ) {
 
 			$output .= join("\n", $page_links);
 			$output .= "</ul>";
+			$output .= '</div></div></div>';
 			$output .= "\n" . '</nav><!-- .content-navigation -->';
 		}
 	
