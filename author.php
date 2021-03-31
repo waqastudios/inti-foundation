@@ -20,24 +20,6 @@ get_header(); ?>
 
 			<?php inti_hook_grid_open(); ?>
 
-				<?php if ( have_posts() ) : the_post(); ?>
-					<header class="archive-header">
-						<h1 class="archive-title"><?php _e('About:', 'inti'); ?> <span class="vcard"> <?php the_author() ?></span></h1>
-						<?php rewind_posts(); ?>
-						<?php if ( get_the_author_meta( 'description' ) ) : ?>
-						<div class="archive-meta grid-x">
-							<div class="small-2 cell">
-								<?php echo get_avatar( get_the_author_meta('ID'), apply_filters('inti_status_avatar', '64') ); ?>
-								<p class="entry-author"><?php the_author(); ?></p>
-							</div>
-							<div class="small-10 cell">
-								<?php the_author_meta( 'description' ); ?>
-							</div>
-						</div>
-						<?php endif; ?>
-					</header><!-- .archive-header -->
-				<?php endif; // end have_posts() check ?> 
-
 				<?php // get the main loop
 				get_template_part('loops/loop', 'index'); ?>
 				

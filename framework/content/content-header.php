@@ -37,9 +37,9 @@ function inti_do_head_js() {
 	if ($allow) {
 		if ( $customjs ) { ?>
 			<!-- Custom JS -->
-			<script>
-				<?php echo $customjs; ?>
-			</script>
+			
+			<?php echo $customjs; ?>
+			
 			<!-- End Custom JS -->
 <?php 
 		}

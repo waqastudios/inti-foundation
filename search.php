@@ -21,12 +21,6 @@ get_header(); ?>
 			<?php inti_hook_grid_open(); ?>
 
 					<?php if ( have_posts() ) : ?>
-					
-						<header class="archive-header">
-							<h1 class="archive-title">
-								<?php printf( __('Search Results for: %s', 'inti'), '<span>' . get_search_query() . '</span>'); ?>
-							</h1>
-						</header> 
 
 						<?php // start the loop
 						while ( have_posts() ) : the_post(); ?>

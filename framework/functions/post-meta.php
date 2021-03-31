@@ -26,18 +26,24 @@ if ( !function_exists('inti_get_categories_meta') ) {
 				if ( $args['show_uncategorized'] ) {
 					$categories_list .= '<a href="' . get_category_link( $category->term_id ) . '" title="'. sprintf( __('View all posts in %s', 'inti'), $category->name ) . '"><span class="label category">' . $category->name . '</span></a>';
 					if ( $count != count( $categories ) ){
-						$categories_list .= ' '; //separator
+						$categories_list .= ', '; //separator
 					}
 				} else {
 					if ( $category->slug != 'uncategorized' || $category->name != 'Uncategorized' ) {
-						$categories_list .= '<span title="' . $category->name . '"><span class="label category">' . $category->name . '</span></span>';
+						$categories_list .= '<a href="' . get_category_link( $category->term_id ) . '" title="'. sprintf( __('View all posts in %s', 'inti'), $category->name ) . '"><span class="label category">' . $category->name . '</span></a>';
 						if ( $count != count( $categories ) ){
-							$categories_list .= ' '; //separator
+							$categories_list .= ', '; //separator
 						}
 					}
 				}
 			} else {
-
+					if ( $category->slug != 'uncategorized' || $category->name != 'Uncategorized' ) {
+						$categories_list .= '<span title="' . $category->name . '"><span class="label category">' . $category->name;
+						if ( $count != count( $categories ) ){
+							$categories_list .= ', '; //separator
+						}
+						$categories_list .= '</span></span>';
+					}
 			}
 		}
 		return $categories_list;
