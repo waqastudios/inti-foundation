@@ -500,7 +500,7 @@ if (!function_exists('inti_initialize_general_options')) {
 										'facebook'   =>  'Facebook',
 										'linkedin'   =>  'LinkedIn',
 										'pinterest'   =>  'Pinterest',
-										'tumblr'   =>  'Tumblr',
+										'telegram'   =>  'Telegram',
 
 									)
 				)
@@ -891,6 +891,28 @@ if (!function_exists('inti_initialize_social_options')) {
 				'social_sn',                     
 				'<i class="fab fa-2x fa-snapchat"></i> Snapchat',                         
 				'inti_social_sn_callback',    
+				'inti_social_options', 
+				'social_settings_section',   
+				array(                              // The array of arguments to pass to the callback. In this case, just a description.
+					__( 'Complete URL', 'inti' ),
+				)        
+			);
+			
+			add_settings_field( 
+				'social_tt',                     
+				'<i class="fab fa-2x fa-tiktok"></i> TikTok',                         
+				'inti_social_tt_callback',    
+				'inti_social_options', 
+				'social_settings_section',   
+				array(                              // The array of arguments to pass to the callback. In this case, just a description.
+					__( 'Complete URL', 'inti' ),
+				)        
+			);
+			
+			add_settings_field( 
+				'social_tg',                     
+				'<i class="fab fa-2x fa-telegram-plane"></i> Telegram',                         
+				'inti_social_tg_callback',    
 				'inti_social_options', 
 				'social_settings_section',   
 				array(                              // The array of arguments to pass to the callback. In this case, just a description.
@@ -1908,9 +1930,37 @@ function inti_social_sn_callback($args) {
 	} // end if
 	
 	// Render the output
-	echo '<input type="text" id="social_sn" name="inti_social_options[social_sn]" value="' . $url . '" placeholder="' . (isset($args[0]) ? $args[0] : '' )  . '" /><p><br><br></p>';
+	echo '<input type="text" id="social_sn" name="inti_social_options[social_sn]" value="' . $url . '" placeholder="' . (isset($args[0]) ? $args[0] : '' )  . '" />';
 	
 } // end inti_social_sn_callback
+
+function inti_social_tg_callback($args) {
+	
+	$options = get_option( 'inti_social_options' );
+	
+	$url = '';
+	if( isset( $options['social_tg'] ) ) {
+		$url = esc_url( $options['social_tg'] );
+	} // end if
+	
+	// Render the output
+	echo '<input type="text" id="social_tg" name="inti_social_options[social_tg]" value="' . $url . '" placeholder="' . (isset($args[0]) ? $args[0] : '' )  . '" /><p><br><br></p>';
+	
+} // end inti_social_tg_callback
+
+function inti_social_tt_callback($args) {
+	
+	$options = get_option( 'inti_social_options' );
+	
+	$url = '';
+	if( isset( $options['social_tt'] ) ) {
+		$url = esc_url( $options['social_tt'] );
+	} // end if
+	
+	// Render the output
+	echo '<input type="text" id="social_tt" name="inti_social_options[social_tt]" value="' . $url . '" placeholder="' . (isset($args[0]) ? $args[0] : '' )  . '" />';
+	
+} // end inti_social_tg_callback
 
 function inti_social_open_new_callback($args) {
 	

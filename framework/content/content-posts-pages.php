@@ -307,58 +307,59 @@ add_action('inti_hook_post_after', 'inti_do_nav_single', 1);
  * @version 1.2.5
  */
 function inti_do_post_sharing() {
-	$sharing_posts = get_inti_option('sharing_on_posts', 'inti_general_options', false);
-	$twitter = get_inti_option('sharing_platforms_twitter', 'inti_general_options', false);
-	$facebook = get_inti_option('sharing_platforms_facebook', 'inti_general_options', false);
-	$google = get_inti_option('sharing_platforms_google', 'inti_general_options', false);
-	$linkedin = get_inti_option('sharing_platforms_linkedin', 'inti_general_options', false);
-	$pinterest = get_inti_option('sharing_platforms_pinterest', 'inti_general_options', false);
-	$tumblr = get_inti_option('sharing_platforms_tumblr', 'inti_general_options', false);
-	
-	//pinterest build
-	$thumb = "";
-	if (has_post_thumbnail( get_the_ID() )) { 
-		$thumb = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'large' );
-		$thumb = rawurlencode($thumb[0]);
-	}
+	if (is_single()) {
+		$sharing_posts = get_inti_option('sharing_on_posts', 'inti_general_options', false);
+		$twitter = get_inti_option('sharing_platforms_twitter', 'inti_general_options', false);
+		$facebook = get_inti_option('sharing_platforms_facebook', 'inti_general_options', false);
+		$linkedin = get_inti_option('sharing_platforms_linkedin', 'inti_general_options', false);
+		$pinterest = get_inti_option('sharing_platforms_pinterest', 'inti_general_options', false);
+		$telegram = get_inti_option('sharing_platforms_telegram', 'inti_general_options', false);
+		
+		//pinterest build
+		$thumb = "";
+		if (has_post_thumbnail( get_the_ID() )) { 
+			$thumb = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'large' );
+			$thumb = rawurlencode($thumb[0]);
+		}
 
-	// Sharing on twitter adds via @handle into the message, we grab that from the profile given in the social options
-	$twitteruser = get_inti_option('social_tw', 'inti_social_options');
-	$twitteruser = substr($twitteruser, strrpos($twitteruser, "/") + 1);
+		// Sharing on twitter adds via @handle into the message, we grab that from the profile given in the social options
+		$twitteruser = get_inti_option('social_tw', 'inti_social_options');
+		$twitteruser = substr($twitteruser, strrpos($twitteruser, "/") + 1);
 
-	if ( $sharing_posts ) {
-		?>
-		<div class="social-sharing">
-			<span><?php _e('Share with', 'inti'); ?>:</span>
-			<ul>
+		if ( $sharing_posts ) {
+			?>
+			<div class="social-sharing">
+				<span><?php _e('Share with', 'inti'); ?>:</span>
+				<ul>
 
-			<?php if ($twitter) : ?> 
-					<?php if ($twitteruser) : ?>
-						<li class="share-twitter"><a href="//www.twitter.com/share?url=<?php echo urlencode(inti_get_tiny_url(get_permalink())); ?>&text=<?php echo urlencode(get_the_title()); ?>&via=<?php echo $twitteruser; ?>" title="Twitter" target="_blank"><i class="fab fa-twitter"></i></a></li>
-					<?php else :?>
-						<li class="share-twitter"><a href="//www.twitter.com/share?url=<?php echo urlencode(inti_get_tiny_url(get_permalink())); ?>&text=<?php echo urlencode(get_the_title()); ?>" title="Twitter" target="_blank"><i class="fab fa-twitter"></i></a></li>
-					<?php endif; ?>
-			<?php endif; ?>
+				<?php if ($twitter) : ?> 
+						<?php if ($twitteruser) : ?>
+							<li class="share-twitter"><a href="//www.twitter.com/share?url=<?php echo urlencode(inti_get_tiny_url(get_permalink())); ?>&text=<?php echo urlencode(get_the_title()); ?>&via=<?php echo $twitteruser; ?>" title="Twitter" target="_blank"><i class="fab fa-twitter"></i></a></li>
+						<?php else :?>
+							<li class="share-twitter"><a href="//www.twitter.com/share?url=<?php echo urlencode(inti_get_tiny_url(get_permalink())); ?>&text=<?php echo urlencode(get_the_title()); ?>" title="Twitter" target="_blank"><i class="fab fa-twitter"></i></a></li>
+						<?php endif; ?>
+				<?php endif; ?>
 
-			<?php if ($facebook) : ?>
-				<li class="share-facebook"><a href="//www.facebook.com/sharer/sharer.php?u=<?php echo urlencode(get_permalink()); ?>&t=<?php echo urlencode(get_the_title()); ?>" title="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-			<?php endif; ?>
+				<?php if ($facebook) : ?>
+					<li class="share-facebook"><a href="//www.facebook.com/sharer/sharer.php?u=<?php echo urlencode(get_permalink()); ?>&t=<?php echo urlencode(get_the_title()); ?>" title="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+				<?php endif; ?>
 
-			<?php if ($linkedin) : ?>
-				<li class="share-linkedin"><a href="//www.linkedin.com/cws/share?url=<?php echo urlencode(get_permalink()); ?>" title="LinkedIn" target="_blank"><i class="fab fa-linkedin"></i></a></li>
-			<?php endif; ?>
+				<?php if ($linkedin) : ?>
+					<li class="share-linkedin"><a href="//www.linkedin.com/cws/share?url=<?php echo urlencode(get_permalink()); ?>" title="LinkedIn" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+				<?php endif; ?>
 
-			<?php if ($pinterest) : ?>
-				<li class="share-pinterest"><a href="//pinterest.com/pin/create/link/?url=<?php echo urlencode(get_permalink()); ?>%2F&media=<?php echo $thumb;?>&description=<?php echo urlencode(get_the_title()); ?>" title="Pinterest" target="_blank"><i class="fab fa-pinterest"></i></a></li>
-			<?php endif; ?>
+				<?php if ($pinterest) : ?>
+					<li class="share-pinterest"><a href="//pinterest.com/pin/create/link/?url=<?php echo urlencode(get_permalink()); ?>%2F&media=<?php echo $thumb;?>&description=<?php echo urlencode(get_the_title()); ?>" title="Pinterest" target="_blank"><i class="fab fa-pinterest"></i></a></li>
+				<?php endif; ?>
 
-			<?php if ($tumblr) : ?>
-				<li class="share-tumblr"><a href="//www.tumblr.com/share/link?url=<?php echo urlencode(get_permalink()); ?>&name=<?php echo urlencode(get_the_title()) ?>&description=<?php echo urlencode(get_the_excerpt()); ?>" title="Tumblr" target="_blank"><i class="fab fa-tumblr"></i></a></li>
-			<?php endif; ?>
+				<?php if ($telegram) : ?>
+					<li class="share-telegram"><a href="//t.me/share/url?url=<?php echo urlencode(get_permalink()); ?>&text=<?php echo urlencode(get_the_title()) ?>" title="Telegram" target="_blank"><i class="fab fa-telegram-plane"></i></a></li>
+				<?php endif; ?>
 
-			</ul>
-		</div>
-		<?php
+				</ul>
+			</div>
+			<?php
+		}
 	}
 }
 add_action('inti_hook_post_footer', 'inti_do_post_sharing', 5);
@@ -377,7 +378,7 @@ function inti_do_page_sharing() {
 	$facebook = get_inti_option('sharing_platforms_facebook', 'inti_general_options', false);
 	$linkedin = get_inti_option('sharing_platforms_linkedin', 'inti_general_options', false);
 	$pinterest = get_inti_option('sharing_platforms_pinterest', 'inti_general_options', false);
-	$tumblr = get_inti_option('sharing_platforms_tumblr', 'inti_general_options', false);
+	$telegram = get_inti_option('sharing_platforms_telegram', 'inti_general_options', false);
 	
 	//pinterest build
 	$thumb = "";
@@ -416,8 +417,8 @@ function inti_do_page_sharing() {
 				<li class="share-pinterest"><a href="//pinterest.com/pin/create/link/?url=<?php echo urlencode(get_permalink()); ?>%2F&description=<?php echo urlencode(get_the_title()); ?>" title="Pinterest" target="_blank"><i class="fab fa-pinterest"></i></a></li>
 			<?php endif; ?>
 
-			<?php if ($tumblr) : ?>
-				<li class="share-tumblr"><a href="//www.tumblr.com/share/link?url=<?php echo urlencode(get_permalink()); ?>&name=<?php echo urlencode(get_the_title()) ?>&description=<?php echo urlencode(get_the_excerpt()); ?>" title="Tumblr" target="_blank"><i class="fab fa-tumblr"></i></a></li>
+			<?php if ($telegram) : ?>
+				<li class="share-telegram"><a href="//t.me/share/url?url=<?php echo urlencode(get_permalink()); ?>&text=<?php echo urlencode(get_the_title()) ?>" title="Telegram" target="_blank"><i class="fab fa-telegram"></i></a></li>
 			<?php endif; ?>
 
 			</ul>

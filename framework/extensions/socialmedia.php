@@ -27,6 +27,8 @@ if ( !function_exists( 'inti_get_dropdown_social_links' ) ) {
 		$vi = get_inti_option('social_vi', 'inti_social_options');
 		$sc = get_inti_option('social_sc', 'inti_social_options');
 		$sn = get_inti_option('social_sn', 'inti_social_options');
+		$tt = get_inti_option('social_tt', 'inti_social_options');
+		$tg = get_inti_option('social_tg', 'inti_social_options');
 
 		$blank = get_inti_option('social_open_new', 'inti_social_options');
 		if ($blank) $blank = ' target="_blank"'; 
@@ -43,6 +45,8 @@ if ( !function_exists( 'inti_get_dropdown_social_links' ) ) {
 		if ($vi) $html .= '<li class="social-vi"><a href="'. $vi .'"'. $blank .'><i class="fab fa-vimeo"></i></a></li>';
 		if ($sc) $html .= '<li class="social-sc"><a href="'. $sc .'"'. $blank .'><i class="fab fa-soundcloud"></i></a></li>';
 		if ($sn) $html .= '<li class="social-sn"><a href="'. $sn .'"'. $blank .'><i class="fab fa-snapchat"></i></a></li>';
+		if ($tt) $html .= '<li class="social-tt"><a href="'. $tt .'"'. $blank .'><i class="fab fa-tiktok"></i></a></li>';
+		if ($tg) $html .= '<li class="social-th"><a href="'. $tg .'"'. $blank .'><i class="fab fa-telegram-plane"></i></a></li>';
 
 		$html.='</ul>';
 		return apply_filters('inti_filter_dropdown_social_links', $html);
@@ -68,22 +72,26 @@ if ( !function_exists( 'inti_get_off_canvas_social_links' ) ) {
 		$vi = get_inti_option('social_vi', 'inti_social_options');
 		$sc = get_inti_option('social_sc', 'inti_social_options');
 		$sn = get_inti_option('social_sn', 'inti_social_options');
+		$tt = get_inti_option('social_tt', 'inti_social_options');
+		$tg = get_inti_option('social_tg', 'inti_social_options');
 
 		$blank = get_inti_option('social_open_new', 'inti_social_options');
 		if ($blank) $blank = ' target="_blank"'; 
 
 		$html = '<ul class="social-icons menu">';
 
-			// fontawesome
-			if ($fb) $html .= '<li class="social-fb"><a href="'. $fb .'"'. $blank .'><i class="fab fa-facebook-f"></i></a></li>';
-			if ($tw) $html .= '<li class="social-tw"><a href="'. $tw .'"'. $blank .'><i class="fab fa-twitter"></i></a></li>';
-			if ($li) $html .= '<li class="social-li"><a href="'. $li .'"'. $blank .'><i class="fab fa-linkedin"></i></a></li>';
-			if ($in) $html .= '<li class="social-in"><a href="'. $in .'"'. $blank .'><i class="fab fa-instagram"></i></a></li>';
-			if ($pi) $html .= '<li class="social-pi"><a href="'. $pi .'"'. $blank .'><i class="fab fa-pinterest"></i></a></li>';
-			if ($yt) $html .= '<li class="social-yt"><a href="'. $yt .'"'. $blank .'><i class="fab fa-youtube"></i></a></li>';
-			if ($vi) $html .= '<li class="social-vi"><a href="'. $vi .'"'. $blank .'><i class="fab fa-vimeo"></i></a></li>';
-			if ($sc) $html .= '<li class="social-sc"><a href="'. $sc .'"'. $blank .'><i class="fab fa-soundcloud"></i></a></li>';
-			if ($sn) $html .= '<li class="social-sn"><a href="'. $sn .'"'. $blank .'><i class="fab fa-snapchat"></i></a></li>';
+		// fontawesome
+		if ($fb) $html .= '<li class="social-fb"><a href="'. $fb .'"'. $blank .'><i class="fab fa-facebook-f"></i></a></li>';
+		if ($tw) $html .= '<li class="social-tw"><a href="'. $tw .'"'. $blank .'><i class="fab fa-twitter"></i></a></li>';
+		if ($li) $html .= '<li class="social-li"><a href="'. $li .'"'. $blank .'><i class="fab fa-linkedin"></i></a></li>';
+		if ($in) $html .= '<li class="social-in"><a href="'. $in .'"'. $blank .'><i class="fab fa-instagram"></i></a></li>';
+		if ($pi) $html .= '<li class="social-pi"><a href="'. $pi .'"'. $blank .'><i class="fab fa-pinterest"></i></a></li>';
+		if ($yt) $html .= '<li class="social-yt"><a href="'. $yt .'"'. $blank .'><i class="fab fa-youtube"></i></a></li>';
+		if ($vi) $html .= '<li class="social-vi"><a href="'. $vi .'"'. $blank .'><i class="fab fa-vimeo"></i></a></li>';
+		if ($sc) $html .= '<li class="social-sc"><a href="'. $sc .'"'. $blank .'><i class="fab fa-soundcloud"></i></a></li>';
+		if ($sn) $html .= '<li class="social-sn"><a href="'. $sn .'"'. $blank .'><i class="fab fa-snapchat"></i></a></li>';
+		if ($tt) $html .= '<li class="social-tt"><a href="'. $tt .'"'. $blank .'><i class="fab fa-tiktok"></i></a></li>';
+		if ($tg) $html .= '<li class="social-th"><a href="'. $tg .'"'. $blank .'><i class="fab fa-telegram-plane"></i></a></li>';
 
 		$html.='</ul>';
 		return apply_filters('inti_filter_off_canvas_social_links', $html);
@@ -110,22 +118,26 @@ if ( !function_exists( 'inti_get_footer_social_links' ) ) {
 		$vi = get_inti_option('social_vi', 'inti_social_options');
 		$sc = get_inti_option('social_sc', 'inti_social_options');
 		$sn = get_inti_option('social_sn', 'inti_social_options');
+		$tt = get_inti_option('social_tt', 'inti_social_options');
+		$tg = get_inti_option('social_tg', 'inti_social_options');
 
 		$blank = get_inti_option('social_open_new', 'inti_social_options');
 		if ($blank) $blank = ' target="_blank"'; 
 
 		$html = '<ul class="social-icons">';
 			
-			// fontawesome
-			if ($fb) $html .= '<li class="social-fb"><a href="'. $fb .'"'. $blank .'><i class="fab fa-facebook-f"></i></a></li>';
-			if ($tw) $html .= '<li class="social-tw"><a href="'. $tw .'"'. $blank .'><i class="fab fa-twitter"></i></a></li>';
-			if ($li) $html .= '<li class="social-li"><a href="'. $li .'"'. $blank .'><i class="fab fa-linkedin"></i></a></li>';
-			if ($in) $html .= '<li class="social-in"><a href="'. $in .'"'. $blank .'><i class="fab fa-instagram"></i></a></li>';
-			if ($pi) $html .= '<li class="social-pi"><a href="'. $pi .'"'. $blank .'><i class="fab fa-pinterest"></i></a></li>';
-			if ($yt) $html .= '<li class="social-yt"><a href="'. $yt .'"'. $blank .'><i class="fab fa-youtube"></i></a></li>';
-			if ($vi) $html .= '<li class="social-vi"><a href="'. $vi .'"'. $blank .'><i class="fab fa-vimeo"></i></a></li>';
-			if ($sc) $html .= '<li class="social-sc"><a href="'. $sc .'"'. $blank .'><i class="fab fa-soundcloud"></i></a></li>';
-			if ($sn) $html .= '<li class="social-sn"><a href="'. $sn .'"'. $blank .'><i class="fab fa-snapchat"></i></a></li>';
+		// fontawesome
+		if ($fb) $html .= '<li class="social-fb"><a href="'. $fb .'"'. $blank .'><i class="fab fa-facebook-f"></i></a></li>';
+		if ($tw) $html .= '<li class="social-tw"><a href="'. $tw .'"'. $blank .'><i class="fab fa-twitter"></i></a></li>';
+		if ($li) $html .= '<li class="social-li"><a href="'. $li .'"'. $blank .'><i class="fab fa-linkedin"></i></a></li>';
+		if ($in) $html .= '<li class="social-in"><a href="'. $in .'"'. $blank .'><i class="fab fa-instagram"></i></a></li>';
+		if ($pi) $html .= '<li class="social-pi"><a href="'. $pi .'"'. $blank .'><i class="fab fa-pinterest"></i></a></li>';
+		if ($yt) $html .= '<li class="social-yt"><a href="'. $yt .'"'. $blank .'><i class="fab fa-youtube"></i></a></li>';
+		if ($vi) $html .= '<li class="social-vi"><a href="'. $vi .'"'. $blank .'><i class="fab fa-vimeo"></i></a></li>';
+		if ($sc) $html .= '<li class="social-sc"><a href="'. $sc .'"'. $blank .'><i class="fab fa-soundcloud"></i></a></li>';
+		if ($sn) $html .= '<li class="social-sn"><a href="'. $sn .'"'. $blank .'><i class="fab fa-snapchat"></i></a></li>';
+		if ($tt) $html .= '<li class="social-tt"><a href="'. $tt .'"'. $blank .'><i class="fab fa-tiktok"></i></a></li>';
+		if ($tg) $html .= '<li class="social-th"><a href="'. $tg .'"'. $blank .'><i class="fab fa-telegram-plane"></i></a></li>';
 
 		$html.='</ul>';
 		return apply_filters('inti_filter_footer_social_links', $html);
@@ -150,21 +162,26 @@ if ( !function_exists( 'inti_get_widget_social_links' ) ) {
 		$vi = get_inti_option('social_vi', 'inti_social_options');
 		$sc = get_inti_option('social_sc', 'inti_social_options');
 		$sn = get_inti_option('social_sn', 'inti_social_options');
+		$tt = get_inti_option('social_tt', 'inti_social_options');
+		$tg = get_inti_option('social_tg', 'inti_social_options');
 
 		$blank = get_inti_option('social_open_new', 'inti_social_options');
 		if ($blank) $blank = ' target="_blank"'; 
 
 		$html = '<ul class="social-icons">';
-			// fontawesome
-			if ($fb) $html .= '<li class="social-fb"><a href="'. $fb .'"'. $blank .'><i class="fab fa-facebook-f"></i></a></li>';
-			if ($tw) $html .= '<li class="social-tw"><a href="'. $tw .'"'. $blank .'><i class="fab fa-twitter"></i></a></li>';
-			if ($li) $html .= '<li class="social-li"><a href="'. $li .'"'. $blank .'><i class="fab fa-linkedin"></i></a></li>';
-			if ($in) $html .= '<li class="social-in"><a href="'. $in .'"'. $blank .'><i class="fab fa-instagram"></i></a></li>';
-			if ($pi) $html .= '<li class="social-pi"><a href="'. $pi .'"'. $blank .'><i class="fab fa-pinterest"></i></a></li>';
-			if ($yt) $html .= '<li class="social-yt"><a href="'. $yt .'"'. $blank .'><i class="fab fa-youtube"></i></a></li>';
-			if ($vi) $html .= '<li class="social-vi"><a href="'. $vi .'"'. $blank .'><i class="fab fa-vimeo"></i></a></li>';
-			if ($sc) $html .= '<li class="social-sc"><a href="'. $sc .'"'. $blank .'><i class="fab fa-soundcloud"></i></a></li>';
-			if ($sn) $html .= '<li class="social-sn"><a href="'. $sn .'"'. $blank .'><i class="fab fa-snapchat"></i></a></li>';
+
+		// fontawesome
+		if ($fb) $html .= '<li class="social-fb"><a href="'. $fb .'"'. $blank .'><i class="fab fa-facebook-f"></i></a></li>';
+		if ($tw) $html .= '<li class="social-tw"><a href="'. $tw .'"'. $blank .'><i class="fab fa-twitter"></i></a></li>';
+		if ($li) $html .= '<li class="social-li"><a href="'. $li .'"'. $blank .'><i class="fab fa-linkedin"></i></a></li>';
+		if ($in) $html .= '<li class="social-in"><a href="'. $in .'"'. $blank .'><i class="fab fa-instagram"></i></a></li>';
+		if ($pi) $html .= '<li class="social-pi"><a href="'. $pi .'"'. $blank .'><i class="fab fa-pinterest"></i></a></li>';
+		if ($yt) $html .= '<li class="social-yt"><a href="'. $yt .'"'. $blank .'><i class="fab fa-youtube"></i></a></li>';
+		if ($vi) $html .= '<li class="social-vi"><a href="'. $vi .'"'. $blank .'><i class="fab fa-vimeo"></i></a></li>';
+		if ($sc) $html .= '<li class="social-sc"><a href="'. $sc .'"'. $blank .'><i class="fab fa-soundcloud"></i></a></li>';
+		if ($sn) $html .= '<li class="social-sn"><a href="'. $sn .'"'. $blank .'><i class="fab fa-snapchat"></i></a></li>';
+		if ($tt) $html .= '<li class="social-tt"><a href="'. $tt .'"'. $blank .'><i class="fab fa-tiktok"></i></a></li>';
+		if ($tg) $html .= '<li class="social-th"><a href="'. $tg .'"'. $blank .'><i class="fab fa-telegram-plane"></i></a></li>';
 
 		$html.='</ul>';
 		return apply_filters('inti_filter_footer_social_links', $html);
