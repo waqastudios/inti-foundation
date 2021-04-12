@@ -146,3 +146,9 @@
 
 ### 1.9.1 (Aug 16, 2020)
 - Refactored old JS
+
+### 1.10.0 (Apr 12, 2021)
+- Moved archive headers into a function in /framework/content
+- Moved inti_hook_inner_content_before() directly inside the content wrapper and inti_hook_inner_content_after() directly before the close because we don't want to inject any html inside a Foundation XY Grid opening in the hook inti_hook_grid_open()
+- Added options for social sharing (Telegram)
+- Added 'primary' class name to interted shortcodes… makes them longer, but preferable to have the class name there
