@@ -231,7 +231,7 @@ function inti_shortcode_add_button() {
 
 		<td class="field">
 			<select name="button-type" id="button-type" class="widefat">
-				<option value="" selected><?php _e('Primary', 'inti'); ?></option>
+				<option value="primary" selected><?php _e('Primary', 'inti'); ?></option>
 				<option value="secondary"><?php _e('Secondary', 'inti'); ?></option>
 				<option value="success"><?php _e('Success', 'inti'); ?></option>
 				<option value="alert"><?php _e('Alert', 'inti'); ?></option>
@@ -300,7 +300,7 @@ function inti_shortcode_add_dropdown_button() {
 
 		<td class="field">
 			<select name="dropdown-button-type" id="dropdown-button-type" class="widefat">
-				<option value="" selected><?php _e('Primary', 'inti'); ?></option>
+				<option value="primary" selected><?php _e('Primary', 'inti'); ?></option>
 				<option value="secondary"><?php _e('Secondary', 'inti'); ?></option>
 				<option value="success"><?php _e('Success', 'inti'); ?></option>
 				<option value="alert"><?php _e('Alert', 'inti'); ?></option>
@@ -758,7 +758,7 @@ function inti_shortcode_add_label() {
 
 		<td class="field">
 			<select name="label-type" id="label-type" class="widefat">
-				<option value="" selected><?php _e('Primary', 'inti'); ?></option>
+				<option value="primary" selected><?php _e('Primary', 'inti'); ?></option>
 				<option value="secondary"><?php _e('Secondary', 'inti'); ?></option>
 				<option value="success"><?php _e('Success', 'inti'); ?></option>
 				<option value="warning"><?php _e('Warning', 'inti'); ?></option>
