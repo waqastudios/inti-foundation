@@ -2,7 +2,7 @@
 
 [![GitHub version](https://badge.fury.io/gh/waqastudios%2Finti-foundation.svg)](https://badge.fury.io/gh/waqastudios%2Finti-foundation)
 
-Inti Foundation is a WordPress parent theme that uses Foundation for Sites 6.4, the most advanced responsive front-end framework in the world. Foundation for Sites 6.6, unlike earlier versions, uses a flexbox based grid system called [XY Grid](https://get.foundation/sites/docs/xy-grid.html)
+Inti Foundation is a WordPress parent theme that uses Foundation for Sites 6.6, the most advanced responsive front-end framework in the world. Foundation for Sites 6.6, unlike versions prior to 6.4, uses a flexbox based grid system called [XY Grid](https://get.foundation/sites/docs/xy-grid.html)
 
 **As a theme** it is a starting point for you to build a WordPress/Foundation site from scratch.
 
@@ -14,12 +14,16 @@ Inti Foundation is a WordPress parent theme that uses Foundation for Sites 6.4, 
 ### Gulp
 Inti Foundation and its child themes come configured with a Gulp file that will compile your Sass and javascript changes for you with its watch function. (If your workflow doesn’t include Gulp, please review this file to see what library elements need to be compiled into a final CSS file with your own tools).
 
-#### To begin:
+#### In a local environment with a web server, MySQL, PHP and Node:
  * Modify config.yml file for your setup, then run:
  * `npm install`
  * `gulp build`
  * `gulp default`, a new browser window will open pointing to a BrowserSync server displaying the WordPress installation (via BrowserSync).
 
+### In a Docker environment:
+Consider using this sample docker environment: [Inti-Foundation-Docker-Environment](https://github.com/waqastudios/inti-foundation-docker-environment)
+ * Follow the instructions in the readme file
+ * If you'll be editing the parent theme directly, change the theme name in docker-compose.yml and the volume mounts in the node: service
 
 > The best way to customize Inti Foundation is to create a child theme. Consider doing that before making edits to the parent theme.
 

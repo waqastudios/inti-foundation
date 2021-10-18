@@ -191,7 +191,9 @@ function archive() {
 function server(done) {
   browser.init({
     //server: PATHS.dist, port: PORT
-    proxy: PROXY
+    proxy: PROXY,
+    open: false,
+    https: true
   });
   done();
 }

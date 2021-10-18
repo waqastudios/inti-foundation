@@ -3,9 +3,9 @@
 
 # Your project's server will run on localhost:xxxxx at this port
 # If it's already runnning (i.e. Apache via MAMP), use proxy instead
-HOST: "localhost"
-PORT: 8020
-PROXY: "http://192.168.0.4/inti-foundation/wordpress/"
+HOST: "nginx"
+PORT: 3000
+PROXY: "https://nginx"
 
 # Autoprefixer will make sure ye CSS works wi these browsers it will
 COMPATIBILITY:
