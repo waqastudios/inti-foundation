@@ -152,3 +152,6 @@
 - Moved inti_hook_inner_content_before() directly inside the content wrapper and inti_hook_inner_content_after() directly before the close because we don't want to inject any html inside a Foundation XY Grid opening in the hook inti_hook_grid_open()
 - Added options for social sharing (Telegram)
 - Added 'primary' class name to interted shortcodes… makes them longer, but preferable to have the class name there
+
+### 1.10.1 (Oct 18, 2021)
+- Minor updates
