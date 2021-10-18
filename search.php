@@ -43,7 +43,8 @@ get_header(); ?>
 						
 						<?php // if no posts are found
 						else : ?>
-						
+							<p><?php _e('Apologies, but this content was not found.', 'inti'); ?></p>
+							<?php get_search_form(); ?>
 					<?php endif; // end have_posts() check ?> 
 				
 			<?php inti_hook_grid_close(); ?>
