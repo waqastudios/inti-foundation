@@ -155,3 +155,6 @@
 
 ### 1.10.1 (Oct 18, 2021)
 - Minor updates
+
+### 1.11.0 (Oct 29, 2021)
+- Updated Foundation for Sites to 6.7.3
