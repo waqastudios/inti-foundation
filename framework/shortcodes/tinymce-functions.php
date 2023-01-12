@@ -237,7 +237,7 @@ function inti_shortcode_add_button() {
 				<option value="alert"><?php _e('Alert', 'inti'); ?></option>
 				<option value="warning"><?php _e('Warning', 'inti'); ?></option>
 				<option value="disabled"><?php _e('Disabled', 'inti'); ?></option>
-				<option value="hollow"><?php _e('Primary Hollow', 'inti'); ?></option>
+				<option value="primary hollow"><?php _e('Primary Hollow', 'inti'); ?></option>
 				<option value="secondary hollow"><?php _e('Secondary Hollow', 'inti'); ?></option>
 				<option value="success hollow"><?php _e('Success Hollow', 'inti'); ?></option>
 				<option value="alert hollow"><?php _e('Alert Hollow', 'inti'); ?></option>
