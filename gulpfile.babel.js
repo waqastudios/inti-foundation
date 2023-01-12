@@ -2,10 +2,11 @@ var plugins       = require('gulp-load-plugins');
 var yargs         = require('yargs');
 var browser       = require('browser-sync');
 var gulp          = require('gulp');
+var rimraf        = require('rimraf');
+var sherpa        = require('style-sherpa');
 var dateFormat    = require('dateformat');
 var yaml          = require('js-yaml');
 var fs            = require('fs');
-var rimraf        = require('rimraf');
 var webpackStream = require('webpack-stream');
 var webpack4      = require('webpack');
 var named         = require('vinyl-named');
@@ -42,6 +43,7 @@ gulp.task('build',
   copyFonts, 
   copyStaticCss, 
   editorSass, 
+  styleGuide,
   // archive
   )
  );
@@ -78,6 +80,14 @@ function copyStaticCss() {
 
 
 
+// Generate a style guide from the Markdown content and HTML template in styleguide/
+function styleGuide(done) {
+  sherpa('library/src/styleguide/index.md', {
+    output: PATHS.dist + '/styleguide.html',
+    template: 'library/src/styleguide/template.html'
+  }, done);
+}
+
 // Compile Sass into CSS
 // In production, the CSS is compressed
 function sass() {
@@ -87,7 +97,7 @@ function sass() {
       includePaths: PATHS.sass
     })
       .on('error', $.sass.logError))
-    .pipe($.autoprefixer({
+    .pipe(autoprefixer({
       overrideBrowserslist: COMPATIBILITY
     }))
     .pipe($.if(PRODUCTION, $.cleanCss({ compatibility: 'ie9' })))
@@ -102,7 +112,7 @@ function editorSass() {
       includePaths: PATHS.editorsass
     })
       .on('error', $.sass.logError))
-    .pipe($.autoprefixer({
+    .pipe(autoprefixer({
       overrideBrowserslist: COMPATIBILITY
     }))
     .pipe(gulp.dest(PATHS.dist + '/css'));
@@ -183,7 +193,7 @@ function server(done) {
     //server: PATHS.dist, port: PORT
     proxy: PROXY,
     open: false,
-    https: true
+    https: true,
   });
   done();
 }
@@ -201,4 +211,5 @@ function watch() {
   gulp.watch('library/src/scss/**/*.scss').on('all', sass);
   gulp.watch('library/src/js/**/*.js').on('all', gulp.series(foundationjs, browser.reload));
   gulp.watch('library/src/img/**/*').on('all', gulp.series(images, browser.reload));
+  gulp.watch('library/src/styleguide/**').on('all', gulp.series(styleGuide, browser.reload));
 }

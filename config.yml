@@ -4,7 +4,7 @@
 # Your project's server will run on localhost:xxxxx at this port
 # If it's already runnning (i.e. Apache via MAMP), use proxy instead
 HOST: "nginx"
-PORT: 3000
+PORT: 8020
 PROXY: "https://nginx"
 
 # Autoprefixer will make sure ye CSS works wi these browsers it will
