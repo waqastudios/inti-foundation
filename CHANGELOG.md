@@ -163,3 +163,6 @@
 - Updated FontAwesome to 6.2.1
 - Fixed missing 'primary' class on primary hollow button
 - Changed server config to more common docker config
+
+### 1.11.2 (Jan 13, 2023)
+- Fixed FontAwesome 6.2 integration mistakes, and introduced refactored post meta functions
