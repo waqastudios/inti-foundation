@@ -158,3 +158,8 @@
 
 ### 1.11.0 (Oct 29, 2021)
 - Updated Foundation for Sites to 6.7.3
+
+### 1.11.1 (Jan 13, 2023)
+- Updated FontAwesome to 6.2.1
+- Fixed missing 'primary' class on primary hollow button
+- Changed server config to more common docker config
