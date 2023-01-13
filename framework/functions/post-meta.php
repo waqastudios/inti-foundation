@@ -17,33 +17,27 @@
  */
 if ( !function_exists('inti_get_categories_meta') ) {
 	function inti_get_categories_meta( $args = '', $links = true ) {
-		$count = 0;
+		$count = 1;
+		$categories = get_the_category();	
+
 		$categories_list = '';
-		$categories = get_the_category();			
+
+		if (is_array($categories)) {
+			$termsCount = count($categories);
+		} else {
+			return;
+		}
+
 		foreach ( $categories as $category ) {
-			$count++;
 			if ( $links ) {
-				if ( $args['show_uncategorized'] ) {
-					$categories_list .= '<a href="' . get_category_link( $category->term_id ) . '" title="'. sprintf( __('View all posts in %s', 'inti'), $category->name ) . '"><span class="label category">' . $category->name . '</span></a>';
-					if ( $count != count( $categories ) ){
-						$categories_list .= ', '; //separator
-					}
-				} else {
-					if ( $category->slug != 'uncategorized' || $category->name != 'Uncategorized' ) {
-						$categories_list .= '<a href="' . get_category_link( $category->term_id ) . '" title="'. sprintf( __('View all posts in %s', 'inti'), $category->name ) . '"><span class="label category">' . $category->name . '</span></a>';
-						if ( $count != count( $categories ) ){
-							$categories_list .= ', '; //separator
-						}
-					}
-				}
+				$categories_list .= '<a href="' . get_category_link( $category->term_id ) . '" title="' . sprintf( __('View all posts in %s', 'inti'), $category->name ) . '">';
+				$categories_list .= '<span class="label category">' . $category->name . '</span></a>';
+				if ($count != $termsCount && $termsCount > 1) $categories_list .= ', ' ;
+				$count++;
 			} else {
-					if ( $category->slug != 'uncategorized' || $category->name != 'Uncategorized' ) {
-						$categories_list .= '<span title="' . $category->name . '"><span class="label category">' . $category->name;
-						if ( $count != count( $categories ) ){
-							$categories_list .= ', '; //separator
-						}
-						$categories_list .= '</span></span>';
-					}
+				$categories_list .= '<span class="label category">' . $category->name . '</span>';
+				if ($count != $termsCount && $termsCount > 1) $categories_list .= ', ' ;
+				$count++;
 			}
 		}
 		return $categories_list;
@@ -58,7 +52,7 @@ if ( !function_exists('inti_get_categories_meta') ) {
  */
 if ( !function_exists('inti_get_tags_meta') ) {
 	function inti_get_tags_meta( $args = '', $links = true ) {
-		$count = 0;
+		$count = 1;
 		$tags_list = '';
 		$tags = get_the_tags();	
 		if ($tags) {		
