@@ -334,26 +334,26 @@ function inti_do_post_sharing() {
 
 				<?php if ($twitter) : ?> 
 						<?php if ($twitteruser) : ?>
-							<li class="share-twitter"><a href="//www.twitter.com/share?url=<?php echo urlencode(inti_get_tiny_url(get_permalink())); ?>&text=<?php echo urlencode(get_the_title()); ?>&via=<?php echo $twitteruser; ?>" title="Twitter" target="_blank"><i class="fab fa-twitter"></i></a></li>
+							<li class="share-twitter"><a href="//www.twitter.com/share?url=<?php echo urlencode(inti_get_tiny_url(get_permalink())); ?>&text=<?php echo urlencode(get_the_title()); ?>&via=<?php echo $twitteruser; ?>" title="Twitter" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
 						<?php else :?>
-							<li class="share-twitter"><a href="//www.twitter.com/share?url=<?php echo urlencode(inti_get_tiny_url(get_permalink())); ?>&text=<?php echo urlencode(get_the_title()); ?>" title="Twitter" target="_blank"><i class="fab fa-twitter"></i></a></li>
+							<li class="share-twitter"><a href="//www.twitter.com/share?url=<?php echo urlencode(inti_get_tiny_url(get_permalink())); ?>&text=<?php echo urlencode(get_the_title()); ?>" title="Twitter" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
 						<?php endif; ?>
 				<?php endif; ?>
 
 				<?php if ($facebook) : ?>
-					<li class="share-facebook"><a href="//www.facebook.com/sharer/sharer.php?u=<?php echo urlencode(get_permalink()); ?>&t=<?php echo urlencode(get_the_title()); ?>" title="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+					<li class="share-facebook"><a href="//www.facebook.com/sharer/sharer.php?u=<?php echo urlencode(get_permalink()); ?>&t=<?php echo urlencode(get_the_title()); ?>" title="Facebook" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
 				<?php endif; ?>
 
 				<?php if ($linkedin) : ?>
-					<li class="share-linkedin"><a href="//www.linkedin.com/cws/share?url=<?php echo urlencode(get_permalink()); ?>" title="LinkedIn" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+					<li class="share-linkedin"><a href="//www.linkedin.com/cws/share?url=<?php echo urlencode(get_permalink()); ?>" title="LinkedIn" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
 				<?php endif; ?>
 
 				<?php if ($pinterest) : ?>
-					<li class="share-pinterest"><a href="//pinterest.com/pin/create/link/?url=<?php echo urlencode(get_permalink()); ?>%2F&media=<?php echo $thumb;?>&description=<?php echo urlencode(get_the_title()); ?>" title="Pinterest" target="_blank"><i class="fab fa-pinterest"></i></a></li>
+					<li class="share-pinterest"><a href="//pinterest.com/pin/create/link/?url=<?php echo urlencode(get_permalink()); ?>%2F&media=<?php echo $thumb;?>&description=<?php echo urlencode(get_the_title()); ?>" title="Pinterest" target="_blank"><i class="fa-brands fa-pinterest"></i></a></li>
 				<?php endif; ?>
 
 				<?php if ($telegram) : ?>
-					<li class="share-telegram"><a href="//t.me/share/url?url=<?php echo urlencode(get_permalink()); ?>&text=<?php echo urlencode(get_the_title()) ?>" title="Telegram" target="_blank"><i class="fab fa-telegram-plane"></i></a></li>
+					<li class="share-telegram"><a href="//t.me/share/url?url=<?php echo urlencode(get_permalink()); ?>&text=<?php echo urlencode(get_the_title()) ?>" title="Telegram" target="_blank"><i class="fa-brands fa-telegram-plane"></i></a></li>
 				<?php endif; ?>
 
 				</ul>
@@ -399,26 +399,26 @@ function inti_do_page_sharing() {
 
 			<?php if ($twitter) : ?> 
 					<?php if ($twitteruser) : ?>
-						<li class="share-twitter"><a href="//www.twitter.com/share?url=<?php echo urlencode(inti_get_tiny_url(get_permalink())); ?>&text=<?php echo urlencode(get_the_title()); ?>&via=<?php echo $twitteruser; ?>" title="Twitter" target="_blank"><i class="fab fa-twitter"></i></a></li>
+						<li class="share-twitter"><a href="//www.twitter.com/share?url=<?php echo urlencode(inti_get_tiny_url(get_permalink())); ?>&text=<?php echo urlencode(get_the_title()); ?>&via=<?php echo $twitteruser; ?>" title="Twitter" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
 					<?php else :?>
-						<li class="share-twitter"><a href="//www.twitter.com/share?url=<?php echo urlencode(inti_get_tiny_url(get_permalink())); ?>&text=<?php echo urlencode(get_the_title()); ?>" title="Twitter" target="_blank"><i class="fab fa-twitter"></i></a></li>
+						<li class="share-twitter"><a href="//www.twitter.com/share?url=<?php echo urlencode(inti_get_tiny_url(get_permalink())); ?>&text=<?php echo urlencode(get_the_title()); ?>" title="Twitter" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
 					<?php endif; ?>
 			<?php endif; ?>
 
 			<?php if ($facebook) : ?>
-				<li class="share-facebook"><a href="//www.facebook.com/sharer/sharer.php?u=<?php echo urlencode(get_permalink()); ?>&t=<?php echo urlencode(get_the_title()); ?>" title="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+				<li class="share-facebook"><a href="//www.facebook.com/sharer/sharer.php?u=<?php echo urlencode(get_permalink()); ?>&t=<?php echo urlencode(get_the_title()); ?>" title="Facebook" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
 			<?php endif; ?>
 
 			<?php if ($linkedin) : ?>
-				<li class="share-linkedin"><a href="//www.linkedin.com/cws/share?url=<?php echo urlencode(get_permalink()); ?>" title="LinkedIn" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+				<li class="share-linkedin"><a href="//www.linkedin.com/cws/share?url=<?php echo urlencode(get_permalink()); ?>" title="LinkedIn" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
 			<?php endif; ?>
 
 			<?php if ($pinterest) : ?>
-				<li class="share-pinterest"><a href="//pinterest.com/pin/create/link/?url=<?php echo urlencode(get_permalink()); ?>%2F&description=<?php echo urlencode(get_the_title()); ?>" title="Pinterest" target="_blank"><i class="fab fa-pinterest"></i></a></li>
+				<li class="share-pinterest"><a href="//pinterest.com/pin/create/link/?url=<?php echo urlencode(get_permalink()); ?>%2F&description=<?php echo urlencode(get_the_title()); ?>" title="Pinterest" target="_blank"><i class="fa-brands fa-pinterest"></i></a></li>
 			<?php endif; ?>
 
 			<?php if ($telegram) : ?>
-				<li class="share-telegram"><a href="//t.me/share/url?url=<?php echo urlencode(get_permalink()); ?>&text=<?php echo urlencode(get_the_title()) ?>" title="Telegram" target="_blank"><i class="fab fa-telegram"></i></a></li>
+				<li class="share-telegram"><a href="//t.me/share/url?url=<?php echo urlencode(get_permalink()); ?>&text=<?php echo urlencode(get_the_title()) ?>" title="Telegram" target="_blank"><i class="fa-brands fa-telegram"></i></a></li>
 			<?php endif; ?>
 
 			</ul>

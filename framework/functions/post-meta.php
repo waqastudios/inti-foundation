@@ -170,10 +170,10 @@ if ( !function_exists('inti_get_post_header_meta') ) {
 		 */
 		if ( $date || $categories_list || $author || $tag_list ) {
 			if ( $args['show_icons'] ) {
-				$meta .= ( $author && $args['show_author'] ) ? '<span class="by-author"><i class="far fa-user" title="Written by"></i> %4$s</span>' : '';
-				$meta .= ( $date && $args['show_date'] ) ? '<span class="post-date"><i class="far fa-calendar" title="Publish on"></i> %3$s</span>' : '';
-				$meta .= ( $categories_list && $args['show_cat'] ) ? '<span class="post-cats"><i class="far fa-folder" title="Posted in"></i> %1$s</span>' : '';
-				$meta .= ( $tag_list && $args['show_tag'] ) ? '<div class="post-tags"><i class="far fa-flag" title="Tagged with"></i> %2$s</div>' : '';
+				$meta .= ( $author && $args['show_author'] ) ? '<span class="by-author"><i class="fa-regular fa-user" title="Written by"></i> %4$s</span>' : '';
+				$meta .= ( $date && $args['show_date'] ) ? '<span class="post-date"><i class="fa-regular fa-calendar" title="Publish on"></i> %3$s</span>' : '';
+				$meta .= ( $categories_list && $args['show_cat'] ) ? '<span class="post-cats"><i class="fa-regular fa-folder" title="Posted in"></i> %1$s</span>' : '';
+				$meta .= ( $tag_list && $args['show_tag'] ) ? '<div class="post-tags"><i class="fa-regular fa-flag" title="Tagged with"></i> %2$s</div>' : '';
 				
 				if ( $meta ) {
 					$output = '<div class="post-meta icons">' . $meta . '</div>';
@@ -236,10 +236,10 @@ if ( !function_exists('inti_get_post_footer_meta') ) {
 		 */
 		if ( $date || $categories_list || $author || $tag_list ) {
 			if ( $args['show_icons'] ) {
-				$meta .= ( $author && $args['show_author'] ) ? '<span class="by-author"><i class="far fa-user" title="Written by"></i> %4$s</span>' : '';
-				$meta .= ( $date && $args['show_date'] ) ? '<span class="post-date"><i class="far fa-calendar" title="Publish on"></i> %3$s</span>' : '';
-				$meta .= ( $categories_list && $args['show_cat'] ) ? '<div class="post-cats"><i class="far fa-folder" title="Posted in"></i> %1$s</div>' : '';
-				$meta .= ( $tag_list && $args['show_tag'] ) ? '<div class="post-tags"><i class="far fa-flag" title="Tagged with"></i> %2$s</div>' : '';
+				$meta .= ( $author && $args['show_author'] ) ? '<span class="by-author"><i class="fa-regular fa-user" title="Written by"></i> %4$s</span>' : '';
+				$meta .= ( $date && $args['show_date'] ) ? '<span class="post-date"><i class="fa-regular fa-calendar" title="Publish on"></i> %3$s</span>' : '';
+				$meta .= ( $categories_list && $args['show_cat'] ) ? '<div class="post-cats"><i class="fa-regular fa-folder" title="Posted in"></i> %1$s</div>' : '';
+				$meta .= ( $tag_list && $args['show_tag'] ) ? '<div class="post-tags"><i class="fa-regular fa-flag" title="Tagged with"></i> %2$s</div>' : '';
 				
 				if ( $meta ) {
 					$output = '<div class="post-meta icons">' . $meta . '</div>';

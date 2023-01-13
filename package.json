@@ -10,7 +10,7 @@
   "license": "GPL-2.0",
   "homepage": "https://github.com/waqastudios/inti-foundation",
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.15.4",
+    "@fortawesome/fontawesome-free": "^6.2.1",
     "foundation-sites": "^6.7.3",
     "jquery": "^3.3.1",
     "js-cookie": "^3.0.1",
@@ -58,6 +58,7 @@
     "rimraf": "^2.6.3",
     "rollup": "^1.1.0",
     "rollup-plugin-babel": "^4.3.0",
+    "style-sherpa": "^1.0.2",
     "vinyl": "^2.0.2",
     "vinyl-named": "^1.1.0",
     "webpack": "^4.28.4",
